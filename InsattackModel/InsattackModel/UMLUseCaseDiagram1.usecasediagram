@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="95a4608e-2c70-463f-93dd-ce254e8aed63" name="UtilisationHorsJeu" linkedPackageId="f55b68a2-27b8-4cf5-87ad-09f211f67923" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="94a891bd-32f7-4b6d-ae61-9b37dc1cb8e8" name="Joueur" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d4511f3a-becb-48c5-a9fe-80309abe409d" />
+        <targetEnds>
+          <association Id="bf3e0899-a0ec-4f2b-972c-c9fa5251184e" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="Jouer" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ee0c9b94-a6cf-402c-9d9f-f3ed9fd5d832" LastKnownName="Jouer" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1538888e-c334-4861-aeb1-6459fd564707" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0ad1660e-a21e-405d-9417-9c2bdd8329ce" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fbef5305-485e-440c-9ed2-4d3841e2239b" name="Jouer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="84844bce-5632-455d-a4be-fc489f3deefd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c3bd6223-eb80-45b2-ae85-744f9f3db7d2" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="1e9808aa-20c8-4551-b4fe-05036af8e568" name="Jeu" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a43defae-9b6c-401a-a2f0-5e0fb64474f0" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="4771acb9-229d-4f38-a44d-86a3b5910e05" name="CréePartie" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="eab76606-c14e-4f54-b0d1-5a24f0d603d6" />
+        <generalsInternal>
+          <generalization Id="2ff30fb8-8134-4e84-94ff-acd85771e7c1" isSubstitutable="false">
+            <useCaseMoniker Id="74479a9d-d09d-491e-a621-7930c5263e3e" LastKnownName="ChoisirPartie" />
+            <elementDefinition Id="2faddf63-6e9a-4e1e-a67a-b0e85e3cd7b2" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="1e9808aa-20c8-4551-b4fe-05036af8e568" LastKnownName="Jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="87b0bd22-cf40-4890-81b2-e7c75b4e4c50" name="ChargePartie" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="32715126-0391-4688-9bc0-2dd4284901e1" />
+        <generalsInternal>
+          <generalization Id="3b32e0ae-629c-469f-9582-d56f414b7cf4" isSubstitutable="false">
+            <useCaseMoniker Id="74479a9d-d09d-491e-a621-7930c5263e3e" LastKnownName="ChoisirPartie" />
+            <elementDefinition Id="93048fc0-89e0-439b-8f42-1d55a0bf9e5d" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="1e9808aa-20c8-4551-b4fe-05036af8e568" LastKnownName="Jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="ee0c9b94-a6cf-402c-9d9f-f3ed9fd5d832" name="Jouer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="44022af5-ba64-440a-a207-acd6503ac05e" />
+        <additions>
+          <include Id="6499ed12-7e65-46ae-a213-77b4d6c9fb83">
+            <useCaseMoniker Id="74479a9d-d09d-491e-a621-7930c5263e3e" LastKnownName="ChoisirPartie" />
+            <elementDefinition Id="aa7ecfc5-5fa9-4d10-ab30-9f067128f68c" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="1e9808aa-20c8-4551-b4fe-05036af8e568" LastKnownName="Jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="74479a9d-d09d-491e-a621-7930c5263e3e" name="ChoisirPartie" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bc3169bc-4090-4b07-a716-9a94298c20b5" />
+        <subjects>
+          <subsystemMoniker Id="1e9808aa-20c8-4551-b4fe-05036af8e568" LastKnownName="Jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="f55b68a2-27b8-4cf5-87ad-09f211f67923" name="InsattackModel">
+    <elementDefinition Id="e8dabbf2-c9dc-4d57-acb9-e8da11bc642b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="a35ce456-f82f-4de4-8f2d-c54930d68335">
+        <profileInstance Id="360ed254-16c4-45a6-87a0-1a4ad01df1b7" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="27d72101-a8f6-4000-a001-d627da0673ab">
+        <profileInstance Id="847e2a6d-c6e6-4c19-b144-2fce8dcfbdf3" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

@@ -1,4 +1,8 @@
-insattack
+Insattack
 =========
 
-Projet POO 4ème année
+Projet POO de 4ème année 2014
+
+Contributeurs : 
+- Bignon Baptiste
+- Prevosto Gabriel

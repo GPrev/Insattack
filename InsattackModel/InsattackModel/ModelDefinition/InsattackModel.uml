@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="e8dabbf2-c9dc-4d57-acb9-e8da11bc642b"
+  name="InsattackModel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="d4511f3a-becb-48c5-a9fe-80309abe409d"
+        name="Joueur"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="c3bd6223-eb80-45b2-ae85-744f9f3db7d2"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="Jouer"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="44022af5-ba64-440a-a207-acd6503ac05e"
+              LastKnownName="Jouer"
+              LastKnownLocation="InsattackModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0ad1660e-a21e-405d-9417-9c2bdd8329ce"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="84844bce-5632-455d-a4be-fc489f3deefd"
+                  name="Jouer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="a43defae-9b6c-401a-a2f0-5e0fb64474f0"
+        name="Jeu"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="eab76606-c14e-4f54-b0d1-5a24f0d603d6"
+        name="CréePartie"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="2faddf63-6e9a-4e1e-a67a-b0e85e3cd7b2"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="bc3169bc-4090-4b07-a716-9a94298c20b5"
+              LastKnownName="ChoisirPartie"
+              LastKnownLocation="InsattackModel.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="a43defae-9b6c-401a-a2f0-5e0fb64474f0"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="32715126-0391-4688-9bc0-2dd4284901e1"
+        name="ChargePartie"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="93048fc0-89e0-439b-8f42-1d55a0bf9e5d"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="bc3169bc-4090-4b07-a716-9a94298c20b5"
+              LastKnownName="ChoisirPartie"
+              LastKnownLocation="InsattackModel.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="a43defae-9b6c-401a-a2f0-5e0fb64474f0"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="44022af5-ba64-440a-a207-acd6503ac05e"
+        name="Jouer"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="aa7ecfc5-5fa9-4d10-ab30-9f067128f68c">
+            <useCaseMoniker
+              Id="bc3169bc-4090-4b07-a716-9a94298c20b5"
+              LastKnownName="ChoisirPartie"
+              LastKnownLocation="InsattackModel.uml" />
+          </include>
+          <include
+            Id="8f546a55-e66b-44ca-849e-31769a57bcf7">
+            <useCaseMoniker
+              Id="329a8c70-9156-4bb7-8099-e1fda2f3b3b5"
+              LastKnownName="DéplacerUnités"
+              LastKnownLocation="InsattackModel.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="a43defae-9b6c-401a-a2f0-5e0fb64474f0"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bc3169bc-4090-4b07-a716-9a94298c20b5"
+        name="ChoisirPartie"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="a43defae-9b6c-401a-a2f0-5e0fb64474f0"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="329a8c70-9156-4bb7-8099-e1fda2f3b3b5"
+        name="DéplacerUnités"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="b83b708f-3928-49e0-86bb-e255b7aec429"
+        name="Joueur"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="067cb481-8583-410c-883f-bcc5801a78c3"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="JouerTour"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f0d84f9d-8030-44b4-8e28-61bfcbba7aca"
+              LastKnownName="Jouer tour"
+              LastKnownLocation="InsattackModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="526e896f-62cb-40ce-8e4f-a2130c9f14a0"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="04815577-02c2-48eb-8f69-c5602e562515"
+                  name="JouerTour"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9c7603c9-af4a-4c9a-92c6-6fe70dd3de2d"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="Sauvegarder"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c5691588-8aa1-4a39-9723-010cd7ea1066"
+              LastKnownName="Sauvegarder"
+              LastKnownLocation="InsattackModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d6cbf71d-77a4-4c02-a495-7216754a9cbb"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8a7586d8-faa3-43f3-ab40-5adc6064979e"
+                  name="Sauvegarder"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f"
+        name="Jeu"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f0d84f9d-8030-44b4-8e28-61bfcbba7aca"
+        name="Jouer tour"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="9f0e32d3-b8fd-484f-8812-4f1a65991bb9">
+            <useCaseMoniker
+              Id="fc698dbb-48c9-40cc-9b0a-3680cbfb3f01"
+              LastKnownName="Jouer unité"
+              LastKnownLocation="InsattackModel.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="724b8d6c-5b75-41ed-ae48-55a46195f025"
+        name="Déplacer unité"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="41f97c37-2418-4e22-98fc-6bb475dcda2f"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="fc698dbb-48c9-40cc-9b0a-3680cbfb3f01"
+              LastKnownName="Jouer unité"
+              LastKnownLocation="InsattackModel.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="11acecd8-332a-4851-8c0a-88c732edfcad"
+        name="Combattre"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="6a8f45a0-3846-4495-bfb8-43a7b66529a2">
+            <useCaseMoniker
+              Id="1ad04799-c6c4-4272-a4d7-a8716bc82e41"
+              LastKnownName="Déplacement possible"
+              LastKnownLocation="InsattackModel.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fc698dbb-48c9-40cc-9b0a-3680cbfb3f01"
+        name="Jouer unité"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4d0d3acb-a3bc-4220-8493-78bb975f56a3"
+        name="Passer tour"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="655f113a-cc5b-44c0-a1ef-87c1ce094dc4"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="fc698dbb-48c9-40cc-9b0a-3680cbfb3f01"
+              LastKnownName="Jouer unité"
+              LastKnownLocation="InsattackModel.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1d070c4b-8c3d-421f-9b9d-08159c4f73a3"
+        name="Déplacement impossible"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="610ba101-ee9c-436c-bc77-92d39f4fc9dd"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="724b8d6c-5b75-41ed-ae48-55a46195f025"
+              LastKnownName="Déplacer unité"
+              LastKnownLocation="InsattackModel.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1ad04799-c6c4-4272-a4d7-a8716bc82e41"
+        name="Déplacement possible"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="6d2c106a-df66-4019-8c73-3cb35a0ff893"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="724b8d6c-5b75-41ed-ae48-55a46195f025"
+              LastKnownName="Déplacer unité"
+              LastKnownLocation="InsattackModel.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c5691588-8aa1-4a39-9723-010cd7ea1066"
+        name="Sauvegarder"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

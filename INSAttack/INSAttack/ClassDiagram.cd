@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="Flyweight (Tile)">
+    <Position X="0.677" Y="0.813" Height="0.406" Width="1.106" />
+  </Comment>
+  <Comment CommentText="Builder (Game)">
+    <Position X="9.792" Y="0.5" Height="0.323" Width="1.065" />
+  </Comment>
+  <Comment CommentText="Factory (Unit)">
+    <Position X="5.292" Y="8.302" Height="0.354" Width="1.002" />
+  </Comment>
+  <Comment CommentText="Strategy (Board)">
+    <Position X="11.177" Y="4.271" Height="0.354" Width="1.117" />
+  </Comment>
+  <Class Name="INSAttack.Game">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="m_activePlayer" Type="INSAttack.Player">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.713" Y="0.352" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="m_players" Type="INSAttack.Player">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.984" Y="0.685" Height="0.182" Width="0.926" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAACAAAAEAAAAAAAgAAAAAAQAACAAAAA=</HashCode>
+      <FileName>Jeu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_activePlayer" />
+      <Field Name="m_board" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="m_players" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="INSAttack.Board">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="m_tileTable" Type="INSAttack.Tile">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.266" Y="0.133" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="m_unitTable" Type="INSAttack.Unit">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.586" Y="0.11" Height="0.182" Width="1.066" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAKAAAAAAAAAAAAAAAAACAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Plateau.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_tileTable" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="m_unitTable" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="INSAttack.Player">
+    <Position X="6.75" Y="6.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="m_department" Type="INSAttack.Department">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.11" Y="0.3" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Joueur.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_department" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="INSAttack.Unit">
+    <Position X="5.25" Y="3.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAABRAAAAAAAABBAEAAAAAIAAAAAAAAEAAwAhIEA=</HashCode>
+      <FileName>Unit.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_player" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="INSAttack.GameBuilder">
+    <Position X="9.5" Y="1" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.523" />
+  </Class>
+  <Class Name="INSAttack.NewGameBuilder">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NewGameBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.GameLoader">
+    <Position X="10.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.TileFactory">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="m_tdTiles" Type="INSAttack.TDTile" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="2" />
+        <Point X="1.094" Y="2" />
+        <Point X="1.094" Y="4.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.411" Y="0.518" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="m_infoTiles" Type="INSAttack.INFOTile" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="1.846" />
+        <Point X="4.156" Y="1.846" />
+        <Point X="4.156" Y="4.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="m_amphiTiles" Type="INSAttack.AmphiTile" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="1.469" />
+        <Point X="0.5" Y="1.469" />
+        <Point X="0.5" Y="5.677" />
+        <Point X="1.125" Y="5.677" />
+        <Point X="1.125" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.255" Y="0.31" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="m_outdoorTiles" Type="INSAttack.OutdoorTile" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="1.431" />
+        <Point X="4.875" Y="1.431" />
+        <Point X="4.875" Y="6.749" />
+        <Point X="4.5" Y="6.749" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAAACgAAAABAAAAAAAAAAAAAABAAAgAgAAgQIACA=</HashCode>
+      <FileName>TileFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_tdTiles" />
+      <Field Name="m_infoTiles" />
+      <Field Name="m_amphiTiles" />
+      <Field Name="m_outdoorTiles" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="INSAttack.Tile">
+    <Position X="1.5" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.TDTile">
+    <Position X="0.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TDTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.INFOTile">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INFOTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.AmphiTile">
+    <Position X="0.75" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="INSAttack.Tile" ManuallyRouted="true">
+      <Path>
+        <Point X="2.625" Y="3.853" />
+        <Point X="2.625" Y="5.917" />
+        <Point X="1.5" Y="5.917" />
+        <Point X="1.5" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AmphiTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.OutdoorTile">
+    <Position X="3" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="INSAttack.Tile" ManuallyRouted="true">
+      <Path>
+        <Point X="2.625" Y="3.853" />
+        <Point X="2.625" Y="5.917" />
+        <Point X="3.75" Y="5.917" />
+        <Point X="3.75" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OutdoorTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.BoardStrategy">
+    <Position X="11.25" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EgAAAAAAAAAAAAAAAAAAAAAAQABBAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BoardStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.2" />
+  </Class>
+  <Class Name="INSAttack.DemoBoardStrategy">
+    <Position X="11.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DemoBoardStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.SmallBoardStrategy">
+    <Position X="13" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmallBoardStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.NormalBoardStrategy">
+    <Position X="9.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NormalBoardStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.EII">
+    <Position X="3.75" Y="9.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAAAA=</HashCode>
+      <FileName>EII.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.Department">
+    <Position X="6.5" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Departement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.INFO">
+    <Position X="7.75" Y="9.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAAAA=</HashCode>
+      <FileName>INFO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.GC">
+    <Position X="5.75" Y="9.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAAAA=</HashCode>
+      <FileName>GC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.GMA">
+    <Position X="11.75" Y="9.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAAAA=</HashCode>
+      <FileName>GMA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.SGM">
+    <Position X="1.75" Y="9.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAAAA=</HashCode>
+      <FileName>SGM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INSAttack.SRC">
+    <Position X="9.75" Y="9.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAAAA=</HashCode>
+      <FileName>SRC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="INSAttack.Factory&lt;T&gt;">
+    <Position X="9" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
