@@ -31,7 +31,7 @@
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification Id="f420a5d0-8b31-47fe-a32f-2de4e05acbae" name="MessageOccurrenceSpecification">
             <covered>
-              <lifelineMoniker Id="7c1fe892-6e33-423d-8c6d-ec8e9bfdb1c6" LastKnownName="GameFactory" />
+              <lifelineMoniker Id="7c1fe892-6e33-423d-8c6d-ec8e9bfdb1c6" LastKnownName="GameBuilder" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="dcd9925e-8b2a-42a0-8c7f-91076d2fb609" name="MessageOccurrenceSpecification">
@@ -46,7 +46,7 @@
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="19abb103-0577-400a-95e8-810309c7a2a4" name="MessageOccurrenceSpecification">
             <covered>
-              <lifelineMoniker Id="7c1fe892-6e33-423d-8c6d-ec8e9bfdb1c6" LastKnownName="GameFactory" />
+              <lifelineMoniker Id="7c1fe892-6e33-423d-8c6d-ec8e9bfdb1c6" LastKnownName="GameBuilder" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="87a356a9-a2da-400f-ada4-f18daf52f787" name="ExecutionOccurrenceSpecification">
@@ -158,64 +158,9 @@
               <lifelineMoniker Id="3a78f3b0-5e0d-4333-bff8-e11ef859d90f" LastKnownName="Board" />
             </covered>
           </executionOccurrenceSpecification>
-          <behaviorExecutionSpecification Id="16737e07-9ba0-4bec-93c6-04e14213967b" name="BehaviorExecutionSpecification">
-            <coveredLifelines>
-              <lifelineMoniker Id="3a78f3b0-5e0d-4333-bff8-e11ef859d90f" LastKnownName="Board" />
-            </coveredLifelines>
-            <finish>
-              <executionOccurrenceSpecificationMoniker Id="b93f1c2e-2701-45ca-8fca-4547ad4ccbee" LastKnownName="ExecutionOccurrenceSpecification" />
-            </finish>
-            <start>
-              <executionOccurrenceSpecificationMoniker Id="cc84f502-cc4a-4cb8-8e75-495c10808338" LastKnownName="ExecutionOccurrenceSpecification" />
-            </start>
-            <nestedOccurrences>
-              <messageOccurrenceSpecificationMoniker Id="dff78d13-8e81-4740-b07c-81804a39645b" LastKnownName="MessageOccurrenceSpecification" />
-              <messageOccurrenceSpecificationMoniker Id="c098f3c6-124f-4b46-a41e-7d3af262e80b" LastKnownName="MessageOccurrenceSpecification" />
-            </nestedOccurrences>
-          </behaviorExecutionSpecification>
-          <executionOccurrenceSpecification Id="cc84f502-cc4a-4cb8-8e75-495c10808338" name="ExecutionOccurrenceSpecification">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker Id="7ed25e74-9350-4b67-9d86-aeb933b32c6a" LastKnownName="ExecutionEvent" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker Id="3a78f3b0-5e0d-4333-bff8-e11ef859d90f" LastKnownName="Board" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="04e5c822-f588-4762-9d5d-d31feeb08b31" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="f811bb0a-4e30-451e-8524-c023b1a35921" LastKnownName="Game" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="dff78d13-8e81-4740-b07c-81804a39645b" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="3a78f3b0-5e0d-4333-bff8-e11ef859d90f" LastKnownName="Board" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="c098f3c6-124f-4b46-a41e-7d3af262e80b" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="3a78f3b0-5e0d-4333-bff8-e11ef859d90f" LastKnownName="Board" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="4a89ed5a-9613-4b0b-ac16-5efd61c46f78" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="f811bb0a-4e30-451e-8524-c023b1a35921" LastKnownName="Game" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <executionOccurrenceSpecification Id="b93f1c2e-2701-45ca-8fca-4547ad4ccbee" name="ExecutionOccurrenceSpecification">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker Id="6f96f42a-803d-41dd-8e80-92ad5517df9f" LastKnownName="ExecutionEvent" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker Id="3a78f3b0-5e0d-4333-bff8-e11ef859d90f" LastKnownName="Board" />
-            </covered>
-          </executionOccurrenceSpecification>
         </fragments>
         <lifelines>
-          <lifeline Id="7c1fe892-6e33-423d-8c6d-ec8e9bfdb1c6" name="GameFactory" isActor="false" lifelineDisplayName="GameFactory">
+          <lifeline Id="7c1fe892-6e33-423d-8c6d-ec8e9bfdb1c6" name="GameBuilder" isActor="false" lifelineDisplayName="GameBuilder">
             <topLevelOccurrences>
               <messageOccurrenceSpecificationMoniker Id="f420a5d0-8b31-47fe-a32f-2de4e05acbae" LastKnownName="MessageOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="19abb103-0577-400a-95e8-810309c7a2a4" LastKnownName="MessageOccurrenceSpecification" />
@@ -226,8 +171,6 @@
               <executionOccurrenceSpecificationMoniker Id="c12d9cc7-c257-4575-840d-0b45374ff130" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="87a356a9-a2da-400f-ada4-f18daf52f787" LastKnownName="ExecutionOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="7aca72a0-3ea3-48d0-9db2-1a244b1d7002" LastKnownName="MessageOccurrenceSpecification" />
-              <messageOccurrenceSpecificationMoniker Id="04e5c822-f588-4762-9d5d-d31feeb08b31" LastKnownName="MessageOccurrenceSpecification" />
-              <messageOccurrenceSpecificationMoniker Id="4a89ed5a-9613-4b0b-ac16-5efd61c46f78" LastKnownName="MessageOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
           <lifeline Id="ddef194b-88c7-461c-9804-a88d89d2cb2b" name="BoardStrategy" isActor="false" lifelineDisplayName="BoardStrategy">
@@ -242,8 +185,6 @@
             <topLevelOccurrences>
               <executionOccurrenceSpecificationMoniker Id="af80f8d9-6764-4849-99cc-31fd2c26d536" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="a6f3f491-574d-489b-b77c-cd9cccb500b4" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="cc84f502-cc4a-4cb8-8e75-495c10808338" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="b93f1c2e-2701-45ca-8fca-4547ad4ccbee" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
         </lifelines>
@@ -288,22 +229,6 @@
               <messageOccurrenceSpecificationMoniker Id="bc28825d-d22f-4d44-afc3-05a009362ae9" LastKnownName="MessageOccurrenceSpecification" />
             </receiveEvent>
           </message>
-          <message Id="92ff9786-9709-430f-ac62-05d2639e2d87" name="Die" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker Id="04e5c822-f588-4762-9d5d-d31feeb08b31" LastKnownName="MessageOccurrenceSpecification" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker Id="dff78d13-8e81-4740-b07c-81804a39645b" LastKnownName="MessageOccurrenceSpecification" />
-            </receiveEvent>
-          </message>
-          <message Id="fcbdfe2b-8026-42f7-88c1-cbad1a06b8c0" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker Id="c098f3c6-124f-4b46-a41e-7d3af262e80b" LastKnownName="MessageOccurrenceSpecification" />
-            </sendEvent>
-            <receiveEvent>
-              <messageOccurrenceSpecificationMoniker Id="4a89ed5a-9613-4b0b-ac16-5efd61c46f78" LastKnownName="MessageOccurrenceSpecification" />
-            </receiveEvent>
-          </message>
         </messages>
       </interaction>
     </packageHasNamedElement>
@@ -324,12 +249,6 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <executionEvent Id="1edc87fe-558b-49fa-abc9-1ae42e0d5f5b" name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent Id="7ed25e74-9350-4b67-9d86-aeb933b32c6a" name="ExecutionEvent" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <executionEvent Id="6f96f42a-803d-41dd-8e80-92ad5517df9f" name="ExecutionEvent" />
     </packageHasNamedElement>
   </packagedElements>
 </SequenceDesignerModel>

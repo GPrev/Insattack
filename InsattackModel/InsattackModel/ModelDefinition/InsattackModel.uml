@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="e8dabbf2-c9dc-4d57-acb9-e8da11bc642b"
   name="InsattackModel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -54,6 +54,84 @@
                 <memberEnd
                   Id="84844bce-5632-455d-a4be-fc489f3deefd"
                   name="Jouer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="4a46e153-d856-44ee-9073-3061da2d42cf"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="Sauvegarder"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c5691588-8aa1-4a39-9723-010cd7ea1066"
+              LastKnownName="Sauvegarder"
+              LastKnownLocation="InsattackModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e55c6e3d-9d61-4448-ad56-2f45f3a2da73"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="919a1686-e831-4fb2-9a8b-a8d638532961"
+                  name="Sauvegarder"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="6a15c670-bc42-4e45-bc31-fe7d370f6585"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="Jouer tour"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f0d84f9d-8030-44b4-8e28-61bfcbba7aca"
+              LastKnownName="Jouer tour"
+              LastKnownLocation="InsattackModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9dba97f2-39d2-4bdc-9de5-88183559c83d"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f1b67334-102e-46e0-84ae-0c0cf16f6bec"
+                  name="Jouer tour"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -173,94 +251,6 @@
         name="DéplacerUnités"
         isAbstract="false"
         isLeaf="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <actor
-        Id="b83b708f-3928-49e0-86bb-e255b7aec429"
-        name="Joueur"
-        isAbstract="false"
-        isLeaf="false">
-        <targetEnds>
-          <association
-            Id="067cb481-8583-410c-883f-bcc5801a78c3"
-            isDerived="false"
-            sourceEndRoleName="Joueur"
-            targetEndRoleName="JouerTour"
-            isLeaf="false"
-            isAbstract="false">
-            <useCaseMoniker
-              Id="f0d84f9d-8030-44b4-8e28-61bfcbba7aca"
-              LastKnownName="Jouer tour"
-              LastKnownLocation="InsattackModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="526e896f-62cb-40ce-8e4f-a2130c9f14a0"
-                  name="Joueur"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="04815577-02c2-48eb-8f69-c5602e562515"
-                  name="JouerTour"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="9c7603c9-af4a-4c9a-92c6-6fe70dd3de2d"
-            isDerived="false"
-            sourceEndRoleName="Joueur"
-            targetEndRoleName="Sauvegarder"
-            isLeaf="false"
-            isAbstract="false">
-            <useCaseMoniker
-              Id="c5691588-8aa1-4a39-9723-010cd7ea1066"
-              LastKnownName="Sauvegarder"
-              LastKnownLocation="InsattackModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="d6cbf71d-77a4-4c02-a495-7216754a9cbb"
-                  name="Joueur"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="8a7586d8-faa3-43f3-ab40-5adc6064979e"
-                  name="Sauvegarder"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
-      </actor>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <subsystem
@@ -439,6 +429,2724 @@
             LastKnownLocation="InsattackModel.uml" />
         </subjects>
       </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="1c176985-4430-4000-888f-90b01e2e6c65"
+        name="Déplacement d'une unité"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="dc3e70ce-20ca-450c-9fb2-5b82cbeef449"
+            name="BehaviorExecutionSpecification2">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="68f40955-1874-443d-bf8a-fcd3740c0557"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="InsattackModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="f669ded1-b6d4-49da-9335-e9d5b3ee3147"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="InsattackModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="aa4a6f75-1c2e-4cfb-a01b-db9d203b6d29"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="2e0e42a1-a5e2-4673-85df-7175e19f2bfa"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="3c8a71f8-8e86-4507-a1f9-0e6ffd54ed70"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="38b7082b-9446-4a60-a6dc-06b357e75046"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="f38e8d5f-6a43-420f-a179-102b66e0aae7"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="e7f791e2-0424-4858-9e61-466a3715eee7"
+                LastKnownName="OperandOccurrenceSpecification13"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="1fa37f73-efa2-4881-90aa-13bf5ba5bfd6"
+                LastKnownName="MessageOccurrenceSpecification23"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="bfd7d7af-2733-40b6-903e-f148f72cbfcc"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="694e079d-d6b5-4c67-bde1-b0b5d32d6888"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="c3044e14-2b85-4273-bc4a-0152868ca7c2"
+                LastKnownName="OperandOccurrenceSpecification14"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="648b2821-9aca-442b-83f1-61bf1f7f7ef8"
+                LastKnownName="OperandOccurrenceSpecification15"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="2ba4a301-2917-444f-9cbf-e7303321a39c"
+                LastKnownName="OperandOccurrenceSpecification16"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="cce3293e-a271-4634-b4a7-583b96192452"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="4df957c2-d6f0-475a-9f1e-b467004b3f59"
+                LastKnownName="MessageOccurrenceSpecification28"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="006505ce-b9e3-4643-b877-3f073d4b6a2f"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="InsattackModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="f669ded1-b6d4-49da-9335-e9d5b3ee3147"
+            name="ExecutionOccurrenceSpecification3">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="47cf3c85-bfd0-4909-8ce6-ccc22b222926"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="07233c78-5565-40aa-9290-30f922bff839"
+            name="MessageOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="215c4ae4-fd37-4683-a74a-9cf5483eb307"
+                LastKnownName="Joueur"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="aa4a6f75-1c2e-4cfb-a01b-db9d203b6d29"
+            name="MessageOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="64442d0e-0d02-4ac9-8eda-0919fb3a3c74"
+            name="BehaviorExecutionSpecification5">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="cf314d5d-9672-4e47-b181-c6cbcc6d9560"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="InsattackModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="067c3570-9c2e-4015-8901-88a8f9cec467"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="InsattackModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="15730337-f040-45fe-a31e-a935e1191d5e"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="f86abaa7-e99e-4eed-ada9-a0e15c91c3af"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="InsattackModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="067c3570-9c2e-4015-8901-88a8f9cec467"
+            name="ExecutionOccurrenceSpecification9">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="f4a30ab1-512b-4568-8237-27fc7965df4a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="15730337-f040-45fe-a31e-a935e1191d5e"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2e0e42a1-a5e2-4673-85df-7175e19f2bfa"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3c8a71f8-8e86-4507-a1f9-0e6ffd54ed70"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f86abaa7-e99e-4eed-ada9-a0e15c91c3af"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="cf314d5d-9672-4e47-b181-c6cbcc6d9560"
+            name="ExecutionOccurrenceSpecification10">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="d7ed84b7-1f3d-494f-8f12-6e5a55e795f2"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="5d30fa37-001c-4284-95ff-e56f416c2d05"
+            name="BehaviorExecutionSpecification3">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="33ba3a9f-deba-41af-b837-2c15dcf50ff3"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="2c510b18-2402-4da2-8168-5f759f343128"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="InsattackModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="39f6770c-b657-4aa2-bbb8-19e16d1c3c26"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="InsattackModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="8178379f-69d9-4343-96a5-0cea5ab28463"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="7ab1284e-cf39-4e10-b952-5b5504269d5a"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="InsattackModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="39f6770c-b657-4aa2-bbb8-19e16d1c3c26"
+            name="ExecutionOccurrenceSpecification5">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="56af7352-c9f7-471e-9518-746f765fe715"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="33ba3a9f-deba-41af-b837-2c15dcf50ff3"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="38b7082b-9446-4a60-a6dc-06b357e75046"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="8178379f-69d9-4343-96a5-0cea5ab28463"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="33ba3a9f-deba-41af-b837-2c15dcf50ff3"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f38e8d5f-6a43-420f-a179-102b66e0aae7"
+            name="MessageOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7ab1284e-cf39-4e10-b952-5b5504269d5a"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="33ba3a9f-deba-41af-b837-2c15dcf50ff3"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="2c510b18-2402-4da2-8168-5f759f343128"
+            name="ExecutionOccurrenceSpecification6">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="0a32436f-0cb6-46f6-aa05-5495b08f85c2"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="33ba3a9f-deba-41af-b837-2c15dcf50ff3"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <combinedFragment
+            Id="8eaab9b7-dc1e-4240-a92c-bc65c4ade238"
+            name="CombinedFragment1"
+            interactionOperator="Alt"
+            customInteractionOperator="Alt[Combat]">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <operands>
+              <interactionOperand
+                Id="2b4a008c-0505-4634-82c5-5502615cd96e"
+                name="InteractionOperand1">
+                <coveredLifelines>
+                  <lifelineMoniker
+                    Id="40449367-1603-46f8-ade1-0bca917768b2"
+                    LastKnownName="Game"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <lifelineMoniker
+                    Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                    LastKnownName="Unit"
+                    LastKnownLocation="InsattackModel.uml" />
+                </coveredLifelines>
+                <guard>
+                  <interactionConstraint
+                    Id="1e8a3db0-444f-493a-9c5b-f6b11965f78d" />
+                </guard>
+                <operandOccurrenceSpecifications>
+                  <operandOccurrenceSpecificationMoniker
+                    Id="e7f791e2-0424-4858-9e61-466a3715eee7"
+                    LastKnownName="OperandOccurrenceSpecification13"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="c3044e14-2b85-4273-bc4a-0152868ca7c2"
+                    LastKnownName="OperandOccurrenceSpecification14"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="4c809637-36d5-429d-bd1d-d268d892d070"
+                    LastKnownName="OperandOccurrenceSpecification17"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="4d7db85b-fb09-40bd-9b8a-255b67072200"
+                    LastKnownName="OperandOccurrenceSpecification18"
+                    LastKnownLocation="InsattackModel.uml" />
+                </operandOccurrenceSpecifications>
+              </interactionOperand>
+              <interactionOperand
+                Id="b2eaf113-63f4-47b9-b6b7-5f9968fa4978"
+                name="InteractionOperand2">
+                <coveredLifelines>
+                  <lifelineMoniker
+                    Id="40449367-1603-46f8-ade1-0bca917768b2"
+                    LastKnownName="Game"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <lifelineMoniker
+                    Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                    LastKnownName="Unit"
+                    LastKnownLocation="InsattackModel.uml" />
+                </coveredLifelines>
+                <guard>
+                  <interactionConstraint
+                    Id="fc0731e6-1129-4b22-b2c7-7e583dedd36c" />
+                </guard>
+                <operandOccurrenceSpecifications>
+                  <operandOccurrenceSpecificationMoniker
+                    Id="648b2821-9aca-442b-83f1-61bf1f7f7ef8"
+                    LastKnownName="OperandOccurrenceSpecification15"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="2ba4a301-2917-444f-9cbf-e7303321a39c"
+                    LastKnownName="OperandOccurrenceSpecification16"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="fcb77ec0-2208-4d6b-b1ea-710a991ca19b"
+                    LastKnownName="OperandOccurrenceSpecification19"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="210e6221-3fc8-4f4c-baa9-890f78d1239b"
+                    LastKnownName="OperandOccurrenceSpecification20"
+                    LastKnownLocation="InsattackModel.uml" />
+                </operandOccurrenceSpecifications>
+              </interactionOperand>
+            </operands>
+          </combinedFragment>
+          <operandOccurrenceSpecification
+            Id="e7f791e2-0424-4858-9e61-466a3715eee7"
+            name="OperandOccurrenceSpecification13">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="4c809637-36d5-429d-bd1d-d268d892d070"
+            name="OperandOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1fa37f73-efa2-4881-90aa-13bf5ba5bfd6"
+            name="MessageOccurrenceSpecification23">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="3b5d8984-ea97-4a63-b699-3262f3606372"
+            name="BehaviorExecutionSpecification7">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="694e079d-d6b5-4c67-bde1-b0b5d32d6888"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="InsattackModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="bfd7d7af-2733-40b6-903e-f148f72cbfcc"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="InsattackModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="014e0f47-9ea8-4d6c-bf95-21610c14f747"
+                LastKnownName="MessageOccurrenceSpecification24"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="7cfd11e7-5fe2-49e7-bd98-3925203d53c7"
+                LastKnownName="MessageOccurrenceSpecification29"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="a9cbc452-4df4-4e2c-8f64-a399c978f8ac"
+                LastKnownName="MessageOccurrenceSpecification32"
+                LastKnownLocation="InsattackModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="bfd7d7af-2733-40b6-903e-f148f72cbfcc"
+            name="ExecutionOccurrenceSpecification13">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="099cc81c-950d-42c0-934f-e7c168816b48"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="014e0f47-9ea8-4d6c-bf95-21610c14f747"
+            name="MessageOccurrenceSpecification24">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="cc101671-2965-450f-bb87-a14ee6513fd5"
+            name="BehaviorExecutionSpecification9">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="10b0d2d9-a615-4a1c-81e0-21333eaf0ffa"
+                LastKnownName="ExecutionOccurrenceSpecification18"
+                LastKnownLocation="InsattackModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="80e04233-1e6d-4c0c-bc1d-1665933cd4d8"
+                LastKnownName="ExecutionOccurrenceSpecification17"
+                LastKnownLocation="InsattackModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="72e160e4-44de-4d13-a590-d73d2fca0015"
+                LastKnownName="MessageOccurrenceSpecification30"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="8e52395a-bae1-408e-83a8-9c8dfb3fc612"
+                LastKnownName="MessageOccurrenceSpecification31"
+                LastKnownLocation="InsattackModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="80e04233-1e6d-4c0c-bc1d-1665933cd4d8"
+            name="ExecutionOccurrenceSpecification17">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="f953898a-ea95-439d-a12d-08b9c0b29223"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="72e160e4-44de-4d13-a590-d73d2fca0015"
+            name="MessageOccurrenceSpecification30">
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7cfd11e7-5fe2-49e7-bd98-3925203d53c7"
+            name="MessageOccurrenceSpecification29">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a9cbc452-4df4-4e2c-8f64-a399c978f8ac"
+            name="MessageOccurrenceSpecification32">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="8e52395a-bae1-408e-83a8-9c8dfb3fc612"
+            name="MessageOccurrenceSpecification31">
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="10b0d2d9-a615-4a1c-81e0-21333eaf0ffa"
+            name="ExecutionOccurrenceSpecification18">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="98a69489-5fa1-45d8-880c-5ffdd07fe85c"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="694e079d-d6b5-4c67-bde1-b0b5d32d6888"
+            name="ExecutionOccurrenceSpecification14">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="68914b3f-38c9-4d8a-9b52-5b496d7bf38d"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="4d7db85b-fb09-40bd-9b8a-255b67072200"
+            name="OperandOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="c3044e14-2b85-4273-bc4a-0152868ca7c2"
+            name="OperandOccurrenceSpecification14">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="fcb77ec0-2208-4d6b-b1ea-710a991ca19b"
+            name="OperandOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="648b2821-9aca-442b-83f1-61bf1f7f7ef8"
+            name="OperandOccurrenceSpecification15">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="210e6221-3fc8-4f4c-baa9-890f78d1239b"
+            name="OperandOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="2ba4a301-2917-444f-9cbf-e7303321a39c"
+            name="OperandOccurrenceSpecification16">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="fc80cb5b-add6-4523-b32e-5c1d47d93beb"
+            name="BehaviorExecutionSpecification8">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="33ba3a9f-deba-41af-b837-2c15dcf50ff3"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="3029042f-bb04-4efe-a3d8-e0d69237b0d4"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="InsattackModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="cc74850f-2563-45b9-8009-154a51b27f89"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="InsattackModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="70c9de7c-2b65-4d57-bf45-ad980423b03b"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="78ac6286-e670-4be1-90d9-61eb84b07011"
+                LastKnownName="MessageOccurrenceSpecification27"
+                LastKnownLocation="InsattackModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="cc74850f-2563-45b9-8009-154a51b27f89"
+            name="ExecutionOccurrenceSpecification15">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="a822f89b-c5ae-4c65-9976-b50e6b4d6441"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="33ba3a9f-deba-41af-b837-2c15dcf50ff3"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="cce3293e-a271-4634-b4a7-583b96192452"
+            name="MessageOccurrenceSpecification25">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="70c9de7c-2b65-4d57-bf45-ad980423b03b"
+            name="MessageOccurrenceSpecification26">
+            <covered>
+              <lifelineMoniker
+                Id="33ba3a9f-deba-41af-b837-2c15dcf50ff3"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="78ac6286-e670-4be1-90d9-61eb84b07011"
+            name="MessageOccurrenceSpecification27">
+            <covered>
+              <lifelineMoniker
+                Id="33ba3a9f-deba-41af-b837-2c15dcf50ff3"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4df957c2-d6f0-475a-9f1e-b467004b3f59"
+            name="MessageOccurrenceSpecification28">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="3029042f-bb04-4efe-a3d8-e0d69237b0d4"
+            name="ExecutionOccurrenceSpecification16">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="4c3a15a7-97ab-4181-8f9c-b3101b3df852"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="33ba3a9f-deba-41af-b837-2c15dcf50ff3"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="006505ce-b9e3-4643-b877-3f073d4b6a2f"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="bd710aa4-ce86-4043-8c70-e3ff70187257"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="215c4ae4-fd37-4683-a74a-9cf5483eb307"
+                LastKnownName="Joueur"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="68f40955-1874-443d-bf8a-fcd3740c0557"
+            name="ExecutionOccurrenceSpecification4">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="07c51e6f-f409-488b-a003-fa64c6d6481e"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="215c4ae4-fd37-4683-a74a-9cf5483eb307"
+            name="Joueur"
+            isActor="true"
+            lifelineDisplayName="Joueur">
+            <represents>
+              <propertyMoniker
+                Id="84f91326-2d20-45cc-a944-43ad4dbbac42"
+                LastKnownLocation="InsattackModel.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="07233c78-5565-40aa-9290-30f922bff839"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="bd710aa4-ce86-4043-8c70-e3ff70187257"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="InsattackModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="40449367-1603-46f8-ade1-0bca917768b2"
+            name="Game"
+            isActor="false"
+            lifelineDisplayName="Game">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="f669ded1-b6d4-49da-9335-e9d5b3ee3147"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="68f40955-1874-443d-bf8a-fcd3740c0557"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="InsattackModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="33ba3a9f-deba-41af-b837-2c15dcf50ff3"
+            name="Board"
+            isActor="false"
+            lifelineDisplayName="Board">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="39f6770c-b657-4aa2-bbb8-19e16d1c3c26"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="2c510b18-2402-4da2-8168-5f759f343128"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="cc74850f-2563-45b9-8009-154a51b27f89"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="3029042f-bb04-4efe-a3d8-e0d69237b0d4"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="InsattackModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+            name="Unit"
+            isActor="false"
+            lifelineDisplayName="Unit">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="067c3570-9c2e-4015-8901-88a8f9cec467"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="cf314d5d-9672-4e47-b181-c6cbcc6d9560"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="4c809637-36d5-429d-bd1d-d268d892d070"
+                LastKnownName="OperandOccurrenceSpecification17"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="80e04233-1e6d-4c0c-bc1d-1665933cd4d8"
+                LastKnownName="ExecutionOccurrenceSpecification17"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="10b0d2d9-a615-4a1c-81e0-21333eaf0ffa"
+                LastKnownName="ExecutionOccurrenceSpecification18"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="4d7db85b-fb09-40bd-9b8a-255b67072200"
+                LastKnownName="OperandOccurrenceSpecification18"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="fcb77ec0-2208-4d6b-b1ea-710a991ca19b"
+                LastKnownName="OperandOccurrenceSpecification19"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="210e6221-3fc8-4f4c-baa9-890f78d1239b"
+                LastKnownName="OperandOccurrenceSpecification20"
+                LastKnownLocation="InsattackModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="1bb200cf-a7aa-4fc8-9e30-6e85cabdc32b"
+            name="Deplace l'unité"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="07233c78-5565-40aa-9290-30f922bff839"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="aa4a6f75-1c2e-4cfb-a01b-db9d203b6d29"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="3392b7bf-aafb-42a9-80cf-b86feba28199"
+            name="Demande le nombre de points de déplacement"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2e0e42a1-a5e2-4673-85df-7175e19f2bfa"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="15730337-f040-45fe-a31e-a935e1191d5e"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="33e02104-3396-4f90-843e-544e4574b322"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f86abaa7-e99e-4eed-ada9-a0e15c91c3af"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="3c8a71f8-8e86-4507-a1f9-0e6ffd54ed70"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="c42b3c8e-7eea-4024-8059-2ea6c201e33b"
+            name="vérifie la validité du déplacement"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="38b7082b-9446-4a60-a6dc-06b357e75046"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="8178379f-69d9-4343-96a5-0cea5ab28463"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="4a6a37c3-1894-4609-8488-d7f454c5a265"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7ab1284e-cf39-4e10-b952-5b5504269d5a"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f38e8d5f-6a43-420f-a179-102b66e0aae7"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="1153a477-7844-4b6f-8e0c-73b1aee93955"
+            name="Résout le combat "
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1fa37f73-efa2-4881-90aa-13bf5ba5bfd6"
+                LastKnownName="MessageOccurrenceSpecification23"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="014e0f47-9ea8-4d6c-bf95-21610c14f747"
+                LastKnownName="MessageOccurrenceSpecification24"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="70c3543b-2b01-4123-92e7-62b8461e4cfb"
+            name="Mise à jour des points de vie"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7cfd11e7-5fe2-49e7-bd98-3925203d53c7"
+                LastKnownName="MessageOccurrenceSpecification29"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="72e160e4-44de-4d13-a590-d73d2fca0015"
+                LastKnownName="MessageOccurrenceSpecification30"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="a1776e87-6365-4db3-aaeb-6a1d211af6cf"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="8e52395a-bae1-408e-83a8-9c8dfb3fc612"
+                LastKnownName="MessageOccurrenceSpecification31"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a9cbc452-4df4-4e2c-8f64-a399c978f8ac"
+                LastKnownName="MessageOccurrenceSpecification32"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="129b151f-746a-406e-bdbc-24d4bdd32727"
+            name="Mise à jour"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="cce3293e-a271-4634-b4a7-583b96192452"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="70c9de7c-2b65-4d57-bf45-ad980423b03b"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="24d862b8-ed76-4521-b965-cf21c9cdf5b8"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="78ac6286-e670-4be1-90d9-61eb84b07011"
+                LastKnownName="MessageOccurrenceSpecification27"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4df957c2-d6f0-475a-9f1e-b467004b3f59"
+                LastKnownName="MessageOccurrenceSpecification28"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="512f74b9-f7fb-4f75-aa6c-f8d785db7c86"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="006505ce-b9e3-4643-b877-3f073d4b6a2f"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="bd710aa4-ce86-4043-8c70-e3ff70187257"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property
+            Id="84f91326-2d20-45cc-a944-43ad4dbbac42"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <actorMoniker
+                Id="d4511f3a-becb-48c5-a9fe-80309abe409d"
+                LastKnownName="Joueur"
+                LastKnownLocation="InsattackModel.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="47cf3c85-bfd0-4909-8ce6-ccc22b222926"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="07c51e6f-f409-488b-a003-fa64c6d6481e"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="56af7352-c9f7-471e-9518-746f765fe715"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="0a32436f-0cb6-46f6-aa05-5495b08f85c2"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="f4a30ab1-512b-4568-8237-27fc7965df4a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="d7ed84b7-1f3d-494f-8f12-6e5a55e795f2"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="099cc81c-950d-42c0-934f-e7c168816b48"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="68914b3f-38c9-4d8a-9b52-5b496d7bf38d"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="a822f89b-c5ae-4c65-9976-b50e6b4d6441"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="4c3a15a7-97ab-4181-8f9c-b3101b3df852"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="f953898a-ea95-439d-a12d-08b9c0b29223"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="98a69489-5fa1-45d8-880c-5ffdd07fe85c"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="a237b49a-87fc-4acd-9662-968626b11714"
+        name="Création de la partie"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="62235de8-0567-486e-ac23-17921a87406c">
+            <body>Crée le joueur en lui donnant son département</body>
+            <annotatedElements>
+              <behaviorExecutionSpecificationMoniker
+                Id="f54edb41-5e7a-46f7-9edd-135a2ba8725e"
+                LastKnownName="BehaviorExecutionSpecification6"
+                LastKnownLocation="InsattackModel.uml" />
+            </annotatedElements>
+          </comment>
+          <comment
+            Id="929017b6-0677-4f0d-b4e8-b5aa7e23500f">
+            <body>Choisit aussi les cases de départ des joueurs</body>
+            <annotatedElements>
+              <behaviorExecutionSpecificationMoniker
+                Id="18f8f59e-9887-4ace-a875-e402c8df50ba"
+                LastKnownName="BehaviorExecutionSpecification3"
+                LastKnownLocation="InsattackModel.uml" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="8f487e68-5c2c-4dde-86a5-1f9eca17a328"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="4912759b-a2ad-43e7-b53c-c06a800a13e2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="caf88045-af6c-40b1-b71b-a29192924e55"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="InsattackModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="0ce89b7e-cc98-478b-a494-d2f3779a033d"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="InsattackModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="bf7b8473-1a43-4444-8e60-2bdf3b2726f4"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="89457b4d-50ac-4616-a391-b4e3fd36cd7e"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="d38c9307-0f7e-4c4c-8807-ac66bfc0a77b"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="2bca2a98-9849-4765-b300-e7d32eb110f6"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="InsattackModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="0ce89b7e-cc98-478b-a494-d2f3779a033d"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="cd2237d3-9f51-47d3-a837-8f81d78d19df"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="4912759b-a2ad-43e7-b53c-c06a800a13e2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0aeec3cc-856c-47a0-bedc-fbb9ff7e8250"
+            name="MessageOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
+                LastKnownName="GameBuilder"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="bf7b8473-1a43-4444-8e60-2bdf3b2726f4"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="4912759b-a2ad-43e7-b53c-c06a800a13e2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="710789c2-6b56-453b-8794-a7ee5588e26c"
+            name="BehaviorExecutionSpecification2">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="be50084c-2b40-4a6c-8e3e-a59020fa9016"
+                LastKnownName="BoardStrategy"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="ddaf7fca-a38f-4cdb-bbc6-7331e0e6c1b9"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="InsattackModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="1201ab10-57e9-4f88-920c-64dfde41f934"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="InsattackModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="4ffb4e77-d694-417a-b543-bd095c346947"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="289e8eb5-6fd9-48c9-adaf-33ae76e447d3"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="7edc2865-05a9-48f5-8e6f-b50703faddfc"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="5dc56877-56e7-40c7-b1de-3a2c7f328ac7"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="InsattackModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="1201ab10-57e9-4f88-920c-64dfde41f934"
+            name="ExecutionOccurrenceSpecification3">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="014afed5-be26-4211-b1ff-18071fcae2f6"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be50084c-2b40-4a6c-8e3e-a59020fa9016"
+                LastKnownName="BoardStrategy"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="89457b4d-50ac-4616-a391-b4e3fd36cd7e"
+            name="MessageOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="4912759b-a2ad-43e7-b53c-c06a800a13e2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4ffb4e77-d694-417a-b543-bd095c346947"
+            name="MessageOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="be50084c-2b40-4a6c-8e3e-a59020fa9016"
+                LastKnownName="BoardStrategy"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="18f8f59e-9887-4ace-a875-e402c8df50ba"
+            name="BehaviorExecutionSpecification3">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="443a94f8-7270-4e12-9c35-322e57231e4c"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="b9dfbcb8-11a0-4fd1-9fed-1216a708a60e"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="InsattackModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="de6d1a98-ea17-4d77-a6ab-e591cb73769a"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="InsattackModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="fefa4d1f-f966-46af-9df8-30a3912cefce"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="9b27e1c8-7055-47b5-8495-3f3faaf8e45f"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="InsattackModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="de6d1a98-ea17-4d77-a6ab-e591cb73769a"
+            name="ExecutionOccurrenceSpecification5">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="cfe149b6-ab2e-48a6-a32e-7bcf89d92bef"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="443a94f8-7270-4e12-9c35-322e57231e4c"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="289e8eb5-6fd9-48c9-adaf-33ae76e447d3"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="be50084c-2b40-4a6c-8e3e-a59020fa9016"
+                LastKnownName="BoardStrategy"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="fefa4d1f-f966-46af-9df8-30a3912cefce"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="443a94f8-7270-4e12-9c35-322e57231e4c"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7edc2865-05a9-48f5-8e6f-b50703faddfc"
+            name="MessageOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="be50084c-2b40-4a6c-8e3e-a59020fa9016"
+                LastKnownName="BoardStrategy"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9b27e1c8-7055-47b5-8495-3f3faaf8e45f"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="443a94f8-7270-4e12-9c35-322e57231e4c"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="b9dfbcb8-11a0-4fd1-9fed-1216a708a60e"
+            name="ExecutionOccurrenceSpecification6">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="ae8706b2-1fde-4f3d-a987-e09460b89bd4"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="443a94f8-7270-4e12-9c35-322e57231e4c"
+                LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d38c9307-0f7e-4c4c-8807-ac66bfc0a77b"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="4912759b-a2ad-43e7-b53c-c06a800a13e2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5dc56877-56e7-40c7-b1de-3a2c7f328ac7"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="be50084c-2b40-4a6c-8e3e-a59020fa9016"
+                LastKnownName="BoardStrategy"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="ddaf7fca-a38f-4cdb-bbc6-7331e0e6c1b9"
+            name="ExecutionOccurrenceSpecification4">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="767038e8-5632-4342-8d46-76a3aca625a3"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be50084c-2b40-4a6c-8e3e-a59020fa9016"
+                LastKnownName="BoardStrategy"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2bca2a98-9849-4765-b300-e7d32eb110f6"
+            name="MessageOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="4912759b-a2ad-43e7-b53c-c06a800a13e2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="69b51fb2-a69a-4ea1-83ed-2b227186ce49"
+            name="MessageOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
+                LastKnownName="GameBuilder"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="caf88045-af6c-40b1-b71b-a29192924e55"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="4bcc20ba-80e3-46b5-9052-71212bba1d67"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="4912759b-a2ad-43e7-b53c-c06a800a13e2"
+                LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <combinedFragment
+            Id="a3248efe-9e12-41d8-9650-be86e4a86f76"
+            name="CombinedFragment1"
+            interactionOperator="Alt"
+            customInteractionOperator="Loop [création de tous les joueurs]">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
+                LastKnownName="GameBuilder"
+                LastKnownLocation="InsattackModel.uml" />
+              <lifelineMoniker
+                Id="1d78ec86-c848-42ce-909d-c1cd5c4e1e26"
+                LastKnownName="Player"
+                LastKnownLocation="InsattackModel.uml" />
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
+                LastKnownLocation="InsattackModel.uml" />
+              <lifelineMoniker
+                Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <operands>
+              <interactionOperand
+                Id="9b41dbcd-59c2-43f1-b6c3-293f4d014b2b"
+                name="InteractionOperand1">
+                <coveredLifelines>
+                  <lifelineMoniker
+                    Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
+                    LastKnownName="GameBuilder"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <lifelineMoniker
+                    Id="1d78ec86-c848-42ce-909d-c1cd5c4e1e26"
+                    LastKnownName="Player"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <lifelineMoniker
+                    Id="9262589b-4504-4957-a793-527f0a01e575"
+                    LastKnownName="Department"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <lifelineMoniker
+                    Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                    LastKnownName="Unit"
+                    LastKnownLocation="InsattackModel.uml" />
+                </coveredLifelines>
+                <fragments>
+                  <combinedFragment
+                    Id="a6337868-a164-46c4-b48e-fb440c86b2c1"
+                    name="CombinedFragment1"
+                    interactionOperator="Alt"
+                    customInteractionOperator="Loop [création de toutes les unités]">
+                    <coveredLifelines>
+                      <lifelineMoniker
+                        Id="9262589b-4504-4957-a793-527f0a01e575"
+                        LastKnownName="Department"
+                        LastKnownLocation="InsattackModel.uml" />
+                      <lifelineMoniker
+                        Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                        LastKnownName="Unit"
+                        LastKnownLocation="InsattackModel.uml" />
+                    </coveredLifelines>
+                    <operands>
+                      <interactionOperand
+                        Id="a9b98924-9803-4791-8704-02101fe02cc8"
+                        name="InteractionOperand1">
+                        <coveredLifelines>
+                          <lifelineMoniker
+                            Id="9262589b-4504-4957-a793-527f0a01e575"
+                            LastKnownName="Department"
+                            LastKnownLocation="InsattackModel.uml" />
+                          <lifelineMoniker
+                            Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                            LastKnownName="Unit"
+                            LastKnownLocation="InsattackModel.uml" />
+                        </coveredLifelines>
+                        <guard>
+                          <interactionConstraint
+                            Id="4d7393d5-571f-4219-96e3-5972da4ce746">
+                            <maxInt>
+                              <literalString
+                                Id="46432750-3026-4c26-ba67-ca1b6d8f66b0"
+                                name="LiteralString1" />
+                            </maxInt>
+                            <minInt>
+                              <literalString
+                                Id="ab69f86c-e7ad-46e5-a802-2aea22985d0d"
+                                name="LiteralString2" />
+                            </minInt>
+                          </interactionConstraint>
+                        </guard>
+                        <operandOccurrenceSpecifications>
+                          <operandOccurrenceSpecificationMoniker
+                            Id="b02a70f3-4b38-49b8-bd66-de87c2fa5adb"
+                            LastKnownName="OperandOccurrenceSpecification9"
+                            LastKnownLocation="InsattackModel.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="fb2c43cf-89a6-4002-93f4-d5a265d74d62"
+                            LastKnownName="OperandOccurrenceSpecification10"
+                            LastKnownLocation="InsattackModel.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="cb063463-0e84-4609-bdc1-dfb21b7ebb3e"
+                            LastKnownName="OperandOccurrenceSpecification11"
+                            LastKnownLocation="InsattackModel.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="7c29b291-3382-4f6e-a955-91b19807fc75"
+                            LastKnownName="OperandOccurrenceSpecification12"
+                            LastKnownLocation="InsattackModel.uml" />
+                        </operandOccurrenceSpecifications>
+                      </interactionOperand>
+                    </operands>
+                  </combinedFragment>
+                </fragments>
+                <guard>
+                  <interactionConstraint
+                    Id="7d99d3d9-5ad6-438e-aa6a-73fc9827763d">
+                    <maxInt>
+                      <literalString
+                        Id="01a49b81-b749-43b1-b84b-30e2d1fd1a8a"
+                        name="LiteralString1" />
+                    </maxInt>
+                    <minInt>
+                      <literalString
+                        Id="06064aa5-1085-412f-995e-8d6395aa4376"
+                        name="LiteralString2" />
+                    </minInt>
+                  </interactionConstraint>
+                </guard>
+                <operandOccurrenceSpecifications>
+                  <operandOccurrenceSpecificationMoniker
+                    Id="ef71143f-a668-4746-a46d-ebb27e397558"
+                    LastKnownName="OperandOccurrenceSpecification1"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="3313d20b-5774-47f2-96c3-b4bbd3b14467"
+                    LastKnownName="OperandOccurrenceSpecification2"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="c135b041-4cbf-4582-8aeb-f4ed0c7aa796"
+                    LastKnownName="OperandOccurrenceSpecification3"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="90c28817-222a-4bba-a12c-08064889e447"
+                    LastKnownName="OperandOccurrenceSpecification4"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="4dd1d845-4b8a-46a0-b730-d7230430e1fc"
+                    LastKnownName="OperandOccurrenceSpecification5"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="edf6bb68-c569-4175-95dd-0773bb21dbf2"
+                    LastKnownName="OperandOccurrenceSpecification6"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="a1da6570-aac5-4105-be4c-a67f96bf1e67"
+                    LastKnownName="OperandOccurrenceSpecification7"
+                    LastKnownLocation="InsattackModel.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="2aa40442-da22-4cf6-8acd-a38dac7ca5a2"
+                    LastKnownName="OperandOccurrenceSpecification8"
+                    LastKnownLocation="InsattackModel.uml" />
+                </operandOccurrenceSpecifications>
+              </interactionOperand>
+            </operands>
+          </combinedFragment>
+          <operandOccurrenceSpecification
+            Id="ef71143f-a668-4746-a46d-ebb27e397558"
+            name="OperandOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="1d78ec86-c848-42ce-909d-c1cd5c4e1e26"
+                LastKnownName="Player"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="a1da6570-aac5-4105-be4c-a67f96bf1e67"
+            name="OperandOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="4dd1d845-4b8a-46a0-b730-d7230430e1fc"
+            name="OperandOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="c135b041-4cbf-4582-8aeb-f4ed0c7aa796"
+            name="OperandOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
+                LastKnownName="GameBuilder"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="866f6ec3-a86b-4b6f-bffb-ea3575dc310b"
+            name="BehaviorExecutionSpecification7">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="3690e6f0-d5f3-481d-a4ba-36b064d29716"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="InsattackModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="392cb732-8954-4e4a-83c4-1f79ccf2c8c6"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="InsattackModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="38256e55-c81d-4018-b41f-3a317eaf00a3"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="cb063463-0e84-4609-bdc1-dfb21b7ebb3e"
+                LastKnownName="OperandOccurrenceSpecification11"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="babb3ae7-ba6d-43eb-a194-189d90921cb4"
+                LastKnownName="MessageOccurrenceSpecification29"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="277e5f40-6ed1-4c2c-9aae-edd3bd30d0fb"
+                LastKnownName="MessageOccurrenceSpecification32"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="7c29b291-3382-4f6e-a955-91b19807fc75"
+                LastKnownName="OperandOccurrenceSpecification12"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="2ae95262-cdf4-419b-a1e7-2ee1088bbb8d"
+                LastKnownName="MessageOccurrenceSpecification27"
+                LastKnownLocation="InsattackModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="392cb732-8954-4e4a-83c4-1f79ccf2c8c6"
+            name="ExecutionOccurrenceSpecification13">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="da268edc-17cc-4d3c-830b-c14c047e7d20"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="38256e55-c81d-4018-b41f-3a317eaf00a3"
+            name="MessageOccurrenceSpecification26">
+            <covered>
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d25bd6d2-9261-47da-9016-98f286c99f66"
+            name="MessageOccurrenceSpecification25">
+            <covered>
+              <lifelineMoniker
+                Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
+                LastKnownName="GameBuilder"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="b02a70f3-4b38-49b8-bd66-de87c2fa5adb"
+            name="OperandOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="cb063463-0e84-4609-bdc1-dfb21b7ebb3e"
+            name="OperandOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="01b6d586-cfd1-4a19-adee-e922713fa752"
+            name="BehaviorExecutionSpecification8">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="c36f33af-fe3e-49ca-a864-ecc14dc7d7c1"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="InsattackModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="1754f0ef-1f95-469b-ade5-944c17c6f871"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="InsattackModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="b1c3acde-4679-475e-b5b9-35620fd1d7aa"
+                LastKnownName="MessageOccurrenceSpecification30"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="b91ed0f1-d170-42d5-aa4a-1416b7cd4e51"
+                LastKnownName="MessageOccurrenceSpecification31"
+                LastKnownLocation="InsattackModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="1754f0ef-1f95-469b-ade5-944c17c6f871"
+            name="ExecutionOccurrenceSpecification15">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="4b49fd82-fcb0-4276-a25c-617eea57416a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b1c3acde-4679-475e-b5b9-35620fd1d7aa"
+            name="MessageOccurrenceSpecification30">
+            <covered>
+              <lifelineMoniker
+                Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="babb3ae7-ba6d-43eb-a194-189d90921cb4"
+            name="MessageOccurrenceSpecification29">
+            <covered>
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b91ed0f1-d170-42d5-aa4a-1416b7cd4e51"
+            name="MessageOccurrenceSpecification31">
+            <covered>
+              <lifelineMoniker
+                Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="277e5f40-6ed1-4c2c-9aae-edd3bd30d0fb"
+            name="MessageOccurrenceSpecification32">
+            <covered>
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="c36f33af-fe3e-49ca-a864-ecc14dc7d7c1"
+            name="ExecutionOccurrenceSpecification16">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="535ea6dc-b1e1-4468-8c2c-8d1637dc7a4a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="fb2c43cf-89a6-4002-93f4-d5a265d74d62"
+            name="OperandOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="7c29b291-3382-4f6e-a955-91b19807fc75"
+            name="OperandOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2ae95262-cdf4-419b-a1e7-2ee1088bbb8d"
+            name="MessageOccurrenceSpecification27">
+            <covered>
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2ce4e896-9451-4354-ae29-617d6c379c75"
+            name="MessageOccurrenceSpecification28">
+            <covered>
+              <lifelineMoniker
+                Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
+                LastKnownName="GameBuilder"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="3690e6f0-d5f3-481d-a4ba-36b064d29716"
+            name="ExecutionOccurrenceSpecification14">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="f93046e3-4a52-41bb-9c9f-e4c6947cd03d"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="f54edb41-5e7a-46f7-9edd-135a2ba8725e"
+            name="BehaviorExecutionSpecification6">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="1d78ec86-c848-42ce-909d-c1cd5c4e1e26"
+                LastKnownName="Player"
+                LastKnownLocation="InsattackModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="b12c53a8-417d-4fa5-97b5-12b1b23cdc6f"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="InsattackModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="50f92563-f2f3-46e4-8a3e-2653580d1573"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="InsattackModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="b63b3812-952a-4536-9aab-f82d36bd668f"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="ffad98e5-60d3-43ab-9f74-25bea7b9808d"
+                LastKnownName="MessageOccurrenceSpecification23"
+                LastKnownLocation="InsattackModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="50f92563-f2f3-46e4-8a3e-2653580d1573"
+            name="ExecutionOccurrenceSpecification11">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="c36a84be-48d5-4ec7-ac84-a55b8f7d6e81"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="1d78ec86-c848-42ce-909d-c1cd5c4e1e26"
+                LastKnownName="Player"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="39261d8d-de99-4123-bc6d-d7d504452c18"
+            name="MessageOccurrenceSpecification21">
+            <covered>
+              <lifelineMoniker
+                Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
+                LastKnownName="GameBuilder"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b63b3812-952a-4536-9aab-f82d36bd668f"
+            name="MessageOccurrenceSpecification22">
+            <covered>
+              <lifelineMoniker
+                Id="1d78ec86-c848-42ce-909d-c1cd5c4e1e26"
+                LastKnownName="Player"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0bcea055-ca5a-4caa-9ab7-1d6423a034f1"
+            name="MessageOccurrenceSpecification24">
+            <covered>
+              <lifelineMoniker
+                Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
+                LastKnownName="GameBuilder"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ffad98e5-60d3-43ab-9f74-25bea7b9808d"
+            name="MessageOccurrenceSpecification23">
+            <covered>
+              <lifelineMoniker
+                Id="1d78ec86-c848-42ce-909d-c1cd5c4e1e26"
+                LastKnownName="Player"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="b12c53a8-417d-4fa5-97b5-12b1b23cdc6f"
+            name="ExecutionOccurrenceSpecification12">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="2ef14e47-647a-4405-964d-a2e1b152c2ca"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="InsattackModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="1d78ec86-c848-42ce-909d-c1cd5c4e1e26"
+                LastKnownName="Player"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="3313d20b-5774-47f2-96c3-b4bbd3b14467"
+            name="OperandOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="1d78ec86-c848-42ce-909d-c1cd5c4e1e26"
+                LastKnownName="Player"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="90c28817-222a-4bba-a12c-08064889e447"
+            name="OperandOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
+                LastKnownName="GameBuilder"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="edf6bb68-c569-4175-95dd-0773bb21dbf2"
+            name="OperandOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="2aa40442-da22-4cf6-8acd-a38dac7ca5a2"
+            name="OperandOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+                LastKnownName="Unit"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
+            name="GameBuilder"
+            isActor="false"
+            lifelineDisplayName="GameBuilder">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="0aeec3cc-856c-47a0-bedc-fbb9ff7e8250"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="69b51fb2-a69a-4ea1-83ed-2b227186ce49"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="c135b041-4cbf-4582-8aeb-f4ed0c7aa796"
+                LastKnownName="OperandOccurrenceSpecification3"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="d25bd6d2-9261-47da-9016-98f286c99f66"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="2ce4e896-9451-4354-ae29-617d6c379c75"
+                LastKnownName="MessageOccurrenceSpecification28"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="39261d8d-de99-4123-bc6d-d7d504452c18"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="InsattackModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="0bcea055-ca5a-4caa-9ab7-1d6423a034f1"
+                LastKnownName="MessageOccurrenceSpecification24"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="90c28817-222a-4bba-a12c-08064889e447"
+                LastKnownName="OperandOccurrenceSpecification4"
+                LastKnownLocation="InsattackModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="4912759b-a2ad-43e7-b53c-c06a800a13e2"
+            name="Game"
+            isActor="false"
+            lifelineDisplayName="Game">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="0ce89b7e-cc98-478b-a494-d2f3779a033d"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="caf88045-af6c-40b1-b71b-a29192924e55"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="InsattackModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="be50084c-2b40-4a6c-8e3e-a59020fa9016"
+            name="BoardStrategy"
+            isActor="false"
+            lifelineDisplayName="BoardStrategy">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="1201ab10-57e9-4f88-920c-64dfde41f934"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="ddaf7fca-a38f-4cdb-bbc6-7331e0e6c1b9"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="InsattackModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="443a94f8-7270-4e12-9c35-322e57231e4c"
+            name="Board"
+            isActor="false"
+            lifelineDisplayName="Board">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="de6d1a98-ea17-4d77-a6ab-e591cb73769a"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="b9dfbcb8-11a0-4fd1-9fed-1216a708a60e"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="InsattackModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="1d78ec86-c848-42ce-909d-c1cd5c4e1e26"
+            name="Player"
+            isActor="false"
+            lifelineDisplayName="Player">
+            <topLevelOccurrences>
+              <operandOccurrenceSpecificationMoniker
+                Id="ef71143f-a668-4746-a46d-ebb27e397558"
+                LastKnownName="OperandOccurrenceSpecification1"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="50f92563-f2f3-46e4-8a3e-2653580d1573"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="b12c53a8-417d-4fa5-97b5-12b1b23cdc6f"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="3313d20b-5774-47f2-96c3-b4bbd3b14467"
+                LastKnownName="OperandOccurrenceSpecification2"
+                LastKnownLocation="InsattackModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="9262589b-4504-4957-a793-527f0a01e575"
+            name="Department"
+            isActor="false"
+            lifelineDisplayName="Department">
+            <topLevelOccurrences>
+              <operandOccurrenceSpecificationMoniker
+                Id="4dd1d845-4b8a-46a0-b730-d7230430e1fc"
+                LastKnownName="OperandOccurrenceSpecification5"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="392cb732-8954-4e4a-83c4-1f79ccf2c8c6"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="3690e6f0-d5f3-481d-a4ba-36b064d29716"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="edf6bb68-c569-4175-95dd-0773bb21dbf2"
+                LastKnownName="OperandOccurrenceSpecification6"
+                LastKnownLocation="InsattackModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="c54b67cf-47f2-4e01-855f-5600bfaa55b5"
+            name="Unit"
+            isActor="false"
+            lifelineDisplayName="Unit">
+            <topLevelOccurrences>
+              <operandOccurrenceSpecificationMoniker
+                Id="a1da6570-aac5-4105-be4c-a67f96bf1e67"
+                LastKnownName="OperandOccurrenceSpecification7"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="b02a70f3-4b38-49b8-bd66-de87c2fa5adb"
+                LastKnownName="OperandOccurrenceSpecification9"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="1754f0ef-1f95-469b-ade5-944c17c6f871"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="InsattackModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="c36f33af-fe3e-49ca-a864-ecc14dc7d7c1"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="fb2c43cf-89a6-4002-93f4-d5a265d74d62"
+                LastKnownName="OperandOccurrenceSpecification10"
+                LastKnownLocation="InsattackModel.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="2aa40442-da22-4cf6-8acd-a38dac7ca5a2"
+                LastKnownName="OperandOccurrenceSpecification8"
+                LastKnownLocation="InsattackModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="05619d31-017d-4b18-9402-79ac1334a632"
+            name="&lt;&lt;create&gt;&gt;"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0aeec3cc-856c-47a0-bedc-fbb9ff7e8250"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="bf7b8473-1a43-4444-8e60-2bdf3b2726f4"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="70b9bc8c-8beb-4eb7-8c5f-d75bd79e8cfc"
+            name="Crée le plateau"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="89457b4d-50ac-4616-a391-b4e3fd36cd7e"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4ffb4e77-d694-417a-b543-bd095c346947"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="695cb8fa-2303-466e-8d95-5e9eaf6065c4"
+            name="&lt;&lt;create&gt;&gt;"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="289e8eb5-6fd9-48c9-adaf-33ae76e447d3"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="fefa4d1f-f966-46af-9df8-30a3912cefce"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="55a0f43a-8d46-4b24-b7a1-3f62c27b2232"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9b27e1c8-7055-47b5-8495-3f3faaf8e45f"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7edc2865-05a9-48f5-8e6f-b50703faddfc"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="0741737a-f824-4eac-8304-1303c286a77e"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5dc56877-56e7-40c7-b1de-3a2c7f328ac7"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d38c9307-0f7e-4c4c-8807-ac66bfc0a77b"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="6c8cd0f8-8b48-4528-a849-5794e7628303"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2bca2a98-9849-4765-b300-e7d32eb110f6"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="69b51fb2-a69a-4ea1-83ed-2b227186ce49"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="cc11d601-7305-4b17-9623-cc278ff5cb0a"
+            name="&lt;&lt;create&gt;&gt;"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d25bd6d2-9261-47da-9016-98f286c99f66"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="38256e55-c81d-4018-b41f-3a317eaf00a3"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="ee182be7-f305-4e32-a47f-541e62403334"
+            name="&lt;&lt;create&gt;&gt;"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="babb3ae7-ba6d-43eb-a194-189d90921cb4"
+                LastKnownName="MessageOccurrenceSpecification29"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="b1c3acde-4679-475e-b5b9-35620fd1d7aa"
+                LastKnownName="MessageOccurrenceSpecification30"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="ce6481bc-a6bb-41a0-9f60-4f0ab3d755a2"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="b91ed0f1-d170-42d5-aa4a-1416b7cd4e51"
+                LastKnownName="MessageOccurrenceSpecification31"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="277e5f40-6ed1-4c2c-9aae-edd3bd30d0fb"
+                LastKnownName="MessageOccurrenceSpecification32"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="68b115c9-245d-413b-9290-23761673e540"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2ae95262-cdf4-419b-a1e7-2ee1088bbb8d"
+                LastKnownName="MessageOccurrenceSpecification27"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2ce4e896-9451-4354-ae29-617d6c379c75"
+                LastKnownName="MessageOccurrenceSpecification28"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="54c3ab42-c90d-40ad-af2e-6b389d3b7813"
+            name="&lt;&lt;create&gt;&gt;"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="39261d8d-de99-4123-bc6d-d7d504452c18"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="b63b3812-952a-4536-9aab-f82d36bd668f"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="3391305e-dd0d-47d3-a4f6-cfd35ff16365"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ffad98e5-60d3-43ab-9f74-25bea7b9808d"
+                LastKnownName="MessageOccurrenceSpecification23"
+                LastKnownLocation="InsattackModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0bcea055-ca5a-4caa-9ab7-1d6423a034f1"
+                LastKnownName="MessageOccurrenceSpecification24"
+                LastKnownLocation="InsattackModel.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="cd2237d3-9f51-47d3-a837-8f81d78d19df"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="4bcc20ba-80e3-46b5-9052-71212bba1d67"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="014afed5-be26-4211-b1ff-18071fcae2f6"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="767038e8-5632-4342-8d46-76a3aca625a3"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="cfe149b6-ab2e-48a6-a32e-7bcf89d92bef"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="ae8706b2-1fde-4f3d-a987-e09460b89bd4"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="c36a84be-48d5-4ec7-ac84-a55b8f7d6e81"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="2ef14e47-647a-4405-964d-a2e1b152c2ca"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="da268edc-17cc-4d3c-830b-c14c047e7d20"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="f93046e3-4a52-41bb-9c9f-e4c6947cd03d"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="4b49fd82-fcb0-4276-a25c-617eea57416a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="535ea6dc-b1e1-4468-8c2c-8d1637dc7a4a"
+        name="ExecutionEvent" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

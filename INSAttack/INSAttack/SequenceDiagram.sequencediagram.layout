@@ -3,14 +3,14 @@
   <SequenceDesignerModelMoniker Id="b7c3a53b-e3aa-4daa-96fd-25feea9a9994" />
   <nestedChildShapes>
     <lifelineShape Id="683b020f-82be-4254-9948-9f6ca49a4ac0" absoluteBounds="2.3541667461395264, 1, 0.15, 1.5520833333333339" visible="true" visualStyleMode="Modified">
-      <lifelineMoniker Id="7c1fe892-6e33-423d-8c6d-ec8e9bfdb1c6" LastKnownName="GameFactory" />
+      <lifelineMoniker Id="7c1fe892-6e33-423d-8c6d-ec8e9bfdb1c6" LastKnownName="GameBuilder" />
       <relativeChildShapes>
-        <dotNetLifelineHeadShape Id="ca87076a-0a63-45b8-b1c3-1085f09c8eee" absoluteBounds="1.9256569457054138, 0.6, 1.0070196008682251, 0.4" customColor="184, 204, 215" visualStyleMode="Modified">
-          <lifelineMoniker Id="7c1fe892-6e33-423d-8c6d-ec8e9bfdb1c6" LastKnownName="GameFactory" />
+        <dotNetLifelineHeadShape Id="ca87076a-0a63-45b8-b1c3-1085f09c8eee" absoluteBounds="1.9291667461395263, 0.6, 1, 0.4" customColor="184, 204, 215" visualStyleMode="Modified">
+          <lifelineMoniker Id="7c1fe892-6e33-423d-8c6d-ec8e9bfdb1c6" LastKnownName="GameBuilder" />
           <relativeChildShapes />
         </dotNetLifelineHeadShape>
         <lifelineHoverShape Id="402e163a-d5d5-4809-86b6-4d8e197d6420" absoluteBounds="2.3541667461395264, 1, 0, 1.5">
-          <lifelineMoniker Id="7c1fe892-6e33-423d-8c6d-ec8e9bfdb1c6" LastKnownName="GameFactory" />
+          <lifelineMoniker Id="7c1fe892-6e33-423d-8c6d-ec8e9bfdb1c6" LastKnownName="GameBuilder" />
         </lifelineHoverShape>
       </relativeChildShapes>
     </lifelineShape>
@@ -57,9 +57,6 @@
         <dotNetExecutionSpecificationShape Id="869a776f-324c-4589-8524-ffe1d9064a03" absoluteBounds="9, 3.3812499999999996, 0.125, 0.55" customColor="184, 204, 215" visualStyleMode="Modified">
           <behaviorExecutionSpecificationMoniker Id="d12c001c-eb47-4541-b968-1e3699b0e96f" LastKnownName="BehaviorExecutionSpecification" />
         </dotNetExecutionSpecificationShape>
-        <dotNetExecutionSpecificationShape Id="7c803b0f-a63c-4cb0-9264-e5b181cb8b64" absoluteBounds="9, 6.270833333333333, 0.125, 0.55" customColor="184, 204, 215" visualStyleMode="Modified">
-          <behaviorExecutionSpecificationMoniker Id="16737e07-9ba0-4bec-93c6-04e14213967b" LastKnownName="BehaviorExecutionSpecification" />
-        </dotNetExecutionSpecificationShape>
       </relativeChildShapes>
     </lifelineShape>
     <createMessageConnector edgePoints="[(2.42916674613953 : 1.51041666666667); (4.64583349227905 : 1.51041666666667)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e24617ce-6c7e-4c7d-802a-63014f02e313" customColor="Black" visible="true" visualStyleMode="Modified" messageId="00000000-0000-0000-0000-000000000000">
@@ -97,19 +94,5 @@
         <dotNetExecutionSpecificationShapeMoniker Id="75f646d5-ca9d-42a0-af1b-e8f806d44968" />
       </nodes>
     </asyncMessageConnector>
-    <syncMessageConnector edgePoints="[(4.72083349227905 : 6.27083333333333); (9 : 6.27083333333333)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e24617ce-6c7e-4c7d-802a-63014f02e313" customColor="Black" visible="true" visualStyleMode="Modified" messageId="00000000-0000-0000-0000-000000000000">
-      <relativeChildShapes />
-      <nodes>
-        <lifelineShapeMoniker Id="25aaafcf-3845-47ed-b8d9-4bdc9b87fc8e" />
-        <dotNetExecutionSpecificationShapeMoniker Id="7c803b0f-a63c-4cb0-9264-e5b181cb8b64" />
-      </nodes>
-    </syncMessageConnector>
-    <returnMessageConnector edgePoints="[(9 : 6.82083333333333); (4.72083349227905 : 6.82083333333333)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e24617ce-6c7e-4c7d-802a-63014f02e313" customColor="Black" visible="true" visualStyleMode="Modified" messageId="00000000-0000-0000-0000-000000000000">
-      <relativeChildShapes />
-      <nodes>
-        <dotNetExecutionSpecificationShapeMoniker Id="7c803b0f-a63c-4cb0-9264-e5b181cb8b64" />
-        <lifelineShapeMoniker Id="25aaafcf-3845-47ed-b8d9-4bdc9b87fc8e" />
-      </nodes>
-    </returnMessageConnector>
   </nestedChildShapes>
 </sequenceDesignerDiagram>
