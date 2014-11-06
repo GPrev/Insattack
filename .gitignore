@@ -1,0 +1,6 @@
+# Latex
+*.log
+*.out
+*.toc
+*.aux
+*.synctex.gz
