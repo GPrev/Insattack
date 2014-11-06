@@ -188,11 +188,11 @@
         <umlExecutionSpecificationShapeMoniker Id="ab87a325-6bdf-421e-89d9-291f14c72246" />
       </nodes>
     </returnMessageConnector>
-    <commentShape Id="e495537f-e401-4a1f-834f-543186e30137" absoluteBounds="10.375, 6.5, 1.25, 0.5" customColor="251, 247, 200">
+    <commentShape Id="e495537f-e401-4a1f-834f-543186e30137" absoluteBounds="9, 6.5, 1.25, 0.5" customColor="251, 247, 200">
       <commentMoniker Id="e6303558-b7e2-46f2-aa51-089c0097ce2f" />
       <relativeChildShapes />
     </commentShape>
-    <commentConnector edgePoints="[(10.375 : 6.75); (8.1083330154419 : 6.76791666621963)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(9 : 6.75); (8.1083330154419 : 6.75)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="e495537f-e401-4a1f-834f-543186e30137" />
@@ -217,11 +217,11 @@
         </interactionOperandShape>
       </nestedChildShapes>
     </combinedFragmentShape>
-    <commentShape Id="c3648e74-8bc0-43ad-ba23-7a8b70ef4747" absoluteBounds="7.5, 1.75, 1.625, 0.375" customColor="251, 247, 200">
+    <commentShape Id="c3648e74-8bc0-43ad-ba23-7a8b70ef4747" absoluteBounds="7.5, 2.25, 1.625, 0.375" customColor="251, 247, 200">
       <commentMoniker Id="14ea8b87-91ab-497b-882e-87031a526b38" />
       <relativeChildShapes />
     </commentShape>
-    <commentConnector edgePoints="[(7.5 : 2.125); (6.83750031789144 : 2.17291666666667)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(7.5 : 2.4375); (6.83750031789144 : 2.4375)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="c3648e74-8bc0-43ad-ba23-7a8b70ef4747" />

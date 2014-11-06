@@ -1,8 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="e1b51e16-97c5-455d-a998-2f91e75e8882" name="UtilisationEnJeu" linkedPackageId="31ca6c25-0522-4e2d-84a5-b77bbe0643f6" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e1b51e16-97c5-455d-a998-2f91e75e8882" name="UtilisationEnJeu" linkedPackageId="31ca6c25-0522-4e2d-84a5-b77bbe0643f6" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <subsystem Id="3f9e8d5b-7cb3-4778-80df-441ee20a49e2" name="Jeu" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <ownedCommentsInternal>
+          <comment Id="4e44624a-fd6c-4934-83bb-70b78e83547b">
+            <elementDefinition Id="a617bfb6-a730-44af-add6-318d6225a585" />
+            <body>Déplacement impossible si pas assez de points de déplacement</body>
+            <annotatedElements>
+              <useCaseMoniker Id="1a729f56-03bd-40fc-b82b-fab66fa6206f" LastKnownName="Déplacement impossible" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
         <elementDefinition Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f" />
       </subsystem>
     </useCaseModelRootHasTypes>
@@ -142,9 +151,61 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="6a15c670-bc42-4e45-bc31-fe7d370f6585" />
           </association>
+          <association Id="df14962f-d0e1-4bde-8c93-298a6186552d" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="Quitter" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="aebad623-9ce8-4151-a575-474607bcd8bf" LastKnownName="Quitter" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="87060554-1b5c-4bf9-8842-8dae1c7ff508" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="75da5e3f-7bf4-41f8-ad83-24e1bf3145af" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="61465ff3-80fd-48b5-b7b5-819c04ce9d90" name="Quitter" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="895682ed-9697-481b-9dc0-bd72261ce03a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="36095b2a-79a8-45b0-b252-0a047c65a7b9" />
+          </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="aebad623-9ce8-4151-a575-474607bcd8bf" name="Quitter" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cdd17199-253e-4304-b2ca-183cdc5d9eeb" />
+        <subjects>
+          <subsystemMoniker Id="3f9e8d5b-7cb3-4778-80df-441ee20a49e2" LastKnownName="Jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="f5720785-5a67-43c2-bb7e-b53f0ac9b8db" name="Mort de l'unité" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3e2ff4dd-d1f1-489f-9c74-640ee177ccd9" />
+        <generalsInternal>
+          <generalization Id="1f52fc7d-f926-4662-8e59-a3bfe281b471" isSubstitutable="false">
+            <useCaseMoniker Id="28614d5b-aafc-426e-8b55-284342d03a84" LastKnownName="Combattre" />
+            <elementDefinition Id="d654e656-5d1a-498e-a53b-08e80922da2e" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="3f9e8d5b-7cb3-4778-80df-441ee20a49e2" LastKnownName="Jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="e16e3833-fde1-4ec1-9352-76bd40682561" name="Mort de l'adversaire" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5ac7198a-6f2b-4d38-aa82-6f8651589b8c" />
+        <generalsInternal>
+          <generalization Id="870ad119-3d0c-4289-8c9d-035526c54276" isSubstitutable="false">
+            <useCaseMoniker Id="28614d5b-aafc-426e-8b55-284342d03a84" LastKnownName="Combattre" />
+            <elementDefinition Id="b386551a-9179-4485-b7b1-4acb6ea6ff8f" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="3f9e8d5b-7cb3-4778-80df-441ee20a49e2" LastKnownName="Jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="31ca6c25-0522-4e2d-84a5-b77bbe0643f6" name="InsattackModel">
     <elementDefinition Id="e8dabbf2-c9dc-4d57-acb9-e8da11bc642b" />

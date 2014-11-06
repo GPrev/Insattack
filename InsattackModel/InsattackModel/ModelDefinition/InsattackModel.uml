@@ -1,8 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="e8dabbf2-c9dc-4d57-acb9-e8da11bc642b"
   name="InsattackModel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="a617bfb6-a730-44af-add6-318d6225a585">
+      <body>Déplacement impossible si pas assez de points de déplacement</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="1d070c4b-8c3d-421f-9b9d-08159c4f73a3"
+          LastKnownName="Déplacement impossible"
+          LastKnownLocation="InsattackModel.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -132,6 +144,45 @@
                 <memberEnd
                   Id="f1b67334-102e-46e0-84ae-0c0cf16f6bec"
                   name="Jouer tour"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="36095b2a-79a8-45b0-b252-0a047c65a7b9"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="Quitter"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="cdd17199-253e-4304-b2ca-183cdc5d9eeb"
+              LastKnownName="Quitter"
+              LastKnownLocation="InsattackModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="75da5e3f-7bf4-41f8-ad83-24e1bf3145af"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="895682ed-9697-481b-9dc0-bd72261ce03a"
+                  name="Quitter"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1109,22 +1160,22 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="fcb77ec0-2208-4d6b-b1ea-710a991ca19b"
-            name="OperandOccurrenceSpecification19">
-            <covered>
-              <lifelineMoniker
-                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
-                LastKnownName="Unit"
-                LastKnownLocation="InsattackModel.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="648b2821-9aca-442b-83f1-61bf1f7f7ef8"
             name="OperandOccurrenceSpecification15">
             <covered>
               <lifelineMoniker
                 Id="40449367-1603-46f8-ade1-0bca917768b2"
                 LastKnownName="Game"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="fcb77ec0-2208-4d6b-b1ea-710a991ca19b"
+            name="OperandOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="ebbb1d27-8d27-498b-8bce-35e9b36a6ba3"
+                LastKnownName="Unit"
                 LastKnownLocation="InsattackModel.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -1257,22 +1308,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="006505ce-b9e3-4643-b877-3f073d4b6a2f"
-            name="MessageOccurrenceSpecification7">
-            <covered>
-              <lifelineMoniker
-                Id="40449367-1603-46f8-ade1-0bca917768b2"
-                LastKnownName="Game"
-                LastKnownLocation="InsattackModel.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="bd710aa4-ce86-4043-8c70-e3ff70187257"
             name="MessageOccurrenceSpecification8">
             <covered>
               <lifelineMoniker
                 Id="215c4ae4-fd37-4683-a74a-9cf5483eb307"
                 LastKnownName="Joueur"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="006505ce-b9e3-4643-b877-3f073d4b6a2f"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="40449367-1603-46f8-ade1-0bca917768b2"
+                LastKnownName="Game"
                 LastKnownLocation="InsattackModel.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -1948,22 +1999,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="7edc2865-05a9-48f5-8e6f-b50703faddfc"
-            name="MessageOccurrenceSpecification12">
-            <covered>
-              <lifelineMoniker
-                Id="be50084c-2b40-4a6c-8e3e-a59020fa9016"
-                LastKnownName="BoardStrategy"
-                LastKnownLocation="InsattackModel.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="9b27e1c8-7055-47b5-8495-3f3faaf8e45f"
             name="MessageOccurrenceSpecification11">
             <covered>
               <lifelineMoniker
                 Id="443a94f8-7270-4e12-9c35-322e57231e4c"
                 LastKnownName="Board"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7edc2865-05a9-48f5-8e6f-b50703faddfc"
+            name="MessageOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="be50084c-2b40-4a6c-8e3e-a59020fa9016"
+                LastKnownName="BoardStrategy"
                 LastKnownLocation="InsattackModel.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2226,6 +2277,16 @@
             </operands>
           </combinedFragment>
           <operandOccurrenceSpecification
+            Id="c135b041-4cbf-4582-8aeb-f4ed0c7aa796"
+            name="OperandOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
+                LastKnownName="GameBuilder"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
             Id="ef71143f-a668-4746-a46d-ebb27e397558"
             name="OperandOccurrenceSpecification1">
             <covered>
@@ -2252,16 +2313,6 @@
               <lifelineMoniker
                 Id="9262589b-4504-4957-a793-527f0a01e575"
                 LastKnownName="Department"
-                LastKnownLocation="InsattackModel.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="c135b041-4cbf-4582-8aeb-f4ed0c7aa796"
-            name="OperandOccurrenceSpecification3">
-            <covered>
-              <lifelineMoniker
-                Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
-                LastKnownName="GameBuilder"
                 LastKnownLocation="InsattackModel.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -2500,22 +2551,22 @@
             </covered>
           </operandOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="2ae95262-cdf4-419b-a1e7-2ee1088bbb8d"
-            name="MessageOccurrenceSpecification27">
-            <covered>
-              <lifelineMoniker
-                Id="9262589b-4504-4957-a793-527f0a01e575"
-                LastKnownName="Department"
-                LastKnownLocation="InsattackModel.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="2ce4e896-9451-4354-ae29-617d6c379c75"
             name="MessageOccurrenceSpecification28">
             <covered>
               <lifelineMoniker
                 Id="62190ab1-88e0-4fa3-866c-c6b947df9faa"
                 LastKnownName="GameBuilder"
+                LastKnownLocation="InsattackModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2ae95262-cdf4-419b-a1e7-2ee1088bbb8d"
+            name="MessageOccurrenceSpecification27">
+            <covered>
+              <lifelineMoniker
+                Id="9262589b-4504-4957-a793-527f0a01e575"
+                LastKnownName="Department"
                 LastKnownLocation="InsattackModel.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3147,6 +3198,137 @@
       <executionEvent
         Id="535ea6dc-b1e1-4468-8c2c-8d1637dc7a4a"
         name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="315002a0-5016-441b-964d-9092e4ad9fea"
+        name="Choisir type de partie"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="f3ac76bd-c3b3-4119-ae85-651ac11b1335">
+            <useCaseMoniker
+              Id="eab76606-c14e-4f54-b0d1-5a24f0d603d6"
+              LastKnownName="CréePartie"
+              LastKnownLocation="InsattackModel.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="a43defae-9b6c-401a-a2f0-5e0fb64474f0"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6174f0d3-a481-4dea-a980-2b3ed6d48b93"
+        name="Choix du peuple"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="b5156abe-e3cb-4a6f-bdcb-1624ca26182e">
+            <useCaseMoniker
+              Id="eab76606-c14e-4f54-b0d1-5a24f0d603d6"
+              LastKnownName="CréePartie"
+              LastKnownLocation="InsattackModel.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="a43defae-9b6c-401a-a2f0-5e0fb64474f0"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="51073f1a-6872-4e79-b5e5-9f1972a5f300"
+        name="Choix de la couleur"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="93c683c1-040d-4b17-ad88-3d9fa2ef2be8">
+            <useCaseMoniker
+              Id="eab76606-c14e-4f54-b0d1-5a24f0d603d6"
+              LastKnownName="CréePartie"
+              LastKnownLocation="InsattackModel.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="a43defae-9b6c-401a-a2f0-5e0fb64474f0"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="cdd17199-253e-4304-b2ca-183cdc5d9eeb"
+        name="Quitter"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3e2ff4dd-d1f1-489f-9c74-640ee177ccd9"
+        name="Mort de l'unité"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="d654e656-5d1a-498e-a53b-08e80922da2e"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="11acecd8-332a-4851-8c0a-88c732edfcad"
+              LastKnownName="Combattre"
+              LastKnownLocation="InsattackModel.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5ac7198a-6f2b-4d38-aa82-6f8651589b8c"
+        name="Mort de l'adversaire"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="b386551a-9179-4485-b7b1-4acb6ea6ff8f"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="11acecd8-332a-4851-8c0a-88c732edfcad"
+              LastKnownName="Combattre"
+              LastKnownLocation="InsattackModel.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="5c1bb15b-777f-4b6c-8442-8c5b56b0ab9f"
+            LastKnownName="Jeu"
+            LastKnownLocation="InsattackModel.uml" />
+        </subjects>
+      </useCase>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

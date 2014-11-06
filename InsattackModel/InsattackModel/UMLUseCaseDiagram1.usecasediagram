@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="95a4608e-2c70-463f-93dd-ce254e8aed63" name="UtilisationHorsJeu" linkedPackageId="f55b68a2-27b8-4cf5-87ad-09f211f67923" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="95a4608e-2c70-463f-93dd-ce254e8aed63" name="UtilisationHorsJeu" linkedPackageId="f55b68a2-27b8-4cf5-87ad-09f211f67923" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="94a891bd-32f7-4b6d-ae61-9b37dc1cb8e8" name="Joueur" isAbstract="false" isLeaf="false">
@@ -74,6 +74,48 @@
     <packageHasNamedElement>
       <useCase Id="74479a9d-d09d-491e-a621-7930c5263e3e" name="ChoisirPartie" isAbstract="false" isLeaf="false">
         <elementDefinition Id="bc3169bc-4090-4b07-a716-9a94298c20b5" />
+        <subjects>
+          <subsystemMoniker Id="1e9808aa-20c8-4551-b4fe-05036af8e568" LastKnownName="Jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="9c5e6712-d3c9-4d83-af41-d003b92ac125" name="Choisir type de partie" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="315002a0-5016-441b-964d-9092e4ad9fea" />
+        <extendedCases>
+          <extend Id="4cb3da78-8d47-4b6e-95e7-88e33a18fe8b">
+            <useCaseMoniker Id="4771acb9-229d-4f38-a44d-86a3b5910e05" LastKnownName="CréePartie" />
+            <elementDefinition Id="f3ac76bd-c3b3-4119-ae85-651ac11b1335" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="1e9808aa-20c8-4551-b4fe-05036af8e568" LastKnownName="Jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="26d9f153-ac58-4c63-87a8-3b0a0e3ad31a" name="Choix du peuple" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6174f0d3-a481-4dea-a980-2b3ed6d48b93" />
+        <extendedCases>
+          <extend Id="d3a3f2d8-e4e2-440a-a9e2-8ff05e5e510b">
+            <useCaseMoniker Id="4771acb9-229d-4f38-a44d-86a3b5910e05" LastKnownName="CréePartie" />
+            <elementDefinition Id="b5156abe-e3cb-4a6f-bdcb-1624ca26182e" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="1e9808aa-20c8-4551-b4fe-05036af8e568" LastKnownName="Jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="51dd94e1-5d60-428b-9274-8e90ad8b4d73" name="Choix de la couleur" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="51073f1a-6872-4e79-b5e5-9f1972a5f300" />
+        <extendedCases>
+          <extend Id="69b80e57-5bae-4923-b272-158a22b58748">
+            <useCaseMoniker Id="4771acb9-229d-4f38-a44d-86a3b5910e05" LastKnownName="CréePartie" />
+            <elementDefinition Id="93c683c1-040d-4b17-ad88-3d9fa2ef2be8" />
+          </extend>
+        </extendedCases>
         <subjects>
           <subsystemMoniker Id="1e9808aa-20c8-4551-b4fe-05036af8e568" LastKnownName="Jeu" />
         </subjects>
