@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="cac5ecb0-3947-4836-bf27-3ef6b610d421" name="Déplacement d'une unité" linkedPackageId="28afc0e6-c4c2-4de3-bb76-a7cbcc76b591" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="39ada0b2-ea97-48b2-ac93-5252d45f37fd">
-      <profileInstance Id="c73dca7b-bba5-4ee9-8acd-37b930676a8e" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="a9c333d0-1521-4a78-ab46-e2cd49f8f587">
-      <profileInstance Id="2237e879-eb39-4f62-b193-7ac42cd1bd72" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="cac5ecb0-3947-4836-bf27-3ef6b610d421" name="Déplacement d'une unité" linkedPackageId="28afc0e6-c4c2-4de3-bb76-a7cbcc76b591" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
   <packagedElements>
     <packageHasNamedElement>
       <interaction Id="2f914511-0512-4786-aeb8-f63ebbe326f9" name="Déplacement d'une unité" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
@@ -377,16 +363,16 @@
               <lifelineMoniker Id="2327fbd0-3d20-4e61-9870-f46d85758e6f" LastKnownName="Game" />
             </covered>
           </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="dffeec9a-70c3-441a-b00e-678a087d0c00" name="OperandOccurrenceSpecification19">
-            <elementDefinition Id="fcb77ec0-2208-4d6b-b1ea-710a991ca19b" />
-            <covered>
-              <lifelineMoniker Id="26b98f00-cfca-4f2b-bf35-d06cdddce7b0" LastKnownName="Unit" />
-            </covered>
-          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="5b0afeac-5254-4c9b-889d-476eeb930ae3" name="OperandOccurrenceSpecification15">
             <elementDefinition Id="648b2821-9aca-442b-83f1-61bf1f7f7ef8" />
             <covered>
               <lifelineMoniker Id="2327fbd0-3d20-4e61-9870-f46d85758e6f" LastKnownName="Game" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="dffeec9a-70c3-441a-b00e-678a087d0c00" name="OperandOccurrenceSpecification19">
+            <elementDefinition Id="fcb77ec0-2208-4d6b-b1ea-710a991ca19b" />
+            <covered>
+              <lifelineMoniker Id="26b98f00-cfca-4f2b-bf35-d06cdddce7b0" LastKnownName="Unit" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="947507c1-520d-4b0f-a872-786e8934c52c" name="OperandOccurrenceSpecification20">
@@ -463,16 +449,16 @@
               <lifelineMoniker Id="22d217b2-87fe-450e-bff9-1ad401cb0d0a" LastKnownName="Board" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="6b2d3d37-8b83-4651-99b4-42eece45986a" name="MessageOccurrenceSpecification7">
-            <elementDefinition Id="006505ce-b9e3-4643-b877-3f073d4b6a2f" />
-            <covered>
-              <lifelineMoniker Id="2327fbd0-3d20-4e61-9870-f46d85758e6f" LastKnownName="Game" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="040b1fb7-1966-4d9f-ae08-4775a5ade792" name="MessageOccurrenceSpecification8">
             <elementDefinition Id="bd710aa4-ce86-4043-8c70-e3ff70187257" />
             <covered>
               <lifelineMoniker Id="27c6b418-9095-40d5-8d83-fb9bae788949" LastKnownName="Joueur" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="6b2d3d37-8b83-4651-99b4-42eece45986a" name="MessageOccurrenceSpecification7">
+            <elementDefinition Id="006505ce-b9e3-4643-b877-3f073d4b6a2f" />
+            <covered>
+              <lifelineMoniker Id="2327fbd0-3d20-4e61-9870-f46d85758e6f" LastKnownName="Game" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="10f10dfa-9d15-45b4-ae1b-a5cf0a6927b9" name="ExecutionOccurrenceSpecification4">
@@ -707,5 +693,19 @@
   </packagedElements>
   <package Id="28afc0e6-c4c2-4de3-bb76-a7cbcc76b591" name="InsattackModel">
     <elementDefinition Id="e8dabbf2-c9dc-4d57-acb9-e8da11bc642b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="39ada0b2-ea97-48b2-ac93-5252d45f37fd">
+        <profileInstance Id="c73dca7b-bba5-4ee9-8acd-37b930676a8e" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a9c333d0-1521-4a78-ab46-e2cd49f8f587">
+        <profileInstance Id="2237e879-eb39-4f62-b193-7ac42cd1bd72" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </SequenceDesignerModel>
