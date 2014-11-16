@@ -5,6 +5,7 @@
 *.aux
 *.synctex.gz
 *.pdf
+*.fdb_latexmk
 
 #ZagroUML
 *.zargo~
