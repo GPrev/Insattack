@@ -7,53 +7,38 @@ namespace INSAttack
 {
     public class TileFactory
     {
-        private TDTile m_tdTiles;
-
-        public TDTile TdTiles
+        public TileFactory()
         {
-            get { return m_tdTiles; }
-            set { m_tdTiles = value; }
-        }
-        private INFOTile m_infoTiles;
 
-        public INFOTile InfoTiles
-        {
-            get { return m_infoTiles; }
-            set { m_infoTiles = value; }
-        }
-        private AmphiTile m_amphiTiles;
-
-        public AmphiTile AmphiTiles
-        {
-            get { return m_amphiTiles; }
-            set { m_amphiTiles = value; }
-        }
-        private OutdoorTile m_outdoorTiles;
-
-        public OutdoorTile OutdoorTiles
-        {
-            get { return m_outdoorTiles; }
-            set { m_outdoorTiles = value; }
         }
 
-        public Tile makeTD()
-        {
-            throw new NotImplementedException();
-        }
+        private TDTile m_tdTile;
 
-        public Tile makeAmphi()
+        public TDTile TdTile
         {
-            throw new System.NotImplementedException();
+            get { return m_tdTile; }
+            //set { m_tdTile = value; }
         }
+        private INFOTile m_infoTile;
 
-        public Tile makeINFO()
+        public INFOTile InfoTile
         {
-            throw new System.NotImplementedException();
+            get { return m_infoTile; }
+            //set { m_infoTile = value; }
         }
+        private AmphiTile m_amphiTile;
 
-        public Tile makeOutdoor()
+        public AmphiTile AmphiTile
         {
-            throw new System.NotImplementedException();
+            get { return m_amphiTile; }
+            //set { m_amphiTile = value; }
+        }
+        private OutdoorTile m_outdoorTile;
+
+        public OutdoorTile OutdoorTile
+        {
+            get { return m_outdoorTile; }
+            //set { m_outdoorTile = value; }
         }
     }
 }

@@ -1,0 +1,9 @@
+H:\Info\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttackTests.dll
+H:\Info\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttackTests.pdb
+H:\Info\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttack.dll
+H:\Info\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttack.pdb
+H:\Info\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.csprojResolveAssemblyReference.cache
+H:\Info\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.dll
+H:\Info\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.pdb
+C:\Users\gprevost\Desktop\INSAttackBuild\INSAttackTests.dll
+C:\Users\gprevost\Desktop\INSAttackBuild\INSAttackTests.pdb

@@ -16,5 +16,11 @@ namespace INSAttack
             get { return SGM.m_instance; }
             set { SGM.m_instance = value; }
         }
+
+        // Overload the conversion from Department to Dept:
+        public static implicit operator Dept(SGM x)
+        {
+            return Dept.SGM;
+        }
     }
 }

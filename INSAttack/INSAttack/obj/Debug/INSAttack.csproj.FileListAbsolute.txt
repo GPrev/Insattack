@@ -1,0 +1,6 @@
+H:\Info\Insattack\INSAttack\INSAttack\bin\Debug\INSAttack.dll
+H:\Info\Insattack\INSAttack\INSAttack\bin\Debug\INSAttack.pdb
+H:\Info\Insattack\INSAttack\INSAttack\obj\Debug\INSAttack.dll
+H:\Info\Insattack\INSAttack\INSAttack\obj\Debug\INSAttack.pdb
+C:\Users\gprevost\Desktop\INSAttackBuild\INSAttack.dll
+C:\Users\gprevost\Desktop\INSAttackBuild\INSAttack.pdb

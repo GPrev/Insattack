@@ -5,6 +5,7 @@ using System.Text;
 
 namespace INSAttack
 {
+    public enum Dept { SGM, EII, GC, INFO, SRC, GMA, NB_DEPT }
     public abstract class Department : Factory<object>
     {
         private Player m_player;
@@ -14,10 +15,37 @@ namespace INSAttack
             get { return m_player; }
             set { m_player = value; }
         }
-    
+
         public object make()
         {
-            throw new NotImplementedException();
+            return new Unit(m_player);
+        }
+
+        public override int GetHashCode()
+        {
+            return (int)this + m_player.Id * (int)Dept.NB_DEPT;
+        }
+
+        // Overload the conversion from Department to Dept:
+        public static implicit operator Dept(Department x)
+        {
+            return Dept.NB_DEPT;
+        }
+
+        // Overload the conversion from Department to int:
+        public static implicit operator int(Department x)
+        {
+            return (int)(Dept)x;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Department && Equals((Department)obj);
+        }
+
+        public bool Equals(Department p)
+        {
+            return (Dept)this == (Dept)p;
         }
     }
 }

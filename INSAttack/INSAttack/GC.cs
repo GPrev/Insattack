@@ -16,5 +16,11 @@ namespace INSAttack
             get { return GC.m_instance; }
             set { GC.m_instance = value; }
         }
+
+        // Overload the conversion from Department to Dept:
+        public static implicit operator Dept(GC x)
+        {
+            return Dept.GC;
+        }
     }
 }

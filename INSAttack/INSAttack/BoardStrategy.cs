@@ -7,51 +7,36 @@ namespace INSAttack
 {
     public abstract class BoardStrategy : INSAttack.Factory<Board>
     {
-        public int NbPlayers
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        private int m_boardSize;
 
         public int BoardSize
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get { return m_boardSize; }
+            set { m_boardSize = value; }
         }
+        private int m_nbPlayers;
+
+        public int NbPlayers
+        {
+            get { return m_nbPlayers; }
+            set { m_nbPlayers = value; }
+        }
+        private int m_nbTurns;
 
         public int NbTurns
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get { return m_nbTurns; }
+            set { m_nbTurns = value; }
         }
+        private int m_nbUnits;
 
         public int NbUnits
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get { return m_nbUnits; }
+            set { m_nbUnits = value; }
         }
 
-        public object make()
+        public Board make()
         {
             throw new NotImplementedException();
         }

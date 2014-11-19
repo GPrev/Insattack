@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>C:\Users\gprevost\Desktop\INSAttackBuild\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="AmphiTile.cs" />
     <Compile Include="BoardStrategy.cs" />
+    <Compile Include="Coord.cs" />
     <Compile Include="DemoBoardStrategy.cs" />
     <Compile Include="Departement.cs" />
     <Compile Include="EII.cs" />
@@ -58,8 +59,6 @@
     <Compile Include="OutdoorTile.cs" />
     <Compile Include="Plateau.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Race.cs" />
-    <Compile Include="RaceFactory.cs" />
     <Compile Include="SGM.cs" />
     <Compile Include="SmallBoardStrategy.cs" />
     <Compile Include="SRC.cs" />
@@ -70,12 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
-    <None Include="SequenceDiagram.sequencediagram" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="SequenceDiagram.sequencediagram.layout">
-      <DependentUpon>SequenceDiagram.sequencediagram</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,5 +7,12 @@ namespace INSAttack
 {
     public class Player
     {
+        private int m_id;
+
+        public int Id
+        {
+            get { return m_id; }
+            set { m_id = value; }
+        }
     }
 }

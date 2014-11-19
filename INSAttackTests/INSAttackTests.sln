@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INSAttack", "INSAttack\INSAttack.csproj", "{9A7692D5-F89D-47BC-B20E-F5AF834516CD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INSAttackTests", "..\INSAttackTests\INSAttackTests\INSAttackTests.csproj", "{D15ABFB0-1CCB-462F-986D-E4ABF868815A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INSAttackTests", "INSAttackTests\INSAttackTests.csproj", "{D15ABFB0-1CCB-462F-986D-E4ABF868815A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9A7692D5-F89D-47BC-B20E-F5AF834516CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A7692D5-F89D-47BC-B20E-F5AF834516CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A7692D5-F89D-47BC-B20E-F5AF834516CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A7692D5-F89D-47BC-B20E-F5AF834516CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D15ABFB0-1CCB-462F-986D-E4ABF868815A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D15ABFB0-1CCB-462F-986D-E4ABF868815A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D15ABFB0-1CCB-462F-986D-E4ABF868815A}.Release|Any CPU.ActiveCfg = Release|Any CPU

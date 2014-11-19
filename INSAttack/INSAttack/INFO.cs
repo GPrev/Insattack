@@ -16,5 +16,11 @@ namespace INSAttack
             get { return INFO.m_instance; }
             set { INFO.m_instance = value; }
         }
+
+        // Overload the conversion from Department to Dept:
+        public static implicit operator Dept(INFO x)
+        {
+            return Dept.INFO;
+        }
     }
 }

@@ -7,6 +7,6 @@ namespace INSAttack
 {
     public abstract class Tile
     {
-        private HashSet<Race, int> m_costs;
+        private Dictionary<Department, int> m_costs;
     }
 }

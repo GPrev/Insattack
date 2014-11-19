@@ -1,0 +1,11 @@
+[TestClass]
+class ameTest{
+
+[TestMethod]
+public void GameInit()
+{
+  //...
+  Assert.IsNoNull(game);
+}
+
+}

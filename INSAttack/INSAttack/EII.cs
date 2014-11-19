@@ -16,5 +16,11 @@ namespace INSAttack
             get { return EII.m_instance; }
             set { EII.m_instance = value; }
         }
+
+        // Overload the conversion from Department to Dept:
+        public static implicit operator Dept(EII x)
+        {
+            return Dept.EII;
+        }
     }
 }

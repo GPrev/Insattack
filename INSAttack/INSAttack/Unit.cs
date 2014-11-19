@@ -57,5 +57,10 @@ namespace INSAttack
             get { return m_player; }
             set { m_player = value; }
         }
+
+        public Unit(INSAttack.Player player)
+        {
+            m_player = player;
+        }
     }
 }

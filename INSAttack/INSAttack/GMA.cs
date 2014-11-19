@@ -16,5 +16,11 @@ namespace INSAttack
             get { return GMA.m_instance; }
             set { GMA.m_instance = value; }
         }
+
+        // Overload the conversion from Department to Dept:
+        public static implicit operator Dept(GMA x)
+        {
+            return Dept.GMA;
+        }
     }
 }
