@@ -7,3 +7,6 @@ H:\Info\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.dll
 H:\Info\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.pdb
 C:\Users\gprevost\Desktop\INSAttackBuild\INSAttackTests.dll
 C:\Users\gprevost\Desktop\INSAttackBuild\INSAttackTests.pdb
+F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.csprojResolveAssemblyReference.cache
+F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.dll
+F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.pdb
