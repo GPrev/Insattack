@@ -46,8 +46,8 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAKAAAAAAAAAAAAAAAAACAAAABAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Plateau.cs</FileName>
+      <HashCode>AAAKAACAAAAgAAAAAAAAACAAAABAAAEACAAAAAAAAAA=</HashCode>
+      <FileName>Board.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="INSAttack.Player">
@@ -250,7 +250,7 @@
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AgQAIAAAAAAAAAAAgAAEAAAAAAAAAIAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AgQAAAAAAAAAAAAAgAAEAAAAAAAAAIAAAABAAQAAAAA=</HashCode>
       <FileName>Departement.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -315,7 +315,7 @@
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAQAAAAIAAAAAAAAAAYAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAQgAEAIAAAQAAAAAAYAA=</HashCode>
       <FileName>Coord.cs</FileName>
     </TypeIdentifier>
   </Class>

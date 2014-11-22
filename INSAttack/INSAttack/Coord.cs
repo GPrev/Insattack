@@ -41,5 +41,47 @@ namespace INSAttack
         {
             return m_x == p.X && m_y == p.Y;
         }
+
+        public bool exists() //returns false if in the negative range
+        {
+            return m_x >= 0 && m_y >= 0;
+        }
+
+        public static bool areAdjacent(Coord c1, Coord c2)
+        {
+            if (!c1.exists() || !c2.exists()) //both squares must esist
+                return false;
+
+            if(c1.Y == c2.Y) //on the same line
+            {
+                return Math.Abs(c1.X - c2.X) == 1; //adjacent if exactly one tile apart
+            }
+            if(c1.X%2 == 1) //c1 is an "odd" square, slightly above the line
+            {
+                if (c1.Y - c2.Y == 1) //c2 is 1 tile higher than c1
+                {
+                    return Math.Abs(c1.X - c2.X) <= 1; //adjacent if close enough horizontally
+                }
+                else if (c2.Y - c1.Y == 1) //c1 is 1 tile higher than c2
+                {
+                    return c1.X == c2.X; //they have to be aligned horizontally
+                }
+            }
+            else //c1 is an "even" square, slightly below the line
+            {
+                if (c2.Y - c1.Y == 1) //c1 is 1 tile higher than c2
+                {
+                    return Math.Abs(c2.X - c1.X) <= 1; //adjacent if close enough horizontally
+                }
+                else if (c1.Y - c2.Y == 1) //c2 is 1 tile higher than c1
+                {
+                    return c2.X == c1.X; //they have to be aligned horizontally
+                }
+            }
+            //else
+            return false;
+        }
+
+        public static Coord nowhere = new Coord(-1,-1);
     }
 }
