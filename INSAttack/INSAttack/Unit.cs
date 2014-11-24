@@ -63,11 +63,50 @@ namespace INSAttack
             m_player = player;
         }
 
-
         //return true if the target is an ally overthise false.
-        public bool ally(Unit cible)
+        public bool isAlly(Unit cible)
         {
-            return m_player == cible.m_player;
+            return m_player.isAlly(cible.Player);
+        }
+
+        //returns true if the unit has enough movement
+        public bool tryAndUseMovement(int movementUsed)
+        {
+            if (movementUsed <= m_movement)
+            {
+                m_movement -= movementUsed;
+                return true;
+            }
+            //else
+            return false;
+        }
+
+        public void resetMovement()
+        {
+            m_movement = m_maxMovement;
+        }
+
+        //returns true if still alive
+        public bool takeHit(int damage)
+        {
+            if(damage >= m_life)
+            {
+                m_life = 0;
+                return false;
+            }
+            //else still alive
+            m_life -= damage;
+            return true;
+        }
+
+        public bool isDead()
+        {
+            return m_life <= 0;
+        }
+
+        public float getHealthRatio()
+        {
+            return (float)m_life / (float)m_maxLife;
         }
     }
 }

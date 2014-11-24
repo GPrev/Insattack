@@ -17,3 +17,7 @@ C:\Users\ishamael\Documents\GitHub\Insattack\INSAttackTests\INSAttackTests\bin\D
 C:\Users\ishamael\Documents\GitHub\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttackTests.pdb
 C:\Users\ishamael\Documents\GitHub\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttack.dll
 C:\Users\ishamael\Documents\GitHub\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttack.pdb
+F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttackTests.dll
+F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttackTests.pdb
+F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttack.dll
+F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttack.pdb

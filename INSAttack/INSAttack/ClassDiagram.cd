@@ -7,7 +7,7 @@
     <Position X="9.792" Y="0.5" Height="0.323" Width="1.065" />
   </Comment>
   <Comment CommentText="Factory (Unit)">
-    <Position X="6.427" Y="8.167" Height="0.354" Width="1.002" />
+    <Position X="6.385" Y="8.386" Height="0.354" Width="1.002" />
   </Comment>
   <Comment CommentText="Strategy (Board)">
     <Position X="11.177" Y="4.271" Height="0.354" Width="1.117" />
@@ -29,7 +29,7 @@
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAACAAAAEAAAAAAAgAAAAAAQAACAAAAA=</HashCode>
-      <FileName>Jeu.cs</FileName>
+      <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="m_activePlayer" />
@@ -44,6 +44,7 @@
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
       <HashCode>AAAKAACAAAAgAAAAAAAAACAAAABAAAEACAAAAAAAAAA=</HashCode>
@@ -52,9 +53,12 @@
   </Class>
   <Class Name="INSAttack.Player">
     <Position X="7.75" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
-      <FileName>Joueur.cs</FileName>
+      <HashCode>AAACAAAAAAAAAAAAgAAAAAAAAAAAAAQABAAAAAQAAiA=</HashCode>
+      <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="INSAttack.Unit">
@@ -64,7 +68,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAABRAAAAAAAABBAEAAAAAIAAAAAAAAEAAwAhIEA=</HashCode>
+      <HashCode>AAAAAABRAAAAAAAABJEEAAAAAJAAAAAABAEAAxAhIEA=</HashCode>
       <FileName>Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -152,7 +156,7 @@
   <Class Name="INSAttack.Tile">
     <Position X="1.5" Y="2.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tile.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -172,14 +176,6 @@
   </Class>
   <Class Name="INSAttack.AmphiTile">
     <Position X="0.75" Y="6.25" Width="1.5" />
-    <InheritanceLine Type="INSAttack.Tile" ManuallyRouted="true">
-      <Path>
-        <Point X="2.625" Y="3.853" />
-        <Point X="2.625" Y="5.917" />
-        <Point X="1.5" Y="5.917" />
-        <Point X="1.5" Y="6.25" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AmphiTile.cs</FileName>
@@ -187,14 +183,6 @@
   </Class>
   <Class Name="INSAttack.OutdoorTile">
     <Position X="3" Y="6.25" Width="1.5" />
-    <InheritanceLine Type="INSAttack.Tile" ManuallyRouted="true">
-      <Path>
-        <Point X="2.625" Y="3.853" />
-        <Point X="2.625" Y="5.917" />
-        <Point X="3.75" Y="5.917" />
-        <Point X="3.75" Y="6.25" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>OutdoorTile.cs</FileName>
@@ -248,6 +236,7 @@
     <Position X="4.25" Y="7.75" Width="2" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
       <HashCode>AgQAAAAAAAAAAAAAgAAEAAAAAAAAAIAAAABAAQAAAAA=</HashCode>
