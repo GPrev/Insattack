@@ -7,6 +7,10 @@ namespace INSAttack
 {
     public abstract class Tile
     {
-        private Dictionary<Department, int> m_costs;
+        protected Dictionary<Dept, int> m_costs;
+
+        public int getcost(Dept department){
+            return m_costs[department];
+        }
     }
 }

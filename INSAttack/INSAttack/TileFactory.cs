@@ -9,7 +9,10 @@ namespace INSAttack
     {
         public TileFactory()
         {
-
+            m_tdTile = new TDTile();
+            m_infoTile = new INFOTile();
+            m_amphiTile = new AmphiTile();
+            m_outdoorTile = new OutdoorTile();
         }
 
         private TDTile m_tdTile;

@@ -21,18 +21,18 @@ namespace INSAttack
             get { return m_board; }
             set { m_board = value; }
         }
-
-        public void move()
-        {
-            throw new System.NotImplementedException();
-        }
-
+        
         private List<Player> m_players;
 
         public List<Player> Players
         {
             get { return m_players; }
             set { m_players = value; }
+        }
+
+        public void move()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

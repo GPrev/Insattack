@@ -62,5 +62,12 @@ namespace INSAttack
         {
             m_player = player;
         }
+
+
+        //return true if the target is an ally overthise false.
+        public bool ally(Unit cible)
+        {
+            return m_player == cible.m_player;
+        }
     }
 }
