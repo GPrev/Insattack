@@ -22,7 +22,7 @@ namespace INSAttackTests
         }
 
         [TestMethod]
-        public void TileFactoryUnityTest()
+        public void Tile_FactoryUnityTest()
         {
             Tile tile1 = m_tileFactory.InfoTile;
             Tile tile2 = m_tileFactory.InfoTile;
@@ -42,7 +42,7 @@ namespace INSAttackTests
         }
 
         [TestMethod]
-        public void TileCostTests()
+        public void Tile_CostTests()
         {
             int cost = m_tileFactory.InfoTile.getcost(Dept.INFO);
             Assert.AreEqual(cost, 1);
