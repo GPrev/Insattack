@@ -24,7 +24,7 @@ namespace INSAttackTests
         }
 
         [TestMethod]
-        public void MovementTest()
+        public void BoardMovementTest()
         {
             Unit u1 = new Unit(m_p1);
             Unit u2 = new Unit(m_p1);

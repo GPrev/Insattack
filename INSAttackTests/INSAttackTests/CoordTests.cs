@@ -20,14 +20,14 @@ namespace INSAttackTests
         }
         
         [TestMethod]
-        public void EqualityTest()
+        public void CoordEqualityTest()
         {
             Assert.AreEqual(new Coord(1, 1), new Coord(1, 1));
             Assert.AreNotEqual(new Coord(1, 1), new Coord(2, 1));
         }
 
         [TestMethod]
-        public void AdjacencyTest()
+        public void CoordAdjacencyTest()
         {
             Coord c1 = new Coord(1, 1); //"odd" tile
 

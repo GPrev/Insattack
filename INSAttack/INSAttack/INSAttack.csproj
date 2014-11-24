@@ -16,10 +16,11 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>C:\Users\gprevost\Desktop\INSAttackBuild\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -52,8 +53,8 @@
     <Compile Include="GMA.cs" />
     <Compile Include="INFO.cs" />
     <Compile Include="INFOTile.cs" />
-    <Compile Include="Jeu.cs" />
-    <Compile Include="Joueur.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="NewGameBuilder.cs" />
     <Compile Include="NormalBoardStrategy.cs" />
     <Compile Include="OutdoorTile.cs" />

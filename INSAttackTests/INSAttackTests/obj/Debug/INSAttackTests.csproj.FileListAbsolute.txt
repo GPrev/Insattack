@@ -10,3 +10,10 @@ C:\Users\gprevost\Desktop\INSAttackBuild\INSAttackTests.pdb
 F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.csprojResolveAssemblyReference.cache
 F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.dll
 F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.pdb
+C:\Users\ishamael\Documents\GitHub\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.csprojResolveAssemblyReference.cache
+C:\Users\ishamael\Documents\GitHub\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.dll
+C:\Users\ishamael\Documents\GitHub\Insattack\INSAttackTests\INSAttackTests\obj\Debug\INSAttackTests.pdb
+C:\Users\ishamael\Documents\GitHub\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttackTests.dll
+C:\Users\ishamael\Documents\GitHub\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttackTests.pdb
+C:\Users\ishamael\Documents\GitHub\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttack.dll
+C:\Users\ishamael\Documents\GitHub\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttack.pdb
