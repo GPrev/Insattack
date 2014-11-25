@@ -64,5 +64,17 @@ namespace INSAttackTests
             Assert.AreEqual(0, m_u1.getHealthRatio());
             Assert.IsTrue(m_u1.isDead());
         }
+
+        [TestMethod]
+        public void Unit_InitTest()
+        {
+            m_u1.init(1, 2, 3, 4);
+            Assert.AreEqual(1, m_u1.MaxMovement);
+            Assert.AreEqual(1, m_u1.Movement);
+            Assert.AreEqual(2, m_u1.MaxLife);
+            Assert.AreEqual(2, m_u1.Life);
+            Assert.AreEqual(3, m_u1.Attack);
+            Assert.AreEqual(4, m_u1.Defense);
+        }
     }
 }

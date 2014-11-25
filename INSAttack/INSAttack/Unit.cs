@@ -63,6 +63,16 @@ namespace INSAttack
             m_player = player;
         }
 
+        public void init(int movement, int life, int attack=1, int defense=1)
+        {
+            m_maxMovement = movement;
+            m_movement = m_maxMovement;
+            m_maxLife = life;
+            m_life = m_maxLife;
+            m_attack = attack;
+            m_defense = defense;
+        }
+
         //return true if the target is an ally overthise false.
         public bool isAlly(Unit cible)
         {
