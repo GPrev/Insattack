@@ -1,0 +1,4 @@
+H:\Info\Insattack\MapDataModel\bin\Debug\MapDataModel.dll
+H:\Info\Insattack\MapDataModel\bin\Debug\MapDataModel.pdb
+H:\Info\Insattack\MapDataModel\obj\Debug\MapDataModel.dll
+H:\Info\Insattack\MapDataModel\obj\Debug\MapDataModel.pdb

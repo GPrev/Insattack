@@ -40,9 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AmphiTile.cs" />
     <Compile Include="BoardStrategy.cs" />
-    <Compile Include="Coord.cs" />
     <Compile Include="DemoBoardStrategy.cs" />
     <Compile Include="Departement.cs" />
     <Compile Include="EII.cs" />
@@ -52,24 +50,29 @@
     <Compile Include="GC.cs" />
     <Compile Include="GMA.cs" />
     <Compile Include="INFO.cs" />
-    <Compile Include="INFOTile.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="NewGameBuilder.cs" />
     <Compile Include="NormalBoardStrategy.cs" />
-    <Compile Include="OutdoorTile.cs" />
     <Compile Include="Board.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SGM.cs" />
     <Compile Include="SmallBoardStrategy.cs" />
     <Compile Include="SRC.cs" />
-    <Compile Include="TDTile.cs" />
-    <Compile Include="Tile.cs" />
-    <Compile Include="TileFactory.cs" />
     <Compile Include="Unit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MapDataModel\MapDataModel.csproj">
+      <Project>{cd730347-182e-4c9f-9357-8b1dd8e8e23d}</Project>
+      <Name>MapDataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MapGeneratorWrapper\MapGeneratorWrapper.vcxproj">
+      <Project>{9f2c43a0-e942-47ee-8a81-9383f27885f4}</Project>
+      <Name>MapGeneratorWrapper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

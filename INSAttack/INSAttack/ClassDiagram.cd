@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Comment CommentText="Flyweight (Tile)">
-    <Position X="0.677" Y="0.813" Height="0.406" Width="1.106" />
+  <Comment CommentText="Flyweight (Tile)&#xD;&#xA;Gone to DataModel">
+    <Position X="0.677" Y="0.813" Height="0.896" Width="1.283" />
   </Comment>
   <Comment CommentText="Builder (Game)">
     <Position X="9.792" Y="0.5" Height="0.323" Width="1.065" />
@@ -47,7 +47,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAKAACAAAAgAAAAAAAAACAAAABAAAEACAAAAAAAAAA=</HashCode>
+      <HashCode>AAACACCAABAgAAAAAAAAACAAAAAAAAEACAAAAAAAAAA=</HashCode>
       <FileName>Board.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -98,94 +98,6 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameLoader.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="INSAttack.TileFactory">
-    <Position X="2" Y="0.5" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <AssociationLine Name="m_tdTile" Type="INSAttack.TDTile" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="2" Y="2.008" />
-        <Point X="1.094" Y="2.008" />
-        <Point X="1.094" Y="4.5" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-0.411" Y="0.518" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="m_infoTile" Type="INSAttack.INFOTile" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="3.5" Y="1.853" />
-        <Point X="4.156" Y="1.853" />
-        <Point X="4.156" Y="4.5" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="m_amphiTile" Type="INSAttack.AmphiTile" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="2" Y="1.474" />
-        <Point X="0.5" Y="1.474" />
-        <Point X="0.5" Y="5.677" />
-        <Point X="1.125" Y="5.677" />
-        <Point X="1.125" Y="6.25" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-0.255" Y="0.31" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="m_outdoorTile" Type="INSAttack.OutdoorTile" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="3.5" Y="1.436" />
-        <Point X="4.875" Y="1.436" />
-        <Point X="4.875" Y="6.749" />
-        <Point X="4.5" Y="6.749" />
-      </Path>
-    </AssociationLine>
-    <TypeIdentifier>
-      <HashCode>AIAAAAACAAAAAAAAAAAAAAEAAAAABAAAgAAABIAAIAA=</HashCode>
-      <FileName>TileFactory.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="m_tdTile" />
-      <Field Name="m_infoTile" />
-      <Field Name="m_amphiTile" />
-      <Field Name="m_outdoorTile" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="INSAttack.Tile">
-    <Position X="1.5" Y="2.75" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AQAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Tile.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="INSAttack.TDTile">
-    <Position X="0.75" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>TDTile.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="INSAttack.INFOTile">
-    <Position X="3" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>INFOTile.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="INSAttack.AmphiTile">
-    <Position X="0.75" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>AmphiTile.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="INSAttack.OutdoorTile">
-    <Position X="3" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>OutdoorTile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="INSAttack.BoardStrategy">
@@ -296,16 +208,6 @@
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAAAA=</HashCode>
       <FileName>SRC.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="INSAttack.Coord">
-    <Position X="13.25" Y="2" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAQgAEAIAAAQAAAAAAYAA=</HashCode>
-      <FileName>Coord.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="INSAttack.Factory&lt;T&gt;">

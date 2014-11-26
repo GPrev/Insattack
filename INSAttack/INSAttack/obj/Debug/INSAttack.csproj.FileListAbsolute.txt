@@ -14,3 +14,8 @@ C:\Users\ishamael\Documents\GitHub\Insattack\INSAttack\INSAttack\bin\Debug\INSAt
 C:\Users\ishamael\Documents\GitHub\Insattack\INSAttack\INSAttack\bin\Debug\INSAttack.pdb
 F:\Gabriel\Programmation\Insattack\INSAttack\INSAttack\bin\Debug\INSAttack.dll
 F:\Gabriel\Programmation\Insattack\INSAttack\INSAttack\bin\Debug\INSAttack.pdb
+H:\Info\Insattack\INSAttack\INSAttack\obj\Debug\INSAttack.csprojResolveAssemblyReference.cache
+H:\Info\Insattack\INSAttack\INSAttack\bin\Debug\MapDataModel.dll
+H:\Info\Insattack\INSAttack\INSAttack\bin\Debug\MapGeneratorWrapper.dll
+H:\Info\Insattack\INSAttack\INSAttack\bin\Debug\MapDataModel.pdb
+H:\Info\Insattack\INSAttack\INSAttack\bin\Debug\MapGeneratorWrapper.pdb

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MapDataModel;
 
 namespace INSAttack
 {
-    public enum Dept { SGM, EII, GC, INFO, SRC, GMA, NB_DEPT }
     public abstract class Department : Factory<object>
     {
         private Player m_player;

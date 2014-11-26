@@ -2,27 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MapDataModel;
 
 namespace INSAttack
 {
     public class Board
     {
-        private Dictionary<INSAttack.Coord, INSAttack.Tile> m_tileTable;
+        private MapDataModel.MapData m_map;
+
+        public MapDataModel.MapData Map
+        {
+            get { return m_map; }
+            set { m_map = value; }
+        }
 
         public Board()
         {
-            m_tileTable = new Dictionary<Coord, Tile>();
+            m_map = new MapData();
             m_unitTable = new Dictionary<Coord,List<Unit>>();
         }
+        private Dictionary<Coord, List<INSAttack.Unit>> m_unitTable;
 
-        public Dictionary<Coord, Tile> TileTable
-        {
-            get { return m_tileTable; }
-            set { m_tileTable = value; }
-        }
-        private Dictionary<INSAttack.Coord, List<INSAttack.Unit>> m_unitTable;
-
-        public Dictionary<INSAttack.Coord, List<INSAttack.Unit>> UnitTable
+        public Dictionary<Coord, List<INSAttack.Unit>> UnitTable
         {
             get { return m_unitTable; }
             set { m_unitTable = value; }
