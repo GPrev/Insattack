@@ -21,3 +21,5 @@ F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAt
 F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttackTests.pdb
 F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttack.dll
 F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttack.pdb
+H:\Info\Insattack\INSAttackTests\INSAttackTests\bin\Debug\MapDataModel.dll
+H:\Info\Insattack\INSAttackTests\INSAttackTests\bin\Debug\MapDataModel.pdb
