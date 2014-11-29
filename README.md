@@ -7,13 +7,14 @@
  
 ## Répartition des tâches
 
-| Qui | Quoi |
-|---|---|
-| Baptiste | Tile et TileFactory |
-| Baptiste | Game et GameBuilder |
-| Gabriel | Board |
-| Gabriel | Unit |
-| Gabriel | Player |
+| Qui | Quoi | Avancement |
+|---|---|---|
+| Baptiste | Tile et TileFactory | ? |
+| Baptiste | Game et GameBuilder | ? |
+| Gabriel | Board | Fini ? |
+| Gabriel | Unit | Fini ? |
+| Gabriel | Player | Fini ? |
+| Gabriel | MapGenerator et Wrapper | Fini |
 
 ## Les différents projets
 
