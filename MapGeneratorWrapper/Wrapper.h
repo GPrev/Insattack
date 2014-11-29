@@ -9,10 +9,12 @@ namespace Wrapper {
 	public ref class WrapperMapGenerator {
 	private:
 		MapGenerator* MapGenerator;
+
+		MapDataModel::MapData^ translate(Map& m);
 	public:
 		WrapperMapGenerator() { MapGenerator = MapGenerator_new(); }
 		~WrapperMapGenerator() { MapGenerator_delete(MapGenerator); }
-		MapDataModel::MapData^ computeFoo() { return gcnew MapDataModel::MapData(); }//MapGenerator->computeFoo(); }
+		MapDataModel::MapData^ makeMap(int size, int nbPlayers, int nbAmphiTiles, int nbTDTiles, int nbInfoTiles) { return translate(MapGenerator_makeMap(MapGenerator, size, nbPlayers, nbAmphiTiles, nbTDTiles, nbInfoTiles)); }
 	};
 }
 #endif

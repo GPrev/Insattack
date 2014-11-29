@@ -19,3 +19,7 @@ H:\Info\Insattack\INSAttack\INSAttack\bin\Debug\MapDataModel.dll
 H:\Info\Insattack\INSAttack\INSAttack\bin\Debug\MapGeneratorWrapper.dll
 H:\Info\Insattack\INSAttack\INSAttack\bin\Debug\MapDataModel.pdb
 H:\Info\Insattack\INSAttack\INSAttack\bin\Debug\MapGeneratorWrapper.pdb
+F:\Gabriel\Programmation\Insattack\INSAttack\INSAttack\bin\Debug\MapDataModel.dll
+F:\Gabriel\Programmation\Insattack\INSAttack\INSAttack\bin\Debug\MapGeneratorWrapper.dll
+F:\Gabriel\Programmation\Insattack\INSAttack\INSAttack\bin\Debug\MapDataModel.pdb
+F:\Gabriel\Programmation\Insattack\INSAttack\INSAttack\bin\Debug\MapGeneratorWrapper.pdb

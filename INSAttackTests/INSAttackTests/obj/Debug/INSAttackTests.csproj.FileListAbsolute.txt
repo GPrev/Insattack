@@ -23,3 +23,7 @@ F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAt
 F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\INSAttack.pdb
 H:\Info\Insattack\INSAttackTests\INSAttackTests\bin\Debug\MapDataModel.dll
 H:\Info\Insattack\INSAttackTests\INSAttackTests\bin\Debug\MapDataModel.pdb
+F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\MapDataModel.dll
+F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\MapDataModel.pdb
+F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\MapGeneratorWrapper.dll
+F:\Gabriel\Programmation\Insattack\INSAttackTests\INSAttackTests\bin\Debug\MapGeneratorWrapper.pdb

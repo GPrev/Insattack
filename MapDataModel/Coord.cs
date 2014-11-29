@@ -42,6 +42,18 @@ namespace MapDataModel
             return m_x == p.X && m_y == p.Y;
         }
 
+        // Overload the conversion from Coord to Tuple<int,int>:
+        public static implicit operator Tuple<int, int>(Coord c)
+        {
+            return new Tuple<int, int>(c.X, c.Y);
+        }
+
+        // Overload the conversion to Coord from Tuple<int,int>:
+        public static implicit operator Coord(Tuple<int, int> t)
+        {
+            return new Coord(t.Item1, t.Item2);
+        }
+
         public bool exists() //returns false if in the negative range
         {
             return m_x >= 0 && m_y >= 0;

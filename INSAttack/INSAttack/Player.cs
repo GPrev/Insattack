@@ -37,6 +37,7 @@ namespace INSAttack
         {
             return m_id == p.Id;
         }
+
         public static bool operator ==(Player a, Player b)
         {
             // If both are null, or both are same instance, return true.
@@ -58,6 +59,11 @@ namespace INSAttack
         public static bool operator !=(Player a, Player b)
         {
             return !(a == b);
+        }
+
+        public override int GetHashCode()
+        {
+            return m_id;
         }
     }
 }

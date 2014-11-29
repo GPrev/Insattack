@@ -43,5 +43,28 @@ namespace MapDataModel
             get { return m_outdoorTile; }
             //set { m_outdoorTile = value; }
         }
+
+        private static  TileFactory m_instance;
+
+        public static TileFactory Instance
+        {
+            get { if(m_instance == null) m_instance = new TileFactory(); return m_instance; }
+            set { m_instance = value; }
+        }
+
+        public Tile getTile(int id) //would be better using a hashmap
+        {
+            switch(id)
+            {
+                case 1:
+                    return AmphiTile;
+                case 2:
+                    return TdTile;
+                case 3:
+                    return InfoTile;
+                default: //0
+                    return OutdoorTile;
+            }
+        }
     }
 }
