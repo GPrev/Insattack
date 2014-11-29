@@ -14,6 +14,9 @@
 *.psd
 INSAttack/INSAttack.v12.suo
 
+#VisualStudio
+*.cache
+
 #WTF
 *.sdf
 *.opensdf
