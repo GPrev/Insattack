@@ -10,6 +10,13 @@ namespace INSAttack
     {
         /// <summary>
         /// </summary>
+        
+
+        public GMA(Player player) : base(player)
+        {
+        }
+
+       
         private static Department m_instance;
 
         public static Department Instance

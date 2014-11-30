@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MapDataModel;
 
 namespace INSAttack
 {
@@ -58,9 +59,18 @@ namespace INSAttack
             set { m_player = value; }
         }
 
-        public Unit(INSAttack.Player player)
+        private Dept m_dept;
+
+        public Dept Dept
+        {
+            get { return m_dept; }
+            //set { m_dept = value; }
+        }
+
+        public Unit(INSAttack.Player player, Dept dept)
         {
             m_player = player;
+            m_dept = dept;
         }
 
         public void init(int movement, int life, int attack=1, int defense=1)

@@ -8,6 +8,16 @@ namespace INSAttack
 {
     public abstract class Department : Factory<object>
     {
+
+        public Department(Player player)
+        {
+            m_player = player;
+        }
+
+        public Department()
+        {
+        }
+
         private Player m_player;
 
         public Player Player
@@ -18,7 +28,7 @@ namespace INSAttack
 
         public object make()
         {
-            return new Unit(m_player);
+            return new Unit(m_player, (Dept)this);
         }
 
         public override int GetHashCode()
