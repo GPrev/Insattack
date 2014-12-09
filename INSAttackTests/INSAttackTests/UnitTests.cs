@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using INSAttack;
+using MapDataModel;
 
 namespace INSAttackTests
 {
@@ -17,8 +18,8 @@ namespace INSAttackTests
         {
             m_p1 = new Player();
             m_p2 = new Player();
-            m_u1 = new Unit(m_p1);
-            m_u2 = new Unit(m_p2);
+            m_u1 = new Unit(m_p1, Dept.INFO);
+            m_u2 = new Unit(m_p2, Dept.INFO);
             m_u1.MaxMovement = 2;
             m_u1.resetMovement();
             m_u2.MaxMovement = 2;

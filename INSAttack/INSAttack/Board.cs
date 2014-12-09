@@ -21,6 +21,20 @@ namespace INSAttack
             m_map = new MapData();
             m_unitTable = new Dictionary<Coord,List<Unit>>();
         }
+
+        public Board(MapData map)
+        {
+            m_map = map;
+            m_unitTable = new Dictionary<Coord, List<Unit>>();
+        }
+
+        private int m_nbTurns;
+        public int NbTurns
+        {
+            get { return m_nbTurns; }
+            set { m_nbTurns = value; }
+        }
+
         private Dictionary<Coord, List<INSAttack.Unit>> m_unitTable;
 
         public Dictionary<Coord, List<INSAttack.Unit>> UnitTable

@@ -6,7 +6,7 @@ using MapDataModel;
 
 namespace INSAttack
 {
-    public abstract class Department : Factory<object>
+    public abstract class Department : Factory<Unit>
     {
 
         public Department(Player player)
@@ -18,7 +18,7 @@ namespace INSAttack
         {
         }
 
-        private Player m_player;
+        protected Player m_player;
 
         public Player Player
         {
@@ -26,7 +26,7 @@ namespace INSAttack
             set { m_player = value; }
         }
 
-        public object make()
+        public virtual Unit make()
         {
             return new Unit(m_player, (Dept)this);
         }

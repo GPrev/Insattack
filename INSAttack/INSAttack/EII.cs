@@ -23,6 +23,11 @@ namespace INSAttack
             set { EII.m_instance = value; }
         }
 
+        public override Unit make()
+        {
+            return new Unit(m_player, (Dept)this);
+        }
+
         // Overload the conversion from Department to Dept:
         public static implicit operator Dept(EII x)
         {

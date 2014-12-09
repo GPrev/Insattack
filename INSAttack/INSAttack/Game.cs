@@ -15,6 +15,18 @@ namespace INSAttack
             get { return m_activePlayer; }
             set { m_activePlayer = value; }
         }
+
+        private int m_placeActivePlayer;
+
+        private int m_nbPlayers;
+
+        public int NbPlayer
+        {
+            get { return m_nbPlayers; }
+            //set { m_nbPlayers = value; }
+        }
+
+
         private Board m_board;
 
         public Board Board
@@ -32,44 +44,66 @@ namespace INSAttack
         }
 
         
-        public Game()
+        public Game(int nbPlayers)
         {
-            
-            //throw new System.NotImplementedException();
-
+            m_nbPlayers = nbPlayers;
+            m_players = new List<Player>();
+            m_placeActivePlayer = 0;
         }
 
 
         public bool move(Unit u, Coord dest)
         {
-            throw new NotImplementedException();
 
-            //vérifier l'existence de l'unité
+            //check the existence of the unit
             Coord coord = m_board.find(u);
-            if (coord == Coord.nowhere) return false;
+            if (!coord.exists()) return false;
+            if (coord.Equals(dest)) return true;
 
-            //vérifier les pm / validité du mouvement
-            int costDiplacement = m_board.Map.TileTable[coord].getcost(u.Dept);
+            //check the validity of the move
+            int costDisplacement = m_board.Map.TileTable[coord].getcost(u.Dept);
             if (!Coord.areAdjacent(coord, dest)) return false;
-            if (costDiplacement > u.Movement) return false;
+            if (costDisplacement > u.Movement) return false;
 
-            //tester la présence d'unité ennemie sur la case de destination
-            List<Unit> UnitsAtDest = m_board.UnitTable[dest];
-
-            //Move the unit if there is no unit on its destination or if the tile is possess by uni's ally
-            if (UnitsAtDest == null || u.isAlly(UnitsAtDest.First()))
+            //Look for the presence of unit on the destination
+            List<Unit> UnitsAtDest;
+            try
             {
-                return m_board.moveUnit(u, dest);
+                UnitsAtDest = m_board.UnitTable[dest];
             }
-            //Resolve the confrontation
-            
-            //rend vrai si le mouvement est effectué
+            catch (KeyNotFoundException)
+            {
+                UnitsAtDest = null;
+            }
+
+            //Move the unit if there is no unit on its destination or if the tile is possess by unit's ally
+            if (UnitsAtDest == null || !UnitsAtDest.Any() ||u.isAlly(UnitsAtDest.First()))
+            {
+                if (u.tryAndUseMovement(costDisplacement))
+                {
+                    return m_board.moveUnit(u, dest);
+                }
+                else return false;
+            }
+
+            //Resolve the battle if there is enemy's unit
+            Unit target = choseTarget(UnitsAtDest);
+            if (u.tryAndUseMovement(costDisplacement))
+            {
+                if (confront(u, target))
+                {
+                    return m_board.moveUnit(u, dest);
+                }
+                else return false;
+            }
             return false;
+
         }
 
-        public void endOfTurn()
+        
+        //return true if the gamed is finished
+        public bool endOfTurn()
         {
-            throw new System.NotImplementedException();
             //reset the pm of all the units
             foreach (var l in m_board.UnitTable)
             {
@@ -81,9 +115,54 @@ namespace INSAttack
             //Apply the effects of special cases (no one for the moment)
 
             //Check if the game is finished
+            m_board.NbTurns--;
+            if (m_board.NbTurns == 0) return true;
 
             //change the active player
-            m_activePlayer = m_players[m_activePlayer.Id];
+            int nextPlayer = (m_placeActivePlayer + 1) % m_nbPlayers;
+            m_activePlayer = m_players[nextPlayer];
+            return false;
+        }
+
+        //Chose one of the unit with the more HP in the list
+        private Unit choseTarget(List<Unit> targets)
+        {
+            Unit target = targets.First();
+            foreach (var u in targets)
+            {
+                if(u.Defense > target.Defense) target = u;
+            }
+            return target;
+        }
+
+        //return true if the target is dead
+        private bool confront(Unit u, Unit target)
+        {
+            //we calculate the number of turns of the battle
+            int maxHP = Math.Max(u.Life, target.Life);
+            Random rand = new Random();
+            int nbTurns = rand.Next() % (maxHP + 2);
+
+            float attack;
+            float defense;
+            int chancesOfLose; //Chance of the attacker to lose the turn
+            for (int i = 0; i < nbTurns; i++)
+            {
+                attack = (float)u.Attack * u.getHealthRatio();
+                defense = (float)target.Defense * target.getHealthRatio();
+                chancesOfLose = 50 + (int)((attack / defense) * 50);
+                if (rand.Next() % 100 <= chancesOfLose)
+                {
+                    u.takeHit(1);
+                }
+                else
+                {
+                    target.takeHit(1);
+                }
+            }
+
+            if (target.isDead()) return true;
+           return false;
         }
     }
 }

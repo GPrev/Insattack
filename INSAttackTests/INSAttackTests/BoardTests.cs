@@ -27,8 +27,8 @@ namespace INSAttackTests
         [TestMethod]
         public void Board_MovementTest()
         {
-            Unit u1 = new Unit(m_p1);
-            Unit u2 = new Unit(m_p1);
+            Unit u1 = new Unit(m_p1, Dept.INFO);
+            Unit u2 = new Unit(m_p1, Dept.INFO);
 
             Assert.IsTrue(m_board.addUnit(new Coord(1, 1), u1));    //u1 -> (1,1)
             Assert.AreEqual(m_board.find(u1), new Coord(1, 1));
