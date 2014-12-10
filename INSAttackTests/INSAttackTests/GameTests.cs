@@ -99,6 +99,9 @@ namespace INSAttackTests
             Unit target = m_departments[1].make();
             m_game.Board.addUnit(dest, target);
             target.init(2, 4, 4, 3);
+            Unit target2 = m_departments[1].make();
+            m_game.Board.addUnit(dest, target);
+            target2.init(2, 5, 4, 4);
             bool moved = m_game.move(unit, dest);
             Assert.AreEqual(moved, target.isDead());
             if (moved)
@@ -110,8 +113,6 @@ namespace INSAttackTests
                 Assert.AreEqual(coord, m_game.Board.find(unit));
             }
 
-            Unit target2 = m_departments[1].make();
-            m_game.Board.addUnit(dest, target);
 
             Assert.AreEqual(4, target.Life);
         }

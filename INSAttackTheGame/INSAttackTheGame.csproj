@@ -71,6 +71,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MapView.cs" />
     <Compile Include="PlayerInfo.xaml.cs">
       <DependentUpon>PlayerInfo.xaml</DependentUpon>
     </Compile>

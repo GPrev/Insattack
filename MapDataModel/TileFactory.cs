@@ -7,7 +7,7 @@ namespace MapDataModel
 {
     public class TileFactory
     {
-        public TileFactory()
+        protected TileFactory()
         {
             m_tdTile = new TDTile();
             m_infoTile = new INFOTile();
@@ -49,7 +49,7 @@ namespace MapDataModel
         public static TileFactory Instance
         {
             get { if(m_instance == null) m_instance = new TileFactory(); return m_instance; }
-            set { m_instance = value; }
+            //set { m_instance = value; }
         }
 
         public Tile getTile(int id) //would be better using a hashmap

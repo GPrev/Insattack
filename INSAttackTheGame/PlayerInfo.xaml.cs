@@ -29,7 +29,7 @@ namespace INSAttackTheGame
             set { m_player = value; }
         }
 
-        public string Name
+        public string PlayerName
         {
             get { throw new NotImplementedException(); }
             //set {}
@@ -51,7 +51,7 @@ namespace INSAttackTheGame
 
         public void update()
         {
-            m_nameLabel.Content = Name;
+            m_nameLabel.Content = PlayerName;
             m_nbPoint.Content = "Points : " + NbPoints;
             m_nbUnits.Content = "Nb Units : " + NbUnits;
         }

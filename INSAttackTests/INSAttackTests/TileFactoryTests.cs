@@ -8,12 +8,10 @@ namespace INSAttackTests
     [TestClass]
     public class TileFactoryTests
     {
-        TileFactory m_tileFactory;
 
         [TestInitialize]
         public void init()
         {
-            m_tileFactory = new TileFactory();
         }
 
         [TestCleanup]
@@ -25,27 +23,27 @@ namespace INSAttackTests
         [TestMethod]
         public void TileFactory_UnityTest()
         {
-            Tile tile1 = m_tileFactory.InfoTile;
-            Tile tile2 = m_tileFactory.InfoTile;
+            Tile tile1 = TileFactory.Instance.InfoTile;
+            Tile tile2 = TileFactory.Instance.InfoTile;
             Assert.AreEqual(tile1, tile2);
 
-            tile1 = m_tileFactory.TdTile;
-            tile2 = m_tileFactory.TdTile;
+            tile1 = TileFactory.Instance.TdTile;
+            tile2 = TileFactory.Instance.TdTile;
             Assert.AreEqual(tile1, tile2);
 
-            tile1 = m_tileFactory.OutdoorTile;
-            tile2 = m_tileFactory.OutdoorTile;
+            tile1 = TileFactory.Instance.OutdoorTile;
+            tile2 = TileFactory.Instance.OutdoorTile;
             Assert.AreEqual(tile1, tile2);
 
-            tile1 = m_tileFactory.AmphiTile;
-            tile2 = m_tileFactory.AmphiTile;
+            tile1 = TileFactory.Instance.AmphiTile;
+            tile2 = TileFactory.Instance.AmphiTile;
             Assert.AreEqual(tile1, tile2);
         }
 
         [TestMethod]
         public void TileFactory_CostTests()
         {
-            int cost = m_tileFactory.InfoTile.getcost(Dept.INFO);
+            int cost = TileFactory.Instance.InfoTile.getcost(Dept.INFO);
             Assert.AreEqual(cost, 1);
         }
     }

@@ -62,18 +62,16 @@ Struct MapDataModel.Dept: AutoLayout, AnsiClass, Class, Public, Sealed
     MapDataModel.Dept GMA = 5 : Public, Static, Literal, HasDefault
     MapDataModel.Dept NB_DEPT = 6 : Public, Static, Literal, HasDefault
 Class MapDataModel.TileFactory: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Properties:
     MapDataModel.TDTile TdTile 'get ' : 
     MapDataModel.INFOTile InfoTile 'get ' : 
     MapDataModel.AmphiTile AmphiTile 'get ' : 
     MapDataModel.OutdoorTile OutdoorTile 'get ' : 
-    MapDataModel.TileFactory Instance 'get set' : 
+    MapDataModel.TileFactory Instance 'get ' : 
   Methods:
     get_TdTile(): PrivateScope, Public, HideBySig, SpecialName
     get_InfoTile(): PrivateScope, Public, HideBySig, SpecialName
     get_AmphiTile(): PrivateScope, Public, HideBySig, SpecialName
     get_OutdoorTile(): PrivateScope, Public, HideBySig, SpecialName
     get_Instance(): PrivateScope, Public, Static, HideBySig, SpecialName
-    set_Instance(TileFactory): PrivateScope, Public, Static, HideBySig, SpecialName
     getTile(Int32): PrivateScope, Public, HideBySig
