@@ -35,5 +35,10 @@ namespace MapDataModel
             m_tileTable = new Dictionary<Coord, Tile>();
             m_startingPos = new List<Coord>();
         }
+
+        public bool isValid(Coord c) //returns true if c is inside the map
+        {
+            return c.X >= 0 && c.Y >= 0 && c.X < m_size && c.Y < m_size;
+        }
     }
 }

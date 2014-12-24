@@ -10,7 +10,7 @@
                 <local:PlayerInfo></local:PlayerInfo>
             </StackPanel>
             <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-                <local:MapView x:Name ="m_mapView" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <local:MapView x:Name ="m_mapView" VerticalAlignment="Top" HorizontalAlignment="Left" MouseLeftButtonDown="onMapViewClick"/>
             </ScrollViewer>
         </DockPanel>
     </Grid>

@@ -1,5 +1,5 @@
 ImageRuntimeVersion: v4.0.30319
-Assembly MapDataModel, Version=1.0.*, Culture=Langue indifférente (Pays indifférent): 
+Assembly MapDataModel, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
 Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
@@ -44,6 +44,7 @@ Class MapDataModel.MapData: AutoLayout, AnsiClass, Class, Public, BeforeFieldIni
     set_Size(Int32): PrivateScope, Public, HideBySig, SpecialName
     get_TileTable(): PrivateScope, Public, HideBySig, SpecialName
     set_TileTable(Dictionary`2): PrivateScope, Public, HideBySig, SpecialName
+    isValid(Coord): PrivateScope, Public, HideBySig
 Class MapDataModel.OutdoorTile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :MapDataModel.Tile
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

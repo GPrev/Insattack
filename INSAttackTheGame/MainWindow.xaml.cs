@@ -33,6 +33,11 @@ namespace INSAttackTheGame
             var map = wrapper.makeMap(10, 3, 5, 15, 10);
             m_mapView.init(map);
         }
+
+        private void onMapViewClick(object sender, MouseButtonEventArgs e)
+        {
+            m_mapView.onClick(sender, e);
+        }
     }
     
 }

@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
+using System.Windows.Input;
 using System.IO;
 
 namespace INSAttackTheGame
@@ -20,12 +21,27 @@ namespace INSAttackTheGame
         private const float tileHeight = 69;
 
         private Dictionary<Tile, ImageSource> m_tileImages;
+        ImageSource m_cursorImage;
 
         MapData m_map;
+        Coord m_cursorPos;
+
+        public Coord CursorPos
+        {
+            get { return m_cursorPos; }
+            set
+            {
+                if (m_map.isValid(value))
+                    m_cursorPos = value;
+                else
+                    unselect();
+            }
+        }
 
         public void init(MapData map)
         {
             m_map = map;
+            m_cursorPos = Coord.nowhere;
             loadImages();
             InvalidateMeasure();
             InvalidateVisual();
@@ -39,6 +55,10 @@ namespace INSAttackTheGame
                 y -= .5f;
             return new Tuple<float, float>(x * tileWidth, y * tileHeight);
         }
+        private Coord toCoords(float x, float y)
+        {
+            return toCoords(new Tuple<float, float>(x, y));
+        }
         private Coord toCoords(Tuple<float, float> t)
         {
             int doubleY = (int)(t.Item2 / (tileHeight / 2)) - 1; //coordinate y in half-tiles
@@ -46,9 +66,9 @@ namespace INSAttackTheGame
             //the 2 coords near the intersection
             int x1 = roughX;
             int x2 = roughX + 1;
-            int y1 = doubleY / 2;
-            int y2 = doubleY / 2;
-            if (doubleY % 2 != 0) //not between 2 tiles of the same line
+            int y1 = (doubleY+2) / 2 -1; // the +2 and -1 are used to counteract the fact that negative values are rounded up and not down when cast to int (and -1 is the only negative value that matters)
+            int y2 = (doubleY + 2) / 2 - 1; //same as above
+            if ((doubleY+2) % 2 != 0) //not between 2 tiles of the same line. +2 deals with negative values (-1 is the only one that matters)
             {
                 if (roughX % 2 == 0) //between an upper-left tile and a lower-right tile
                     y2++;
@@ -79,6 +99,8 @@ namespace INSAttackTheGame
                 m_tileImages.Add(TileFactory.Instance.AmphiTile, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Terrain/Amphi.png")));
                 m_tileImages.Add(TileFactory.Instance.TdTile, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Terrain/TD.png")));
                 m_tileImages.Add(TileFactory.Instance.InfoTile, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Terrain/INFO.png")));
+
+                m_cursorImage = BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/UI/Cursor.png"));
             }
             catch (Exception e)
             {
@@ -89,8 +111,12 @@ namespace INSAttackTheGame
         }
         private void DrawElementOnCanvas(Tile t, Coord pos, DrawingContext dc)
         {
+            DrawElementOnCanvas(m_tileImages[t], pos, dc);
+        }
+        private void DrawElementOnCanvas(ImageSource i, Coord pos, DrawingContext dc)
+        {
             Tuple<float, float> realPos = toPixels(pos);
-            dc.DrawImage(m_tileImages[t], new Rect(realPos.Item1 - tileWidth / 2, realPos.Item2 - tileHeight / 2, tileWidth, tileHeight));
+            dc.DrawImage(i, new Rect(realPos.Item1 - tileWidth / 2, realPos.Item2 - tileHeight / 2, tileWidth, tileHeight));
         }
 
         protected override void OnRender(DrawingContext drawingContext) //Draws the terrain on the canvas
@@ -100,8 +126,10 @@ namespace INSAttackTheGame
             {
                 foreach(var t in m_map.TileTable)
                 {
-                    DrawElementOnCanvas(t.Value, t.Key, drawingContext);
+                    DrawElementOnCanvas(t.Value, t.Key, drawingContext); //draws each tile
                 }
+                if(m_map.isValid(m_cursorPos))
+                    DrawElementOnCanvas(m_cursorImage, m_cursorPos, drawingContext); //draws the cursor
             }
         }
 
@@ -113,6 +141,17 @@ namespace INSAttackTheGame
             //else
             Tuple<float, float> lastPos = toPixels(new Coord(m_map.Size, m_map.Size)); //position of the last tile
             return new Size(lastPos.Item1, lastPos.Item1 + tileHeight * 1.5); //rough estimation of the size, always equal or slightly higher
+        }
+        
+        public void onClick(object sender, MouseButtonEventArgs e) //Called by the main window if clicked
+        {
+            CursorPos = toCoords((float)e.GetPosition(this).X, (float)e.GetPosition(this).Y); //updates the cursor position
+            InvalidateVisual(); //refreshes the display
+        }
+
+        public void unselect() //unselects selected tile if any
+        {
+            m_cursorPos = Coord.nowhere;
         }
     }
 }
