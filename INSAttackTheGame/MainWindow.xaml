@@ -5,13 +5,13 @@
         Title="INSAttack" Height="350" Width="525"
         Loaded="MainWindow_Loaded">
     <Grid>
-        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical">
-            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="200" >
-                <local:MapView x:Name ="m_mapView"> </local:MapView>
-            </ScrollViewer>
-            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
+        <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" LastChildFill="True" Margin="0">
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" DockPanel.Dock="Bottom">
                 <local:PlayerInfo></local:PlayerInfo>
             </StackPanel>
-        </StackPanel>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <local:MapView x:Name ="m_mapView"></local:MapView>
+            </ScrollViewer>
+        </DockPanel>
     </Grid>
 </Window>
