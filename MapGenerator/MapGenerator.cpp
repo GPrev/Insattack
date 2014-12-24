@@ -22,8 +22,8 @@ void MapGenerator::buildMap(int size, int nbPlayers, int nbAmphiTiles, int nbTDT
 	m_map.init(size, nbPlayers, nbAmphiTiles, nbTDTiles, nbInfoTiles);
 
 	//Generating tiles
-	int s2 = size*size;
-	int nbOutdoorTiles = s2 - (nbAmphiTiles + nbInfoTiles + nbTDTiles);
+	int remainingTot = size*size;
+	int nbOutdoorTiles = remainingTot - (nbAmphiTiles + nbInfoTiles + nbTDTiles);
 	std::map<int, int> remaining;
 	remaining[OUTDOOR] = nbOutdoorTiles;
 	remaining[AMPHI] = nbAmphiTiles;
@@ -33,29 +33,27 @@ void MapGenerator::buildMap(int size, int nbPlayers, int nbAmphiTiles, int nbTDT
 	{
 		for (int j = 0; j < size; ++j)
 		{
-			int tile = 0;
-			int rng;
-			do
+			int tile;
+
+			int rng = rand() % remainingTot;
+			if (rng < remaining[OUTDOOR])
+				tile = OUTDOOR;
+			else
 			{
-				rng = rand() % s2;
-				if (rng < nbOutdoorTiles)
-					tile = OUTDOOR;
+				rng -= remaining[OUTDOOR];
+				if (rng < remaining[AMPHI])
+					tile = AMPHI;
 				else
 				{
-					rng -= nbOutdoorTiles;
-					if (rng < nbAmphiTiles)
-						tile = AMPHI;
+					rng -= remaining[AMPHI];
+					if (rng < remaining[TD])
+						tile = TD;
 					else
-					{
-						rng -= nbAmphiTiles;
-						if (rng < nbTDTiles)
-							tile = TD;
-						else
-							tile = INFO;
-					}
+						tile = INFO;
 				}
-			} while (remaining[tile] <= 0);
+			}
 
+			remainingTot--;
 			remaining[tile]--;
 			m_map[i][j] = tile;
 		}
