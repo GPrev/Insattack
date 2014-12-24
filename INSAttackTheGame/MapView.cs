@@ -27,6 +27,7 @@ namespace INSAttackTheGame
         {
             m_map = map;
             loadImages();
+            InvalidateMeasure();
             InvalidateVisual();
         }
 
@@ -92,20 +93,26 @@ namespace INSAttackTheGame
             dc.DrawImage(m_tileImages[t], new Rect(realPos.Item1 - tileWidth / 2, realPos.Item2 - tileHeight / 2, tileWidth, tileHeight));
         }
 
-        protected override void OnRender(DrawingContext drawingContext)
+        protected override void OnRender(DrawingContext drawingContext) //Draws the terrain on the canvas
         {
             base.OnRender(drawingContext);
             if(m_tileImages != null) //if initialized correctly
             {
-                //DrawElementOnCanvas(TileFactory.Instance.OutdoorTile, new Coord(0, 0), drawingContext);
-                //DrawElementOnCanvas(TileFactory.Instance.AmphiTile, new Coord(1, 0), drawingContext);
-                //DrawElementOnCanvas(TileFactory.Instance.TdTile, new Coord(0, 1), drawingContext);
-                //DrawElementOnCanvas(TileFactory.Instance.InfoTile, new Coord(1, 1), drawingContext);
                 foreach(var t in m_map.TileTable)
                 {
                     DrawElementOnCanvas(t.Value, t.Key, drawingContext);
                 }
             }
+        }
+
+        protected override System.Windows.Size MeasureOverride(System.Windows.Size constraint) //Returns the measure of the canvas
+        {
+            base.MeasureOverride(constraint);
+            if(m_map == null) //if the map hasn't been initialized yet
+                return new System.Windows.Size(0,0);
+            //else
+            Tuple<float, float> lastPos = toPixels(new Coord(m_map.Size, m_map.Size)); //position of the last tile
+            return new Size(lastPos.Item1, lastPos.Item1 + tileHeight * 1.5); //rough estimation of the size, always equal or slightly higher
         }
     }
 }
