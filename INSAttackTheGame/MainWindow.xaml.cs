@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wrapper;
+using MapDataModel;
 
 namespace INSAttackTheGame
 {
@@ -26,7 +28,10 @@ namespace INSAttackTheGame
         }
         public void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            m_mapView.init();
+            //TEMPORARY : when this goes away, delete the reference to the wrapper in TheGame project
+            var wrapper = new WrapperMapGenerator();
+            var map = wrapper.makeMap(10, 3, 5, 15, 10);
+            m_mapView.init(map);
         }
     }
     

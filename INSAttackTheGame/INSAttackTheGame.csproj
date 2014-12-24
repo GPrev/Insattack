@@ -110,6 +110,10 @@
       <Project>{cd730347-182e-4c9f-9357-8b1dd8e8e23d}</Project>
       <Name>MapDataModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MapGeneratorWrapper\MapGeneratorWrapper.vcxproj">
+      <Project>{9f2c43a0-e942-47ee-8a81-9383f27885f4}</Project>
+      <Name>MapGeneratorWrapper</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Terrain\Outdoor.png" />

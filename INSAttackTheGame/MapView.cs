@@ -21,8 +21,11 @@ namespace INSAttackTheGame
 
         private Dictionary<Tile, ImageSource> m_tileImages;
 
-        public void init()
+        MapData m_map;
+
+        public void init(MapData map)
         {
+            m_map = map;
             loadImages();
             InvalidateVisual();
         }
@@ -94,10 +97,14 @@ namespace INSAttackTheGame
             base.OnRender(drawingContext);
             if(m_tileImages != null) //if initialized correctly
             {
-                DrawElementOnCanvas(TileFactory.Instance.OutdoorTile, new Coord(0, 0), drawingContext);
-                DrawElementOnCanvas(TileFactory.Instance.AmphiTile, new Coord(1, 0), drawingContext);
-                DrawElementOnCanvas(TileFactory.Instance.TdTile, new Coord(0, 1), drawingContext);
-                DrawElementOnCanvas(TileFactory.Instance.InfoTile, new Coord(1, 1), drawingContext);
+                //DrawElementOnCanvas(TileFactory.Instance.OutdoorTile, new Coord(0, 0), drawingContext);
+                //DrawElementOnCanvas(TileFactory.Instance.AmphiTile, new Coord(1, 0), drawingContext);
+                //DrawElementOnCanvas(TileFactory.Instance.TdTile, new Coord(0, 1), drawingContext);
+                //DrawElementOnCanvas(TileFactory.Instance.InfoTile, new Coord(1, 1), drawingContext);
+                foreach(var t in m_map.TileTable)
+                {
+                    DrawElementOnCanvas(t.Value, t.Key, drawingContext);
+                }
             }
         }
     }
