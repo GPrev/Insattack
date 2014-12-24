@@ -24,5 +24,10 @@ namespace INSAttackTheGame
         {
             InitializeComponent();
         }
+        public void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            m_mapView.init();
+        }
     }
+    
 }
