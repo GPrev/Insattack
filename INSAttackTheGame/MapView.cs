@@ -22,6 +22,7 @@ namespace INSAttackTheGame
         private const float tileHeight = 69;
 
         private Dictionary<Tile, ImageSource> m_tileImages;
+        private Dictionary<Dept, ImageSource> m_deptImages;
         ImageSource m_cursorImage;
 
         Game m_game;
@@ -104,12 +105,20 @@ namespace INSAttackTheGame
         private bool loadImages()
         {
             m_tileImages = new Dictionary<Tile, ImageSource>();
+            m_deptImages = new Dictionary<Dept,ImageSource>();
             try
             {
                 m_tileImages.Add(TileFactory.Instance.OutdoorTile, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Terrain/Outdoor.png")));
                 m_tileImages.Add(TileFactory.Instance.AmphiTile, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Terrain/Amphi.png")));
                 m_tileImages.Add(TileFactory.Instance.TdTile, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Terrain/TD.png")));
                 m_tileImages.Add(TileFactory.Instance.InfoTile, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Terrain/INFO.png")));
+
+                m_deptImages.Add(Dept.INFO, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/INFO.png")));
+                m_deptImages.Add(Dept.EII, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/EII.png")));
+                m_deptImages.Add(Dept.SRC, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/SRC.png")));
+                m_deptImages.Add(Dept.SGM, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/SGM.png")));
+                m_deptImages.Add(Dept.GMA, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/GMA.png")));
+                m_deptImages.Add(Dept.GC, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/GC.png")));
 
                 m_cursorImage = BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/UI/Cursor.png"));
             }
@@ -123,6 +132,10 @@ namespace INSAttackTheGame
         private void DrawElementOnCanvas(Tile t, Coord pos, DrawingContext dc)
         {
             DrawElementOnCanvas(m_tileImages[t], pos, dc);
+        }
+        private void DrawElementOnCanvas(Dept d, Coord pos, DrawingContext dc)
+        {
+            DrawElementOnCanvas(m_deptImages[d], pos, dc);
         }
         private void DrawElementOnCanvas(ImageSource i, Coord pos, DrawingContext dc)
         {
@@ -138,6 +151,11 @@ namespace INSAttackTheGame
                 foreach(var t in MyMap.TileTable)
                 {
                     DrawElementOnCanvas(t.Value, t.Key, drawingContext); //draws each tile
+                }
+                foreach (var u in MyBoard.UnitTable)
+                {
+                    if (u.Value.Count > 0)
+                        DrawElementOnCanvas(u.Value.First().Dept, u.Key, drawingContext); //draws each tile
                 }
                 if (MyMap.isValid(m_cursorPos))
                     DrawElementOnCanvas(m_cursorImage, m_cursorPos, drawingContext); //draws the cursor
