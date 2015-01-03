@@ -19,10 +19,10 @@ namespace INSAttackTests
         {
             NewGameBuilder gameBuilder = new NewGameBuilder();
             m_departments = new List<Department>();
-            m_departments.Add(new INFO(new Player()));
             m_departments.Add(new EII(new Player()));
+            m_departments.Add(new INFO(new Player()));
             gameBuilder.Departments = m_departments;
-            gameBuilder.BoardCreator = new DemoBoardStrategy(m_departments);
+            gameBuilder.BoardCreator = new NormalBoardStrategy(m_departments);
             m_game = gameBuilder.make();
         }
 
@@ -64,11 +64,19 @@ namespace INSAttackTests
 
         public void Game_PointsTests()
         {
-
-            for(int i = 0; i <m_game.NbPlayer; i++)
+            int test = 0;
+            foreach (var ul in m_game.Board.UnitTable)
             {
-                Assert.AreEqual(1, m_game.points(m_game.Players.ElementAt(0)));
+                test++;
             }
+            Assert.AreEqual(2, test);
+
+            foreach (var player in m_game.Players)
+            {
+                Assert.AreEqual(1, m_game.points(player));
+            }
+            
+            
 
             Coord coord = new Coord(2, 1);
             Unit unit1 = m_departments[0].make();
@@ -87,6 +95,38 @@ namespace INSAttackTests
             m_game.Board.addUnit(coord2, unit);
             unit.init(2, 4, 4, 3);
             Assert.AreEqual(3, m_game.points(m_game.Players.First()));
+
+
+            m_game.Board.removeUnit(unit1);
+            m_game.Board.removeUnit(unit2);
+            m_game.Board.removeUnit(unit);
+        }
+
+        [TestMethod]
+        public void Game_countUnitsTests()
+        {
+            foreach (var player in m_game.Players)
+            {
+                Assert.AreEqual(8, m_game.countUnits(player));
+            }
+
+            Coord coord = new Coord(2, 1);
+            Unit unit1 = m_departments[0].make();
+            Unit unit2 = m_departments[0].make();
+
+            m_game.Board.addUnit(coord, unit1);
+            m_game.Board.addUnit(coord, unit2);
+            unit1.init(2, 4, 4, 3);
+            unit2.init(2, 4, 4, 3);
+            Assert.AreEqual(10, m_game.countUnits(m_game.Players.First()));
+
+
+
+            Coord coord2 = new Coord(1, 1);
+            Unit unit = m_departments[0].make();
+            m_game.Board.addUnit(coord2, unit);
+            unit.init(2, 4, 4, 3);
+            Assert.AreEqual(11, m_game.countUnits(m_game.Players.First()));
 
 
             m_game.Board.removeUnit(unit1);
@@ -159,7 +199,6 @@ namespace INSAttackTests
 
             Assert.AreEqual(4, target.Life);
         }
-
         
     }
 }

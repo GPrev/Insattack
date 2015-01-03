@@ -49,8 +49,10 @@ namespace INSAttackTests
                     test |= ((int)u.Dept == (int)Dept.EII) || ((int)u.Dept == (int)Dept.INFO);
                 }
             }
+
             Assert.AreEqual(m_boardCreator.NbUnits*m_boardCreator.NbPlayers, nbUnits);
             Assert.IsTrue(test);
+
         }
 
         [TestMethod]
@@ -70,8 +72,11 @@ namespace INSAttackTests
                     test |= ((int)u.Dept == (int)Dept.EII) || ((int)u.Dept == (int)Dept.INFO);
                 }
             }
+
             Assert.AreEqual(m_boardCreator.NbUnits * m_boardCreator.NbPlayers, nbUnits);
             Assert.IsTrue(test);
+
+
         }
 
         [TestMethod]
@@ -93,6 +98,7 @@ namespace INSAttackTests
             }
             Assert.AreEqual(m_boardCreator.NbUnits * m_boardCreator.NbPlayers, nbUnits);
             Assert.IsTrue(test);
+
         }
 
     }

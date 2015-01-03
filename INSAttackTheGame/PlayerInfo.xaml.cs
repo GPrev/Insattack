@@ -21,6 +21,14 @@ namespace INSAttackTheGame
     /// </summary>
     public partial class PlayerInfo : UserControl
     {
+        private Game m_game;
+
+        public Game Game
+        {
+            get { return m_game; }
+            set { m_game = value; }
+        }
+
         private Player m_player;
 
         public Player Player
@@ -31,17 +39,17 @@ namespace INSAttackTheGame
 
         public string PlayerName
         {
-            get { throw new NotImplementedException(); }
+            get { return m_player.Id.ToString(); }
             //set {}
         }
         public int NbUnits
         {
-            get { throw new NotImplementedException(); }
+            get { return m_game.countUnits(m_player); }
             //set {}
         }
         public int NbPoints
         {
-            get { throw new NotImplementedException(); }
+            get { return m_game.points(m_player); }
             //set {}
         }
         public PlayerInfo()

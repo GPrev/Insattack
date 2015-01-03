@@ -170,9 +170,25 @@ namespace INSAttack
             int res = 0;
             foreach (var ul in m_board.UnitTable)
             {
-                if (ul.Value.First().Player.Equals(player))
+                if (ul.Value.First().Player == player)
                 {
                     res++;
+                }
+            }
+            return res;
+        }
+
+        public int countUnits(Player player)
+        {
+            int res = 0;
+            foreach (var ul in m_board.UnitTable)
+            {
+                foreach (var u in ul.Value)
+                {
+                    if (u.Player.Equals(player))
+                    {
+                        res += 1;
+                    }
                 }
             }
             return res;
