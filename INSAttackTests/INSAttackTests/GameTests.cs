@@ -105,9 +105,10 @@ namespace INSAttackTests
         [TestMethod]
         public void Game_countUnitsTests()
         {
+            int nbUnitsPerPlayer = 8;
             foreach (var player in m_game.Players)
             {
-                Assert.AreEqual(8, m_game.countUnits(player));
+                Assert.AreEqual(nbUnitsPerPlayer, m_game.countUnits(player));
             }
 
             Coord coord = new Coord(2, 1);
@@ -118,7 +119,7 @@ namespace INSAttackTests
             m_game.Board.addUnit(coord, unit2);
             unit1.init(2, 4, 4, 3);
             unit2.init(2, 4, 4, 3);
-            Assert.AreEqual(10, m_game.countUnits(m_game.Players.First()));
+            Assert.AreEqual(nbUnitsPerPlayer+2, m_game.countUnits(m_game.Players.First()));
 
 
 
@@ -126,7 +127,7 @@ namespace INSAttackTests
             Unit unit = m_departments[0].make();
             m_game.Board.addUnit(coord2, unit);
             unit.init(2, 4, 4, 3);
-            Assert.AreEqual(11, m_game.countUnits(m_game.Players.First()));
+            Assert.AreEqual(nbUnitsPerPlayer+3, m_game.countUnits(m_game.Players.First()));
 
 
             m_game.Board.removeUnit(unit1);
@@ -137,7 +138,7 @@ namespace INSAttackTests
         [TestMethod]
         public void Game_MoveTest()
         {
- 
+
 
             Coord coord = new Coord(2,1);
             Unit unit = m_departments[0].make();
