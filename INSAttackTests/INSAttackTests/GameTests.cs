@@ -90,7 +90,7 @@ namespace INSAttackTests
 
 
 
-            Coord coord2 = new Coord(1, 1);
+            Coord coord2 = new Coord(2, 2);
             Unit unit = m_departments[0].make();
             m_game.Board.addUnit(coord2, unit);
             unit.init(2, 4, 4, 3);

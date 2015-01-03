@@ -57,6 +57,13 @@ namespace INSAttackTheGame
             InitializeComponent();
         }
 
+        public PlayerInfo(Player player, Game game)
+        {
+            InitializeComponent();
+            m_game = game;
+            m_player = player;
+        }
+
         public void update()
         {
             m_nameLabel.Content = PlayerName;
