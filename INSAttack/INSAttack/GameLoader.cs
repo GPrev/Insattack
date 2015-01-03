@@ -7,5 +7,9 @@ namespace INSAttack
 {
     public class GameLoader : GameBuilder
     {
+        public override Game make()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

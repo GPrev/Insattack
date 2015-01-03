@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using MapDataModel;
+using INSAttack;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -23,24 +24,34 @@ namespace INSAttackTheGame
         private Dictionary<Tile, ImageSource> m_tileImages;
         ImageSource m_cursorImage;
 
-        MapData m_map;
+        Game m_game;
         Coord m_cursorPos;
+
+        private Board MyBoard
+        {
+            get { return m_game.Board; }
+        }
+
+        private MapData MyMap
+        {
+            get { return MyBoard.Map; }
+        }
 
         public Coord CursorPos
         {
             get { return m_cursorPos; }
             set
             {
-                if (m_map.isValid(value))
+                if (MyMap.isValid(value))
                     m_cursorPos = value;
                 else
                     unselect();
             }
         }
 
-        public void init(MapData map)
+        public void init(GameBuilder builder)
         {
-            m_map = map;
+            m_game = builder.make();
             m_cursorPos = Coord.nowhere;
             loadImages();
             InvalidateMeasure();
@@ -124,11 +135,11 @@ namespace INSAttackTheGame
             base.OnRender(drawingContext);
             if(m_tileImages != null) //if initialized correctly
             {
-                foreach(var t in m_map.TileTable)
+                foreach(var t in MyMap.TileTable)
                 {
                     DrawElementOnCanvas(t.Value, t.Key, drawingContext); //draws each tile
                 }
-                if(m_map.isValid(m_cursorPos))
+                if (MyMap.isValid(m_cursorPos))
                     DrawElementOnCanvas(m_cursorImage, m_cursorPos, drawingContext); //draws the cursor
             }
         }
@@ -136,11 +147,11 @@ namespace INSAttackTheGame
         protected override System.Windows.Size MeasureOverride(System.Windows.Size constraint) //Returns the measure of the canvas
         {
             base.MeasureOverride(constraint);
-            if(m_map == null) //if the map hasn't been initialized yet
+            if(m_game == null) //if the game hasn't been initialized yet
                 return new System.Windows.Size(0,0);
             //else
-            Tuple<float, float> lastPos = toPixels(new Coord(m_map.Size, m_map.Size)); //position of the last tile
-            return new Size(lastPos.Item1, lastPos.Item1 + tileHeight * 1.5); //rough estimation of the size, always equal or slightly higher
+            Tuple<float, float> lastPos = toPixels(new Coord(MyMap.Size, MyMap.Size)); //position of the last tile
+            return new Size(lastPos.Item1, lastPos.Item1 + tileHeight * 2); //rough estimation of the size, always equal or slightly higher
         }
         
         public void onClick(object sender, MouseButtonEventArgs e) //Called by the main window if clicked

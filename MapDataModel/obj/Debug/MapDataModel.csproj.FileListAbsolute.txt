@@ -15,3 +15,4 @@ C:\Users\klael\Documents\GitHub\Insattack\MapDataModel\bin\Debug\MapDataModel.pd
 C:\Users\klael\Documents\GitHub\Insattack\MapDataModel\obj\Debug\MapDataModel.csprojResolveAssemblyReference.cache
 C:\Users\klael\Documents\GitHub\Insattack\MapDataModel\obj\Debug\MapDataModel.dll
 C:\Users\klael\Documents\GitHub\Insattack\MapDataModel\obj\Debug\MapDataModel.pdb
+F:\Gabriel\Programmation\Insattack\MapDataModel\obj\Debug\MapDataModel.csprojResolveAssemblyReference.cache

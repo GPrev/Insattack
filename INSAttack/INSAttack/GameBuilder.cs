@@ -8,14 +8,7 @@ namespace INSAttack
 {
     public abstract class GameBuilder : INSAttack.Factory<Game>
     {
+        public abstract Game make();
 
-       
-
-        public Game make()
-        {
-            throw new NotImplementedException();
-        }
-
-        
     }
 }

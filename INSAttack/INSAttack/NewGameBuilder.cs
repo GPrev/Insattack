@@ -30,7 +30,7 @@ namespace INSAttack
             m_boardCreator = new NormalBoardStrategy(m_departments);
         }
 
-        public new Game make()
+        public override Game make()
         {
             m_nbPlayers = m_departments.Count;
             m_boardCreator.Departments = m_departments;
