@@ -50,6 +50,17 @@ namespace INSAttackTheGame
             }
         }
 
+        public List<Unit> SelectedUnits
+        {
+            get
+            {
+                if(MyBoard.UnitTable.ContainsKey(CursorPos))
+                    return MyBoard.UnitTable[CursorPos];
+                //else
+                return new List<Unit>();
+            }
+        }
+
         public void init(GameBuilder builder)
         {
             m_game = builder.make();
