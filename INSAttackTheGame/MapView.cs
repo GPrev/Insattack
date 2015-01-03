@@ -38,6 +38,11 @@ namespace INSAttackTheGame
             get { return MyBoard.Map; }
         }
 
+        public Game Game
+        {
+            get { return m_game; }
+        }
+
         public Coord CursorPos
         {
             get { return m_cursorPos; }

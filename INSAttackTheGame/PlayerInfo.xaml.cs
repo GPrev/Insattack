@@ -21,13 +21,6 @@ namespace INSAttackTheGame
     /// </summary>
     public partial class PlayerInfo : UserControl
     {
-        private Game m_game;
-
-        public Game Game
-        {
-            get { return m_game; }
-            set { m_game = value; }
-        }
 
         private Player m_player;
 
@@ -44,12 +37,12 @@ namespace INSAttackTheGame
         }
         public int NbUnits
         {
-            get { return m_game.countUnits(m_player); }
+            get { return (this.Parent as MapView).Game.countUnits(m_player); }
             //set {}
         }
         public int NbPoints
         {
-            get { return m_game.points(m_player); }
+            get { return (this.Parent as MapView).Game.points(m_player); }
             //set {}
         }
         public PlayerInfo()
@@ -57,11 +50,11 @@ namespace INSAttackTheGame
             InitializeComponent();
         }
 
-        public PlayerInfo(Player player, Game game)
+        public PlayerInfo(Player player)
         {
             InitializeComponent();
-            m_game = game;
             m_player = player;
+            update();
         }
 
         public void update()
