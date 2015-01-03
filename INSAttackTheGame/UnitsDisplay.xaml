@@ -8,7 +8,6 @@
     <Grid>
         <StackPanel x:Name="m_units" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top">
             <Label x:Name ="m_main" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"/>
-
         </StackPanel>
     </Grid>
 </UserControl>

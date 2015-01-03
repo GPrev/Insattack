@@ -63,14 +63,7 @@ namespace INSAttackTheGame
             for (int i = 0; i < m_unitList.Count; i++)
             {
                 Label unitDisplay = new Label();
-                unitDisplay.Content = 
-                    "Unité "+i+" :\n"+
-                    "Vie : " + m_unitList[i].Life + "/" + m_unitList[i].MaxLife + "\n"+
-                    "Mouvement : " + m_unitList[i].Movement + "/" + m_unitList[i].MaxMovement + "\n"+
-                    "Attaque : " + m_unitList[i].Attack + "\n"+
-                    "Defense : " + m_unitList[i].Defense + "\n\n"
-                    ;
-
+                
                 m_units.Children.Insert(i, unitDisplay);
 
             }
