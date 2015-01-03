@@ -59,6 +59,41 @@ namespace INSAttackTests
             Assert.AreSame(p, m_game.ActivePlayer);
         }
 
+
+        [TestMethod]
+
+        public void Game_PointsTests()
+        {
+
+            for(int i = 0; i <m_game.NbPlayer; i++)
+            {
+                Assert.AreEqual(1, m_game.points(m_game.Players.ElementAt(0)));
+            }
+
+            Coord coord = new Coord(2, 1);
+            Unit unit1 = m_departments[0].make();
+            Unit unit2 = m_departments[0].make();
+
+            m_game.Board.addUnit(coord, unit1);
+            m_game.Board.addUnit(coord, unit2);
+            unit1.init(2, 4, 4, 3);
+            unit2.init(2, 4, 4, 3);
+            Assert.AreEqual(2, m_game.points(m_game.Players.First()));
+
+
+
+            Coord coord2 = new Coord(1, 1);
+            Unit unit = m_departments[0].make();
+            m_game.Board.addUnit(coord2, unit);
+            unit.init(2, 4, 4, 3);
+            Assert.AreEqual(3, m_game.points(m_game.Players.First()));
+
+
+            m_game.Board.removeUnit(unit1);
+            m_game.Board.removeUnit(unit2);
+            m_game.Board.removeUnit(unit);
+        }
+
         [TestMethod]
         public void Game_MoveTest()
         {
@@ -99,9 +134,18 @@ namespace INSAttackTests
             Unit target = m_departments[1].make();
             m_game.Board.addUnit(dest, target);
             target.init(2, 4, 4, 3);
+
             Unit target2 = m_departments[1].make();
             m_game.Board.addUnit(dest, target);
-            target2.init(2, 5, 4, 4);
+            target2.init(2, 5, 4, 10);
+
+            Assert.AreEqual(2, m_game.Board.UnitTable[dest].Count);
+            Assert.AreEqual(3, target.Defense);
+            Assert.AreEqual(10, target2.Defense);
+            Assert.AreEqual(4, target.Life);
+            Assert.AreEqual(5, target2.Life);
+
+
             bool moved = m_game.move(unit, dest);
             Assert.AreEqual(moved, target.isDead());
             if (moved)
@@ -113,9 +157,9 @@ namespace INSAttackTests
                 Assert.AreEqual(coord, m_game.Board.find(unit));
             }
 
-
             Assert.AreEqual(4, target.Life);
         }
 
+        
     }
 }

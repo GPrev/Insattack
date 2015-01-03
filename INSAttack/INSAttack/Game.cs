@@ -164,5 +164,18 @@ namespace INSAttack
             if (target.isDead()) return true;
            return false;
         }
+
+        public int points(Player player)
+        {
+            int res = 0;
+            foreach (var ul in m_board.UnitTable)
+            {
+                if (ul.Value.First().Player.Equals(player))
+                {
+                    res++;
+                }
+            }
+            return res;
+        }
     }
 }
