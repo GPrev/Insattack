@@ -3,7 +3,7 @@
 #include <vector>
 #include <map>
 
-#define DIST_FROM_EDGES 3
+#define DIST_FROM_EDGES 1
 
 #define OUTDOOR 0
 #define AMPHI 1
