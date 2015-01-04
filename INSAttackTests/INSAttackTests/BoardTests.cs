@@ -46,5 +46,23 @@ namespace INSAttackTests
             Assert.IsTrue(m_board.removeUnit(u1));                  //u1 -> X
             Assert.IsFalse(m_board.find(u1).exists());
         }
+
+       // [TestMethod]
+        public void Board_EqualityTest()
+        {
+            m_board = new Board();
+            Board board = new Board();
+
+            Coord coord = new Coord(1, 1);
+            Unit unit = new Unit(m_p1, Dept.EII);
+
+            
+
+            Assert.AreEqual(m_board, m_board);
+            Assert.AreEqual(m_board, board);
+
+            board.addUnit(coord, unit);
+            Assert.AreNotEqual(m_board, board);
+        }
     }
 }

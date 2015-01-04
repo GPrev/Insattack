@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MapDataModel;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Soap;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace INSAttack
 {
+    [Serializable()]
     public class Board
     {
         private MapDataModel.MapData m_map;
@@ -82,5 +86,28 @@ namespace INSAttack
             }
             return Coord.nowhere;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Board && Equals((Board)obj);
+        }
+
+        public bool Equals(Board board)
+        {
+            if (!m_map.Equals(board.m_map)) return false;
+            if (!m_nbTurns.Equals(board.m_nbTurns)) return false;
+            if (m_unitTable.Count != board.m_unitTable.Count) return false;
+            foreach (var ul in m_unitTable)
+            {
+                foreach (var u in ul.Value)
+                {
+                    if (! board.m_unitTable[ul.Key].Contains(u)) return false;
+                }
+                if (ul.Value.Count != board.m_unitTable[ul.Key].Count) return false;
+            }
+            return true;
+        }
+
+
     }
 }

@@ -57,5 +57,32 @@ namespace INSAttackTests
 
             Assert.AreSame(m_departments.First().Player, game.ActivePlayer);
         }
+
+        [TestMethod]
+        public void GameLoaderTests()
+        {
+            NewGameBuilder m_gameBuilder = new NewGameBuilder();
+            m_gameBuilder.Departments = m_departments;
+            m_gameBuilder.BoardCreator = new DemoBoardStrategy(m_departments);
+            Game oldGame = m_gameBuilder.make();
+            int countPlayer = Player.Count;
+            int countUnits = Unit.Count;
+            oldGame.save();
+
+
+            GameLoader gameLoader = new GameLoader();
+            Game game = null;
+            game = gameLoader.make();
+            Assert.IsNotNull(game);
+            Assert.AreEqual(oldGame, game);
+
+            //Test for the value of the static members
+            Player p = new Player();
+            Unit u = new Unit(p, Dept.INFO);
+            game = gameLoader.make();
+            Assert.AreEqual(countPlayer, Player.Count);
+            Assert.AreEqual(countUnits, Unit.Count);
+            
+        }
     }
 }

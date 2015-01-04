@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Soap;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace INSAttack
 {
+    [Serializable()]
     public class Player
     {
         public Player()
@@ -16,6 +20,12 @@ namespace INSAttack
         private int m_id;
 
         private static int m_count = 0;
+
+        public static int Count
+        {
+            get { return Player.m_count; }
+            set { Player.m_count = value; }
+        }
 
         public int Id
         {

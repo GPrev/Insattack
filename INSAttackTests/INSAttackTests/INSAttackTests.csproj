@@ -54,6 +54,7 @@
     <Compile Include="BoardTests.cs" />
     <Compile Include="CoordTests.cs" />
     <Compile Include="GameTests.cs" />
+    <Compile Include="MapDataTests.cs" />
     <Compile Include="MapGeneratorTests.cs" />
     <Compile Include="PlayerTests.cs" />
     <Compile Include="TileFactoryTests.cs" />

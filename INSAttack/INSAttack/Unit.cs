@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MapDataModel;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Soap;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace INSAttack
 {
+    [Serializable()]
     public class Unit
     {
         private int m_attack;
@@ -67,10 +71,28 @@ namespace INSAttack
             //set { m_dept = value; }
         }
 
+        private int m_id;
+
+        public int Id
+        {
+            get { return m_id; }
+            set { m_id = value; }
+        }
+
+        private static int m_count = 0;
+
+        public static int Count
+        {
+            get { return Unit.m_count; }
+            set { Unit.m_count = value; }
+        }
+
         public Unit(INSAttack.Player player, Dept dept)
         {
             m_player = player;
             m_dept = dept;
+            m_id = m_count;
+            m_count++;
         }
 
         public void init(int movement, int life, int attack=1, int defense=1)
@@ -127,6 +149,26 @@ namespace INSAttack
         public float getHealthRatio()
         {
             return (float)m_life / (float)m_maxLife;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Unit && Equals((Unit)obj);
+        }
+
+        public bool Equals(Unit unit)
+        {
+            if (!m_id.Equals(unit.m_id)) return false;
+            if (!m_player.Equals(unit.m_player)) return false;
+            if (!m_dept.Equals(unit.m_dept)) return false;
+            if (!m_life.Equals(unit.m_life)) return false;
+            if (!m_maxLife.Equals(unit.m_maxLife)) return false;
+            if (!m_movement.Equals(unit.m_movement)) return false;
+            if (!m_maxMovement.Equals(unit.m_maxMovement)) return false;
+            if (!m_attack.Equals(unit.m_attack)) return false;
+            if (!m_defense.Equals(unit.m_defense)) return false;
+
+            return true;
         }
     }
 }

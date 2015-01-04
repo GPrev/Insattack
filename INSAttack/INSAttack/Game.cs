@@ -1,4 +1,8 @@
 ﻿using System;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Soap;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +10,7 @@ using MapDataModel;
 
 namespace INSAttack
 {
+    [Serializable()]
     public class Game
     {
         private Player m_activePlayer;
@@ -42,6 +47,7 @@ namespace INSAttack
             get { return m_players; }
             set { m_players = value; }
         }
+
 
         
         public Game(int nbPlayers)
@@ -193,5 +199,38 @@ namespace INSAttack
             }
             return res;
         }
+
+        public void save(String name = "gameSave.xml")
+        {
+            
+
+            //Opens a file and serializes the object into it in binary format.
+            Stream stream = File.Open(name, FileMode.Create);
+            //SoapFormatter formatter = new SoapFormatter();
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            formatter.Serialize(stream, this);
+            formatter.Serialize(stream, Unit.Count);
+            formatter.Serialize(stream, Player.Count);
+            stream.Close();
+        }
+
+        
+        public override bool Equals(object obj)
+        {
+            return obj is Game && Equals((Game)obj);
+        }
+
+        public bool Equals(Game game)
+        {
+            if (!m_activePlayer.Equals(game.m_activePlayer)) return false;
+            if (!m_placeActivePlayer.Equals(game.m_placeActivePlayer)) return false;
+            if (!m_nbPlayers.Equals(game.m_nbPlayers)) return false;
+            if (!m_board.Equals(game.m_board)) return false;
+            if (!m_players.SequenceEqual(game.m_players)) return false;
+
+            return true;
+        }
+         
     }
 }

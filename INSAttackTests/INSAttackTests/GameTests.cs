@@ -33,6 +33,21 @@ namespace INSAttackTests
         }
 
         [TestMethod]
+        public void Game_EqualityTest()
+        {
+            NewGameBuilder gameBuilder = new NewGameBuilder();
+            List<Department> departments = new List<Department>();
+            departments.Add(new SRC(new Player()));
+            departments.Add(new INSAttack.GC(new Player()));
+            gameBuilder.Departments = departments;
+            gameBuilder.BoardCreator = new NormalBoardStrategy(departments);
+            Game game = gameBuilder.make();
+
+            Assert.AreEqual(m_game, m_game);
+            Assert.AreNotEqual(m_game, game);
+        }
+
+        [TestMethod]
         public void Game_EndOfTurnTest()
         {
             Coord c = m_game.Board.Map.StartingPos.First();

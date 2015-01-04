@@ -77,5 +77,45 @@ namespace INSAttackTests
             Assert.AreEqual(3, m_u1.Attack);
             Assert.AreEqual(4, m_u1.Defense);
         }
+
+        [TestMethod]
+        public void Unit_EqualityTests()
+        {
+
+            m_u1.init(1, 2, 3, 4);
+            m_u2.init(1, 2, 3, 4);
+
+            Assert.AreEqual(m_u1, m_u1);
+            
+            Assert.AreNotEqual(m_u1, m_u2);
+
+            Unit u = new Unit(m_p1, Dept.INFO);
+            u.init(1, 2, 3, 4);
+            u.Id = m_u1.Id;
+            Assert.AreEqual(m_u1, u);
+
+            u = new Unit(m_p1, Dept.SRC);
+            u.Id = m_u1.Id;
+            u.init(1, 2, 3, 4);
+            Assert.AreNotEqual(m_u1, u);
+
+            u = new Unit(m_p1, Dept.INFO);
+            u.init(1, 2, 3, 4);
+            u.Id = m_u1.Id;
+            Assert.AreEqual(m_u1, u);
+
+            m_u2.init(42, 2, 3, 4);
+            Assert.AreNotEqual(m_u1, m_u2);
+
+            m_u2.init(1, 42, 3, 4);
+            Assert.AreNotEqual(m_u1, m_u2);
+
+            m_u2.init(1, 2, 42, 4);
+            Assert.AreNotEqual(m_u1, m_u2);
+
+            m_u2.init(1, 2, 3, 42);
+            Assert.AreNotEqual(m_u1, m_u2);
+
+        }
     }
 }
