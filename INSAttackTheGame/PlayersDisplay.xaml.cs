@@ -42,6 +42,9 @@ namespace INSAttackTheGame
             {
                 player.update();
             }
+            m_main.Text = "Joueur actif : " + Context.Game.ActivePlayer.toString() + "\nNombre de tours restant : " + Context.Board.NbTurns;
+
         }
+
     }
 }

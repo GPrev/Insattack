@@ -9,7 +9,7 @@
     <Grid>
         
         <StackPanel HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top">
-            <Label x:Name ="m_nameLabel" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label x:Name ="m_playerName" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"/>
             <Label x:Name ="m_nbPoint" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
             <Label x:Name ="m_nbUnits" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
         </StackPanel>

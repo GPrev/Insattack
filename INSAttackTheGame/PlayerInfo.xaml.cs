@@ -56,7 +56,7 @@ namespace INSAttackTheGame
 
         public void update()
         {
-            m_nameLabel.Content = PlayerName;
+            m_playerName.Content = PlayerName;
             m_nbPoint.Content = "Points : " + NbPoints;
             m_nbUnits.Content = "Nb Units : " + NbUnits;
         }

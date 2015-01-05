@@ -95,11 +95,18 @@ namespace INSAttackTheGame
                 case Key.Space:
                     if(Context.SelectedUnit != null)
                     {
-                        Context.Game.passTrun(Context.SelectedUnit);
+                        Context.Game.passTurn(Context.SelectedUnit);
                         m_unitsDisplay.update();
                     }
                     break;
             }
+        }
+
+        private void m_buttonEndOfTurn_Click(object sender, RoutedEventArgs e)
+        {
+            Context.Game.endOfTurn();
+            m_unitsDisplay.update();
+            m_playerDisplay.update();
         }
 
     }

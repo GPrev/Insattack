@@ -11,7 +11,12 @@
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="250" >
                     <local:UnitsDisplay x:Name="m_unitsDisplay" Width="225"></local:UnitsDisplay>
                 </ScrollViewer>
-                <local:PlayersDisplay x:Name="m_playerDisplay"></local:PlayersDisplay>
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" DockPanel.Dock="Left">
+                    <local:PlayersDisplay x:Name="m_playerDisplay"></local:PlayersDisplay>
+                <Button Name="m_buttonEndOfTurn"  Click="m_buttonEndOfTurn_Click" BorderBrush="Black" BorderThickness="1" ClickMode="Release" Width="100" Height="50">
+                    Fin du tour
+                </Button>
+                </StackPanel>
             </StackPanel>
             <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
                 <local:MapView x:Name ="m_mapView" VerticalAlignment="Top" HorizontalAlignment="Left" MouseLeftButtonDown="onMapViewClick" MouseRightButtonDown="onMapViewRClick"/>

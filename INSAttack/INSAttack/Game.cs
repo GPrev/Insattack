@@ -109,7 +109,7 @@ namespace INSAttack
 
         }
 
-        public bool passTrun(Unit u)
+        public bool passTurn(Unit u)
         {
             //checks the existence of the unit
             Coord coord = m_board.find(u);
@@ -143,8 +143,8 @@ namespace INSAttack
             if (m_board.NbTurns == 0) return true;
 
             //change the active player
-            int nextPlayer = (m_placeActivePlayer + 1) % m_nbPlayers;
-            m_activePlayer = m_players[nextPlayer];
+            m_placeActivePlayer = (m_placeActivePlayer + 1) % m_nbPlayers;
+            m_activePlayer = m_players[m_placeActivePlayer];
             return false;
         }
 
