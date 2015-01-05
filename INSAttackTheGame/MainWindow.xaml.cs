@@ -87,6 +87,15 @@ namespace INSAttackTheGame
                     m_mapView.goDownRight();
                     m_UnitsDisplay.update();
                     break;
+
+                //Pass a turn
+                case Key.Space:
+                    if(Context.SelectedUnit != null)
+                    {
+                        Context.Game.passTrun(Context.SelectedUnit);
+                        m_UnitsDisplay.update();
+                    }
+                    break;
             }
         }
     }

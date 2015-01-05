@@ -28,7 +28,6 @@ namespace INSAttack
         public int NbPlayer
         {
             get { return m_nbPlayers; }
-            //set { m_nbPlayers = value; }
         }
 
 
@@ -65,6 +64,10 @@ namespace INSAttack
             Coord coord = m_board.find(u);
             if (!coord.exists()) return false;
             if (coord.Equals(dest)) return true;
+
+            //checks if the unit belongs to current player
+            if (!u.Player.Equals(m_activePlayer))
+                return false;
 
             //check the validity of the move
             int costDisplacement = m_board.Map.TileTable[coord].getcost(u.Dept);
@@ -104,6 +107,21 @@ namespace INSAttack
             }
             return false;
 
+        }
+
+        public bool passTrun(Unit u)
+        {
+            //checks the existence of the unit
+            Coord coord = m_board.find(u);
+            if (!coord.exists())
+                return false;
+
+            //checks if the unit belongs to current player
+            if (!u.Player.Equals(m_activePlayer))
+                return false;
+
+            u.useAllMovement();
+            return true;
         }
 
         
@@ -231,6 +249,5 @@ namespace INSAttack
 
             return true;
         }
-         
     }
 }

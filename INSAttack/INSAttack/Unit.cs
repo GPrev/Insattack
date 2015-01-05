@@ -128,6 +128,11 @@ namespace INSAttack
             m_movement = m_maxMovement;
         }
 
+        public void useAllMovement()
+        {
+            m_movement = 0;
+        }
+
         //returns true if still alive
         public bool takeHit(int damage)
         {
