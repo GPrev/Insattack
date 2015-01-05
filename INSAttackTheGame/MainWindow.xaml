@@ -13,7 +13,7 @@
                 </ScrollViewer>
                 <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" DockPanel.Dock="Left">
                     <local:PlayersDisplay x:Name="m_playerDisplay"></local:PlayersDisplay>
-                <Button Name="m_buttonEndOfTurn"  Click="m_buttonEndOfTurn_Click" BorderBrush="Black" BorderThickness="1" ClickMode="Release" Width="100" Height="50">
+                <Button Name="m_buttonEndOfTurn"  Click="m_buttonEndOfTurn_Click" BorderBrush="Black" BorderThickness="1" ClickMode="Release" Width="100" Height="50" Margin="0,10,0,0">
                     Fin du tour
                 </Button>
                 </StackPanel>
