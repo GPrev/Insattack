@@ -25,37 +25,11 @@ namespace INSAttackTheGame
         private Dictionary<Dept, ImageSource> m_deptImages;
         ImageSource m_cursorImage;
 
-        Coord m_cursorPos;
-
-        public Coord CursorPos
-        {
-            get { return m_cursorPos; }
-            set
-            {
-                if (Context.Map.isValid(value))
-                    m_cursorPos = value;
-                else
-                    unselect();
-
-                InvalidateVisual(); //refreshes the display to show new cursor position
-            }
-        }
-
-        public List<Unit> SelectedUnits
-        {
-            get
-            {
-                if (Context.Board.UnitTable.ContainsKey(CursorPos))
-                    return Context.Board.UnitTable[CursorPos];
-                //else
-                return new List<Unit>();
-            }
-        }
 
         public void init(GameBuilder builder)
         {
             Context.changeGame(builder);
-            m_cursorPos = Coord.nowhere;
+            Context.CursorPos = Coord.nowhere;
             loadImages();
             InvalidateMeasure();
             InvalidateVisual();
@@ -159,8 +133,8 @@ namespace INSAttackTheGame
                     if (u.Value.Count > 0)
                         DrawElementOnCanvas(u.Value.First().Dept, u.Key, drawingContext); //draws each tile
                 }
-                if (Context.Map.isValid(m_cursorPos))
-                    DrawElementOnCanvas(m_cursorImage, m_cursorPos, drawingContext); //draws the cursor
+                if (Context.Map.isValid(Context.CursorPos))
+                    DrawElementOnCanvas(m_cursorImage, Context.CursorPos, drawingContext); //draws the cursor
             }
         }
 
@@ -176,18 +150,14 @@ namespace INSAttackTheGame
         
         public void onClick(object sender, MouseButtonEventArgs e) //Called by the main window if clicked
         {
-            CursorPos = toCoords((float)e.GetPosition(this).X, (float)e.GetPosition(this).Y); //updates the cursor position
+            Context.CursorPos = toCoords((float)e.GetPosition(this).X, (float)e.GetPosition(this).Y); //updates the cursor position
             InvalidateVisual(); //refreshes the display
         }
 
-        public void unselect() //unselects selected tile if any
-        {
-            m_cursorPos = Coord.nowhere;
-        }
 
         public void goUpLeft()
         {
-            if (CursorPos.X % 2 == 0) // "even" tile (see reference picture)
+            if (Context.CursorPos.X % 2 == 0) // "even" tile (see reference picture)
                 moveCursor(-1, 0);
             else // "odd" tile
                 moveCursor(-1, -1);
@@ -200,7 +170,7 @@ namespace INSAttackTheGame
 
         public void goUpRight()
         {
-            if (CursorPos.X % 2 == 0) // "even" tile (see reference picture)
+            if (Context.CursorPos.X % 2 == 0) // "even" tile (see reference picture)
                 moveCursor(1, 0);
             else // "odd" tile
                 moveCursor(1, -1);
@@ -208,7 +178,7 @@ namespace INSAttackTheGame
 
         public void goDownLeft()
         {
-            if (CursorPos.X % 2 == 0) // "even" tile (see reference picture)
+            if (Context.CursorPos.X % 2 == 0) // "even" tile (see reference picture)
                 moveCursor(-1, 1);
             else // "odd" tile
                 moveCursor(-1, 0);
@@ -221,7 +191,7 @@ namespace INSAttackTheGame
 
         public void goDownRight()
         {
-            if (CursorPos.X % 2 == 0) // "even" tile (see reference picture)
+            if (Context.CursorPos.X % 2 == 0) // "even" tile (see reference picture)
                 moveCursor(1, 1);
             else // "odd" tile
                 moveCursor(1, 0);
@@ -229,13 +199,13 @@ namespace INSAttackTheGame
 
         private void moveCursor(int dx, int dy)
         {
-            if (Context.Map.isValid(m_cursorPos)) //if the cursor is on a valid tile
+            if (Context.Map.isValid(Context.CursorPos)) //if the cursor is on a valid tile
             {
-                Coord newPos = CursorPos.copy();
+                Coord newPos = Context.CursorPos.copy();
                 newPos.X += dx;
                 newPos.Y += dy;
                 if (Context.Map.isValid(newPos)) //if the cursor is to be moved on a valid tile
-                    CursorPos = newPos;
+                    Context.CursorPos = newPos;
             }
         }
     }

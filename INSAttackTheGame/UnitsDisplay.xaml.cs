@@ -22,32 +22,34 @@ namespace INSAttackTheGame
     /// </summary>
     public partial class UnitsDisplay : UserControl
     {
-        
-        public UnitsDisplay(Game game)
+
+        public UnitsDisplay()
         {
             InitializeComponent();
-            update();
         }
 
 
         public void update()
         {
-            MapView map = this.Parent as MapView;
-            Coord coord = map.CursorPos;
-            List<Unit> unitList = map.SelectedUnits;
-            if(coord.Equals(Coord.nowhere))
+
+            Coord coord = Context.CursorPos;
+            List<Unit> unitList = Context.SelectedUnitsList;
+            if (coord.Equals(Coord.nowhere))
             {
                 m_main.Content = "Sélectionnez une case pour afficher les unités.";
-            }else{
+            }
+            else
+            {
                 m_main.Content = "Liste des unités de la case (" + coord.X + ", " + coord.Y + ") :";
             }
-            
+
             m_units.Children.Clear();
             for (int i = 0; i < unitList.Count; i++)
             {
                 UnitInfo unit = new UnitInfo(unitList[i]);
                 m_units.Children.Add(unit);
             }
+
         }
 
     }

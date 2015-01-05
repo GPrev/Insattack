@@ -43,5 +43,10 @@ namespace INSAttackTheGame
             m_Attack.Content = "Attaque : " + m_unit.Attack;
             m_Defense.Content = "Defense : " + m_unit.Defense;
         }
+
+        public void onClick(object sender, MouseButtonEventArgs e)
+        {
+            Context.SelectedUnit = m_unit;
+        }
     }
 }

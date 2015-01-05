@@ -32,11 +32,13 @@ namespace INSAttackTheGame
             builder.Departments.Add(new INFO(new Player()));
             builder.Departments.Add(new EII(new Player()));
             m_mapView.init(builder);
+            m_UnitsDisplay.update();
         }
 
         private void onMapViewClick(object sender, MouseButtonEventArgs e)
         {
             m_mapView.onClick(sender, e);
+            m_UnitsDisplay.update();
         }
 
         private void onKeyDown(object sender, KeyEventArgs e)
