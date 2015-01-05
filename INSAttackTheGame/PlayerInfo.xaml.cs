@@ -33,17 +33,14 @@ namespace INSAttackTheGame
         public string PlayerName
         {
             get { return m_player.Id.ToString(); }
-            //set {}
         }
         public int NbUnits
         {
-            get { return (this.Parent as MapView).Game.countUnits(m_player); }
-            //set {}
+            get { return Context.Game.countUnits(m_player); }
         }
         public int NbPoints
         {
-            get { return (this.Parent as MapView).Game.points(m_player); }
-            //set {}
+            get { return Context.Game.points(m_player); }
         }
         public PlayerInfo()
         {

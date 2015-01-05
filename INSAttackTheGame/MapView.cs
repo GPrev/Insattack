@@ -25,30 +25,14 @@ namespace INSAttackTheGame
         private Dictionary<Dept, ImageSource> m_deptImages;
         ImageSource m_cursorImage;
 
-        Game m_game;
         Coord m_cursorPos;
-
-        private Board MyBoard
-        {
-            get { return m_game.Board; }
-        }
-
-        private MapData MyMap
-        {
-            get { return MyBoard.Map; }
-        }
-
-        public Game Game
-        {
-            get { return m_game; }
-        }
 
         public Coord CursorPos
         {
             get { return m_cursorPos; }
             set
             {
-                if (MyMap.isValid(value))
+                if (Context.Map.isValid(value))
                     m_cursorPos = value;
                 else
                     unselect();
@@ -59,8 +43,8 @@ namespace INSAttackTheGame
         {
             get
             {
-                if(MyBoard.UnitTable.ContainsKey(CursorPos))
-                    return MyBoard.UnitTable[CursorPos];
+                if (Context.Board.UnitTable.ContainsKey(CursorPos))
+                    return Context.Board.UnitTable[CursorPos];
                 //else
                 return new List<Unit>();
             }
@@ -68,7 +52,7 @@ namespace INSAttackTheGame
 
         public void init(GameBuilder builder)
         {
-            m_game = builder.make();
+            Context.changeGame(builder);
             m_cursorPos = Coord.nowhere;
             loadImages();
             InvalidateMeasure();
@@ -164,16 +148,16 @@ namespace INSAttackTheGame
             base.OnRender(drawingContext);
             if(m_tileImages != null) //if initialized correctly
             {
-                foreach(var t in MyMap.TileTable)
+                foreach (var t in Context.Map.TileTable)
                 {
                     DrawElementOnCanvas(t.Value, t.Key, drawingContext); //draws each tile
                 }
-                foreach (var u in MyBoard.UnitTable)
+                foreach (var u in Context.Board.UnitTable)
                 {
                     if (u.Value.Count > 0)
                         DrawElementOnCanvas(u.Value.First().Dept, u.Key, drawingContext); //draws each tile
                 }
-                if (MyMap.isValid(m_cursorPos))
+                if (Context.Map.isValid(m_cursorPos))
                     DrawElementOnCanvas(m_cursorImage, m_cursorPos, drawingContext); //draws the cursor
             }
         }
@@ -181,10 +165,10 @@ namespace INSAttackTheGame
         protected override System.Windows.Size MeasureOverride(System.Windows.Size constraint) //Returns the measure of the canvas
         {
             base.MeasureOverride(constraint);
-            if(m_game == null) //if the game hasn't been initialized yet
+            if(!Context.isGameValid()) //if the game hasn't been initialized yet
                 return new System.Windows.Size(0,0);
             //else
-            Tuple<float, float> lastPos = toPixels(new Coord(MyMap.Size, MyMap.Size)); //position of the last tile
+            Tuple<float, float> lastPos = toPixels(new Coord(Context.Map.Size, Context.Map.Size)); //position of the last tile
             return new Size(lastPos.Item1, lastPos.Item1 + tileHeight * 2); //rough estimation of the size, always equal or slightly higher
         }
         
