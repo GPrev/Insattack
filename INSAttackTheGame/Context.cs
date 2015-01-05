@@ -46,8 +46,6 @@ namespace INSAttackTheGame
                     m_cursorPos = value;
                 else
                     unselect();
-
-                m_selectedUnit = null; //unselects the selected unit if any
             }
         }
 

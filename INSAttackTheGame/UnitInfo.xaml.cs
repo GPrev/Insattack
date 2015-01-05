@@ -35,6 +35,11 @@ namespace INSAttackTheGame
             //set { m_unit = value; }
         }
 
+        public Border Border
+        {
+            get { return m_border;}
+        }
+
         public void update()
         {
             m_nameLabel.Content = "Propriétaire : Joueur " + m_unit.Player.Id;
@@ -44,9 +49,11 @@ namespace INSAttackTheGame
             m_Defense.Content = "Defense : " + m_unit.Defense;
         }
 
-        public void onClick(object sender, MouseButtonEventArgs e)
+
+        public void select()
         {
             Context.SelectedUnit = m_unit;
+            m_border.BorderBrush = Brushes.Red;
         }
     }
 }

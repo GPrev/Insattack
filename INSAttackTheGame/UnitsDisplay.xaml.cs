@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -47,9 +48,27 @@ namespace INSAttackTheGame
             for (int i = 0; i < unitList.Count; i++)
             {
                 UnitInfo unit = new UnitInfo(unitList[i]);
+                unit.MouseLeftButtonDown += new MouseButtonEventHandler(onClick);
+                if ((unitList[i] == Context.SelectedUnit) && (unitList[i] != null)) unit.select();
                 m_units.Children.Add(unit);
             }
 
+        }
+
+        public void onClick(object sender, MouseButtonEventArgs e)
+        {
+            resetColor();
+            ((UnitInfo) sender).select();
+        }
+
+
+
+        public void resetColor()
+        {
+            foreach (UnitInfo unitInfo in m_units.Children)
+            {
+                unitInfo.Border.BorderBrush = Brushes.Black;
+            }
         }
 
     }
