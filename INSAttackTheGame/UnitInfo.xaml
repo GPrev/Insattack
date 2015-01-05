@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <StackPanel MouseLeftButtonDown="onClick"  HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top">
+        <StackPanel MouseLeftButtonDown="onClick"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top">
             <Label x:Name ="m_nameLabel" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"/>
             <Label x:Name ="m_Life" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
             <Label x:Name ="m_Movement" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top"/>

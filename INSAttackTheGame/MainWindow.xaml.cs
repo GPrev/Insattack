@@ -49,31 +49,37 @@ namespace INSAttackTheGame
                 case Key.A:
                 case Key.NumPad7:
                     m_mapView.goUpLeft();
+                    m_UnitsDisplay.update();
                     break;
                 //Up-left directionnal key
                 case Key.Z:
                 case Key.NumPad8:
                     m_mapView.goUp();
+                    m_UnitsDisplay.update();
                     break;
                 //Up-left directionnal key
                 case Key.E:
                 case Key.NumPad9:
                     m_mapView.goUpRight();
+                    m_UnitsDisplay.update();
                     break;
                 //Up-left directionnal key
                 case Key.Q:
                 case Key.NumPad4:
                     m_mapView.goDownLeft();
+                    m_UnitsDisplay.update();
                     break;
                 //Up-left directionnal key
                 case Key.S:
                 case Key.NumPad5:
                     m_mapView.goDown();
+                    m_UnitsDisplay.update();
                     break;
                 //Up-left directionnal key
                 case Key.D:
                 case Key.NumPad6:
                     m_mapView.goDownRight();
+                    m_UnitsDisplay.update();
                     break;
             }
         }

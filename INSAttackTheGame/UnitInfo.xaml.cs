@@ -37,7 +37,7 @@ namespace INSAttackTheGame
 
         public void update()
         {
-            m_nameLabel.Content = "Joueur propriétaire de l'unité : Joueur " + m_unit.Player.Id;
+            m_nameLabel.Content = "Propriétaire : Joueur " + m_unit.Player.Id;
             m_Life.Content = "Vie : " + m_unit.Life + "/" + m_unit.MaxLife;
             m_Movement.Content = "Mouvement : " + m_unit.Movement + "/" + m_unit.MaxMovement;
             m_Attack.Content = "Attaque : " + m_unit.Attack;

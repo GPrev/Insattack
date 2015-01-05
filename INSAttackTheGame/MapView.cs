@@ -205,7 +205,10 @@ namespace INSAttackTheGame
                 newPos.X += dx;
                 newPos.Y += dy;
                 if (Context.Map.isValid(newPos)) //if the cursor is to be moved on a valid tile
+                {
                     Context.CursorPos = newPos;
+                    InvalidateVisual(); //refreshes the display
+                }
             }
         }
     }
