@@ -101,7 +101,12 @@ namespace INSAttack
             {
                 if (confront(u, target))
                 {
-                    return m_board.moveUnit(u, dest);
+                    if (UnitsAtDest.Count == 0)
+                    {
+                        return m_board.moveUnit(u, dest);
+                    }
+                    return false;
+                    
                 }
                 else return false;
             }
@@ -185,7 +190,12 @@ namespace INSAttack
                 }
             }
 
-            if (target.isDead()) return true;
+            if (u.isDead()) m_board.removeUnit(u);
+            if (target.isDead())
+            {
+                m_board.removeUnit(target);
+                return true;
+            }
            return false;
         }
 
