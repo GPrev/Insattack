@@ -99,5 +99,10 @@ namespace MapDataModel
         }
 
         public static Coord nowhere = new Coord(-1,-1);
+
+        public Coord copy()
+        {
+            return new Coord(X, Y);
+        }
     }
 }

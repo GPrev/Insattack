@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:INSAttackTheGame"
         Title="INSAttack" Height="350" Width="525"
-        Loaded="MainWindow_Loaded">
+        Loaded="MainWindow_Loaded" KeyDown="onKeyDown">
     <Grid>
         <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" LastChildFill="True" Margin="0">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" DockPanel.Dock="Bottom">

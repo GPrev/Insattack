@@ -28,10 +28,6 @@ namespace INSAttackTheGame
         }
         public void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            //TEMPORARY : when this goes away, delete the reference to the wrapper in TheGame project
-            //var wrapper = new WrapperMapGenerator();
-            //var map = wrapper.makeMap(10, 3, 5, 15, 10);
-
             NewGameBuilder builder = new NewGameBuilder();
             builder.Departments.Add(new INFO(new Player()));
             builder.Departments.Add(new EII(new Player()));
@@ -41,6 +37,43 @@ namespace INSAttackTheGame
         private void onMapViewClick(object sender, MouseButtonEventArgs e)
         {
             m_mapView.onClick(sender, e);
+        }
+
+        private void onKeyDown(object sender, KeyEventArgs e)
+        {
+            switch(e.Key)
+            {
+                //Up-left directionnal key
+                case Key.A:
+                case Key.NumPad7:
+                    m_mapView.goUpLeft();
+                    break;
+                //Up-left directionnal key
+                case Key.Z:
+                case Key.NumPad8:
+                    m_mapView.goUp();
+                    break;
+                //Up-left directionnal key
+                case Key.E:
+                case Key.NumPad9:
+                    m_mapView.goUpRight();
+                    break;
+                //Up-left directionnal key
+                case Key.Q:
+                case Key.NumPad4:
+                    m_mapView.goDownLeft();
+                    break;
+                //Up-left directionnal key
+                case Key.S:
+                case Key.NumPad5:
+                    m_mapView.goDown();
+                    break;
+                //Up-left directionnal key
+                case Key.D:
+                case Key.NumPad6:
+                    m_mapView.goDownRight();
+                    break;
+            }
         }
     }
     

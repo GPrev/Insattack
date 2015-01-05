@@ -36,6 +36,8 @@ namespace INSAttackTheGame
                     m_cursorPos = value;
                 else
                     unselect();
+
+                InvalidateVisual(); //refreshes the display to show new cursor position
             }
         }
 
@@ -181,6 +183,60 @@ namespace INSAttackTheGame
         public void unselect() //unselects selected tile if any
         {
             m_cursorPos = Coord.nowhere;
+        }
+
+        public void goUpLeft()
+        {
+            if (CursorPos.X % 2 == 0) // "even" tile (see reference picture)
+                moveCursor(-1, 0);
+            else // "odd" tile
+                moveCursor(-1, -1);
+        }
+
+        public void goUp()
+        {
+            moveCursor(0, -1);
+        }
+
+        public void goUpRight()
+        {
+            if (CursorPos.X % 2 == 0) // "even" tile (see reference picture)
+                moveCursor(1, 0);
+            else // "odd" tile
+                moveCursor(1, -1);
+        }
+
+        public void goDownLeft()
+        {
+            if (CursorPos.X % 2 == 0) // "even" tile (see reference picture)
+                moveCursor(-1, 1);
+            else // "odd" tile
+                moveCursor(-1, 0);
+        }
+
+        public void goDown()
+        {
+            moveCursor(0, 1);
+        }
+
+        public void goDownRight()
+        {
+            if (CursorPos.X % 2 == 0) // "even" tile (see reference picture)
+                moveCursor(1, 1);
+            else // "odd" tile
+                moveCursor(1, 0);
+        }
+
+        private void moveCursor(int dx, int dy)
+        {
+            if (Context.Map.isValid(m_cursorPos)) //if the cursor is on a valid tile
+            {
+                Coord newPos = CursorPos.copy();
+                newPos.X += dx;
+                newPos.Y += dy;
+                if (Context.Map.isValid(newPos)) //if the cursor is to be moved on a valid tile
+                    CursorPos = newPos;
+            }
         }
     }
 }
