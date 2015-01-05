@@ -37,11 +37,11 @@ namespace INSAttackTheGame
             List<Unit> unitList = Context.SelectedUnitsList;
             if (coord.Equals(Coord.nowhere))
             {
-                m_main.Content = "Sélectionnez une case pour afficher les unités.";
+                m_main.Text = "Sélectionnez une case pour afficher les unités.";
             }
             else
             {
-                m_main.Content = "Liste des unités de la case (" + coord.X + ", " + coord.Y + ") :";
+                m_main.Text = "Liste des unités de la case (" + coord.X + ", " + coord.Y + ") :";
             }
 
             m_units.Children.Clear();
@@ -52,8 +52,8 @@ namespace INSAttackTheGame
                 if ((unitList[i] == Context.SelectedUnit) && (unitList[i] != null)) unit.select();
                 m_units.Children.Add(unit);
             }
-
         }
+
 
         public void onClick(object sender, MouseButtonEventArgs e)
         {

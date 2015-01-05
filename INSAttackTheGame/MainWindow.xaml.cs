@@ -32,19 +32,22 @@ namespace INSAttackTheGame
             builder.Departments.Add(new INFO(new Player()));
             builder.Departments.Add(new EII(new Player()));
             m_mapView.init(builder);
-            m_UnitsDisplay.update();
+            m_unitsDisplay.update();
+            m_playerDisplay.init();
         }
 
         private void onMapViewClick(object sender, MouseButtonEventArgs e)
         {
             m_mapView.onClick(sender, e);
-            m_UnitsDisplay.update();
+            m_unitsDisplay.update();
+            m_playerDisplay.update();
         }
 
         private void onMapViewRClick(object sender, MouseButtonEventArgs e)
         {
             m_mapView.onRClick(sender, e);
-            m_UnitsDisplay.update();
+            m_unitsDisplay.update();
+            m_playerDisplay.update();
         }
 
         private void onKeyDown(object sender, KeyEventArgs e)
@@ -55,37 +58,37 @@ namespace INSAttackTheGame
                 case Key.A:
                 case Key.NumPad7:
                     m_mapView.goUpLeft();
-                    m_UnitsDisplay.update();
+                    m_unitsDisplay.update();
                     break;
                 //Up-left directionnal key
                 case Key.Z:
                 case Key.NumPad8:
                     m_mapView.goUp();
-                    m_UnitsDisplay.update();
+                    m_unitsDisplay.update();
                     break;
                 //Up-left directionnal key
                 case Key.E:
                 case Key.NumPad9:
                     m_mapView.goUpRight();
-                    m_UnitsDisplay.update();
+                    m_unitsDisplay.update();
                     break;
                 //Up-left directionnal key
                 case Key.Q:
                 case Key.NumPad4:
                     m_mapView.goDownLeft();
-                    m_UnitsDisplay.update();
+                    m_unitsDisplay.update();
                     break;
                 //Up-left directionnal key
                 case Key.S:
                 case Key.NumPad5:
                     m_mapView.goDown();
-                    m_UnitsDisplay.update();
+                    m_unitsDisplay.update();
                     break;
                 //Up-left directionnal key
                 case Key.D:
                 case Key.NumPad6:
                     m_mapView.goDownRight();
-                    m_UnitsDisplay.update();
+                    m_unitsDisplay.update();
                     break;
 
                 //Pass a turn
@@ -93,7 +96,7 @@ namespace INSAttackTheGame
                     if(Context.SelectedUnit != null)
                     {
                         Context.Game.passTrun(Context.SelectedUnit);
-                        m_UnitsDisplay.update();
+                        m_unitsDisplay.update();
                     }
                     break;
             }

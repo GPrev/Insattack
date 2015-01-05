@@ -9,11 +9,9 @@
         <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" LastChildFill="True" Margin="0">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" DockPanel.Dock="Left">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="250" >
-                    <local:UnitsDisplay x:Name="m_UnitsDisplay" Width="225"></local:UnitsDisplay>
+                    <local:UnitsDisplay x:Name="m_unitsDisplay" Width="225"></local:UnitsDisplay>
                 </ScrollViewer>
-                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" DockPanel.Dock="Bottom">
-                    <local:PlayerInfo></local:PlayerInfo>
-                </StackPanel>
+                <local:PlayersDisplay x:Name="m_playerDisplay"></local:PlayersDisplay>
             </StackPanel>
             <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
                 <local:MapView x:Name ="m_mapView" VerticalAlignment="Top" HorizontalAlignment="Left" MouseLeftButtonDown="onMapViewClick" MouseRightButtonDown="onMapViewRClick"/>

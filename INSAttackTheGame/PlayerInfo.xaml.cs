@@ -32,7 +32,7 @@ namespace INSAttackTheGame
 
         public string PlayerName
         {
-            get { return m_player.Id.ToString(); }
+            get { return m_player.toString(); }
         }
         public int NbUnits
         {

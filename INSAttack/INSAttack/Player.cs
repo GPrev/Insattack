@@ -75,5 +75,10 @@ namespace INSAttack
         {
             return m_id;
         }
+
+        public String toString()
+        {
+            return "Joueur : " + m_id;
+        }
     }
 }

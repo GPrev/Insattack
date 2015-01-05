@@ -54,6 +54,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Context.cs" />
+    <Compile Include="PlayersDisplay.xaml.cs">
+      <DependentUpon>PlayersDisplay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UnitInfo.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>UnitInfo.xaml</DependentUpon>
@@ -74,6 +77,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PlayerInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PlayersDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
