@@ -154,6 +154,19 @@ namespace INSAttackTheGame
             InvalidateVisual(); //refreshes the display
         }
 
+        internal void onRClick(object sender, MouseButtonEventArgs e)
+        {
+            if(Context.SelectedUnit != null) //if a unit is selected
+            {
+                Coord clickedPos = toCoords((float)e.GetPosition(this).X, (float)e.GetPosition(this).Y); //compmutes the clicked spot
+                if(Context.Game.move(Context.SelectedUnit, clickedPos)) //tries and moves the unit
+                {
+                    Context.CursorPos = clickedPos; //moves the cursor on the destination
+                    InvalidateVisual(); //refreshes the display
+                }
+            }
+        }
+
 
         public void goUpLeft()
         {

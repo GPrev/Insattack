@@ -46,6 +46,8 @@ namespace INSAttackTheGame
                     m_cursorPos = value;
                 else
                     unselect();
+
+                m_selectedUnit = null; //unselects the selected unit if any
             }
         }
 
@@ -74,6 +76,7 @@ namespace INSAttackTheGame
         public static void unselect() //unselects selected tile if any
         {
             m_cursorPos = Coord.nowhere;
+            m_selectedUnit = null;
         }
     }
 }

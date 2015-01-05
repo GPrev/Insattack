@@ -16,7 +16,7 @@
                 </StackPanel>
             </StackPanel>
             <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-                <local:MapView x:Name ="m_mapView" VerticalAlignment="Top" HorizontalAlignment="Left" MouseLeftButtonDown="onMapViewClick"/>
+                <local:MapView x:Name ="m_mapView" VerticalAlignment="Top" HorizontalAlignment="Left" MouseLeftButtonDown="onMapViewClick" MouseRightButtonDown="onMapViewRClick"/>
             </ScrollViewer>
         </DockPanel>
     </Grid>

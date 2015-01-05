@@ -41,6 +41,12 @@ namespace INSAttackTheGame
             m_UnitsDisplay.update();
         }
 
+        private void onMapViewRClick(object sender, MouseButtonEventArgs e)
+        {
+            m_mapView.onRClick(sender, e);
+            m_UnitsDisplay.update();
+        }
+
         private void onKeyDown(object sender, KeyEventArgs e)
         {
             switch(e.Key)
