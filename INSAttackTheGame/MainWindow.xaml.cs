@@ -115,24 +115,75 @@ namespace INSAttackTheGame
             NewGameBuilder builder = new NewGameBuilder();
             builder.Departments.Add(new INFO(new Player()));
             builder.Departments.Add(new EII(new Player()));
+            changeMap(builder);
+        }
+
+        private void changeMap(GameBuilder builder)
+        {
             Context.changeGame(builder);
             Context.CursorPos = Coord.nowhere;
             m_mapView.InvalidateMeasure();
             m_mapView.InvalidateVisual();
         }
 
-        private void onLoad(object sender, RoutedEventArgs e)
+        private void onQuickLoad(object sender, RoutedEventArgs e)
         {
             GameLoader loader = new GameLoader();
-            Context.changeGame(loader);
-            Context.CursorPos = Coord.nowhere;
-            m_mapView.InvalidateMeasure();
-            m_mapView.InvalidateVisual();
+            changeMap(loader);
+        }
+
+        private void onQuickSave(object sender, RoutedEventArgs e)
+        {
+            Context.Game.save();
+        }
+
+        private void onLoad(object sender, RoutedEventArgs e)
+        {
+            // Create OpenFileDialog 
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Set filter for file extension and default file extension 
+            dlg.DefaultExt = ".xml";
+            dlg.Filter = "XML Files (*.xml)|*.xml";
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Get the selected file name and display in a TextBox 
+            if (result == true)
+            {
+                // Open document 
+                string filename = dlg.FileName;
+                GameLoader loader = new GameLoader();
+                loader.SaveName = filename;
+                changeMap(loader);
+            }
         }
 
         private void onSave(object sender, RoutedEventArgs e)
         {
-            Context.Game.save();
+            // Create OpenFileDialog 
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Set filter for file extension and default file extension 
+            dlg.DefaultExt = ".xml";
+            dlg.Filter = "XML Files (*.xml)|*.xml";
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Get the selected file name and display in a TextBox 
+            if (result == true)
+            {
+                // Open document 
+                string filename = dlg.FileName;
+                Context.Game.save(filename);
+            }
+        }
+
+        private void onExit(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
 
     }

@@ -11,12 +11,13 @@
                 <MenuItem Header="_File">
                     <MenuItem Header="_New..." Click="onNew" />
                     <Separator />
+                    <MenuItem Header="_QuickLoad" Click="onQuickLoad" />
                     <MenuItem Header="_Load..." Click="onLoad" />
                     <Separator />
-                    <MenuItem Header="_Save" Click="onSave" />
-                    <MenuItem Header="_Save As..." />
+                    <MenuItem Header="_QuickSave" Click="onQuickSave" />
+                    <MenuItem Header="_Save..." Click="onSave" />
                     <Separator />
-                    <MenuItem Header="_Exit" />
+                    <MenuItem Header="_Exit" Click="onExit" />
                 </MenuItem>
                 <MenuItem Header="_Help" />
             </Menu>
