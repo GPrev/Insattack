@@ -204,7 +204,7 @@ namespace INSAttack
             int res = 0;
             foreach (var ul in m_board.UnitTable)
             {
-                if (ul.Value.First().Player == player)
+                if (ul.Value.Count > 0 && ul.Value.First().Player == player)
                 {
                     res++;
                 }
