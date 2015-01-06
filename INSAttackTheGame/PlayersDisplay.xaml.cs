@@ -27,6 +27,8 @@ namespace INSAttackTheGame
 
         public void init()
         {
+            m_main.Text = "";
+            m_players.Children.Clear();
             if (Context.isGameValid())
             {
                 for (int i = 0; i < Context.Game.NbPlayer; i++)

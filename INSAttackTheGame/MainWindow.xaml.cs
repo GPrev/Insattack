@@ -132,6 +132,8 @@ namespace INSAttackTheGame
         {
             GameLoader loader = new GameLoader();
             changeMap(loader);
+            m_playerDisplay.init();
+            m_unitsDisplay.update();
         }
 
         private void onQuickSave(object sender, RoutedEventArgs e)

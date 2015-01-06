@@ -16,6 +16,7 @@ namespace MapDataModel
     public abstract class Tile
     {
         protected Dictionary<Dept, int> m_costs;
+        protected enum TileHash { Tile = -1, OutdoorTile, AmphiTile, INFOTile, TDTile }
 
         public int getcost(Dept department){
             return m_costs[department];
@@ -24,6 +25,11 @@ namespace MapDataModel
         public override bool Equals(object obj)
         {
             return obj is Tile;
+        }
+
+        public override int GetHashCode()
+        {
+            return (int)TileHash.Tile;
         }
     }
 }

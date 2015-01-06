@@ -1,5 +1,5 @@
 ImageRuntimeVersion: v4.0.30319
-Assembly MapDataModel, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+Assembly MapDataModel, Version=1.0.*, Culture=Langue indifférente (Pays indifférent): 
 	hash=SHA1, flags=PublicKey
 Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
@@ -9,11 +9,13 @@ Class MapDataModel.Tile: AutoLayout, AnsiClass, Class, Public, Abstract, Seriali
   Methods:
     getcost(Dept): PrivateScope, Public, HideBySig
     Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
 Class MapDataModel.AmphiTile: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
   :MapDataModel.Tile
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
 Class MapDataModel.Coord: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
@@ -39,6 +41,7 @@ Class MapDataModel.INFOTile: AutoLayout, AnsiClass, Class, Public, Serializable,
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
 Class MapDataModel.MapData: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Properties:
@@ -60,11 +63,13 @@ Class MapDataModel.OutdoorTile: AutoLayout, AnsiClass, Class, Public, Serializab
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
 Class MapDataModel.TDTile: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
   :MapDataModel.Tile
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
 Struct MapDataModel.Dept: AutoLayout, AnsiClass, Class, Public, Sealed
   :System.Enum
   Fields:

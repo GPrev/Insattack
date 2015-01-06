@@ -26,5 +26,10 @@ namespace MapDataModel
         {
             return obj is AmphiTile;
         }
+
+        public override int GetHashCode()
+        {
+            return (int) TileHash.AmphiTile;
+        }
     }
 }

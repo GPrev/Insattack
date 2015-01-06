@@ -26,5 +26,10 @@ namespace MapDataModel
         {
             return obj is OutdoorTile;
         }
+
+        public override int GetHashCode()
+        {
+            return (int) TileHash.OutdoorTile;
+        }
     }
 }
