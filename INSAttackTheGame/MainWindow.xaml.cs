@@ -28,10 +28,11 @@ namespace INSAttackTheGame
         }
         public void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            NewGameBuilder builder = new NewGameBuilder();
-            builder.Departments.Add(new INFO(new Player()));
-            builder.Departments.Add(new EII(new Player()));
-            m_mapView.init(builder);
+            //NewGameBuilder builder = new NewGameBuilder();
+            //builder.Departments.Add(new INFO(new Player()));
+            //builder.Departments.Add(new EII(new Player()));
+            //m_mapView.init(builder);
+            m_mapView.init();
             m_unitsDisplay.update();
             m_playerDisplay.init();
         }
@@ -107,6 +108,31 @@ namespace INSAttackTheGame
             Context.Game.endOfTurn();
             m_unitsDisplay.update();
             m_playerDisplay.update();
+        }
+
+        private void onNew(object sender, RoutedEventArgs e)
+        {
+            NewGameBuilder builder = new NewGameBuilder();
+            builder.Departments.Add(new INFO(new Player()));
+            builder.Departments.Add(new EII(new Player()));
+            Context.changeGame(builder);
+            Context.CursorPos = Coord.nowhere;
+            m_mapView.InvalidateMeasure();
+            m_mapView.InvalidateVisual();
+        }
+
+        private void onLoad(object sender, RoutedEventArgs e)
+        {
+            GameLoader loader = new GameLoader();
+            Context.changeGame(loader);
+            Context.CursorPos = Coord.nowhere;
+            m_mapView.InvalidateMeasure();
+            m_mapView.InvalidateVisual();
+        }
+
+        private void onSave(object sender, RoutedEventArgs e)
+        {
+            Context.Game.save();
         }
 
     }

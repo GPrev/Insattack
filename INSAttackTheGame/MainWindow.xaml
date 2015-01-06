@@ -7,9 +7,22 @@
         KeyDown="onKeyDown">
     <Grid>
         <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" LastChildFill="True" Margin="0">
+            <Menu IsMainMenu="True" DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New..." Click="onNew" />
+                    <Separator />
+                    <MenuItem Header="_Load..." Click="onLoad" />
+                    <Separator />
+                    <MenuItem Header="_Save" Click="onSave" />
+                    <MenuItem Header="_Save As..." />
+                    <Separator />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+                <MenuItem Header="_Help" />
+            </Menu>
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" DockPanel.Dock="Left">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="250" >
-                    <local:UnitsDisplay x:Name="m_unitsDisplay" Width="225"></local:UnitsDisplay>
+                    <local:UnitsDisplay x:Name="m_unitsDisplay" Width="240"></local:UnitsDisplay>
                 </ScrollViewer>
                 <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" DockPanel.Dock="Left">
                     <local:PlayersDisplay x:Name="m_playerDisplay"></local:PlayersDisplay>

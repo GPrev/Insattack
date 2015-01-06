@@ -25,7 +25,7 @@ namespace INSAttackTheGame
         private Dictionary<Dept, ImageSource> m_deptImages;
         ImageSource m_cursorImage;
 
-
+        //initializes the widget with a new map
         public void init(GameBuilder builder)
         {
             Context.changeGame(builder);
@@ -33,6 +33,12 @@ namespace INSAttackTheGame
             loadImages();
             InvalidateMeasure();
             InvalidateVisual();
+        }
+
+        //initializes the widget with no map
+        public void init()
+        {
+            loadImages();
         }
 
         private Tuple<float, float> toPixels(Coord c)
