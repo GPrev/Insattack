@@ -32,25 +32,27 @@ namespace INSAttackTheGame
 
         public void update()
         {
+            if (Context.isGameValid()) 
+            { 
+                Coord coord = Context.CursorPos;
+                List<Unit> unitList = Context.SelectedUnitsList;
+                if (coord.Equals(Coord.nowhere))
+                {
+                    m_main.Text = "Sélectionnez une case pour afficher les unités.";
+                }
+                else
+                {
+                    m_main.Text = "Liste des unités de la case (" + coord.X + ", " + coord.Y + ") :";
+                }
 
-            Coord coord = Context.CursorPos;
-            List<Unit> unitList = Context.SelectedUnitsList;
-            if (coord.Equals(Coord.nowhere))
-            {
-                m_main.Text = "Sélectionnez une case pour afficher les unités.";
-            }
-            else
-            {
-                m_main.Text = "Liste des unités de la case (" + coord.X + ", " + coord.Y + ") :";
-            }
-
-            m_units.Children.Clear();
-            for (int i = 0; i < unitList.Count; i++)
-            {
-                UnitInfo unit = new UnitInfo(unitList[i]);
-                unit.MouseLeftButtonDown += new MouseButtonEventHandler(onClick);
-                if ((unitList[i] == Context.SelectedUnit) && (unitList[i] != null)) unit.select();
-                m_units.Children.Add(unit);
+                m_units.Children.Clear();
+                for (int i = 0; i < unitList.Count; i++)
+                {
+                    UnitInfo unit = new UnitInfo(unitList[i]);
+                    unit.MouseLeftButtonDown += new MouseButtonEventHandler(onClick);
+                    if ((unitList[i] == Context.SelectedUnit) && (unitList[i] != null)) unit.select();
+                    m_units.Children.Add(unit);
+                }
             }
         }
 

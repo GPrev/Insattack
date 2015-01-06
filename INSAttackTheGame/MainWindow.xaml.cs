@@ -116,6 +116,8 @@ namespace INSAttackTheGame
             builder.Departments.Add(new INFO(new Player()));
             builder.Departments.Add(new EII(new Player()));
             changeMap(builder);
+            m_playerDisplay.init();
+            m_unitsDisplay.update();
         }
 
         private void changeMap(GameBuilder builder)
@@ -157,6 +159,8 @@ namespace INSAttackTheGame
                 GameLoader loader = new GameLoader();
                 loader.SaveName = filename;
                 changeMap(loader);
+                m_playerDisplay.init();
+                m_unitsDisplay.update();
             }
         }
 

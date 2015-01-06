@@ -27,23 +27,30 @@ namespace INSAttackTheGame
 
         public void init()
         {
-            for (int i = 0; i < Context.Game.NbPlayer; i++)
+            if (Context.isGameValid())
             {
-                PlayerInfo playerView = new PlayerInfo(Context.Game.Players[i]);
-                playerView.update();
-                m_players.Children.Add(playerView);
+                for (int i = 0; i < Context.Game.NbPlayer; i++)
+                {
+                    PlayerInfo playerView = new PlayerInfo(Context.Game.Players[i]);
+                    playerView.update();
+                    m_players.Children.Add(playerView);
+                }
+                m_main.Text = "Joueur actif : " + Context.Game.ActivePlayer.toString() + "\nNombre de tours restant : " +
+                              Context.Board.NbTurns;
             }
-            m_main.Text = "Joueur actif : " + Context.Game.ActivePlayer.toString() + "\nNombre de tours restant : " + Context.Board.NbTurns;
         }
 
         public void update()
         {
-            foreach (PlayerInfo player in m_players.Children)
+            if (Context.isGameValid())
             {
-                player.update();
+                foreach (PlayerInfo player in m_players.Children)
+                {
+                    player.update();
+                }
+                m_main.Text = "Joueur actif : " + Context.Game.ActivePlayer.toString() + "\nNombre de tours restant : " +
+                              Context.Board.NbTurns;
             }
-            m_main.Text = "Joueur actif : " + Context.Game.ActivePlayer.toString() + "\nNombre de tours restant : " + Context.Board.NbTurns;
-
         }
 
     }
