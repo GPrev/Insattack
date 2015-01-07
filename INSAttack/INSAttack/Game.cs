@@ -273,7 +273,7 @@ namespace INSAttack
             return false;
         }
 
-        public int points(Player player)
+        public int getPoints(Player player)
         {
             int res = 0;
             bool isHere = false;
@@ -312,24 +312,31 @@ namespace INSAttack
             return res;
         }
 
-        public Player winner()
+        public List<Player> winner()
         {
-            if (m_nbPlayers == 1) return m_players.First();
+            List<Player> winners = new List<Player>();
+            if (m_nbPlayers == 1) return m_players;
             if (m_nbPlayers > 1)
             {
-                Player player;
+                winners.Add(m_players.First());
                 int maxPoints;
-                player = m_players.First();
-                maxPoints = points(player);
+                maxPoints = getPoints(winners.First());
                 foreach (Player p in m_players)
                 {
-                    if (points(p) > maxPoints)
+                    int points = getPoints(p);
+                    if (points == maxPoints)
                     {
-                        maxPoints = points(p);
-                        player = p;
+                        winners.Add(p);
+                    }
+
+                    if (points > maxPoints)
+                    {
+                        maxPoints = points;
+                        winners.Clear();
+                        winners.Add(p);
                     }
                 }
-                return player;
+                return winners;
             }
             throw new Exception();
         }

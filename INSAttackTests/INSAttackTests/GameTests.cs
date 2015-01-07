@@ -88,7 +88,7 @@ namespace INSAttackTests
 
             foreach (var player in m_game.Players)
             {
-                Assert.AreEqual(1, m_game.points(player));
+                Assert.AreEqual(1, m_game.getPoints(player));
             }
             
             
@@ -101,7 +101,7 @@ namespace INSAttackTests
             m_game.Board.addUnit(coord, unit2);
             unit1.init(2, 4, 4, 3);
             unit2.init(2, 4, 4, 3);
-            Assert.AreEqual(2, m_game.points(m_game.Players.First()));
+            Assert.AreEqual(2, m_game.getPoints(m_game.Players.First()));
 
 
 
@@ -109,10 +109,10 @@ namespace INSAttackTests
             Unit unit = m_departments[0].make();
             m_game.Board.addUnit(coord2, unit);
             unit2.init(2, 4, 4, 3);
-            Assert.AreEqual(3, m_game.points(m_game.Players.First()));
+            Assert.AreEqual(3, m_game.getPoints(m_game.Players.First()));
 
             unit.Points = 4;
-            Assert.AreEqual(7, m_game.points(m_game.Players.First()));
+            Assert.AreEqual(7, m_game.getPoints(m_game.Players.First()));
 
 
             m_game.Board.removeUnit(unit1);

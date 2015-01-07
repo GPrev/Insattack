@@ -40,7 +40,7 @@ namespace INSAttackTheGame
         }
         public int NbPoints
         {
-            get { return Context.Game.points(m_player); }
+            get { return Context.Game.getPoints(m_player); }
         }
         public PlayerInfo()
         {
