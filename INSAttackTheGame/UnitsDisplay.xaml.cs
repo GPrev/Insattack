@@ -36,6 +36,8 @@ namespace INSAttackTheGame
             { 
                 Coord coord = Context.CursorPos;
                 List<Unit> unitList = Context.SelectedUnitsList;
+                //m_units = new ListBox();
+                List<UnitInfo> units = new List<UnitInfo>();
                 if (coord.Equals(Coord.nowhere))
                 {
                     m_main.Text = "Sélectionnez une case pour afficher les unités.";
@@ -45,17 +47,22 @@ namespace INSAttackTheGame
                     m_main.Text = "Liste des unités de la case (" + coord.X + ", " + coord.Y + ") :";
                 }
 
-                m_units.Children.Clear();
+                //m_units.Items.Clear();
                 for (int i = 0; i < unitList.Count; i++)
                 {
                     UnitInfo unit = new UnitInfo(unitList[i]);
-                    unit.MouseLeftButtonDown += new MouseButtonEventHandler(onClick);
+                    //unit.MouseLeftButtonDown += new MouseButtonEventHandler(onClick);
                     if ((unitList[i] == Context.SelectedUnit) && (unitList[i] != null)) unit.select();
-                    m_units.Children.Add(unit);
+                    units.Add(unit);
                 }
+                m_units = new ListBox();
+                m_grid.Children.Add(m_units);
+                m_units.ItemsSource = units;
+                m_units.SelectionChanged += new SelectionChangedEventHandler(m_units_SelectionChanged);
             }
         }
 
+        
 
         public void onClick(object sender, MouseButtonEventArgs e)
         {
@@ -67,10 +74,18 @@ namespace INSAttackTheGame
 
         public void resetColor()
         {
-            foreach (UnitInfo unitInfo in m_units.Children)
+            foreach (UnitInfo unitInfo in m_units.Items)
             {
                 unitInfo.Border.BorderBrush = Brushes.Black;
             }
+        }
+
+        private void m_units_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //if(m_units.Items != null)
+            resetColor();
+            ((UnitInfo) m_units.SelectedItem).select();
+            //((UnitInfo)sender).select();
         }
 
     }

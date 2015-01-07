@@ -30,7 +30,7 @@ namespace INSAttackTheGame
             if (Context.isGameValid() && Context.CursorPos != null)
             {
                 m_coord.Content = "Case : (" + Context.CursorPos.X + ", " + Context.CursorPos.Y + ")";
-                m_infos.Text = Context.Map.TileTable[Context.CursorPos].ToString();
+                if(Context.CursorPos.exists()) m_infos.Text = Context.Map.TileTable[Context.CursorPos].ToString();
             }
         }
     }

@@ -37,7 +37,7 @@ namespace INSAttackTheGame
 
         public Border Border
         {
-            get { return m_border;}
+            get { return m_border; }
         }
 
         public void update()
