@@ -159,6 +159,7 @@ namespace INSAttack
             //Apply the effects of special cases (no one for the moment)
 
             //Check if the game is finished
+            if (m_nbPlayers <= 1) return true;
             if (m_placeActivePlayer == (NbPlayer-1)) m_board.NbTurns--;
             if (m_board.NbTurns == 0) return true;
 
@@ -166,6 +167,13 @@ namespace INSAttack
             m_placeActivePlayer = (m_placeActivePlayer + 1) % m_nbPlayers;
             m_activePlayer = m_players[m_placeActivePlayer];
             return false;
+        }
+
+        //Delete one of the player, for the momet we considere that there is only 2 players
+        private void removePlayer(Player player)
+        {
+            m_players.Remove(player);
+            m_nbPlayers--;
         }
 
         private bool executeMove(Unit unit, Coord dest, int costDisplacement)
@@ -208,6 +216,7 @@ namespace INSAttack
             int chancesOfLose; //Chance of the attacker to lose the turn
             for (int i = 0; i < nbTurns; i++)
             {
+                //resolve the battle
                 attack = (float)u.Attack * u.getHealthRatio();
                 defense = (float)target.Defense * target.getHealthRatio();
                 chancesOfLose = 50 + (int)((attack / defense) * 50);
@@ -219,18 +228,21 @@ namespace INSAttack
                 {
                     target.takeHit(1);
                 }
-            }
 
-            if (u.isDead())
-            {
-                m_board.removeUnit(u);
-                killer(target);
-            }
-            if (target.isDead())
-            {
-                m_board.removeUnit(target);
-                killer(u);
-                return true;
+                //check if the one of the units involved is dead 
+                if (u.isDead())
+                {
+                    m_board.removeUnit(u);
+                    killer(target);
+                    if (countUnits(u.Player) == 0) removePlayer(u.Player);
+                }
+                if (target.isDead())
+                {
+                    m_board.removeUnit(target);
+                    killer(u);
+                    if (countUnits(target.Player) == 0) removePlayer(target.Player);
+                    return true;
+                }
             }
            return false;
         }
@@ -277,6 +289,28 @@ namespace INSAttack
                 }
             }
             return res;
+        }
+
+        public Player winner()
+        {
+            if (m_nbPlayers == 1) return m_players.First();
+            if (m_nbPlayers > 1)
+            {
+                Player player;
+                int maxPoints;
+                player = m_players.First();
+                maxPoints = points(player);
+                foreach (Player p in m_players)
+                {
+                    if (points(p) > maxPoints)
+                    {
+                        maxPoints = points(p);
+                        player = p;
+                    }
+                }
+                return player;
+            }
+            throw new Exception();
         }
 
         public void save(String name = "gameSave.xml")
