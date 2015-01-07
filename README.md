@@ -16,7 +16,7 @@
 | ajout du nombre d'unités des joueurs | Baptiste | Pas commencé |
 | écran de victoire | Gabriel | Pas commencé |
 | déplacement des unités avec le clavier | Gabriel | Pas commencé |
-| touche entrée pour la fin du tour | Gabriel | Pas commencé |
+| touche entrée pour la fin du tour | Gabriel | Fini et testé |
 | rendre les widgets plus jolis (texture parchemin, pierre, ..) | Baptiste | Pas commencé |
 
 ## Les différents projets
