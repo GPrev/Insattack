@@ -232,12 +232,22 @@ namespace INSAttack
                 //check if the one of the units involved is dead 
                 if (u.isDead())
                 {
+                    if (escape(u))
+                    {
+                        u.Life = 1;
+                        return false;
+                    }
                     m_board.removeUnit(u);
                     killer(target);
                     if (countUnits(u.Player) == 0) removePlayer(u.Player);
                 }
                 if (target.isDead())
                 {
+                    if (escape(target))
+                    {
+                        u.Life = 1;
+                        return false;
+                    }
                     m_board.removeUnit(target);
                     killer(u);
                     if (countUnits(target.Player) == 0) removePlayer(target.Player);
@@ -250,6 +260,17 @@ namespace INSAttack
         private void killer(Unit unit)
         {
             if (unit.Dept == Dept.EII) unit.Points--;
+        }
+
+        private bool escape(Unit unit)
+        {
+            if (unit.Dept == Dept.SRC)
+            {
+                Random rand = new Random();
+                int chance = rand.Next() % 100;
+                if (chance > 50) return true;
+            }
+            return false;
         }
 
         public int points(Player player)
