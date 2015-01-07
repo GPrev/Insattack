@@ -108,8 +108,11 @@ namespace INSAttackTests
             Coord coord2 = new Coord(2, 2);
             Unit unit = m_departments[0].make();
             m_game.Board.addUnit(coord2, unit);
-            unit.init(2, 4, 4, 3);
+            unit2.init(2, 4, 4, 3);
             Assert.AreEqual(3, m_game.points(m_game.Players.First()));
+
+            unit.Points = 4;
+            Assert.AreEqual(7, m_game.points(m_game.Players.First()));
 
 
             m_game.Board.removeUnit(unit1);

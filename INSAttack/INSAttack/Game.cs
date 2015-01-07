@@ -221,23 +221,43 @@ namespace INSAttack
                 }
             }
 
-            if (u.isDead()) m_board.removeUnit(u);
+            if (u.isDead())
+            {
+                m_board.removeUnit(u);
+                killer(target);
+            }
             if (target.isDead())
             {
                 m_board.removeUnit(target);
+                killer(u);
                 return true;
             }
            return false;
         }
 
+        private void killer(Unit unit)
+        {
+            if (unit.Dept == Dept.EII) unit.Points--;
+        }
+
         public int points(Player player)
         {
             int res = 0;
+            bool isHere = false;
             foreach (var ul in m_board.UnitTable)
             {
                 if (ul.Value.Count > 0 && ul.Value.First().Player == player)
                 {
-                    res++;
+                    isHere = false;
+                        foreach (var u in ul.Value)
+                    {
+                        if (u.Player.Equals(player))
+                        {
+                            res += u.Points;
+                            isHere = true;
+                        }
+                    }
+                    if (isHere) res++;
                 }
             }
             return res;

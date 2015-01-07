@@ -79,6 +79,19 @@ namespace INSAttack
             set { m_id = value; }
         }
 
+        private int m_points;
+        public int Points {
+            get { return m_points; }
+            set
+            {
+                if (value >= 0)
+                {
+                    m_points = value;
+                }
+                else m_points = 0;
+            } 
+        }
+
         private static int m_count = 0;
 
         public static int Count
@@ -95,7 +108,7 @@ namespace INSAttack
             m_count++;
         }
 
-        public void init(int movement, int life, int attack=1, int defense=1)
+        public void init(int movement, int life, int attack=1, int defense=1, int points = 0)
         {
             m_maxMovement = movement;
             m_movement = m_maxMovement;
@@ -103,6 +116,7 @@ namespace INSAttack
             m_life = m_maxLife;
             m_attack = attack;
             m_defense = defense;
+            Points = points;
         }
 
         //return true if the target is an ally overthise false.
