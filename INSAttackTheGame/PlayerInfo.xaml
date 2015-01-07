@@ -9,9 +9,9 @@
     <Grid>
         
         <StackPanel HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top">
-            <Label x:Name ="m_playerName" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"/>
-            <Label x:Name ="m_nbPoint" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-            <Label x:Name ="m_nbUnits" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+            <Label x:Name ="m_playerName" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label x:Name ="m_nbPoint" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+            <Label x:Name ="m_nbUnits" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
         </StackPanel>
     </Grid>
 </UserControl>

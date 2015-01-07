@@ -31,5 +31,10 @@ namespace MapDataModel
         {
             return (int) TileHash.TDTile;
         }
+
+        public override string ToString()
+        {
+            return "Salle de TD";
+        }
     }
 }

@@ -31,5 +31,10 @@ namespace MapDataModel
         {
             return (int) TileHash.INFOTile;
         }
+
+        public override string ToString()
+        {
+            return "Salle info :\n"+"Les unités du département info peuvent se déplacer instantanément entre les salles info.";
+        }
     }
 }

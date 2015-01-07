@@ -31,5 +31,10 @@ namespace MapDataModel
         {
             return (int) TileHash.OutdoorTile;
         }
+
+        public override string ToString()
+        {
+            return "Extérieurs";
+        }
     }
 }

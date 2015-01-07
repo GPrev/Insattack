@@ -31,5 +31,10 @@ namespace MapDataModel
         {
             return (int)TileHash.Tile;
         }
+
+        public override string ToString()
+        {
+            return "Case abstraite";
+        }
     }
 }

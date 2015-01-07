@@ -42,6 +42,7 @@ namespace INSAttackTheGame
             m_mapView.onClick(sender, e);
             m_unitsDisplay.update();
             m_playerDisplay.update();
+            m_tile.update();
         }
 
         private void onMapViewRClick(object sender, MouseButtonEventArgs e)
@@ -49,6 +50,7 @@ namespace INSAttackTheGame
             m_mapView.onRClick(sender, e);
             m_unitsDisplay.update();
             m_playerDisplay.update();
+            m_tile.update();
         }
 
         private void onKeyDown(object sender, KeyEventArgs e)
@@ -60,36 +62,42 @@ namespace INSAttackTheGame
                 case Key.NumPad7:
                     m_mapView.goUpLeft();
                     m_unitsDisplay.update();
+                    m_tile.update();
                     break;
                 //Up-left directionnal key
                 case Key.Z:
                 case Key.NumPad8:
                     m_mapView.goUp();
                     m_unitsDisplay.update();
+                    m_tile.update();
                     break;
                 //Up-left directionnal key
                 case Key.E:
                 case Key.NumPad9:
                     m_mapView.goUpRight();
                     m_unitsDisplay.update();
+                    m_tile.update();
                     break;
                 //Up-left directionnal key
                 case Key.Q:
                 case Key.NumPad4:
                     m_mapView.goDownLeft();
                     m_unitsDisplay.update();
+                    m_tile.update();
                     break;
                 //Up-left directionnal key
                 case Key.S:
                 case Key.NumPad5:
                     m_mapView.goDown();
                     m_unitsDisplay.update();
+                    m_tile.update();
                     break;
                 //Up-left directionnal key
                 case Key.D:
                 case Key.NumPad6:
                     m_mapView.goDownRight();
                     m_unitsDisplay.update();
+                    m_tile.update();
                     break;
 
                 //Pass a turn for the unit
@@ -125,6 +133,7 @@ namespace INSAttackTheGame
             changeMap(builder);
             m_playerDisplay.init();
             m_unitsDisplay.update();
+            m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void changeMap(GameBuilder builder)
@@ -141,6 +150,7 @@ namespace INSAttackTheGame
             changeMap(loader);
             m_playerDisplay.init();
             m_unitsDisplay.update();
+            m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void onQuickSave(object sender, RoutedEventArgs e)
@@ -170,6 +180,7 @@ namespace INSAttackTheGame
                 changeMap(loader);
                 m_playerDisplay.init();
                 m_unitsDisplay.update();
+                m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
