@@ -5,16 +5,19 @@
 - Bignon Baptiste
 - Prevosto Gabriel
  
-## Répartition des tâches
-
-| Qui | Quoi | Avancement |
+## TODO
+| Tâche | Responsable | Avancement |
 |---|---|---|
-| Baptiste | Tile et TileFactory | ? |
-| Baptiste | Game et GameBuilder | ? |
-| Gabriel | Board | Fini ? |
-| Gabriel | Unit | Fini ? |
-| Gabriel | Player | Fini ? |
-| Gabriel | MapGenerator et Wrapper | Fini |
+| choix des peuples | Baptiste | Pas commencé |
+| algo de conseil de déplacement | Gabriel | Pas commencé |
+| ajout des règles | Baptiste | Pas commencé |
+| ajout d'un descriptif des cases | Baptiste | Pas commencé |
+| indiquer dans l'affichage si l'unité a ou non des points de mouvement | Gabriel | Pas commencé |
+| ajout du nombre d'unités des joueurs | Baptiste | Pas commencé |
+| écran de victoire | Gabriel | Pas commencé |
+| déplacement des unités avec le clavier | Gabriel | Pas commencé |
+| touche entrée pour la fin du tour | Gabriel | Pas commencé |
+| rendre les widgets plus jolis (texture parchemin, pierre, ..) | Baptiste | Pas commencé |
 
 ## Les différents projets
 
