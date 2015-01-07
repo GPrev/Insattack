@@ -69,11 +69,6 @@ namespace INSAttack
             if (!u.Player.Equals(m_activePlayer))
                 return false;
 
-            //check the validity of the move
-            int costDisplacement = m_board.Map.TileTable[coord].getcost(u.Dept);
-            if (!Coord.areAdjacent(coord, dest)) return false;
-            if (costDisplacement > u.Movement) return false;
-
             //Look for the presence of unit on the destination
             List<Unit> UnitsAtDest;
             try
@@ -85,14 +80,25 @@ namespace INSAttack
                 UnitsAtDest = null;
             }
 
+            //check if the unit can teleport onto the case or not
+            if(teleport(u, coord, dest))
+            {
+                if (UnitsAtDest == null || !UnitsAtDest.Any() || u.isAlly(UnitsAtDest.First()))
+                {
+                    return executeMove(u, dest, 0);
+                }
+            }
+
+            //check the validity of the move
+            int costDisplacement = m_board.Map.TileTable[coord].getcost(u.Dept);
+            if (!Coord.areAdjacent(coord, dest)) return false;
+            if (costDisplacement > u.Movement) return false;
+
+            
             //Move the unit if there is no unit on its destination or if the tile is possess by unit's ally
             if (UnitsAtDest == null || !UnitsAtDest.Any() ||u.isAlly(UnitsAtDest.First()))
             {
-                if (u.tryAndUseMovement(costDisplacement))
-                {
-                    return m_board.moveUnit(u, dest);
-                }
-                else return false;
+                return executeMove(u, dest, costDisplacement);
             }
 
             //Resolve the battle if there is enemy's unit
@@ -126,6 +132,15 @@ namespace INSAttack
                 return false;
 
             u.useAllMovement();
+
+            List<Unit> unitList = getPlayerUnits(u.Player);
+            bool finishedTurn = true;
+            foreach (var unit in unitList)
+            {
+                if(unit.Movement !=0)
+                    finishedTurn = false;
+            }
+            if (finishedTurn) return endOfTurn();
             return true;
         }
 
@@ -144,13 +159,29 @@ namespace INSAttack
             //Apply the effects of special cases (no one for the moment)
 
             //Check if the game is finished
-            m_board.NbTurns--;
+            if (m_placeActivePlayer == (NbPlayer-1)) m_board.NbTurns--;
             if (m_board.NbTurns == 0) return true;
 
             //change the active player
             m_placeActivePlayer = (m_placeActivePlayer + 1) % m_nbPlayers;
             m_activePlayer = m_players[m_placeActivePlayer];
             return false;
+        }
+
+        private bool executeMove(Unit unit, Coord dest, int costDisplacement)
+        {
+            if (unit.tryAndUseMovement(costDisplacement))
+            {
+                return m_board.moveUnit(unit, dest);
+            }
+            else return false;
+        }
+
+        private bool teleport(Unit unit, Coord startingPoint, Coord dest)
+        {
+            return ((unit.Dept == Dept.INFO) &&
+                   (m_board.Map.TileTable[startingPoint] == TileFactory.Instance.InfoTile) &&
+                   (m_board.Map.TileTable[dest] == TileFactory.Instance.InfoTile));
         }
 
         //Chose one of the unit with the more HP in the list
@@ -259,5 +290,23 @@ namespace INSAttack
 
             return true;
         }
+
+        public List<Unit> getPlayerUnits(Player player)
+        {
+            List<Unit> playerUnits = new List<Unit>();
+            foreach (var unitList in m_board.UnitTable)
+            {
+                foreach (var unit in unitList.Value)
+                {
+                    if (unit.Player.Equals(player))
+                    {
+                        playerUnits.Add(unit);
+                    }
+                }
+            }
+            return playerUnits;
+        }
+
+
     }
 }
