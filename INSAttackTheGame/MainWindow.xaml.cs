@@ -92,13 +92,20 @@ namespace INSAttackTheGame
                     m_unitsDisplay.update();
                     break;
 
-                //Pass a turn
+                //Pass a turn for the unit
                 case Key.Space:
                     if(Context.SelectedUnit != null)
                     {
                         Context.Game.passTurn(Context.SelectedUnit);
                         m_unitsDisplay.update();
                     }
+                    break;
+
+                //Pass a turn
+                case Key.Enter:
+                    Context.Game.endOfTurn();
+                    m_unitsDisplay.update();
+                    m_playerDisplay.update();
                     break;
             }
         }
