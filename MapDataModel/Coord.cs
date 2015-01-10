@@ -104,5 +104,25 @@ namespace MapDataModel
         {
             return new Coord(X, Y);
         }
+
+        public List<Coord> adjacentCoords()
+        {
+            List<Coord> res = new List<Coord>();
+            res.Add(new Coord(0, -1));
+            res.Add(new Coord(0, 1));
+            res.Add(new Coord(1, 0));
+            res.Add(new Coord(-1, 0));
+            if (X % 2 == 0) // "even" tile (see reference picture)
+            {
+                res.Add(new Coord(-1, 1));
+                res.Add(new Coord(1, 1));
+            }
+            else // "odd" tile
+            {
+                res.Add(new Coord(-1, -1));
+                res.Add(new Coord(1, -1));
+            }
+            return res;
+        }
     }
 }
