@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -238,16 +239,19 @@ namespace INSAttackTheGame
         private void onQuickLoad(object sender, RoutedEventArgs e)
         {
             GameLoader loader = new GameLoader();
-            changeMap(loader);
-            m_playerDisplay.init();
-            m_unitsDisplay.update();
-            m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
-            m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
+            if (File.Exists(loader.SaveName))
+            {
+                changeMap(loader);
+                m_playerDisplay.init();
+                m_unitsDisplay.update();
+                m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
+                m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
+            }
         }
 
         private void onQuickSave(object sender, RoutedEventArgs e)
         {
-            Context.Game.save();
+            if(Context.isGameValid())   Context.Game.save();
         }
 
         private void onLoad(object sender, RoutedEventArgs e)
@@ -281,6 +285,7 @@ namespace INSAttackTheGame
         {
             // Create OpenFileDialog 
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.CheckFileExists = false;
 
             // Set filter for file extension and default file extension 
             dlg.DefaultExt = ".xml";

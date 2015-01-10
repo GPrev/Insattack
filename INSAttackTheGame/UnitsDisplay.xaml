@@ -7,7 +7,18 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Name="m_grid">
         <TextBlock x:Name ="m_main" Text="" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"  TextWrapping="Wrap"/>
-        <ListBox x:Name="m_units" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" SelectionChanged="m_units_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <ListBox Grid.Row="0" x:Name="m_units" HorizontalAlignment="Left" Margin="20,20,0,0" Focusable="True"  VerticalAlignment="Top" SelectionChanged="m_units_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListBox.ItemContainerStyle>
+            <Style TargetType="ListBoxItem">
+                <Style.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+                    <!-- Background of selected item when focussed -->
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="BlueViolet"/>
+                    <!-- Background of selected item when not focussed -->
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Green" />
+                </Style.Resources>
+            </Style>
+        </ListBox.ItemContainerStyle>
         </ListBox>
     </Grid>
 </UserControl>

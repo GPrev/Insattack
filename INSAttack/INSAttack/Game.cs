@@ -367,6 +367,7 @@ namespace INSAttack
             
 
             //Opens a file and serializes the object into it in binary format.
+            //File.Create(name);
             Stream stream = File.Open(name, FileMode.Create);
             //SoapFormatter formatter = new SoapFormatter();
             BinaryFormatter formatter = new BinaryFormatter();
