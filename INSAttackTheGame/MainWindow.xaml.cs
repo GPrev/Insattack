@@ -61,42 +61,42 @@ namespace INSAttackTheGame
                 //Up-left directionnal key
                 case Key.A:
                 case Key.NumPad7:
-                    m_mapView.goUpLeft();
+                    goUpLeft();
                     m_unitsDisplay.update();
                     m_tile.update();
                     break;
                 //Up-left directionnal key
                 case Key.Z:
                 case Key.NumPad8:
-                    m_mapView.goUp();
+                    goUp();
                     m_unitsDisplay.update();
                     m_tile.update();
                     break;
                 //Up-left directionnal key
                 case Key.E:
                 case Key.NumPad9:
-                    m_mapView.goUpRight();
+                    goUpRight();
                     m_unitsDisplay.update();
                     m_tile.update();
                     break;
                 //Up-left directionnal key
                 case Key.Q:
                 case Key.NumPad4:
-                    m_mapView.goDownLeft();
+                    goDownLeft();
                     m_unitsDisplay.update();
                     m_tile.update();
                     break;
                 //Up-left directionnal key
                 case Key.S:
                 case Key.NumPad5:
-                    m_mapView.goDown();
+                    goDown();
                     m_unitsDisplay.update();
                     m_tile.update();
                     break;
                 //Up-left directionnal key
                 case Key.D:
                 case Key.NumPad6:
-                    m_mapView.goDownRight();
+                    goDownRight();
                     m_unitsDisplay.update();
                     m_tile.update();
                     break;
@@ -119,6 +119,63 @@ namespace INSAttackTheGame
             }
         }
 
+        public void goUpLeft()
+        {
+            if (Context.CursorPos.X % 2 == 0) // "even" tile (see reference picture)
+                moveUnit(-1, 0);
+            else // "odd" tile
+                moveUnit(-1, -1);
+        }
+
+        public void goUp()
+        {
+            moveUnit(0, -1);
+        }
+
+        public void goUpRight()
+        {
+            if (Context.CursorPos.X % 2 == 0) // "even" tile (see reference picture)
+                moveUnit(1, 0);
+            else // "odd" tile
+                moveUnit(1, -1);
+        }
+
+        public void goDownLeft()
+        {
+            if (Context.CursorPos.X % 2 == 0) // "even" tile (see reference picture)
+                moveUnit(-1, 1);
+            else // "odd" tile
+                moveUnit(-1, 0);
+        }
+
+        public void goDown()
+        {
+            moveUnit(0, 1);
+        }
+
+        public void goDownRight()
+        {
+            if (Context.CursorPos.X % 2 == 0) // "even" tile (see reference picture)
+                moveUnit(1, 1);
+            else // "odd" tile
+                moveUnit(1, 0);
+        }
+
+        private void moveUnit(int dx, int dy)
+        {
+            if (Context.Map.isValid(Context.CursorPos)) //if the cursor is on a valid tile
+            {
+                Coord newPos = Context.CursorPos.copy();
+                newPos.X += dx;
+                newPos.Y += dy;
+                if (Context.Map.isValid(newPos)) //if the cursor is to be moved on a valid tile
+                {
+                    m_mapView.moveSelUnit(newPos);
+                    m_mapView.InvalidateVisual(); //refreshes the display
+                }
+            }
+        }
+
         private void m_buttonEndOfTurn_Click(object sender, RoutedEventArgs e)
         {
             Context.Game.endOfTurn();
@@ -127,11 +184,7 @@ namespace INSAttackTheGame
         }
 
         private void onNew(object sender, RoutedEventArgs e)
-        {
-            //NewGameBuilder builder = new NewGameBuilder();
-            //builder.Departments = Context.Departments;
-            //builder.BoardCreator = Context.BoardCreator;
- 
+        { 
             NewGameParam paramChoice = new NewGameParam();
             paramChoice.Closed += new EventHandler(creategame);
             paramChoice.ShowDialog();
@@ -228,5 +281,4 @@ namespace INSAttackTheGame
         }
 
     }
-    
 }

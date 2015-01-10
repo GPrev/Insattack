@@ -160,74 +160,22 @@ namespace INSAttackTheGame
             InvalidateVisual(); //refreshes the display
         }
 
-        internal void onRClick(object sender, MouseButtonEventArgs e)
+        public void onRClick(object sender, MouseButtonEventArgs e)
         {
             if(Context.SelectedUnit != null) //if a unit is selected
             {
                 Coord clickedPos = toCoords((float)e.GetPosition(this).X, (float)e.GetPosition(this).Y); //compmutes the clicked spot
-                if(Context.Game.move(Context.SelectedUnit, clickedPos)) //tries and moves the unit
-                {
-                    Context.CursorPos = clickedPos; //moves the cursor on the destination
-                    InvalidateVisual(); //refreshes the display
-                }
+                moveSelUnit(clickedPos);
             }
         }
 
-
-        public void goUpLeft()
+        //tries to move selected unit to given position
+        public void moveSelUnit(Coord pos)
         {
-            if (Context.CursorPos.X % 2 == 0) // "even" tile (see reference picture)
-                moveCursor(-1, 0);
-            else // "odd" tile
-                moveCursor(-1, -1);
-        }
-
-        public void goUp()
-        {
-            moveCursor(0, -1);
-        }
-
-        public void goUpRight()
-        {
-            if (Context.CursorPos.X % 2 == 0) // "even" tile (see reference picture)
-                moveCursor(1, 0);
-            else // "odd" tile
-                moveCursor(1, -1);
-        }
-
-        public void goDownLeft()
-        {
-            if (Context.CursorPos.X % 2 == 0) // "even" tile (see reference picture)
-                moveCursor(-1, 1);
-            else // "odd" tile
-                moveCursor(-1, 0);
-        }
-
-        public void goDown()
-        {
-            moveCursor(0, 1);
-        }
-
-        public void goDownRight()
-        {
-            if (Context.CursorPos.X % 2 == 0) // "even" tile (see reference picture)
-                moveCursor(1, 1);
-            else // "odd" tile
-                moveCursor(1, 0);
-        }
-
-        private void moveCursor(int dx, int dy)
-        {
-            if (Context.Map.isValid(Context.CursorPos)) //if the cursor is on a valid tile
+            if (Context.Game.move(Context.SelectedUnit, pos)) //tries and moves the unit
             {
-                Coord newPos = Context.CursorPos.copy();
-                newPos.X += dx;
-                newPos.Y += dy;
-                if (Context.Map.isValid(newPos)) //if the cursor is to be moved on a valid tile
-                {
-                    Context.CursorPos = newPos;
-                    InvalidateVisual(); //refreshes the display
-                }
+                Context.CursorPos = pos; //moves the cursor on the destination
+                InvalidateVisual(); //refreshes the display
             }
         }
     }
