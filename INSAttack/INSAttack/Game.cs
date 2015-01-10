@@ -269,9 +269,10 @@ namespace INSAttack
             //Apply the effects of special cases (no one for the moment)
 
             //Check if the game is finished
-            if (m_nbPlayers <= 1) return true;
+            //if (m_nbPlayers <= 1) return true;
             if (m_placeActivePlayer == (NbPlayer - 1)) m_board.NbTurns--;
-            if (m_board.NbTurns == 0) return true;
+            //if (m_board.NbTurns == 0) return true;
+            if (isGamefinished()) return true;
 
             //change the active player
             m_placeActivePlayer = (m_placeActivePlayer + 1) % m_nbPlayers;
@@ -319,18 +320,20 @@ namespace INSAttack
             return res;
         }
 
+        
         public List<Player> winner()
         {
+            if (!isGamefinished()) return null;
             List<Player> winners = new List<Player>();
             if (m_nbPlayers == 1) return m_players;
             if (m_nbPlayers > 1)
             {
                 winners.Add(m_players.First());
-                int maxPoints;
-                maxPoints = getPoints(winners.First());
+                int maxPoints = getPoints(winners.First());
+                int points;
                 foreach (Player p in m_players)
                 {
-                    int points = getPoints(p);
+                    points = getPoints(p);
                     if (points == maxPoints)
                     {
                         winners.Add(p);
@@ -343,10 +346,19 @@ namespace INSAttack
                         winners.Add(p);
                     }
                 }
-                return winners;
             }
-            throw new Exception();
+
+            return winners;
         }
+
+        public bool isGamefinished()
+        {
+            if (m_nbPlayers == 1) return true;
+            if (m_board.NbTurns == 0) return true;
+            return false;
+        }
+
+
 
         public void save(String name = "gameSave.xml")
         {
