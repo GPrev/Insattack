@@ -22,6 +22,8 @@ namespace INSAttackTheGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        private NewGameParam m_parameters;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -185,22 +187,31 @@ namespace INSAttackTheGame
 
         private void onNew(object sender, RoutedEventArgs e)
         { 
-            NewGameParam paramChoice = new NewGameParam();
-            paramChoice.Closed += new EventHandler(creategame);
-            paramChoice.ShowDialog();
+            m_parameters = new NewGameParam();
+            m_parameters.m_buttonNewGame.Click += new RoutedEventHandler(createGame);
+            m_parameters.ShowDialog();
 
         }
 
-        private void creategame(object sender, EventArgs e)
+        private void createGame(object sender, RoutedEventArgs e)
         {
-            GameBuilder builder = ((NewGameParam) sender).Builder;
+
+            GameBuilder builder = m_parameters.Builder;
             if (builder != null)
             {
-                changeMap(builder);
-                m_playerDisplay.init();
-                m_unitsDisplay.update();
-                m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
-                m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
+                if (m_parameters.m_player1.PlayerName.Equals(m_parameters.m_player2.PlayerName))
+                {
+                    MessageBox.Show("Chaque joueur doit avoir un nom différent.");
+                }
+                else
+                {
+                    changeMap(builder);
+                    m_playerDisplay.init();
+                    m_unitsDisplay.update();
+                    m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
+                    m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
+                    m_parameters.Close();
+                }
             }
         }
 

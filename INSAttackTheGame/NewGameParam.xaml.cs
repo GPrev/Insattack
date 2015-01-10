@@ -38,7 +38,13 @@ namespace INSAttackTheGame
 
         public GameBuilder Builder
         {
-            get { return m_gameBuilder; }
+            get
+            {
+                m_gameBuilder = new NewGameBuilder();
+                m_gameBuilder.Departments = getDepartments();
+                m_gameBuilder.BoardCreator = getBoardCreator();
+                return m_gameBuilder;
+            }
         }
 
         private List<Department> getDepartments()
@@ -58,14 +64,14 @@ namespace INSAttackTheGame
         }
 
 
-        private void onNew(object sender, RoutedEventArgs e)
-        {
-            m_gameBuilder = new NewGameBuilder();
-            m_gameBuilder.Departments = getDepartments();
-            m_gameBuilder.BoardCreator = getBoardCreator();
+        //private void onNew(object sender, RoutedEventArgs e)
+        //{
+        //    m_gameBuilder = new NewGameBuilder();
+        //    m_gameBuilder.Departments = getDepartments();
+        //    m_gameBuilder.BoardCreator = getBoardCreator();
             
-            this.Close();
-        }
+        //    this.Close();
+        //}
 
         private void m_buttonCancel_Click(object sender, RoutedEventArgs e)
         {
