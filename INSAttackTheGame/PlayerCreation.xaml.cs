@@ -32,6 +32,11 @@ namespace INSAttackTheGame
             m_main.Text = "Joueur : " + i;
         }
 
+        public String PlayerName
+        {
+            get { return m_playerName.Text; }
+        }
+
         public Department Department
         {
             get
@@ -65,6 +70,7 @@ namespace INSAttackTheGame
         public void setPlayerNumber(int i)
         {
             m_main.Text = "Joueur " + i + " : ";
+            m_playerName.Text = "Joueur " + i;
         }
 
     }

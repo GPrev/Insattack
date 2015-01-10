@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace INSAttackTheGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        private NewGameParam m_parameters;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -189,29 +192,39 @@ namespace INSAttackTheGame
 
         private void m_buttonEndOfTurn_Click(object sender, RoutedEventArgs e)
         {
-            Context.Game.endOfTurn();
+            if(!Context.isGameOver()) Context.Game.endOfTurn();
             m_unitsDisplay.update();
             m_playerDisplay.update();
+            checkWinState();
         }
 
         private void onNew(object sender, RoutedEventArgs e)
         { 
-            NewGameParam paramChoice = new NewGameParam();
-            paramChoice.Closed += new EventHandler(creategame);
-            paramChoice.ShowDialog();
+            m_parameters = new NewGameParam();
+            m_parameters.m_buttonNewGame.Click += new RoutedEventHandler(createGame);
+            m_parameters.ShowDialog();
 
         }
 
-        private void creategame(object sender, EventArgs e)
+        private void createGame(object sender, RoutedEventArgs e)
         {
-            GameBuilder builder = ((NewGameParam) sender).Builder;
+
+            GameBuilder builder = m_parameters.Builder;
             if (builder != null)
             {
-                changeMap(builder);
-                m_playerDisplay.init();
-                m_unitsDisplay.update();
-                m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
-                m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
+                if (m_parameters.m_player1.PlayerName.Equals(m_parameters.m_player2.PlayerName))
+                {
+                    MessageBox.Show("Chaque joueur doit avoir un nom différent.");
+                }
+                else
+                {
+                    changeMap(builder);
+                    m_playerDisplay.init();
+                    m_unitsDisplay.update();
+                    m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
+                    m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
+                    m_parameters.Close();
+                }
             }
         }
 
@@ -226,16 +239,19 @@ namespace INSAttackTheGame
         private void onQuickLoad(object sender, RoutedEventArgs e)
         {
             GameLoader loader = new GameLoader();
-            changeMap(loader);
-            m_playerDisplay.init();
-            m_unitsDisplay.update();
-            m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
-            m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
+            if (File.Exists(loader.SaveName))
+            {
+                changeMap(loader);
+                m_playerDisplay.init();
+                m_unitsDisplay.update();
+                m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
+                m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
+            }
         }
 
         private void onQuickSave(object sender, RoutedEventArgs e)
         {
-            Context.Game.save();
+            if(Context.isGameValid())   Context.Game.save();
         }
 
         private void onLoad(object sender, RoutedEventArgs e)
@@ -269,6 +285,7 @@ namespace INSAttackTheGame
         {
             // Create OpenFileDialog 
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.CheckFileExists = false;
 
             // Set filter for file extension and default file extension 
             dlg.DefaultExt = ".xml";
@@ -282,7 +299,7 @@ namespace INSAttackTheGame
             {
                 // Open document 
                 string filename = dlg.FileName;
-                Context.Game.save(filename);
+                if(Context.isGameValid()) Context.Game.save(filename);
             }
         }
 

@@ -324,13 +324,15 @@ namespace INSAttack
         
         public List<Player> winner()
         {
-            if (!isGamefinished()) return null;
             List<Player> winners = new List<Player>();
+
+            if (!isGamefinished()) return winners;
+            
             if (m_nbPlayers == 1) return m_players;
             if (m_nbPlayers > 1)
             {
                 winners.Add(m_players.First());
-                int maxPoints = getPoints(winners.First());
+                int maxPoints = -42;//getPoints(winners.First());
                 int points;
                 foreach (Player p in m_players)
                 {
@@ -363,17 +365,26 @@ namespace INSAttack
 
         public void save(String name = "gameSave.xml")
         {
-            
+            String _name = name;
+            try 
+            {
+                if(!_name.EndsWith(".xml"))
+                {
+                    _name = String.Concat(name, ".xml");
+                }
+                //Opens a file and serializes the object into it in binary format.
+                Stream stream = File.Open(_name, FileMode.Create);
+                BinaryFormatter formatter = new BinaryFormatter();
 
-            //Opens a file and serializes the object into it in binary format.
-            Stream stream = File.Open(name, FileMode.Create);
-            //SoapFormatter formatter = new SoapFormatter();
-            BinaryFormatter formatter = new BinaryFormatter();
-
-            formatter.Serialize(stream, this);
-            formatter.Serialize(stream, Unit.Count);
-            formatter.Serialize(stream, Player.Count);
-            stream.Close();
+                formatter.Serialize(stream, this);
+                formatter.Serialize(stream, Unit.Count);
+                formatter.Serialize(stream, Player.Count);
+                stream.Close();
+            }
+            catch (SerializationException e)
+            {
+                Console.Error.WriteLine(e.Message);
+            }
         }
 
         
