@@ -15,7 +15,15 @@ namespace INSAttack
         {
             m_id = m_count;
             m_count++;
+            m_name = "Joueur " + m_id;
         }
+        public Player(String name)
+        {
+            m_id = m_count;
+            m_count++;
+            m_name = name;
+        }
+
 
         private int m_id;
 
@@ -33,6 +41,14 @@ namespace INSAttack
             set { m_id = value; }
         }
 
+        private String m_name;
+
+        public String Name
+        {
+            get { return m_name; }
+            set { m_name = value; }
+        }
+
         public bool isAlly(Player p)
         {
             return this == p;
@@ -45,7 +61,7 @@ namespace INSAttack
 
         public bool Equals(Player p)
         {
-            return m_id == p.Id;
+            return m_id == p.Id && m_name.Equals(p.Name);
         }
 
         public static bool operator ==(Player a, Player b)
@@ -78,7 +94,7 @@ namespace INSAttack
 
         public String toString()
         {
-            return "Joueur : " + m_id;
+            return Name;
         }
     }
 }

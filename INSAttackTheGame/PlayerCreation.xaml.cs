@@ -26,12 +26,17 @@ namespace INSAttackTheGame
         {
             InitializeComponent();
         }
+        public PlayerCreation(int i)
+        {
+            InitializeComponent();
+            m_main.Text = "Joueur : " + i;
+        }
 
         public Department Department
         {
             get
             {
-                Player player = new Player();
+                Player player = new Player(m_playerName.Text);
                 return getDepartment(player);
             }
         }
@@ -55,6 +60,11 @@ namespace INSAttackTheGame
             if (department.Equals("SGM")) m_departChoice.SelectedIndex = 3;
             if (department.Equals("GMA")) m_departChoice.SelectedIndex = 4;
             if (department.Equals("GC")) m_departChoice.SelectedIndex = 5;
+        }
+
+        public void setPlayerNumber(int i)
+        {
+            m_main.Text = "Joueur " + i + " : ";
         }
 
     }

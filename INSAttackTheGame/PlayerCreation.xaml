@@ -7,8 +7,8 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" DockPanel.Dock="Left">
-            <TextBlock x:Name ="m_main" Text="Joueur 1 : " HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"/>
-            <TextBlock x:Name ="m_playerName" IsEnabled="False" Text="" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" Visibility="Hidden"/>
+            <TextBlock x:Name ="m_main" Text="Joueur" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"/>
+            <TextBlock x:Name ="m_playerName" Text="Joueur" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" Visibility="Visible" Margin="10,0,0,0" IsManipulationEnabled="True"/>
             <ComboBox x:Name="m_departChoice" Margin="10,0,0,0">
                 <ComboBoxItem IsSelected="True">INFO</ComboBoxItem>
                 <ComboBoxItem>EII</ComboBoxItem>
