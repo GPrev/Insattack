@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MapDataModel;
+using Wrapper;
 
 namespace INSAttack
 {
@@ -408,6 +409,38 @@ namespace INSAttack
             return playerUnits;
         }
 
+        public List<Coord> suggest(Unit u)
+        {
+            return suggest(Board.find(u));
+        }
+        public List<Coord> suggest(Coord pos)
+        {
+            List<Coord> adjList = pos.adjacentCoords();
 
+            //Collects data on adjacent squares
+            List<Tuple<Tile, bool, int>> data = new List<Tuple<Tile,bool,int>>();
+            foreach(Coord c in adjList)
+            {
+                bool isAlly = Board.UnitTable[c].Count > 0 && Board.UnitTable[c][0].Player == m_activePlayer;
+                int enemyHP = 0;
+                if (!isAlly && Board.UnitTable[c].Count > 0)
+                {
+                    foreach(Unit u in Board.UnitTable[c])
+                        enemyHP += u.Life;
+                }
+                data.Add(new Tuple<Tile, bool, int>(Board.Map.TileTable[c], isAlly, enemyHP));
+            }
+
+            WrapperHintGiver hintGiver = new WrapperHintGiver(); //calls the c++ hint giver
+
+            //translates back to Coords
+            List<int> indexList = hintGiver.giveHint(data);
+            List<Coord> res = new List<Coord>();
+            foreach(int i in indexList)
+            {
+                res.Add(adjList[i]);
+            }
+            return res;
+        }
     }
 }
