@@ -25,6 +25,7 @@ namespace INSAttackTheGame
         private Dictionary<Dept, ImageSource> m_deptImages;
         private Dictionary<Dept, ImageSource> m_tiredDeptImages;
         ImageSource m_cursorImage;
+        ImageSource m_hintImage;
 
         //initializes the widget with a new map
         public void init(GameBuilder builder)
@@ -112,6 +113,7 @@ namespace INSAttackTheGame
                 m_tiredDeptImages.Add(Dept.GC, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/GC_tired.png")));
 
                 m_cursorImage = BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/UI/Cursor.png"));
+                m_hintImage = BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/UI/Hint.png"));
             }
             catch (Exception e)
             {
@@ -151,10 +153,13 @@ namespace INSAttackTheGame
             base.OnRender(drawingContext);
             if(m_tileImages != null) //if initialized correctly
             {
+                //Tiles
                 foreach (var t in Context.Map.TileTable)
                 {
                     DrawElementOnCanvas(t.Value, t.Key, drawingContext); //draws each tile
                 }
+
+                //Units
                 foreach (var unitList in Context.Board.UnitTable)
                 {
                     if (unitList.Value.Count > 0)
@@ -171,8 +176,21 @@ namespace INSAttackTheGame
                         DrawElementOnCanvas(unitList.Value.First().Dept, hasMovement, unitList.Key, drawingContext); //draws each tile
                     }
                 }
+
                 if (Context.Map.isValid(Context.CursorPos))
+                {
+                    //Hints
+                    var hints = Context.Game.suggest(Context.CursorPos);
+                    foreach(Coord c in hints)
+                    {
+                        DrawElementOnCanvas(m_hintImage, c, drawingContext);
+                    }
+
+                    //Cursor
                     DrawElementOnCanvas(m_cursorImage, Context.CursorPos, drawingContext); //draws the cursor
+                }
+
+                //Win message
                 string msg = Context.getWinMessage();
                 if(msg != null)//if the game si over
                 {

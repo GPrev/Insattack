@@ -426,21 +426,46 @@ namespace INSAttack
         }
         public List<Coord> suggest(Coord pos)
         {
-            List<Coord> adjList = pos.adjacentCoords();
+            //if there is no ally unit at the given position taht is able to move, no hint to be given
+            bool hasMovement = false;
+            if (Board.UnitTable.ContainsKey(pos) && Board.UnitTable[pos].Count > 0 && Board.UnitTable[pos][0].Player == m_activePlayer)
+            {
+                foreach (var unit in Board.UnitTable[pos])
+                {
+                    if (unit.Movement > 0)
+                    {
+                        hasMovement = true;
+                        break;
+                    }
+                }
+            }
+            if(!hasMovement)
+                return new List<Coord>();
+
 
             //Collects data on adjacent squares
+            List<Coord> adjList = pos.adjacentCoords();
             List<Tuple<Tile, bool, int>> data = new List<Tuple<Tile,bool,int>>();
+            List<Coord> toDeleteList = new List<Coord>();
             foreach(Coord c in adjList)
             {
-                bool isAlly = Board.UnitTable[c].Count > 0 && Board.UnitTable[c][0].Player == m_activePlayer;
-                int enemyHP = 0;
-                if (!isAlly && Board.UnitTable[c].Count > 0)
+                if (Board.Map.isValid(c))
                 {
-                    foreach(Unit u in Board.UnitTable[c])
-                        enemyHP += u.Life;
+                    bool isAlly = Board.UnitTable.ContainsKey(c) && Board.UnitTable[c].Count > 0 && Board.UnitTable[c][0].Player == m_activePlayer;
+                    int enemyHP = 0;
+                    if (!isAlly && Board.UnitTable.ContainsKey(c) && Board.UnitTable[c].Count > 0)
+                    {
+                        foreach (Unit u in Board.UnitTable[c])
+                            enemyHP += u.Life;
+                    }
+                    data.Add(new Tuple<Tile, bool, int>(Board.Map.TileTable[c], isAlly, enemyHP));
                 }
-                data.Add(new Tuple<Tile, bool, int>(Board.Map.TileTable[c], isAlly, enemyHP));
+                else
+                    toDeleteList.Add(c);
             }
+            //removes invalid coordinates
+            foreach (Coord c in toDeleteList)
+                adjList.Remove(c);
 
             WrapperHintGiver hintGiver = new WrapperHintGiver(); //calls the c++ hint giver
 
