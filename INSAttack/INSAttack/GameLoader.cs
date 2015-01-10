@@ -35,16 +35,25 @@ namespace INSAttack
 
             Game game = null;
 
-            //Opens save file and deserializes the object from it.
-            Stream stream = File.Open(SaveName, FileMode.Open);
-            //SoapFormatter formatter = new SoapFormatter();
-            BinaryFormatter formatter = new BinaryFormatter();
+            if (File.Exists(SaveName))
+            {
+                try
+                {
+                    //Opens save file and deserializes the object from it.
+                    Stream stream = File.Open(SaveName, FileMode.Open);
+                    //SoapFormatter formatter = new SoapFormatter();
+                    BinaryFormatter formatter = new BinaryFormatter();
 
-            game = (Game)formatter.Deserialize(stream);
-            Unit.Count = (int)formatter.Deserialize(stream);
-            Player.Count = (int)formatter.Deserialize(stream);
-            stream.Close();
-
+                    game = (Game) formatter.Deserialize(stream);
+                    Unit.Count = (int) formatter.Deserialize(stream);
+                    Player.Count = (int) formatter.Deserialize(stream);
+                    stream.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.Error.WriteLine(e.Message);
+                }
+            }
             return game;
         }
     }

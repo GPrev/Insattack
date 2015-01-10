@@ -299,7 +299,7 @@ namespace INSAttackTheGame
             {
                 // Open document 
                 string filename = dlg.FileName;
-                Context.Game.save(filename);
+                if(Context.isGameValid()) Context.Game.save(filename);
             }
         }
 
