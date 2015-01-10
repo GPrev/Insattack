@@ -323,13 +323,15 @@ namespace INSAttack
         
         public List<Player> winner()
         {
-            if (!isGamefinished()) return null;
             List<Player> winners = new List<Player>();
+
+            if (!isGamefinished()) return winners;
+            
             if (m_nbPlayers == 1) return m_players;
             if (m_nbPlayers > 1)
             {
                 winners.Add(m_players.First());
-                int maxPoints = getPoints(winners.First());
+                int maxPoints = -42;//getPoints(winners.First());
                 int points;
                 foreach (Player p in m_players)
                 {

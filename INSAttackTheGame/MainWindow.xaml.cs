@@ -191,9 +191,10 @@ namespace INSAttackTheGame
 
         private void m_buttonEndOfTurn_Click(object sender, RoutedEventArgs e)
         {
-            Context.Game.endOfTurn();
+            if(!Context.isGameOver()) Context.Game.endOfTurn();
             m_unitsDisplay.update();
             m_playerDisplay.update();
+            checkWinState();
         }
 
         private void onNew(object sender, RoutedEventArgs e)
