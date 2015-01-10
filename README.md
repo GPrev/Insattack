@@ -14,7 +14,7 @@
 | ajout d'un descriptif des cases | Baptiste | Fini |
 | indiquer dans l'affichage si l'unité a ou non des points de mouvement | Gabriel | Fini et testé |
 | ajout du nombre d'unités des joueurs | Baptiste | Fini |
-| écran de victoire | Gabriel | Pas commencé |
+| écran de victoire | Gabriel | Fini mais moche |
 | déplacement des unités avec le clavier | Gabriel | Fini et testé |
 | touche entrée pour la fin du tour | Gabriel | Fini et testé |
 | rendre les widgets plus jolis (texture parchemin, pierre, ..) | Baptiste | Pas commencé |
