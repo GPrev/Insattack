@@ -111,63 +111,12 @@ namespace INSAttack
                     {
                         return m_board.moveUnit(u, dest);
                     }
-                    return false;
-                    
                 }
-                else return false;
             }
             return false;
 
         }
 
-        public bool passTurn(Unit u)
-        {
-            //checks the existence of the unit
-            Coord coord = m_board.find(u);
-            if (!coord.exists())
-                return false;
-
-            //checks if the unit belongs to current player
-            if (!u.Player.Equals(m_activePlayer))
-                return false;
-
-            u.useAllMovement();
-
-            List<Unit> unitList = getPlayerUnits(u.Player);
-            bool finishedTurn = true;
-            foreach (var unit in unitList)
-            {
-                if(unit.Movement !=0)
-                    finishedTurn = false;
-            }
-            if (finishedTurn) return endOfTurn();
-            return true;
-        }
-
-        
-        //return true if the gamed is finished
-        public bool endOfTurn()
-        {
-            //reset the pm of all the units
-            foreach (var l in m_board.UnitTable)
-            {
-                foreach (var u in l.Value)
-                {
-                    u.resetMovement();
-                }
-            }
-            //Apply the effects of special cases (no one for the moment)
-
-            //Check if the game is finished
-            if (m_nbPlayers <= 1) return true;
-            if (m_placeActivePlayer == (NbPlayer-1)) m_board.NbTurns--;
-            if (m_board.NbTurns == 0) return true;
-
-            //change the active player
-            m_placeActivePlayer = (m_placeActivePlayer + 1) % m_nbPlayers;
-            m_activePlayer = m_players[m_placeActivePlayer];
-            return false;
-        }
 
         //Delete one of the player, for the momet we considere that there is only 2 players
         private void removePlayer(Player player)
@@ -204,12 +153,12 @@ namespace INSAttack
         }
 
         //return true if the target is dead
-        private bool confront(Unit u, Unit target)
+        private bool confront(Unit unit, Unit target)
         {
             //we calculate the number of turns of the battle
-            int maxHP = Math.Max(u.Life, target.Life);
+            int maxHP = Math.Max(unit.Life, target.Life);
             Random rand = new Random();
-            int nbTurns = rand.Next() % (maxHP + 2);
+            int nbTurns = (rand.Next() % maxHP)+2;
 
             float attack;
             float defense;
@@ -217,39 +166,39 @@ namespace INSAttack
             for (int i = 0; i < nbTurns; i++)
             {
                 //resolve the battle
-                attack = (float)u.Attack * u.getHealthRatio();
+                attack = (float)unit.Attack * unit.getHealthRatio();
                 defense = (float)target.Defense * target.getHealthRatio();
-                chancesOfLose = 50 + (int)((attack / defense) * 50);
-                if (rand.Next() % 100 <= chancesOfLose)
+                chancesOfLose = getChancesOfLose(attack, defense);
+                if ( (rand.Next() % 100) <= chancesOfLose)
                 {
-                    u.takeHit(1);
+                    unit.takeHit(1);
                 }
                 else
                 {
                     target.takeHit(1);
                 }
 
-                //check if the one of the units involved is dead 
-                if (u.isDead())
+                //check if the one of the units involved is dead
+                if (unit.isDead())
                 {
-                    if (escape(u))
+                    if (escape(unit))
                     {
-                        u.Life = 1;
+                        unit.Life = 1;
                         return false;
                     }
-                    m_board.removeUnit(u);
+                    m_board.removeUnit(unit);
                     killer(target);
-                    if (countUnits(u.Player) == 0) removePlayer(u.Player);
+                    if (countUnits(unit.Player) == 0) removePlayer(unit.Player);
                 }
                 if (target.isDead())
                 {
                     if (escape(target))
                     {
-                        u.Life = 1;
+                        unit.Life = 1;
                         return false;
                     }
                     m_board.removeUnit(target);
-                    killer(u);
+                    killer(unit);
                     if (countUnits(target.Player) == 0) removePlayer(target.Player);
                     return true;
                 }
@@ -257,6 +206,14 @@ namespace INSAttack
            return false;
         }
 
+
+        private int getChancesOfLose(float attack, float defense)
+        {
+            if (attack > defense) return (50 - (int) ((1 - (defense / attack)) * 50));
+            if (attack < defense) return (50 + (int) ((1 - (attack / defense)) * 50));
+            //if (attack == defense) return 50;
+            return 50;
+        }
         private void killer(Unit unit)
         {
             if (unit.Dept == Dept.EII) unit.Points--;
@@ -272,6 +229,56 @@ namespace INSAttack
             }
             return false;
         }
+
+        public bool passTurn(Unit u)
+        {
+            //checks the existence of the unit
+            Coord coord = m_board.find(u);
+            if (!coord.exists())
+                return false;
+
+            //checks if the unit belongs to current player
+            if (!u.Player.Equals(m_activePlayer))
+                return false;
+
+            u.useAllMovement();
+
+            List<Unit> unitList = getPlayerUnits(u.Player);
+            bool finishedTurn = true;
+            foreach (var unit in unitList)
+            {
+                if (unit.Movement != 0)
+                    finishedTurn = false;
+            }
+            if (finishedTurn) return endOfTurn();
+            return true;
+        }
+
+
+        //return true if the gamed is finished
+        public bool endOfTurn()
+        {
+            //reset the pm of all the units
+            foreach (var l in m_board.UnitTable)
+            {
+                foreach (var u in l.Value)
+                {
+                    u.resetMovement();
+                }
+            }
+            //Apply the effects of special cases (no one for the moment)
+
+            //Check if the game is finished
+            if (m_nbPlayers <= 1) return true;
+            if (m_placeActivePlayer == (NbPlayer - 1)) m_board.NbTurns--;
+            if (m_board.NbTurns == 0) return true;
+
+            //change the active player
+            m_placeActivePlayer = (m_placeActivePlayer + 1) % m_nbPlayers;
+            m_activePlayer = m_players[m_placeActivePlayer];
+            return false;
+        }
+
 
         public int getPoints(Player player)
         {

@@ -19,8 +19,8 @@ namespace INSAttackTests
         {
             NewGameBuilder gameBuilder = new NewGameBuilder();
             m_departments = new List<Department>();
-            m_departments.Add(new EII(new Player()));
             m_departments.Add(new INFO(new Player()));
+            m_departments.Add(new EII(new Player()));
             gameBuilder.Departments = m_departments;
             gameBuilder.BoardCreator = new NormalBoardStrategy(m_departments);
             m_game = gameBuilder.make();
@@ -173,6 +173,7 @@ namespace INSAttackTests
             Assert.AreEqual(dest, m_game.Board.find(unit));
             unit.resetMovement();
             m_game.move(unit, coord);
+            Assert.AreEqual(coord, m_game.Board.find(unit));
 
 
             unit.Movement = 0;
@@ -184,25 +185,23 @@ namespace INSAttackTests
             Assert.IsFalse(Coord.areAdjacent(coord, dest2));
             Assert.IsFalse(m_game.move(unit, dest2));
             Assert.AreEqual(coord, m_game.Board.find(unit));
+            Assert.AreEqual(unit.MaxMovement, unit.Movement);
+
 
             Assert.IsFalse(m_game.move(unit, new Coord(-4, -42)));
             Assert.AreEqual(coord, m_game.Board.find(unit));
+            Assert.AreEqual(unit.MaxMovement, unit.Movement);
 
 
             //tests for battles
+            unit.init(2, 4, 4, 3);
+
+            //With only one unit on the destnination
             Unit target = m_departments[1].make();
             m_game.Board.addUnit(dest, target);
             target.init(2, 4, 4, 3);
 
-            Unit target2 = m_departments[1].make();
-            m_game.Board.addUnit(dest, target);
-            target2.init(2, 5, 4, 10);
 
-            Assert.AreEqual(2, m_game.Board.UnitTable[dest].Count);
-            Assert.AreEqual(3, target.Defense);
-            Assert.AreEqual(10, target2.Defense);
-            Assert.AreEqual(4, target.Life);
-            Assert.AreEqual(5, target2.Life);
 
 
             bool moved = m_game.move(unit, dest);
@@ -213,10 +212,42 @@ namespace INSAttackTests
             }
             else
             {
-                Assert.AreEqual(coord, m_game.Board.find(unit));
-            }
 
+                if (!unit.isDead())
+                {
+                    Assert.AreEqual(coord, m_game.Board.find(unit));
+                }
+                else
+                {
+                    Assert.AreEqual(Coord.nowhere, m_game.Board.find(unit));
+                }
+            }
+            m_game.Board.removeUnit(unit);
+            m_game.Board.removeUnit(target);
+
+            //With two units on the destnination
+            unit = m_departments[0].make();
+            m_game.Board.addUnit(coord, unit);
+            unit.init(2, 4, 4, 3);
+
+            target = m_departments[1].make();
+            m_game.Board.addUnit(dest, target);
+            target.init(2, 4, 4, 3);
+
+            Unit target2 = m_departments[1].make();
+            m_game.Board.addUnit(dest, target2);
+            target2.init(2, 5, 4, 10);
+
+            Assert.AreEqual(2, m_game.Board.UnitTable[dest].Count);
+            Assert.AreEqual(3, target.Defense);
+            Assert.AreEqual(10, target2.Defense);
             Assert.AreEqual(4, target.Life);
+            Assert.AreEqual(5, target2.Life);
+
+            moved = m_game.move(unit, dest);
+            Assert.AreEqual(false, moved);
+
+            Assert.AreEqual(target.MaxLife, target.Life);
         }
         
     }
