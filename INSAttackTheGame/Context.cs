@@ -77,5 +77,30 @@ namespace INSAttackTheGame
             m_cursorPos = Coord.nowhere;
             m_selectedUnit = null;
         }
+
+        public static bool isGameOver()
+        {
+            var winners = Game.winner();
+            return winners.Count > 0;
+        }
+
+        //returns the message to display when the game is over
+        public static string getWinMessage()
+        {
+            var winners = Game.winner();
+            if(winners == null || winners.Count == 0)
+                return null;
+            //else
+            if(winners.Count == 1)
+                return winners[0].Name + " wins";
+            //else
+            string res = "Tie between " + winners[0].Name;
+            winners.RemoveAt(0);
+            foreach(Player p in winners)
+            {
+                res += " and " + p.Name;
+            }
+            return res;
+        }
     }
 }

@@ -137,6 +137,15 @@ namespace INSAttackTheGame
             dc.DrawImage(i, new Rect(realPos.Item1 - tileWidth / 2, realPos.Item2 - tileHeight / 2, tileWidth, tileHeight));
         }
 
+        private void DrawTextOnCanvas(string text, Point pos, DrawingContext dc)
+        {
+            Typeface typeFace = new Typeface(new FontFamily("Arial"), FontStyles.Normal, FontWeights.Normal, new FontStretch());
+            FormattedText formattedText = new FormattedText(text, System.Globalization.CultureInfo.CurrentCulture, FlowDirection.LeftToRight,
+                    typeFace, 50, Brushes.White);
+            formattedText.TextAlignment = TextAlignment.Center;
+            dc.DrawText(formattedText, pos);
+        }
+
         protected override void OnRender(DrawingContext drawingContext) //Draws the terrain on the canvas
         {
             base.OnRender(drawingContext);
@@ -164,6 +173,11 @@ namespace INSAttackTheGame
                 }
                 if (Context.Map.isValid(Context.CursorPos))
                     DrawElementOnCanvas(m_cursorImage, Context.CursorPos, drawingContext); //draws the cursor
+                string msg = Context.getWinMessage();
+                if(msg != null)//if the game si over
+                {
+                    DrawTextOnCanvas(msg, new Point(ActualWidth / 2, ActualWidth / 2), drawingContext);
+                }
             }
         }
 

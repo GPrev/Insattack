@@ -52,6 +52,7 @@ namespace INSAttackTheGame
             m_unitsDisplay.update();
             m_playerDisplay.update();
             m_tile.update();
+            checkWinState();
         }
 
         private void onKeyDown(object sender, KeyEventArgs e)
@@ -172,7 +173,17 @@ namespace INSAttackTheGame
                 {
                     m_mapView.moveSelUnit(newPos);
                     m_mapView.InvalidateVisual(); //refreshes the display
+                    checkWinState();
                 }
+            }
+        }
+
+        private void checkWinState()
+        {
+            string msg = Context.getWinMessage();
+            if (msg != null)//if the game si over
+            {
+                MessageBox.Show(msg);
             }
         }
 
