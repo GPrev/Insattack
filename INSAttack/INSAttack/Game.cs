@@ -61,6 +61,9 @@ namespace INSAttack
         public bool move(Unit u, Coord dest)
         {
 
+            //check that the game is not finished
+            if (isGamefinished()) return false;
+
             //check the existence of the unit
             Coord coord = m_board.find(u);
             if (!coord.exists()) return false;
