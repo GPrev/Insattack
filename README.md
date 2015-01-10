@@ -12,10 +12,10 @@
 | algo de conseil de déplacement | Gabriel | Pas commencé |
 | ajout des règles | Baptiste | Commencé |
 | ajout d'un descriptif des cases | Baptiste | Fini |
-| indiquer dans l'affichage si l'unité a ou non des points de mouvement | Gabriel | Pas commencé |
+| indiquer dans l'affichage si l'unité a ou non des points de mouvement | Gabriel | Fini et testé |
 | ajout du nombre d'unités des joueurs | Baptiste | Fini |
 | écran de victoire | Gabriel | Pas commencé |
-| déplacement des unités avec le clavier | Gabriel | Pas commencé |
+| déplacement des unités avec le clavier | Gabriel | Fini et testé |
 | touche entrée pour la fin du tour | Gabriel | Fini et testé |
 | rendre les widgets plus jolis (texture parchemin, pierre, ..) | Baptiste | Pas commencé |
 

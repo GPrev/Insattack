@@ -23,6 +23,7 @@ namespace INSAttackTheGame
 
         private Dictionary<Tile, ImageSource> m_tileImages;
         private Dictionary<Dept, ImageSource> m_deptImages;
+        private Dictionary<Dept, ImageSource> m_tiredDeptImages;
         ImageSource m_cursorImage;
 
         //initializes the widget with a new map
@@ -87,7 +88,8 @@ namespace INSAttackTheGame
         private bool loadImages()
         {
             m_tileImages = new Dictionary<Tile, ImageSource>();
-            m_deptImages = new Dictionary<Dept,ImageSource>();
+            m_deptImages = new Dictionary<Dept, ImageSource>();
+            m_tiredDeptImages = new Dictionary<Dept, ImageSource>();
             try
             {
                 m_tileImages.Add(TileFactory.Instance.OutdoorTile, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Terrain/Outdoor.png")));
@@ -102,6 +104,13 @@ namespace INSAttackTheGame
                 m_deptImages.Add(Dept.GMA, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/GMA.png")));
                 m_deptImages.Add(Dept.GC, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/GC.png")));
 
+                m_tiredDeptImages.Add(Dept.INFO, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/INFO_tired.png")));
+                m_tiredDeptImages.Add(Dept.EII, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/EII_tired.png")));
+                m_tiredDeptImages.Add(Dept.SRC, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/SRC_tired.png")));
+                m_tiredDeptImages.Add(Dept.SGM, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/SGM_tired.png")));
+                m_tiredDeptImages.Add(Dept.GMA, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/GMA_tired.png")));
+                m_tiredDeptImages.Add(Dept.GC, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/GC_tired.png")));
+
                 m_cursorImage = BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/UI/Cursor.png"));
             }
             catch (Exception e)
@@ -115,9 +124,12 @@ namespace INSAttackTheGame
         {
             DrawElementOnCanvas(m_tileImages[t], pos, dc);
         }
-        private void DrawElementOnCanvas(Dept d, Coord pos, DrawingContext dc)
+        private void DrawElementOnCanvas(Dept d, bool hasMovement, Coord pos, DrawingContext dc)
         {
-            DrawElementOnCanvas(m_deptImages[d], pos, dc);
+            if(hasMovement)
+                DrawElementOnCanvas(m_deptImages[d], pos, dc);
+            else
+                DrawElementOnCanvas(m_tiredDeptImages[d], pos, dc);
         }
         private void DrawElementOnCanvas(ImageSource i, Coord pos, DrawingContext dc)
         {
@@ -134,10 +146,21 @@ namespace INSAttackTheGame
                 {
                     DrawElementOnCanvas(t.Value, t.Key, drawingContext); //draws each tile
                 }
-                foreach (var u in Context.Board.UnitTable)
+                foreach (var unitList in Context.Board.UnitTable)
                 {
-                    if (u.Value.Count > 0)
-                        DrawElementOnCanvas(u.Value.First().Dept, u.Key, drawingContext); //draws each tile
+                    if (unitList.Value.Count > 0)
+                    {
+                        bool hasMovement = false;
+                        foreach (var unit in unitList.Value)
+                        {
+                            if(unit.Movement > 0)
+                            {
+                                hasMovement = true;
+                                break;
+                            }
+                        }
+                        DrawElementOnCanvas(unitList.Value.First().Dept, hasMovement, unitList.Key, drawingContext); //draws each tile
+                    }
                 }
                 if (Context.Map.isValid(Context.CursorPos))
                     DrawElementOnCanvas(m_cursorImage, Context.CursorPos, drawingContext); //draws the cursor
