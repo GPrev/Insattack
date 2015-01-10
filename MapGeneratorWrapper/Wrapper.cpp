@@ -27,7 +27,7 @@ namespace Wrapper {
 		return csMap;
 	}
 
-	std::vector<SquareInfo> WrapperMapGenerator::translate(System::Collections::Generic::List<Tuple<MapDataModel::Tile^, bool, int>^>^ data)
+	std::vector<SquareInfo> WrapperHintGiver::translate(System::Collections::Generic::List<Tuple<MapDataModel::Tile^, bool, int>^>^ data)
 	{
 		std::vector<SquareInfo> res;
 		for (int i = 0; i < data->Count; ++i)
@@ -47,9 +47,9 @@ namespace Wrapper {
 		return res;
 	}
 
-	System::Collections::Generic::List<int>^ WrapperMapGenerator::translate(std::vector<int>& v)
+	System::Collections::Generic::List<int>^ WrapperHintGiver::translate(std::vector<int>& v)
 	{
-		System::Collections::Generic::List<int>^ res;
+		System::Collections::Generic::List<int>^ res = gcnew System::Collections::Generic::List<int>();
 		for (int i : v)
 			res->Add(i);
 		return res;

@@ -1,17 +1,17 @@
 #include "HintGiver.h"
 
-std::vector<int> HintGiver::giveHint(std::vector<SquareInfo>& choices)
+std::vector<int>& HintGiver::giveHint(std::vector<SquareInfo>& choices)
 {
-	std::vector<int> res;
+	m_hints.clear();
 
 	//suggests free tiles (free tile = free point)
 	for (unsigned int i = 0; i < choices.size(); ++i)
 	{
 		if (choices[i].isFree()) //if the tile is free, suggest it
 		{
-			res.push_back(i);
-			if (res.size() == 3) //if the max nb o tiles to suggest was reached end there
-				return res;
+			m_hints.push_back(i);
+			if (m_hints.size() == 3) //if the max nb o tiles to suggest was reached end there
+				return m_hints;
 		}
 	}
 
@@ -27,7 +27,7 @@ std::vector<int> HintGiver::giveHint(std::vector<SquareInfo>& choices)
 		{
 			if (choices[i].isEnemy() && choices[i].m_enemyHP < minHP) //new weakest enemy
 			{
-				if (std::find(res.begin(), res.end(), i) == res.end()) //if the tile is not suggested yet
+				if (std::find(m_hints.begin(), m_hints.end(), i) == m_hints.end()) //if the tile is not suggested yet
 				{
 					weakerEnemy = i;
 					minHP = choices[i].m_enemyHP;
@@ -37,13 +37,13 @@ std::vector<int> HintGiver::giveHint(std::vector<SquareInfo>& choices)
 		//suggests weaker enemy
 		if (weakerEnemy != -1)
 		{
-			res.push_back(weakerEnemy);
-			if (res.size() == 3) //if the max nb o tiles to suggest was reached end there
-				return res;
+			m_hints.push_back(weakerEnemy);
+			if (m_hints.size() == 3) //if the max nb o tiles to suggest was reached end there
+				return m_hints;
 		}
 	} while (weakerEnemy != -1); //while we can find an enemy that was not suggested yet
 
-	return res;
+	return m_hints;
 }
 
 HintGiver* HintGiver_new()

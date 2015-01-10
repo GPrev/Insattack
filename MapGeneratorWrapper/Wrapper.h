@@ -10,15 +10,23 @@ namespace Wrapper {
 	public ref class WrapperMapGenerator {
 	private:
 		MapGenerator* MapGenerator;
-		HintGiver* HintGiver;
 
 		MapDataModel::MapData^ translate(Map& m);
+	public:
+		WrapperMapGenerator() { MapGenerator = MapGenerator_new(); }
+		~WrapperMapGenerator() { MapGenerator_delete(MapGenerator); }
+		MapDataModel::MapData^ makeMap(int size, int nbPlayers, int nbAmphiTiles, int nbTDTiles, int nbInfoTiles) { return translate(MapGenerator_makeMap(MapGenerator, size, nbPlayers, nbAmphiTiles, nbTDTiles, nbInfoTiles)); }
+	};
+
+	public ref class WrapperHintGiver {
+	private:
+		HintGiver* HintGiver;
+
 		std::vector<SquareInfo> translate(System::Collections::Generic::List<Tuple<MapDataModel::Tile^, bool, int>^>^ data);
 		System::Collections::Generic::List<int>^ translate(std::vector<int>& v);
 	public:
-		WrapperMapGenerator() { MapGenerator = MapGenerator_new(); HintGiver = HintGiver_new(); }
-		~WrapperMapGenerator() { MapGenerator_delete(MapGenerator); HintGiver_delete(HintGiver); }
-		MapDataModel::MapData^ makeMap(int size, int nbPlayers, int nbAmphiTiles, int nbTDTiles, int nbInfoTiles) { return translate(MapGenerator_makeMap(MapGenerator, size, nbPlayers, nbAmphiTiles, nbTDTiles, nbInfoTiles)); }
+		WrapperHintGiver() { HintGiver = HintGiver_new(); }
+		~WrapperHintGiver() { HintGiver_delete(HintGiver); }
 		System::Collections::Generic::List<int>^ giveHint(System::Collections::Generic::List<Tuple<MapDataModel::Tile^, bool, int>^>^ data) { return translate(HintGiver_giveHint(HintGiver, translate(data))); }
 	};
 }

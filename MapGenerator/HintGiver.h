@@ -8,7 +8,7 @@
 
 #include <vector>
 
-class SquareInfo
+class DLL SquareInfo
 {
 public:
 	SquareInfo(int tile, bool ally = false, int enemyHP = 0) : m_tile(tile), m_ally(ally), m_enemyHP(enemyHP) {};
@@ -22,7 +22,10 @@ public:
 class DLL HintGiver
 {
 public:
-	std::vector<int> giveHint(std::vector<SquareInfo>& choices);
+	std::vector<int>& giveHint(std::vector<SquareInfo>& choices);
+
+private:
+	std::vector<int> m_hints;
 };
 // A ne pas implémenter dans le .h !
 EXTERNC DLL HintGiver* HintGiver_new();

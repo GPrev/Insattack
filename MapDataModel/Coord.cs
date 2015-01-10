@@ -46,6 +46,11 @@ namespace MapDataModel
             return m_x == p.X && m_y == p.Y;
         }
 
+        public static Coord operator +(Coord c1, Coord c2)
+        {
+            return new Coord(c1.X + c2.X, c1.Y + c2.Y);
+        }
+
         // Overload the conversion from Coord to Tuple<int,int>:
         public static implicit operator Tuple<int, int>(Coord c)
         {
@@ -108,19 +113,19 @@ namespace MapDataModel
         public List<Coord> adjacentCoords()
         {
             List<Coord> res = new List<Coord>();
-            res.Add(new Coord(0, -1));
-            res.Add(new Coord(0, 1));
-            res.Add(new Coord(1, 0));
-            res.Add(new Coord(-1, 0));
+            res.Add(this + new Coord(0, -1));
+            res.Add(this + new Coord(0, 1));
+            res.Add(this + new Coord(1, 0));
+            res.Add(this + new Coord(-1, 0));
             if (X % 2 == 0) // "even" tile (see reference picture)
             {
-                res.Add(new Coord(-1, 1));
-                res.Add(new Coord(1, 1));
+                res.Add(this + new Coord(-1, 1));
+                res.Add(this + new Coord(1, 1));
             }
             else // "odd" tile
             {
-                res.Add(new Coord(-1, -1));
-                res.Add(new Coord(1, -1));
+                res.Add(this + new Coord(-1, -1));
+                res.Add(this + new Coord(1, -1));
             }
             return res;
         }

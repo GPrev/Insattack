@@ -9,7 +9,7 @@
 | Tâche | Responsable | Avancement |
 |---|---|---|
 | choix des peuples | Baptiste | Fini |
-| algo de conseil de déplacement | Gabriel | Pas commencé |
+| algo de conseil de déplacement | Gabriel | En cours |
 | ajout des règles | Baptiste | Commencé |
 | ajout d'un descriptif des cases | Baptiste | Fini |
 | indiquer dans l'affichage si l'unité a ou non des points de mouvement | Gabriel | Fini et testé |
