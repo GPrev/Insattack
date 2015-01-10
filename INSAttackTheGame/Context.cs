@@ -60,6 +60,7 @@ namespace INSAttackTheGame
             }
         }
 
+
         public static void changeGame(GameBuilder builder)
         {
             m_game = builder.make();

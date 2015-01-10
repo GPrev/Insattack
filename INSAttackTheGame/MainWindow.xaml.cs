@@ -25,6 +25,7 @@ namespace INSAttackTheGame
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
         public void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
@@ -127,13 +128,27 @@ namespace INSAttackTheGame
 
         private void onNew(object sender, RoutedEventArgs e)
         {
-            NewGameBuilder builder = new NewGameBuilder();
-            builder.Departments.Add(new INFO(new Player()));
-            builder.Departments.Add(new EII(new Player()));
-            changeMap(builder);
-            m_playerDisplay.init();
-            m_unitsDisplay.update();
-            m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
+            //NewGameBuilder builder = new NewGameBuilder();
+            //builder.Departments = Context.Departments;
+            //builder.BoardCreator = Context.BoardCreator;
+ 
+            NewGameParam paramChoice = new NewGameParam();
+            paramChoice.Closed += new EventHandler(creategame);
+            paramChoice.ShowDialog();
+
+        }
+
+        private void creategame(object sender, EventArgs e)
+        {
+            GameBuilder builder = ((NewGameParam) sender).Builder;
+            if (builder != null)
+            {
+                changeMap(builder);
+                m_playerDisplay.init();
+                m_unitsDisplay.update();
+                m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
+                m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
+            }
         }
 
         private void changeMap(GameBuilder builder)
@@ -151,6 +166,7 @@ namespace INSAttackTheGame
             m_playerDisplay.init();
             m_unitsDisplay.update();
             m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
+            m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void onQuickSave(object sender, RoutedEventArgs e)
@@ -181,6 +197,7 @@ namespace INSAttackTheGame
                 m_playerDisplay.init();
                 m_unitsDisplay.update();
                 m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
+                m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
