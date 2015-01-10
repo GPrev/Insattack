@@ -54,8 +54,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Context.cs" />
+    <Compile Include="NewGameParam.xaml.cs">
+      <DependentUpon>NewGameParam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerCreation.xaml.cs">
+      <DependentUpon>PlayerCreation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PlayersDisplay.xaml.cs">
       <DependentUpon>PlayersDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TileInfo.xaml.cs">
+      <DependentUpon>TileInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="UnitInfo.xaml.cs">
       <SubType>Code</SubType>
@@ -76,6 +85,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewGameParam.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PlayerCreation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="PlayerInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +100,10 @@
     <Page Include="PlayersDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TileInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UnitInfo.xaml">
       <SubType>Designer</SubType>
