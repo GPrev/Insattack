@@ -65,10 +65,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="HintGiver.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapGenerator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="HintGiver.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapGenerator.cpp" />
   </ItemGroup>
