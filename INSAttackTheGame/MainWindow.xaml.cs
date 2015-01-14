@@ -29,6 +29,12 @@ namespace INSAttackTheGame
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            ImageBrush backgroundPicture = new ImageBrush();
+            backgroundPicture.ImageSource =
+                new BitmapImage(
+                    new Uri(@"pack://application:,,/Resources/textures/papier-vieilli.png")
+                );
+            Background = backgroundPicture;
         }
         public void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
@@ -38,6 +44,7 @@ namespace INSAttackTheGame
             //m_mapView.init(builder);
             m_mapView.init();
             m_unitsDisplay.update();
+            m_unitsDisplay.Background = this.Background;
             m_playerDisplay.init();
             onNew(sender, e);
         }
@@ -203,6 +210,7 @@ namespace INSAttackTheGame
         { 
             m_parameters = new NewGameParam();
             m_parameters.m_buttonNewGame.Click += new RoutedEventHandler(createGame);
+            m_parameters.Background = this.Background;
             m_parameters.ShowDialog();
 
         }

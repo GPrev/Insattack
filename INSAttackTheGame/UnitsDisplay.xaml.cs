@@ -27,6 +27,12 @@ namespace INSAttackTheGame
         public UnitsDisplay()
         {
             InitializeComponent();
+            //ImageBrush backgroundPicture = new ImageBrush();
+            //backgroundPicture.ImageSource =
+            //    new BitmapImage(
+            //        new Uri(@"pack://application:,,/Resources/textures/parcho12.jpg")
+            //    );
+            //Background = backgroundPicture;
         }
 
         //out of date
@@ -90,6 +96,7 @@ namespace INSAttackTheGame
                 }
                 m_units.ItemsSource = units;
                 if (selectedUnit != -1) m_units.SelectedIndex = selectedUnit;
+                m_units.Background = this.Background;
             }
         }
 
