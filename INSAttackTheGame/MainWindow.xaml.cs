@@ -39,6 +39,7 @@ namespace INSAttackTheGame
             m_mapView.init();
             m_unitsDisplay.update();
             m_playerDisplay.init();
+            onNew(sender, e);
         }
 
         private void onMapViewClick(object sender, MouseButtonEventArgs e)
