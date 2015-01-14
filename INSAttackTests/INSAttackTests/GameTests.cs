@@ -72,6 +72,35 @@ namespace INSAttackTests
                 m_game.endOfTurn();
             }
             Assert.AreSame(p, m_game.ActivePlayer);
+            while (m_game.Board.NbTurns > 0)
+            {
+                m_game.Board.NbTurns--;
+            }
+            Assert.IsTrue(m_game.isGamefinished());
+
+
+            //Test of the interdiction of displacement after the end of the game
+            Coord coord = new Coord(2,1);
+            unit = m_departments[0].make();
+            m_game.Board.addUnit(coord, unit);
+            unit.init(2, 4, 4, 3);
+            Coord dest = new Coord(coord.X, coord.Y + 1);
+
+            Assert.IsFalse(m_game.move(unit, coord));
+            Assert.IsFalse(m_game.move(unit, dest));
+
+            //tests the end of the game
+            m_game.Board.NbTurns = 1;
+            Assert.IsTrue(m_game.endOfTurn());
+            Assert.IsTrue(m_game.isGamefinished());
+
+            m_game.Board.NbTurns = 10;
+            m_game.removePlayer(m_game.Players[1]);
+            Assert.IsTrue(m_game.endOfTurn());
+            Assert.IsTrue(m_game.isGamefinished());
+            //Clean
+            m_game.Board.removeUnit(unit);
+
         }
 
 
@@ -196,12 +225,10 @@ namespace INSAttackTests
             //tests for battles
             unit.init(2, 4, 4, 3);
 
-            //With only one unit on the destnination
+            //With only one unit on the destination
             Unit target = m_departments[1].make();
             m_game.Board.addUnit(dest, target);
             target.init(2, 4, 4, 3);
-
-
 
 
             bool moved = m_game.move(unit, dest);
@@ -225,7 +252,7 @@ namespace INSAttackTests
             m_game.Board.removeUnit(unit);
             m_game.Board.removeUnit(target);
 
-            //With two units on the destnination
+            //With two units on the destination
             unit = m_departments[0].make();
             m_game.Board.addUnit(coord, unit);
             unit.init(2, 4, 4, 3);
@@ -248,6 +275,105 @@ namespace INSAttackTests
             Assert.AreEqual(false, moved);
 
             Assert.AreEqual(target.MaxLife, target.Life);
+
+
+            //Cleaning the previous tests
+            m_game.Board.removeUnit(unit);
+            m_game.Board.removeUnit(target);
+            m_game.Board.removeUnit(target2);
+
+            //Test of the teleportation
+            //TileFactory factory = new TileFactory();
+            Player player = m_game.ActivePlayer;
+            unit = (new INFO(player)).make();
+            coord = new Coord(2, 1);
+            dest = new Coord(coord.X, coord.Y + 2);
+            m_game.Board.addUnit(coord, unit);
+
+            Assert.IsTrue(dest.exists());
+            Assert.IsTrue(coord.exists());
+            m_game.Board.Map.TileTable[coord] = TileFactory.Instance.InfoTile;
+            m_game.Board.Map.TileTable[dest] = TileFactory.Instance.InfoTile;
+            Assert.IsTrue(m_game.move(unit, dest));
+            Assert.AreEqual(unit.MaxMovement, unit.Movement);
+            m_game.move(unit, coord);
+
+
+            m_game.Board.Map.TileTable[dest] = TileFactory.Instance.TdTile;
+            Assert.IsFalse(m_game.move(unit, dest));
+            Assert.AreEqual(unit.MaxMovement, unit.Movement);
+
+
+            m_game.Board.Map.TileTable[coord] = TileFactory.Instance.TdTile;
+            m_game.Board.Map.TileTable[dest] = TileFactory.Instance.InfoTile;
+            Assert.IsFalse(m_game.move(unit, dest));
+            Assert.AreEqual(unit.MaxMovement, unit.Movement);
+
+
+            unit = (new SRC(player)).make();
+            m_game.Board.Map.TileTable[coord] = TileFactory.Instance.InfoTile;
+            m_game.Board.Map.TileTable[dest] = TileFactory.Instance.InfoTile;
+            Assert.IsFalse(m_game.move(unit, dest));
+            Assert.AreEqual(unit.MaxMovement, unit.Movement);
+            m_game.move(unit, coord);
+
+            //clean
+            m_game.Board.removeUnit(unit);
+        }
+
+        [TestMethod]
+        public void Game_GainPointOnKill()
+        {
+            Player player;
+            Unit unit;
+            Coord coord;
+            Unit target;
+            Coord dest;
+            while (!m_game.ActivePlayer.Equals(m_game.Players.First())) m_game.endOfTurn();
+            
+
+            //gain point on kill allow
+            player = m_game.Players.First();
+            unit = (new EII(player)).make();
+            coord = new Coord(2, 1);
+            m_game.Board.addUnit(coord, unit);
+            unit.init(1000, 1000, 1000, 1000);
+
+            dest = new Coord(coord.X, coord.Y + 1);
+            target = (new GMA(m_game.Players[1])).make();
+            target.init(1, 1, 0, 0);
+            m_game.Board.addUnit(dest, target);
+
+            Assert.IsTrue(m_game.move(unit, dest));
+            Assert.IsTrue(target.isDead());
+            Assert.AreEqual(1, unit.Points);
+
+            Assert.IsTrue(m_game.Board.removeUnit(unit));
+            Assert.AreEqual(0, m_game.Board.UnitTable[coord].Count);
+            Assert.AreEqual(0, m_game.Board.UnitTable[dest].Count);
+
+
+            //gain point on kill forbidden
+            player = m_game.ActivePlayer;
+            unit = (new INFO(player)).make();
+            coord = new Coord(4, 3);
+            m_game.Board.addUnit(coord, unit);
+            unit.init(1000, 1000, 1000, 1000);
+
+            dest = new Coord(coord.X, coord.Y + 1);
+            target = (new GMA(m_game.Players[1])).make();
+            target.init(1, 1, 0, 0);
+            m_game.Board.addUnit(dest, target);
+
+            Assert.IsTrue(m_game.move(unit, dest));
+            Assert.IsTrue(target.isDead());
+            Assert.AreEqual(0, unit.Points);
+
+            Assert.IsTrue(m_game.Board.removeUnit(unit));
+            Assert.AreEqual(0, m_game.Board.UnitTable[coord].Count);
+            Assert.AreEqual(0, m_game.Board.UnitTable[dest].Count);
+
+
         }
         
     }

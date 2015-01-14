@@ -58,19 +58,20 @@ namespace INSAttack
         }
 
 
-        public bool move(Unit u, Coord dest)
+        public bool move(Unit unit, Coord dest)
         {
 
             //check that the game is not finished
             if (isGamefinished()) return false;
 
-            //check the existence of the unit
-            Coord coord = m_board.find(u);
+            //check the existence of the unit and the validity of the case
+            Coord coord = m_board.find(unit);
             if (!coord.exists()) return false;
+            if (!dest.exists()) return false;
             if (coord.Equals(dest)) return true;
 
             //checks if the unit belongs to current player
-            if (!u.Player.Equals(m_activePlayer))
+            if (!unit.Player.Equals(m_activePlayer))
                 return false;
 
             //Look for the presence of unit on the destination
@@ -83,37 +84,35 @@ namespace INSAttack
             {
                 UnitsAtDest = null;
             }
-
             //check if the unit can teleport onto the case or not
-            if(teleport(u, coord, dest))
+            if(teleport(unit, coord, dest))
             {
-                if (UnitsAtDest == null || !UnitsAtDest.Any() || u.isAlly(UnitsAtDest.First()))
+                 if(UnitsAtDest == null || !UnitsAtDest.Any() || unit.isAlly(UnitsAtDest.First()))
                 {
-                    return executeMove(u, dest, 0);
+                    return executeMove(unit, dest, 0);
                 }
             }
-
             //check the validity of the move
-            int costDisplacement = m_board.Map.TileTable[coord].getcost(u.Dept);
+            int costDisplacement = m_board.Map.TileTable[coord].getcost(unit.Dept);
             if (!Coord.areAdjacent(coord, dest)) return false;
-            if (costDisplacement > u.Movement) return false;
+            if (costDisplacement > unit.Movement) return false;
 
             
             //Move the unit if there is no unit on its destination or if the tile is possess by unit's ally
-            if (UnitsAtDest == null || !UnitsAtDest.Any() ||u.isAlly(UnitsAtDest.First()))
+            if (UnitsAtDest == null || !UnitsAtDest.Any() ||unit.isAlly(UnitsAtDest.First()))
             {
-                return executeMove(u, dest, costDisplacement);
+                return executeMove(unit, dest, costDisplacement);
             }
 
             //Resolve the battle if there is enemy's unit
             Unit target = choseTarget(UnitsAtDest);
-            if (u.tryAndUseMovement(costDisplacement))
+            if (unit.tryAndUseMovement(costDisplacement))
             {
-                if (confront(u, target))
+                if (confront(unit, target))
                 {
                     if (UnitsAtDest.Count == 0)
                     {
-                        return m_board.moveUnit(u, dest);
+                        return m_board.moveUnit(unit, dest);
                     }
                 }
             }
@@ -123,7 +122,7 @@ namespace INSAttack
 
 
         //Delete one of the player, for the momet we considere that there is only 2 players
-        private void removePlayer(Player player)
+        public void removePlayer(Player player)
         {
             m_players.Remove(player);
             m_nbPlayers--;
@@ -141,8 +140,8 @@ namespace INSAttack
         private bool teleport(Unit unit, Coord startingPoint, Coord dest)
         {
             return ((unit.Dept == Dept.INFO) &&
-                   (m_board.Map.TileTable[startingPoint] == TileFactory.Instance.InfoTile) &&
-                   (m_board.Map.TileTable[dest] == TileFactory.Instance.InfoTile));
+                   (m_board.Map.TileTable[startingPoint].Equals(TileFactory.Instance.InfoTile)) &&
+                   (m_board.Map.TileTable[dest].Equals(TileFactory.Instance.InfoTile)));
         }
 
         //Chose one of the unit with the more HP in the list
@@ -159,6 +158,7 @@ namespace INSAttack
         //return true if the target is dead
         private bool confront(Unit unit, Unit target)
         {
+
             //we calculate the number of turns of the battle
             int maxHP = Math.Max(unit.Life, target.Life);
             Random rand = new Random();
@@ -193,6 +193,7 @@ namespace INSAttack
                     m_board.removeUnit(unit);
                     killer(target);
                     if (countUnits(unit.Player) == 0) removePlayer(unit.Player);
+                    return false;
                 }
                 if (target.isDead())
                 {
@@ -220,7 +221,10 @@ namespace INSAttack
         }
         private void killer(Unit unit)
         {
-            if (unit.Dept == Dept.EII) unit.Points--;
+            if (unit.Dept == Dept.EII)
+            {
+                unit.Points = unit.Points + 1;
+            }
         }
 
         private bool escape(Unit unit)
