@@ -9,6 +9,7 @@
         <Grid Name="m_grid">       
             <StackPanel Name="m_stackPanel" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top">
                 <Label x:Name ="m_nameLabel" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label x:Name ="m_points" Content="" Visibility="Hidden" IsEnabled="False" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="0" Height="0"/>
                 <Label x:Name ="m_Life" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
                 <Label x:Name ="m_Movement" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
                 <Label x:Name ="m_Attack" Content="Label" HorizontalAlignment="Left"  VerticalAlignment="Top"/>

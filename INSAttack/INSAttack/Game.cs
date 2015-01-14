@@ -219,14 +219,23 @@ namespace INSAttack
             //if (attack == defense) return 50;
             return 50;
         }
+
+        //Add points to the unit if it possess the abilities to gain point by killing others units
         private void killer(Unit unit)
         {
-            if (unit.Dept == Dept.EII)
+            if (canGainPointOnKill(unit))
             {
                 unit.Points = unit.Points + 1;
             }
         }
 
+        //Return true if the unit can gain point by killing another unit
+        public bool canGainPointOnKill(Unit unit)
+        {
+            return unit.Dept == Dept.EII;
+        }
+
+        //return true if the unit do an escape (that mean it avoid the death
         private bool escape(Unit unit)
         {
             if (unit.Dept == Dept.SRC)

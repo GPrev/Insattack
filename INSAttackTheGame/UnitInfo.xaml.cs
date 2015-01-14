@@ -25,6 +25,16 @@ namespace INSAttackTheGame
         {
             InitializeComponent();
             m_unit = unit;
+            if (Context.isGameValid())
+            {
+                if (Context.Game.canGainPointOnKill(unit))
+                {
+                    m_points.IsEnabled = true;
+                    m_points.Visibility = Visibility.Visible;
+                    m_points.Width = m_Life.Width;
+                    m_points.Height = m_Life.Height;
+                }
+            }
             update();
         }
 
@@ -44,6 +54,7 @@ namespace INSAttackTheGame
         {
             //m_nameLabel.Content = "Propriétaire : Joueur " + m_unit.Player.Id;
             m_nameLabel.Content = "Propriétaire : " + m_unit.Player.Name;
+            m_points.Content = "Nombre de points : " + m_unit.Points;
             m_Life.Content = "Vie : " + m_unit.Life + "/" + m_unit.MaxLife;
             m_Movement.Content = "Mouvement : " + m_unit.Movement + "/" + m_unit.MaxMovement;
             m_Attack.Content = "Attaque : " + m_unit.Attack;
