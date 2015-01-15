@@ -94,7 +94,6 @@ namespace INSAttackTheGame
         {
             resetColor();
             if(m_units.SelectedItem != null) {((UnitInfo) m_units.SelectedItem).select();}
-            //((UnitInfo)sender).select();
         }
 
     }

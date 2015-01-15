@@ -14,7 +14,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock x:Name ="m_main" Text="Joueur" HorizontalAlignment="Stretch"  VerticalAlignment="Top" FontWeight="Bold"  Margin="0,0,10,0"/>
             <TextBox x:Name ="m_playerName" Text="Joueur" HorizontalAlignment="Stretch"  VerticalAlignment="Top" FontWeight="Bold" IsReadOnly="False" IsManipulationEnabled="True" Grid.Column="1"/>
-            <ComboBox x:Name="m_departChoice" Grid.Column="3">
+            <ComboBox x:Name="m_departChoice" Grid.Column="3" Margin="10,0,0,0">
                 <ComboBoxItem IsSelected="True">INFO</ComboBoxItem>
                 <ComboBoxItem>EII</ComboBoxItem>
                 <ComboBoxItem>SRC</ComboBoxItem>

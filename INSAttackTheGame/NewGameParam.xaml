@@ -17,7 +17,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Carte jouée : " HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"  TextWrapping="Wrap" Margin="0,0,10,0"/>
-                <ComboBox x:Name="m_boards" Grid.Column="1">
+                <ComboBox x:Name="m_boards" Grid.Column="1" Width="200">
                     <ComboBoxItem>Carte de démonstration</ComboBoxItem>
                     <ComboBoxItem>Petite carte</ComboBoxItem>
                     <ComboBoxItem IsSelected="True">Carte normale</ComboBoxItem>

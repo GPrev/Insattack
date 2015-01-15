@@ -94,7 +94,7 @@ namespace INSAttackTheGame
                 return null;
             //else
             if(winners.Count == 1)
-                return winners[0].Name + " gagne.";
+                return "Victoire de : " + winners[0].Name;
             //else
             string res = "Égalité entre " + winners[0].Name;
             winners.RemoveAt(0);

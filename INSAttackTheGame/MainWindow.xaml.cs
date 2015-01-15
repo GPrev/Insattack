@@ -201,7 +201,24 @@ namespace INSAttackTheGame
             string msg = Context.getWinMessage();
             if (msg != null)//if the game si over
             {
-                MessageBox.Show(msg);
+                Window winDisplay = new Window();
+                Label label = new Label();
+                winDisplay.Content = label;
+                label.FontWeight = FontWeights.Bold;
+                label.Content = msg;
+                label.HorizontalContentAlignment = HorizontalAlignment.Center;
+                label.VerticalContentAlignment = VerticalAlignment.Center;
+
+                winDisplay.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                winDisplay.Width = 200;
+                winDisplay.Height = 150;
+
+                winDisplay.ResizeMode = ResizeMode.NoResize;
+                winDisplay.Title = "Victoire";
+                winDisplay.Icon = this.Icon;
+
+                winDisplay.Background = this.Background;
+                winDisplay.ShowDialog();
             }
         }
 

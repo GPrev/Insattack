@@ -197,13 +197,6 @@ namespace INSAttackTheGame
                     //Cursor
                     DrawElementOnCanvas(m_cursorImage, Context.CursorPos, drawingContext); //draws the cursor
                 }
-
-                //Win message
-                string msg = Context.getWinMessage();
-                if(msg != null)//if the game si over
-                {
-                    DrawTextOnCanvas(msg, new Point(ActualWidth / 2, ActualWidth / 2), drawingContext);
-                }
             }
         }
 
