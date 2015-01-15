@@ -117,7 +117,7 @@ namespace INSAttackTests
 
             foreach (var player in m_game.Players)
             {
-                Assert.AreEqual(1, m_game.getPoints(player));
+                Assert.AreEqual(2, m_game.getPoints(player));
             }
             
             
@@ -130,7 +130,7 @@ namespace INSAttackTests
             m_game.Board.addUnit(coord, unit2);
             unit1.init(2, 4, 4, 3);
             unit2.init(2, 4, 4, 3);
-            Assert.AreEqual(2, m_game.getPoints(m_game.Players.First()));
+            Assert.AreEqual(4, m_game.getPoints(m_game.Players.First()));
 
 
 
@@ -138,15 +138,28 @@ namespace INSAttackTests
             Unit unit = m_departments[0].make();
             m_game.Board.addUnit(coord2, unit);
             unit2.init(2, 4, 4, 3);
-            Assert.AreEqual(3, m_game.getPoints(m_game.Players.First()));
+            Assert.AreEqual(6, m_game.getPoints(m_game.Players.First()));
 
             unit.Points = 4;
-            Assert.AreEqual(7, m_game.getPoints(m_game.Players.First()));
+            Assert.AreEqual(10, m_game.getPoints(m_game.Players.First()));
 
 
             m_game.Board.removeUnit(unit1);
             m_game.Board.removeUnit(unit2);
             m_game.Board.removeUnit(unit);
+
+            //tests for GC players
+            unit = (new INSAttack.GC(m_game.ActivePlayer)).make();
+            unit.init(5, 5, 5, 5);
+            coord = new Coord(2, 2);
+            Assert.AreEqual(2, m_game.getPoints(unit.Player));
+            m_game.Board.addUnit(coord, unit);
+            m_game.Board.Map.TileTable[coord] = TileFactory.Instance.OutdoorTile;
+            Assert.AreEqual(2, m_game.getPoints(unit.Player));
+
+            m_game.Board.Map.TileTable[coord] = TileFactory.Instance.AmphiTile;
+            Assert.AreEqual(5, m_game.getPoints(unit.Player));
+
         }
 
         [TestMethod]
@@ -345,7 +358,7 @@ namespace INSAttackTests
 
             Assert.IsTrue(m_game.move(unit, dest));
             Assert.IsTrue(target.isDead());
-            Assert.AreEqual(1, unit.Points);
+            Assert.AreEqual(2, unit.Points);
 
             Assert.IsTrue(m_game.Board.removeUnit(unit));
             Assert.AreEqual(0, m_game.Board.UnitTable[coord].Count);

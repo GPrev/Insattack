@@ -14,7 +14,7 @@ namespace INSAttack
     [Serializable()]
     public class Game
     {
-        private Player m_activePlayer;
+        private Player m_activePlayer;//Player of which it's the turn to play
 
         public Player ActivePlayer
         {
@@ -24,7 +24,7 @@ namespace INSAttack
 
         private int m_placeActivePlayer;
 
-        private int m_nbPlayers;
+        private int m_nbPlayers;//Number of players in the game
 
         public int NbPlayer
         {
@@ -57,7 +57,7 @@ namespace INSAttack
             m_placeActivePlayer = 0;
         }
 
-
+        //Return true if the unit succeed its move
         public bool move(Unit unit, Coord dest)
         {
 
@@ -128,6 +128,7 @@ namespace INSAttack
             m_nbPlayers--;
         }
 
+        //Execute the move on the board
         private bool executeMove(Unit unit, Coord dest, float costDisplacement)
         {
             if (unit.tryAndUseMovement(costDisplacement))
@@ -137,6 +138,7 @@ namespace INSAttack
             else return false;
         }
 
+        //Return true if the unit has the ability to teleport itself onto the dest
         private bool teleport(Unit unit, Coord startingPoint, Coord dest)
         {
             return ((unit.Dept == Dept.INFO) &&
@@ -144,7 +146,7 @@ namespace INSAttack
                    (m_board.Map.TileTable[dest].Equals(TileFactory.Instance.InfoTile)));
         }
 
-        //Chose one of the unit with the more HP in the list
+        //Chose one of the unit with the highest defense in the list
         private Unit choseTarget(List<Unit> targets)
         {
             Unit target = targets.First();
@@ -211,7 +213,7 @@ namespace INSAttack
            return false;
         }
 
-
+        //Return the chance of lose a battle for the attacker in function of its attack, and of the defense of the opponent
         private int getChancesOfLose(float attack, float defense)
         {
             if (attack > defense) return (50 - (int) ((1 - (defense / attack)) * 50));
@@ -225,7 +227,7 @@ namespace INSAttack
         {
             if (canGainPointOnKill(unit))
             {
-                unit.Points = unit.Points + 1;
+                unit.Points = unit.Points + 2;
             }
         }
 
@@ -235,7 +237,7 @@ namespace INSAttack
             return unit.Dept == Dept.EII;
         }
 
-        //return true if the unit do an escape (that mean it avoid the death
+        //return true if the unit do an escape (that mean it avoid the death)
         private bool escape(Unit unit)
         {
             if (unit.Dept == Dept.SRC)
@@ -300,11 +302,13 @@ namespace INSAttack
             return false;
         }
 
+        //Execute the effect of the tile if it has one 
         private void executeSpecialEffets(Tile tile, List<Unit> units)
         {
             List<Unit> deadUnits = new List<Unit>();
             if (units != null && units.Count != 0)
             {
+                /*If you are on a RestaurantTile at the end of the turn you have 50% chance to gain 1 Hp, and 50% to lose 1.*/
                 if (tile.Equals(TileFactory.Instance.RestaurantTile))
                 {
                     foreach (Unit u in units)
@@ -312,6 +316,7 @@ namespace INSAttack
                         if (!eatInSelf(u)) deadUnits.Add(u);
                     }
                 }
+
                 foreach (Unit unit in deadUnits)
                 {
                     m_board.removeUnit(unit);
@@ -336,7 +341,7 @@ namespace INSAttack
             }
         }
 
-
+        //returns the number of points of the player giving in parameter
         public int getPoints(Player player)
         {
             int res = 0;
@@ -354,12 +359,25 @@ namespace INSAttack
                             isHere = true;
                         }
                     }
-                    if (isHere) res++;
+                    if (isHere) res += getPointOnTile(m_board.Map.TileTable[ul.Key], ul.Value.First());
                 }
             }
             return res;
         }
 
+        //return the number of point that give the control of the tile by the unit
+        private int getPointOnTile(Tile tile, Unit unit)
+        {
+            if (unit.Dept == Dept.GC)
+            {
+                //The GC unit gained 3 points by controling a building, but they don't gain any point on outdoor tile
+                if (tile.Equals(TileFactory.Instance.OutdoorTile)) return 0;
+                else return 3;
+            }
+            return 2;//Default gain for one tile controled
+        }
+
+        //return the number of unit of the player giving in parameter
         public int countUnits(Player player)
         {
             int res = 0;
@@ -376,7 +394,7 @@ namespace INSAttack
             return res;
         }
 
-        
+        //Return a list of all the winners if the game is finished, if not the list is empty
         public List<Player> winner()
         {
             List<Player> winners = new List<Player>();
@@ -409,6 +427,7 @@ namespace INSAttack
             return winners;
         }
 
+        //return true if the game is finished
         public bool isGamefinished()
         {
             if (m_nbPlayers == 1) return true;
@@ -417,7 +436,7 @@ namespace INSAttack
         }
 
 
-
+        //Save the game in an xml with the name giving in parameter
         public void save(String name = "gameSave.xml")
         {
             String _name = name;
@@ -459,6 +478,7 @@ namespace INSAttack
             return true;
         }
 
+        //Return the list of the units of the player giving in parameter
         public List<Unit> getPlayerUnits(Player player)
         {
             List<Unit> playerUnits = new List<Unit>();
