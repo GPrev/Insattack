@@ -230,8 +230,8 @@ namespace INSAttackTheGame
                 {
                     changeMap(builder);
                     m_playerDisplay.init();
-                    m_unitsDisplay.update();
                     setUIVisibility(true);
+                    m_unitsDisplay.update();
                     m_parameters.Close();
                 }
             }
@@ -246,7 +246,8 @@ namespace INSAttackTheGame
                 visibility = System.Windows.Visibility.Hidden;
 
             m_buttonEndOfTurn.Visibility = visibility;
-            m_unitsDisplay.Visibility = visibility;
+            m_tile.Visibility = visibility;
+            m_unitsDisplay.setUIVisibility(visible);
         }
 
         private void changeMap(GameBuilder builder)
@@ -274,8 +275,6 @@ namespace INSAttackTheGame
                 changeMap(loader);
                 m_playerDisplay.init();
                 m_unitsDisplay.update();
-                m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
-                m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
@@ -306,8 +305,6 @@ namespace INSAttackTheGame
                 changeMap(loader);
                 m_playerDisplay.init();
                 m_unitsDisplay.update();
-                m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
-                m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
