@@ -156,7 +156,7 @@ namespace INSAttackTheGame
         protected override void OnRender(DrawingContext drawingContext) //Draws the terrain on the canvas
         {
             base.OnRender(drawingContext);
-            if(m_tileImages != null) //if initialized correctly
+            if(m_tileImages != null && Context.Game != null) //if initialized correctly and the game is valid
             {
                 //Tiles
                 foreach (var t in Context.Map.TileTable)
