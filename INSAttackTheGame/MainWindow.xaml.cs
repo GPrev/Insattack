@@ -46,7 +46,14 @@ namespace INSAttackTheGame
             m_unitsDisplay.update();
             m_unitsDisplay.Background = Brushes.Transparent;
             m_playerDisplay.init();
-            onNew(sender, e);
+
+            Welcome welcome= new Welcome();
+            //m_parameters.m_buttonNewGame.Click += new RoutedEventHandler(createGame);
+            welcome.m_load.Click += new RoutedEventHandler(onLoad);
+            welcome.m_newGame.Click += new RoutedEventHandler(onNew);
+            welcome.Background = this.Background;
+            welcome.ResizeMode = System.Windows.ResizeMode.NoResize;
+            welcome.ShowDialog();
         }
 
         private void onMapViewClick(object sender, MouseButtonEventArgs e)
