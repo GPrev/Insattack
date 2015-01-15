@@ -22,9 +22,9 @@
 % the last extension makes it possible to add images
 
 %presentation of the document
-\title{Insattack : Projet de POO\smallbreak Rapport de conception}
+\title{Insattack : Projet de POO\smallbreak Documentation Utilisateur}
 \author{Baptiste \textsc{Bignon}, Gabriel \textsc{Prevosto}}
-\date{12/11/2014}
+\date{15/01/2015}
 \setlength\parindent{15pt}
 \begin{document}
 
@@ -47,19 +47,22 @@
 \newpage
 
 
-\section{Introduction}			\label{sec:introduction}			
+\section{Introduction}			\label{sec:introduction}			\input{"Parties/intro.tex"}
 \newpage
+
+\section{Créer une parite}			\label{sec:creation_partie}			\input{"Parties/creation_partie.tex"}
+\clearpage
 
 \section{Le jeu}				\label{sec:jeu}
 \subsection{Les règles}			\label{sec:regles}				\input{"Parties/regles.tex"}
-\subsection{Les peuples}			\label{sec:départements}				\input{"Parties/departements.tex"}
+\subsection{Les peuples}			\label{sec:départements}			\input{"Parties/departements.tex"}
 \subsection{Les terrains}			\label{sec:terrains}				\input{"Parties/carte.tex"}
 \clearpage
 
-
+\section{Sauvegarder et charger}	\label{sec:sauvegarde_chargement}	\input{"Parties/sauvegarde_chargement.tex"}
 \clearpage
 
-\section{Conclusion} 			\label{sec:conclusion}			
+%\section{Conclusion} 			\label{sec:conclusion}			\input{"Parties/conclu.tex"}
 
 
 \end{document}
