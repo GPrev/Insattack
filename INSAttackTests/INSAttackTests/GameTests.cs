@@ -283,7 +283,6 @@ namespace INSAttackTests
             m_game.Board.removeUnit(target2);
 
             //Test of the teleportation
-            //TileFactory factory = new TileFactory();
             Player player = m_game.ActivePlayer;
             unit = (new INFO(player)).make();
             coord = new Coord(2, 1);
@@ -375,6 +374,25 @@ namespace INSAttackTests
 
 
         }
-        
+
+        [TestMethod]
+        public void Game_RestaurantEffectTests()
+        {
+            Player player = m_game.ActivePlayer;
+            Unit unit = (new INFO(player)).make();
+            Coord coord = new Coord(2,2);
+
+            unit.init(6, 6, 5, 5);
+            m_game.Board.addUnit(coord, unit);
+            unit.Life = 3;
+            m_game.Board.Map.TileTable[coord] = TileFactory.Instance.InfoTile;
+            m_game.endOfTurn();
+            Assert.AreEqual(3, unit.Life);
+
+            m_game.Board.Map.TileTable[coord] = TileFactory.Instance.RestaurantTile;
+            m_game.endOfTurn();
+            Assert.IsTrue((unit.Life == 2) || (unit.Life == 4));
+        }
+
     }
 }

@@ -64,6 +64,11 @@ namespace INSAttackTests
             Assert.IsFalse(m_u1.takeHit(1));
             Assert.AreEqual(0, m_u1.getHealthRatio());
             Assert.IsTrue(m_u1.isDead());
+            m_u1.heal(1);
+            Assert.AreEqual(1, m_u1.Life);
+            m_u1.Life = m_u1.MaxLife;
+            m_u1.heal(10);
+            Assert.AreEqual(m_u1.MaxLife, m_u1.Life);
         }
 
         [TestMethod]
