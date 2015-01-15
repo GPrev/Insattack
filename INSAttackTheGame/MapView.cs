@@ -97,6 +97,7 @@ namespace INSAttackTheGame
                 m_tileImages.Add(TileFactory.Instance.AmphiTile, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Terrain/Amphi.png")));
                 m_tileImages.Add(TileFactory.Instance.TdTile, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Terrain/TD.png")));
                 m_tileImages.Add(TileFactory.Instance.InfoTile, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Terrain/INFO.png")));
+                m_tileImages.Add(TileFactory.Instance.RestaurantTile, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Terrain/Restaurant.png")));
 
                 m_deptImages.Add(Dept.INFO, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/INFO.png")));
                 m_deptImages.Add(Dept.EII, BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/EII.png")));
