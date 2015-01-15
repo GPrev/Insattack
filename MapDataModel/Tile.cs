@@ -35,5 +35,7 @@ namespace MapDataModel
         {
             return "Case abstraite";
         }
+
+        
     }
 }

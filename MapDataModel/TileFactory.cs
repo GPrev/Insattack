@@ -12,7 +12,9 @@ namespace MapDataModel
             m_tdTile = new TDTile();
             m_infoTile = new INFOTile();
             m_amphiTile = new AmphiTile();
+            m_restaurantTile = new RestaurantTile();
             m_outdoorTile = new OutdoorTile();
+            
         }
 
         private TDTile m_tdTile;
@@ -44,6 +46,14 @@ namespace MapDataModel
             //set { m_outdoorTile = value; }
         }
 
+        private RestaurantTile m_restaurantTile;
+
+        public RestaurantTile RestaurantTile
+        {
+            get { return m_restaurantTile; }
+            //set { m_outdoorTile = value; }
+        }
+
         private static  TileFactory m_instance;
 
         public static TileFactory Instance
@@ -62,6 +72,8 @@ namespace MapDataModel
                     return TdTile;
                 case 3:
                     return InfoTile;
+                case 4:
+                    return RestaurantTile;
                 default: //0
                     return OutdoorTile;
             }

@@ -283,7 +283,11 @@ namespace INSAttack
                     u.resetMovement();
                 }
             }
-            //Apply the effects of special cases (no one for the moment)
+            //Apply the effects of the restaurants
+            foreach (var tile in m_board.Map.TileTable)
+            {
+                executeSpecialEffets(tile.Value, m_board.UnitTable[tile.Key]);
+            }
 
             //Check if the game is finished
             //if (m_nbPlayers <= 1) return true;
@@ -296,6 +300,17 @@ namespace INSAttack
             m_activePlayer = m_players[m_placeActivePlayer];
             return false;
         }
+
+        private void executeSpecialEffets(Tile tile, List<Unit> units)
+        {
+            if (units != null)
+            {
+                if (tile.Equals(TileFactory.Instance.RestaurantTile))
+                {
+                    
+                }
+            }
+        } 
 
 
         public int getPoints(Player player)
