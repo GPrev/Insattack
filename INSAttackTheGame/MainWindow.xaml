@@ -22,7 +22,7 @@
                 <MenuItem Header="_Options">
                     <MenuItem Header="_Aide au déplacement" IsCheckable="True" IsChecked="True" Click="onHintEnableCheck" />
                 </MenuItem>
-                <MenuItem Header="_Aide" />
+                <MenuItem Header="_Aide" Click="Help_Click"/>
             </Menu>
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" DockPanel.Dock="Left">
                 <local:UnitsDisplay x:Name="m_unitsDisplay" Width="240" Visibility="Hidden" Margin="20,0,0,0"></local:UnitsDisplay>
