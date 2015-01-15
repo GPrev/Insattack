@@ -92,6 +92,18 @@ namespace INSAttackTheGame
                 m_units.ItemsSource = m_unitsList;
                 if (selectedUnit != -1) m_units.SelectedIndex = selectedUnit;
                 m_units.Background = this.Background;
+                if (unitList.Count == 0)
+                {
+                    m_units.Visibility = System.Windows.Visibility.Hidden;
+                }
+                else
+                {
+                    m_units.Visibility = System.Windows.Visibility.Visible;
+                }
+            }
+            else
+            {
+                m_units.Visibility = System.Windows.Visibility.Hidden;
             }
         }
 

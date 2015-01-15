@@ -9,6 +9,19 @@
     <Grid Name="m_grid">
         <TextBlock x:Name ="m_main" Text="" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"  TextWrapping="Wrap" Margin="20,30,0,0"/>
         <ListBox Grid.Row="0" x:Name="m_units" HorizontalAlignment="Left" Margin="20,50,0,0" VerticalAlignment="Top" SelectionChanged="m_units_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected"
+    					 Value="True">
+                            <Setter Property="Background"
+    						Value="{x:Null}" />
+                            <Setter Property="BorderBrush"
+    						Value="{x:Null}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
         </ListBox>
     </Grid>
 </UserControl>

@@ -44,7 +44,7 @@ namespace INSAttackTheGame
             //m_mapView.init(builder);
             m_mapView.init();
             m_unitsDisplay.update();
-            m_unitsDisplay.Background = this.Background;
+            m_unitsDisplay.Background = Brushes.Transparent;
             m_playerDisplay.init();
             onNew(sender, e);
         }
