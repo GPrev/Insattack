@@ -32,7 +32,7 @@ namespace INSAttackTheGame
             ImageBrush backgroundPicture = new ImageBrush();
             backgroundPicture.ImageSource =
                 new BitmapImage(
-                    new Uri(@"pack://application:,,/Resources/textures/papier-vieilli.png")
+                    new Uri(@"pack://application:,,/Resources/textures/Background.png")
                 );
             Background = backgroundPicture;
 

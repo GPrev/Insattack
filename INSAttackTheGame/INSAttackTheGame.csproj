@@ -196,16 +196,6 @@
     <Resource Include="Resources\UI\Hint.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\textures\parcho12.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\textures\macro-moleanos.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\textures\papier-vieilli.png" />
-    <Resource Include="Resources\textures\beton.JPG" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Terrain\Restaurant.png" />
   </ItemGroup>
   <ItemGroup>
@@ -213,6 +203,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Icone.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\textures\Background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
