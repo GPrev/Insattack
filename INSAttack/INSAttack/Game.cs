@@ -329,6 +329,11 @@ namespace INSAttack
             if (chance <= 50)
             {
                 unit.takeHit(1);
+                if (unit.isDead())
+                {
+                    m_board.removeUnit(unit);
+                    if (countUnits(unit.Player) == 0) removePlayer(unit.Player);
+                }
             }
             else
             {
