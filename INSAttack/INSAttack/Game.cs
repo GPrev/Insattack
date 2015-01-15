@@ -93,7 +93,7 @@ namespace INSAttack
                 }
             }
             //check the validity of the move
-            int costDisplacement = m_board.Map.TileTable[coord].getcost(unit.Dept);
+            float costDisplacement = m_board.Map.TileTable[coord].getcost(unit.Dept);
             if (!Coord.areAdjacent(coord, dest)) return false;
             if (costDisplacement > unit.Movement) return false;
 
@@ -128,7 +128,7 @@ namespace INSAttack
             m_nbPlayers--;
         }
 
-        private bool executeMove(Unit unit, Coord dest, int costDisplacement)
+        private bool executeMove(Unit unit, Coord dest, float costDisplacement)
         {
             if (unit.tryAndUseMovement(costDisplacement))
             {

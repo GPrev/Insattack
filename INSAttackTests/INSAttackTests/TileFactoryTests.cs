@@ -43,8 +43,11 @@ namespace INSAttackTests
         [TestMethod]
         public void TileFactory_CostTests()
         {
-            int cost = TileFactory.Instance.InfoTile.getcost(Dept.INFO);
-            Assert.AreEqual(cost, 1);
+            float cost = TileFactory.Instance.InfoTile.getcost(Dept.INFO);
+            Assert.AreEqual(0, cost);
+
+            cost = TileFactory.Instance.OutdoorTile.getcost(Dept.INFO);
+            Assert.AreEqual(1.5F, cost);
         }
     }
 }

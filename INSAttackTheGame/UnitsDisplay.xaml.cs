@@ -23,16 +23,11 @@ namespace INSAttackTheGame
     /// </summary>
     public partial class UnitsDisplay : UserControl
     {
-
+        private List<UnitInfo> m_unitsList;
         public UnitsDisplay()
         {
             InitializeComponent();
-            //ImageBrush backgroundPicture = new ImageBrush();
-            //backgroundPicture.ImageSource =
-            //    new BitmapImage(
-            //        new Uri(@"pack://application:,,/Resources/textures/parcho12.jpg")
-            //    );
-            //Background = backgroundPicture;
+            m_unitsList = new List<UnitInfo>();
         }
 
         //out of date
@@ -78,7 +73,7 @@ namespace INSAttackTheGame
                 List<Unit> unitList = Context.SelectedUnitsList;
                 int selectedUnit = -1;
 
-                List<UnitInfo> units = new List<UnitInfo>();
+                m_unitsList = new List<UnitInfo>();
                 if (coord.Equals(Coord.nowhere))
                 {
                     m_main.Text = "Sélectionnez une case pour afficher les unités.";
@@ -91,10 +86,10 @@ namespace INSAttackTheGame
                 for (int i = 0; i < unitList.Count; i++)
                 {
                     UnitInfo unit = new UnitInfo(unitList[i]);
-                    if ((unitList[i] == Context.SelectedUnit) && (unitList[i] != null)) selectedUnit = i;//unit.select();
-                    units.Add(unit);
+                    if ((unitList[i] == Context.SelectedUnit) && (unitList[i] != null)) selectedUnit = i;
+                    m_unitsList.Add(unit);
                 }
-                m_units.ItemsSource = units;
+                m_units.ItemsSource = m_unitsList;
                 if (selectedUnit != -1) m_units.SelectedIndex = selectedUnit;
                 m_units.Background = this.Background;
             }

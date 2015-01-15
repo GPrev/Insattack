@@ -13,9 +13,9 @@ namespace MapDataModel
     {
         public AmphiTile()
         {
-            m_costs = new Dictionary<Dept, int>();
+            m_costs = new Dictionary<Dept, float>();
             m_costs.Add(Dept.INFO, 1);
-            m_costs.Add(Dept.EII, 1);
+            m_costs.Add(Dept.EII, 2);
             m_costs.Add(Dept.SRC, 1);
             m_costs.Add(Dept.SGM, 1);
             m_costs.Add(Dept.GMA, 1);
@@ -34,7 +34,7 @@ namespace MapDataModel
 
         public override string ToString()
         {
-            return "Amphithéatre";
+            return "Amphithéâtre";
         }
     }
 }

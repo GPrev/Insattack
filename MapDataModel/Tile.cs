@@ -13,10 +13,11 @@ namespace MapDataModel
     [Serializable()]
     public abstract class Tile
     {
-        protected Dictionary<Dept, int> m_costs;
+        protected Dictionary<Dept, float> m_costs;
         protected enum TileHash { Tile = -1, OutdoorTile, AmphiTile, INFOTile, TDTile }
 
-        public int getcost(Dept department){
+        public float getcost(Dept department)
+        {
             return m_costs[department];
         }
 

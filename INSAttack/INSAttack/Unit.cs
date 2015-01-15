@@ -40,16 +40,16 @@ namespace INSAttack
             get { return m_maxLife; }
             set { m_maxLife = value; }
         }
-        private int m_movement;
+        private float m_movement;
 
-        public int Movement
+        public float Movement
         {
             get { return m_movement; }
             set { m_movement = value; }
         }
-        private int m_maxMovement;
+        private float m_maxMovement;
 
-        public int MaxMovement
+        public float MaxMovement
         {
             get { return m_maxMovement; }
             set { m_maxMovement = value; }
@@ -126,7 +126,7 @@ namespace INSAttack
         }
 
         //returns true if the unit has enough movement
-        public bool tryAndUseMovement(int movementUsed)
+        public bool tryAndUseMovement(float movementUsed)
         {
             if (movementUsed <= m_movement)
             {

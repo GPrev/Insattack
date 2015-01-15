@@ -63,16 +63,6 @@ namespace INSAttackTheGame
             return null;
         }
 
-
-        //private void onNew(object sender, RoutedEventArgs e)
-        //{
-        //    m_gameBuilder = new NewGameBuilder();
-        //    m_gameBuilder.Departments = getDepartments();
-        //    m_gameBuilder.BoardCreator = getBoardCreator();
-            
-        //    this.Close();
-        //}
-
         private void m_buttonCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
