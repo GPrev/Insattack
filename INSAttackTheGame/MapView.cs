@@ -135,8 +135,12 @@ namespace INSAttackTheGame
         }
         private void DrawElementOnCanvas(ImageSource i, Coord pos, DrawingContext dc)
         {
+            //have to calculate height and width because WPF doesn't care about size, he messes it up with dpi
+            double ratio = i.Width / i.Height;
+            double height = tileHeight;
+            double width = height * ratio;
             Tuple<float, float> realPos = toPixels(pos);
-            dc.DrawImage(i, new Rect(realPos.Item1 - tileWidth / 2, realPos.Item2 - tileHeight / 2, tileWidth, tileHeight));
+            dc.DrawImage(i, new Rect(realPos.Item1 - width / 2, realPos.Item2 - height / 2, width, height));
         }
 
         private void DrawTextOnCanvas(string text, Point pos, DrawingContext dc)
