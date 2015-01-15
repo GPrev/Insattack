@@ -37,6 +37,7 @@ namespace INSAttackTheGame
             get { return m_playerName.Text; }
         }
 
+        //Return the department create with the parameters chosen by the user
         public Department Department
         {
             get
@@ -46,6 +47,7 @@ namespace INSAttackTheGame
             }
         }
 
+        //Create the department
         private Department getDepartment(Player player)
         {
             if (m_departChoice.SelectedIndex == 0) return new INFO(player);
@@ -57,6 +59,7 @@ namespace INSAttackTheGame
             return new INFO(player); //default case
         }
 
+        //Set the default department for the player
         public void setDefault(String department)
         {
             if (department.Equals("INFO")) m_departChoice.SelectedIndex = 0;
@@ -67,6 +70,7 @@ namespace INSAttackTheGame
             if (department.Equals("GC")) m_departChoice.SelectedIndex = 5;
         }
 
+        //set the number of the player
         public void setPlayerNumber(int i)
         {
             m_main.Text = "Joueur " + i + " : ";

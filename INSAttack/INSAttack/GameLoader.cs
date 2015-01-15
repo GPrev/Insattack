@@ -29,7 +29,7 @@ namespace INSAttack
             return make();
         }
 
-
+        //Create a game based on a previous save
         public override Game make()
         {
 
@@ -41,7 +41,6 @@ namespace INSAttack
                 {
                     //Opens save file and deserializes the object from it.
                     Stream stream = File.Open(SaveName, FileMode.Open);
-                    //SoapFormatter formatter = new SoapFormatter();
                     BinaryFormatter formatter = new BinaryFormatter();
 
                     game = (Game) formatter.Deserialize(stream);

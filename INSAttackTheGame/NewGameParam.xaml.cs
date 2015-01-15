@@ -36,6 +36,7 @@ namespace INSAttackTheGame
             m_player2.setDefault("EII");
         }
 
+        //Return the GameBuilder create with the parameters giving by the user
         public GameBuilder Builder
         {
             get

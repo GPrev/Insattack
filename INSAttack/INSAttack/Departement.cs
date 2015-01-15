@@ -26,6 +26,7 @@ namespace INSAttack
             set { m_player = value; }
         }
 
+        //Create a new unit
         public virtual Unit make()
         {
             return new Unit(m_player, (Dept)this);
