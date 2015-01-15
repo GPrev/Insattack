@@ -5,8 +5,8 @@
         Title="NewGameParam" Height="300" Width="300">
     <Grid>
         
-        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" DockPanel.Dock="Left">
-            <StackPanel Name="m_boardChoice" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" DockPanel.Dock="Left" Margin="10,10,0,0">
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" DockPanel.Dock="Left" Margin="10,0,0,0">
+            <StackPanel Name="m_boardChoice" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" DockPanel.Dock="Left" Margin="10,20,0,0">
                 <TextBlock Text="Carte jouée : " HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"  TextWrapping="Wrap"/>
                 <ComboBox x:Name="m_boards">
                     <ComboBoxItem>Carte de démonstration</ComboBoxItem>
@@ -17,7 +17,7 @@
             <local:PlayerCreation x:Name="m_player1" Margin="10,10,0,0"></local:PlayerCreation>
             <local:PlayerCreation x:Name="m_player2" Margin="10,10,0,0"></local:PlayerCreation>
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" DockPanel.Dock="Left">
-                <Button Name="m_buttonNewGame"  Visibility="Visible"  BorderBrush="Black" BorderThickness="1" ClickMode="Release" Width="100" Height="50" Margin="10,10,0,0">
+                <Button Name="m_buttonNewGame"  Visibility="Visible"  BorderBrush="Black" BorderThickness="1" ClickMode="Release" Width="100" Height="50" Margin="20,10,0,0">
                     Lancer
                 </Button>
                 <Button Name="m_buttonCancel"  Click="m_buttonCancel_Click" Visibility="Visible"  BorderBrush="Black" BorderThickness="1" ClickMode="Release" Width="100" Height="50" Margin="12,10,0,0">

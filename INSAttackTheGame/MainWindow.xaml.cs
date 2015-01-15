@@ -211,6 +211,7 @@ namespace INSAttackTheGame
             m_parameters = new NewGameParam();
             m_parameters.m_buttonNewGame.Click += new RoutedEventHandler(createGame);
             m_parameters.Background = this.Background;
+            m_parameters.ResizeMode = System.Windows.ResizeMode.NoResize;
             m_parameters.ShowDialog();
 
         }
