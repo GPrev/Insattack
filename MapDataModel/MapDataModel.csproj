@@ -48,6 +48,7 @@
     <Compile Include="MapData.cs" />
     <Compile Include="OutdoorTile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestaurantTile.cs" />
     <Compile Include="TDTile.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="TileFactory.cs" />

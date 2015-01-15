@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MapDataModel
 {
-    class RestaurantTile : Tile
+    public class RestaurantTile : Tile
     {public RestaurantTile()
         {
             m_costs = new Dictionary<Dept, float>();
