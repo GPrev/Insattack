@@ -16,6 +16,7 @@ namespace INSAttack
             m_nbTurns = 30;
             m_boardSize = 14;
             m_nbSimpleTiles = 30;
+            nb_restaurantsTile = 3;
         }
 
     }

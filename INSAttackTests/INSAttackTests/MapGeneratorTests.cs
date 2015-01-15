@@ -16,7 +16,7 @@ namespace INSAttackTests
         public void init()
         {
             m_wrapper = new WrapperMapGenerator();
-            m_map = m_wrapper.makeMap(10, 3, 5, 15, 10);
+            m_map = m_wrapper.makeMap(10, 3, 5, 15, 10, 0);
         }
 
         [TestCleanup]

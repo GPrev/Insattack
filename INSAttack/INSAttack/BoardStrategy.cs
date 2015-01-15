@@ -25,6 +25,14 @@ namespace INSAttack
             //set { m_nbSimpleTiles = value; }
         }
 
+        protected int nb_restaurantsTile; //Number of RestaurantTile
+
+        public int NBRestaurantTiles
+        {
+            get { return nb_restaurantsTile; }
+            //set { m_nbSimpleTiles = value; }
+        }
+
         private int m_nbPlayers;
 
         public int NbPlayers
@@ -64,7 +72,7 @@ namespace INSAttack
         public Board make()
         {
             WrapperMapGenerator mapGenerator = new WrapperMapGenerator();
-            MapData map = mapGenerator.makeMap(m_boardSize, m_nbPlayers, m_nbSimpleTiles, m_nbSimpleTiles, m_nbSimpleTiles);
+            MapData map = mapGenerator.makeMap(m_boardSize, m_nbPlayers, m_nbSimpleTiles, m_nbSimpleTiles, m_nbSimpleTiles, nb_restaurantsTile);
             Board board = new Board(map);
 
             board.NbTurns = m_nbTurns;

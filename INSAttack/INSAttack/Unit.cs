@@ -160,6 +160,19 @@ namespace INSAttack
             return true;
         }
 
+        //The unit gain the number of health giving in paramteter, if its life exceed its maxLife the exceed health will not taken effect.
+        public void heal(int hp)
+        {
+            if (hp + m_life >= m_maxLife)
+            {
+                m_life = m_maxLife;
+            }
+            else
+            {
+                m_life += hp;
+            }
+        }
+
         public bool isDead()
         {
             return m_life <= 0;

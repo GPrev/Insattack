@@ -286,13 +286,20 @@ namespace INSAttack
             //Apply the effects of the restaurants
             foreach (var tile in m_board.Map.TileTable)
             {
-                executeSpecialEffets(tile.Value, m_board.UnitTable[tile.Key]);
+                List<Unit> units;
+                try
+                {
+                    units = m_board.UnitTable[tile.Key];
+                }
+                catch
+                {
+                    units = null;
+                }
+                executeSpecialEffets(tile.Value, units);
             }
 
             //Check if the game is finished
-            //if (m_nbPlayers <= 1) return true;
             if (m_placeActivePlayer == (NbPlayer - 1)) m_board.NbTurns--;
-            //if (m_board.NbTurns == 0) return true;
             if (isGamefinished()) return true;
 
             //change the active player
@@ -307,10 +314,32 @@ namespace INSAttack
             {
                 if (tile.Equals(TileFactory.Instance.RestaurantTile))
                 {
-                    
+                    foreach (Unit u in units)
+                    {
+                        eatInSelf(u);
+                    }
                 }
             }
-        } 
+        }
+
+        private void eatInSelf(Unit unit)
+        {
+            Random rand = new Random();
+            int chance = (rand.Next()) % 100;
+            if (chance <= 50)
+            {
+                unit.takeHit(1);
+                if (unit.isDead())
+                {
+                    m_board.removeUnit(unit);
+                    if (countUnits(unit.Player) == 0) removePlayer(unit.Player);
+                }
+            }
+            else
+            {
+                unit.heal(1);
+            }
+        }
 
 
         public int getPoints(Player player)
