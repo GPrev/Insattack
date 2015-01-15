@@ -12,7 +12,7 @@ class DLL MapGenerator {
 public:
 	MapGenerator() {}
 	~MapGenerator() {}
-	void buildMap(int size, int nbPlayers, int nbAmphiTiles, int nbTDTiles, int nbInfoTiles); //only works between 2 and 4 players
+	void buildMap(int size, int nbPlayers, int nbAmphiTiles, int nbTDTiles, int nbInfoTiles, int nbRestaurantTiles); //only works between 2 and 4 players
 	Map& getMap();
 private:
 	Map m_map;
@@ -20,4 +20,4 @@ private:
 // A ne pas implémenter dans le .h !
 EXTERNC DLL MapGenerator* MapGenerator_new();
 EXTERNC DLL void MapGenerator_delete(MapGenerator* MapGenerator);
-EXTERNC DLL Map& MapGenerator_makeMap(MapGenerator* MapGenerator, int size, int nbPlayers, int nbAmphiTiles, int nbTDTiles, int nbInfoTiles);
+EXTERNC DLL Map& MapGenerator_makeMap(MapGenerator* MapGenerator, int size, int nbPlayers, int nbAmphiTiles, int nbTDTiles, int nbInfoTiles, int nbRestaurantTiles);

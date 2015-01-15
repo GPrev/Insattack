@@ -15,7 +15,7 @@ namespace Wrapper {
 	public:
 		WrapperMapGenerator() { MapGenerator = MapGenerator_new(); }
 		~WrapperMapGenerator() { MapGenerator_delete(MapGenerator); }
-		MapDataModel::MapData^ makeMap(int size, int nbPlayers, int nbAmphiTiles, int nbTDTiles, int nbInfoTiles) { return translate(MapGenerator_makeMap(MapGenerator, size, nbPlayers, nbAmphiTiles, nbTDTiles, nbInfoTiles)); }
+		MapDataModel::MapData^ makeMap(int size, int nbPlayers, int nbAmphiTiles, int nbTDTiles, int nbInfoTiles, int nbRestaurantTile) { return translate(MapGenerator_makeMap(MapGenerator, size, nbPlayers, nbAmphiTiles, nbTDTiles, nbInfoTiles, nbRestaurantTile)); }
 	};
 
 	public ref class WrapperHintGiver {

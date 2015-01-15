@@ -8,7 +8,7 @@ Map::~Map()
 {
 }
 
-void Map::init(int size, int nbPlayers, int nbAmphiTiles, int nbTDTiles, int nbInfoTiles)
+void Map::init(int size)
 {
 	m_tiles.clear();
 	for (int i = 0; i < size; ++i)
