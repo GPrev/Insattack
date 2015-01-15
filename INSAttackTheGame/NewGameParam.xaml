@@ -2,7 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:INSAttackTheGame"
-        Title="NewGameParam" Height="300" Width="300">
+        Title="Paramètres du jeu" Height="300" Width="300"
+        Icon="Icone.ico">
     <Grid>
         
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" DockPanel.Dock="Left" Margin="10,0,0,0">

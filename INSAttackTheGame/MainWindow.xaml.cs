@@ -48,7 +48,6 @@ namespace INSAttackTheGame
             m_playerDisplay.init();
 
             Welcome welcome= new Welcome();
-            //m_parameters.m_buttonNewGame.Click += new RoutedEventHandler(createGame);
             welcome.m_load.Click += new RoutedEventHandler(onLoad);
             welcome.m_newGame.Click += new RoutedEventHandler(onNew);
             welcome.Background = this.Background;

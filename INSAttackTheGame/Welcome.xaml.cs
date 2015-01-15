@@ -23,7 +23,6 @@ namespace INSAttackTheGame
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            Title = "Bienvenue sur INSAttack";
         }
 
         private void m_Click(object sender, RoutedEventArgs e)
