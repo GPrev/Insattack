@@ -185,10 +185,13 @@ namespace INSAttackTheGame
                 if (Context.Map.isValid(Context.CursorPos))
                 {
                     //Hints
-                    var hints = Context.Game.suggest(Context.CursorPos);
-                    foreach(Coord c in hints)
+                    if(Context.EnableHints)
                     {
-                        DrawElementOnCanvas(m_hintImage, c, drawingContext);
+                        var hints = Context.Game.suggest(Context.CursorPos);
+                        foreach(Coord c in hints)
+                        {
+                            DrawElementOnCanvas(m_hintImage, c, drawingContext);
+                        }
                     }
 
                     //Cursor

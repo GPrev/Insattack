@@ -9,7 +9,7 @@
         <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" LastChildFill="True" Margin="0">
             <Menu IsMainMenu="True" DockPanel.Dock="Top">
                 <MenuItem Header="_Fichier">
-                    <MenuItem Header="_Nouveau..." Click="onNew" />
+                    <MenuItem Header="_Nouvelle partie..." Click="onNew" />
                     <Separator />
                     <MenuItem Header="_Chargement rapide" Click="onQuickLoad" />
                     <MenuItem Header="_Chargement..." Click="onLoad" />
@@ -18,6 +18,9 @@
                     <MenuItem Header="_Sauvegarde..." Click="onSave" />
                     <Separator />
                     <MenuItem Header="_Quitter" Click="onExit" />
+                </MenuItem>
+                <MenuItem Header="_Options">
+                    <MenuItem Header="_Aide au déplacement" IsCheckable="True" IsChecked="True" Click="onHintEnableCheck" />
                 </MenuItem>
                 <MenuItem Header="_Aide" />
             </Menu>

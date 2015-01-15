@@ -60,6 +60,8 @@ namespace INSAttackTheGame
             }
         }
 
+        public static bool EnableHints { get; set; }
+
 
         public static void changeGame(GameBuilder builder)
         {

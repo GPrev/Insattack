@@ -35,6 +35,9 @@ namespace INSAttackTheGame
                     new Uri(@"pack://application:,,/Resources/textures/papier-vieilli.png")
                 );
             Background = backgroundPicture;
+
+            //enable movement hints by default
+            Context.EnableHints = true;
         }
         public void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
@@ -340,6 +343,13 @@ namespace INSAttackTheGame
         private void onExit(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void onHintEnableCheck(object sender, RoutedEventArgs e)
+        {
+            Context.EnableHints = (sender as MenuItem).IsChecked;
+            //refreshes the view to make the hints appear (or disappear)
+            m_mapView.InvalidateVisual();
         }
 
     }
