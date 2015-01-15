@@ -9,13 +9,14 @@
 #define AMPHI 1
 #define TD 2
 #define INFO 3
+#define RESTAURANT 4
 
 class Map
 {
 public:
 	Map();
 	~Map();
-	void init(int size, int nbPlayers, int nbAmphiTiles, int nbTDTiles, int nbInfoTiles);
+	void init(int size); //makes a map of size x size outdoor tiles
 	inline int getSize() { return m_tiles.size(); };
 	inline std::vector<std::pair<int, int>> getStartingPos() { return m_startingPos; };
 	inline void addStartingPos(int x, int y) { addStartingPos(std::pair<int, int>(x, y)); }
