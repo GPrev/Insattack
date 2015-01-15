@@ -5,14 +5,19 @@
         Icon="Icone.ico" SizeToContent="WidthAndHeight">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="10">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="0,10,0,0"/>
+                </Style>
+            </StackPanel.Resources>
             <Image Source="Resources/Logo.png" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" ClipToBounds="True"/>
-            <Button Name="m_newGame"  Visibility="Visible" Click="m_Click"  BorderBrush="Black" BorderThickness="1" ClickMode="Release" Margin="0,0,0,0">
+            <Button Name="m_newGame"  Visibility="Visible" Click="m_Click"  BorderBrush="Black" BorderThickness="1" ClickMode="Release">
                 Nouvelle partie
             </Button>
-            <Button Name="m_load"  Visibility="Visible"  Click="m_Click" BorderBrush="Black" BorderThickness="1" ClickMode="Release" Margin="0,0,0,0">
+            <Button Name="m_load"  Visibility="Visible"  Click="m_Click" BorderBrush="Black" BorderThickness="1" ClickMode="Release">
                 Charger une partie
             </Button>
-            <Button Name="m_exit"  Visibility="Visible"  Click="m_Click" BorderBrush="Black" BorderThickness="1" ClickMode="Release" Margin="0,0,0,0">
+            <Button Name="m_exit"  Visibility="Visible"  Click="m_Click" BorderBrush="Black" BorderThickness="1" ClickMode="Release">
                 Quitter
             </Button>
         </StackPanel>
