@@ -132,9 +132,7 @@ namespace INSAttackTheGame
 
                 //Pass a turn
                 case Key.Enter:
-                    Context.Game.endOfTurn();
-                    m_unitsDisplay.update();
-                    m_playerDisplay.update();
+                    endOfTurn();
                     break;
             }
         }
@@ -211,21 +209,31 @@ namespace INSAttackTheGame
                 label.VerticalContentAlignment = VerticalAlignment.Center;
 
                 winDisplay.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-                winDisplay.Width = 200;
+                winDisplay.Width = 300;
                 winDisplay.Height = 150;
 
                 winDisplay.ResizeMode = ResizeMode.NoResize;
                 winDisplay.Title = "Victoire";
                 winDisplay.Icon = this.Icon;
 
-                winDisplay.Background = this.Background;
+                ImageBrush backgroundPicture = new ImageBrush();
+                backgroundPicture.ImageSource =
+                    new BitmapImage(
+                        new Uri(@"pack://application:,,/Resources/textures/VictoryBG.png")
+                    );
+                winDisplay.Background = backgroundPicture;
                 winDisplay.ShowDialog();
             }
         }
 
         private void m_buttonEndOfTurn_Click(object sender, RoutedEventArgs e)
         {
-            if(!Context.isGameOver()) Context.Game.endOfTurn();
+            endOfTurn();
+        }
+
+        private void endOfTurn()
+        {
+            if (!Context.isGameOver()) Context.Game.endOfTurn();
             m_unitsDisplay.update();
             m_playerDisplay.update();
             checkWinState();
