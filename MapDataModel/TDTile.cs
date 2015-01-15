@@ -19,7 +19,7 @@ namespace MapDataModel
             m_costs.Add(Dept.SRC, 1);
             m_costs.Add(Dept.SGM, 1);
             m_costs.Add(Dept.GMA, 1);
-            m_costs.Add(Dept.GC, 1);
+            m_costs.Add(Dept.GC, 2);
         }
 
         public override bool Equals(object obj)
