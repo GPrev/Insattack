@@ -247,7 +247,7 @@ namespace INSAttackTheGame
 
             m_buttonEndOfTurn.Visibility = visibility;
             m_tile.Visibility = visibility;
-            m_unitsDisplay.setUIVisibility(visible);
+            m_unitsDisplay.Visibility = visibility;
         }
 
         private void changeMap(GameBuilder builder)
