@@ -283,19 +283,11 @@ namespace INSAttack
                     u.resetMovement();
                 }
             }
-            //Apply the effects of the restaurants
-            foreach (var tile in m_board.Map.TileTable)
+
+            foreach (var units in m_board.UnitTable)
             {
-                List<Unit> units;
-                try
-                {
-                    units = m_board.UnitTable[tile.Key];
-                }
-                catch
-                {
-                    units = null;
-                }
-                executeSpecialEffets(tile.Value, units);
+
+                executeSpecialEffets(m_board.Map.TileTable[units.Key], units.Value);
             }
 
             //Check if the game is finished
@@ -310,34 +302,37 @@ namespace INSAttack
 
         private void executeSpecialEffets(Tile tile, List<Unit> units)
         {
-            if (units != null)
+            List<Unit> deadUnits = new List<Unit>();
+            if (units != null && units.Count != 0)
             {
                 if (tile.Equals(TileFactory.Instance.RestaurantTile))
                 {
                     foreach (Unit u in units)
                     {
-                        eatInSelf(u);
+                        if (!eatInSelf(u)) deadUnits.Add(u);
                     }
                 }
-            }
-        }
-
-        private void eatInSelf(Unit unit)
-        {
-            Random rand = new Random();
-            int chance = (rand.Next()) % 100;
-            if (chance <= 50)
-            {
-                unit.takeHit(1);
-                if (unit.isDead())
+                foreach (Unit unit in deadUnits)
                 {
                     m_board.removeUnit(unit);
                     if (countUnits(unit.Player) == 0) removePlayer(unit.Player);
                 }
             }
+        }
+        //return false if the unit die because of the effect, true in other cases
+        private bool eatInSelf(Unit unit)
+        {
+            
+            Random rand = new Random();
+            int chance = (rand.Next()) % 100;
+            if (chance <= 50)
+            {
+                return unit.takeHit(1);
+            }
             else
             {
                 unit.heal(1);
+                return true;
             }
         }
 
