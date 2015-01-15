@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using System.Diagnostics;
 using System.IO;
 using System.Collections.Generic;
@@ -304,7 +305,11 @@ namespace INSAttackTheGame
 
         private void onQuickSave(object sender, RoutedEventArgs e)
         {
-            if(Context.isGameValid())   Context.Game.save();
+            if (Context.isGameValid())
+            {
+                //string savename = VirtualPathUtility.toAbsolute(GameLoader.DefaultSaveName);
+                Context.Game.save();
+            }
         }
 
         private void onLoad(object sender, RoutedEventArgs e)

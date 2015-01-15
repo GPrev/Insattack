@@ -17,7 +17,7 @@ namespace INSAttack
         {
             get
             {
-                if (m_saveName == null) return "gameSave.xml";
+                if (m_saveName == null) return DefaultSaveName;
                 return m_saveName; 
             }
             set { m_saveName = value; }
@@ -29,6 +29,10 @@ namespace INSAttack
             return make();
         }
 
+        public static string DefaultSaveName
+        {
+            get { return "gameSave.xml"; }
+        }
         //Create a game based on a previous save
         public override Game make()
         {
@@ -51,6 +55,7 @@ namespace INSAttack
                 catch (Exception e)
                 {
                     Console.Error.WriteLine(e.Message);
+                    Console.Error.WriteLine("Problem on Save : " + SaveName);
                 }
             }
             return game;

@@ -222,6 +222,7 @@ namespace INSAttackTheGame
             {
                 Coord clickedPos = toCoords((float)e.GetPosition(this).X, (float)e.GetPosition(this).Y); //compmutes the clicked spot
                 moveSelUnit(clickedPos);
+                InvalidateVisual(); //refreshes the display
             }
         }
 
