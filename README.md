@@ -10,14 +10,14 @@
 |---|---|---|
 | choix des peuples | Baptiste | Fini |
 | algo de conseil de déplacement | Gabriel | Fini et testé |
-| ajout des règles | Baptiste | Commencé |
+| ajout des règles | Baptiste | Fini |
 | ajout d'un descriptif des cases | Baptiste | Fini |
 | indiquer dans l'affichage si l'unité a ou non des points de mouvement | Gabriel | Fini et testé |
 | ajout du nombre d'unités des joueurs | Baptiste | Fini |
 | écran de victoire | Gabriel | Fini mais moche |
 | déplacement des unités avec le clavier | Gabriel | Fini et testé |
 | touche entrée pour la fin du tour | Gabriel | Fini et testé |
-| rendre les widgets plus jolis (texture parchemin, pierre, ..) | Baptiste | Pas commencé |
+| rendre les widgets plus jolis (texture parchemin, pierre, ..) | Baptiste | Commencé |
 
 ## Les différents projets
 
