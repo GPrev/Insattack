@@ -41,10 +41,6 @@ namespace INSAttackTheGame
         }
         public void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            //NewGameBuilder builder = new NewGameBuilder();
-            //builder.Departments.Add(new INFO(new Player()));
-            //builder.Departments.Add(new EII(new Player()));
-            //m_mapView.init(builder);
             m_mapView.init();
             m_unitsDisplay.update();
             m_unitsDisplay.Background = Brushes.Transparent;
@@ -53,6 +49,7 @@ namespace INSAttackTheGame
             Welcome welcome= new Welcome();
             welcome.m_load.Click += new RoutedEventHandler(onLoad);
             welcome.m_newGame.Click += new RoutedEventHandler(onNew);
+            welcome.m_exit.Click += new RoutedEventHandler(onExit);
             welcome.Background = this.Background;
             welcome.ResizeMode = System.Windows.ResizeMode.NoResize;
             welcome.ShowDialog();
