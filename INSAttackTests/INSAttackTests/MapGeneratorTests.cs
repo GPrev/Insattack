@@ -16,7 +16,7 @@ namespace INSAttackTests
         public void init()
         {
             m_wrapper = new WrapperMapGenerator();
-            m_map = m_wrapper.makeMap(10, 3, 5, 15, 10, 0);
+            m_map = m_wrapper.makeMap(10, 3, 5, 15, 10, 1);
         }
 
         [TestCleanup]
@@ -52,6 +52,7 @@ namespace INSAttackTests
             Assert.AreEqual(5, valCount[TileFactory.Instance.AmphiTile]);
             Assert.AreEqual(15, valCount[TileFactory.Instance.TdTile]);
             Assert.AreEqual(10, valCount[TileFactory.Instance.InfoTile]);
+            Assert.AreEqual(1, valCount[TileFactory.Instance.RestaurantTile]);
         }
     }
 }

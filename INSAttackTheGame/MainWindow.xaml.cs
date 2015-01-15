@@ -231,17 +231,37 @@ namespace INSAttackTheGame
                     changeMap(builder);
                     m_playerDisplay.init();
                     m_unitsDisplay.update();
-                    m_buttonEndOfTurn.Visibility = System.Windows.Visibility.Visible;
-                    m_unitsDisplay.Visibility = System.Windows.Visibility.Visible;
+                    setUIVisibility(true);
                     m_parameters.Close();
                 }
             }
         }
 
+        public void setUIVisibility(bool visible)
+        {
+            System.Windows.Visibility visibility;
+            if (visible)
+                visibility = System.Windows.Visibility.Visible;
+            else
+                visibility = System.Windows.Visibility.Hidden;
+
+            m_buttonEndOfTurn.Visibility = visibility;
+            m_unitsDisplay.Visibility = visibility;
+        }
+
         private void changeMap(GameBuilder builder)
         {
             Context.changeGame(builder);
-            Context.CursorPos = Coord.nowhere;
+            if(Context.Game != null) //change succeeded
+            {
+                Context.CursorPos = Coord.nowhere;
+                setUIVisibility(true);
+            }
+            else //change failed
+            {
+                MessageBox.Show("Erreur au chargerment du jeu.");
+                setUIVisibility(false);
+            }
             m_mapView.InvalidateMeasure();
             m_mapView.InvalidateVisual();
         }

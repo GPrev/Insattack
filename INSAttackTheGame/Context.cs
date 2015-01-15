@@ -19,12 +19,12 @@ namespace INSAttackTheGame
         }
         public static Board Board
         {
-            get { return m_game.Board; }
+            get { if (Game != null) return m_game.Board; else return null; }
         }
 
         public static MapData Map
         {
-            get { return Board.Map; }
+            get { if (Board != null) return Board.Map; else return null; }
         }
 
         private static Unit m_selectedUnit;
