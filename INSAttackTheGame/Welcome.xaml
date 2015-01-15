@@ -1,0 +1,15 @@
+﻿<Window x:Class="INSAttackTheGame.Welcome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Welcome" Height="300" Width="300">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+            <Button Name="m_newGame"  Visibility="Visible" Click="m_Click"  BorderBrush="Black" BorderThickness="1" ClickMode="Release" Width="100" Height="50" Margin="0,10,0,0">
+                Nouvelle partie
+            </Button>
+            <Button Name="m_load"  Visibility="Visible"  Click="m_Click" BorderBrush="Black" BorderThickness="1" ClickMode="Release" Width="100" Height="50" Margin="0,20,0,0">
+                Charger une partie
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
