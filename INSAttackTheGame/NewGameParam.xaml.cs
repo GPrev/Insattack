@@ -34,6 +34,7 @@ namespace INSAttackTheGame
             m_player1.setPlayerNumber(1);
             m_player2.setPlayerNumber(2);
             m_player2.setDefault("EII");
+            this.Title = "Paramètres du jeu";
         }
 
         public GameBuilder Builder

@@ -92,15 +92,15 @@ namespace INSAttackTheGame
                 return null;
             //else
             if(winners.Count == 1)
-                return winners[0].Name + " wins";
+                return winners[0].Name + " gagne.";
             //else
-            string res = "Tie between " + winners[0].Name;
+            string res = "Égalité entre " + winners[0].Name;
             winners.RemoveAt(0);
             foreach(Player p in winners)
             {
-                res += " and " + p.Name;
+                res += " et " + p.Name;
             }
-            return res;
+            return res+".";
         }
     }
 }

@@ -53,6 +53,7 @@ namespace INSAttackTheGame
         public void update()
         {
             m_nameLabel.Content = "Propriétaire : " + m_unit.Player.Name;
+            m_type.Content = "Type de l'unité : " + m_unit.Dept.ToString();
             m_points.Content = "Nombre de points : " + m_unit.Points;
             m_Life.Content = "Vie : " + m_unit.Life + "/" + m_unit.MaxLife;
             m_Movement.Content = "Mouvement : " + m_unit.Movement + "/" + m_unit.MaxMovement;
