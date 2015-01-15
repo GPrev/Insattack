@@ -7,6 +7,6 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Label x:Name ="m_coord" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,20,0,0"/>
-        <TextBlock x:Name ="m_infos" Text="" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,50,10,0" TextWrapping="Wrap" MaxWidth="200"/>
+        <TextBlock x:Name ="m_infos" Text="" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,50,10,0" TextWrapping="WrapWithOverflow" Width="200"/>
     </Grid>
 </UserControl>
