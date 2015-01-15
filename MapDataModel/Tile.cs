@@ -14,7 +14,7 @@ namespace MapDataModel
     public abstract class Tile
     {
         protected Dictionary<Dept, float> m_costs;
-        protected enum TileHash { Tile = -1, OutdoorTile, AmphiTile, INFOTile, TDTile }
+        protected enum TileHash { Tile = -1, OutdoorTile, AmphiTile, INFOTile, TDTile, RestaurantTile}
 
         public float getcost(Dept department)
         {
