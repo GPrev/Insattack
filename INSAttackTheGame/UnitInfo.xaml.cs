@@ -27,6 +27,7 @@ namespace INSAttackTheGame
             m_unit = unit;
             if (Context.isGameValid())
             {
+                //We display the number of points of the unit only if it can gain point by killing
                 if (Context.Game.canGainPointOnKill(unit))
                 {
                     m_points.IsEnabled = true;

@@ -436,7 +436,7 @@ namespace INSAttack
         }
 
 
-        //Save the game in an xml with the name giving in parameter
+        //Save the game in an xml file with the name giving in parameter
         public void save(String name = "gameSave.xml")
         {
             String _name = name;
