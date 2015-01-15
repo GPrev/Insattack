@@ -4,20 +4,9 @@
 ## Contributeurs
 - Bignon Baptiste
 - Prevosto Gabriel
- 
-## TODO
-| Tâche | Responsable | Avancement |
-|---|---|---|
-| choix des peuples | Baptiste | Fini |
-| algo de conseil de déplacement | Gabriel | Fini et testé |
-| ajout des règles | Baptiste | Fini |
-| ajout d'un descriptif des cases | Baptiste | Fini |
-| indiquer dans l'affichage si l'unité a ou non des points de mouvement | Gabriel | Fini et testé |
-| ajout du nombre d'unités des joueurs | Baptiste | Fini |
-| écran de victoire | Gabriel | Fini mais moche |
-| déplacement des unités avec le clavier | Gabriel | Fini et testé |
-| touche entrée pour la fin du tour | Gabriel | Fini et testé |
-| rendre les widgets plus jolis (texture parchemin, pierre, ..) | Baptiste | Commencé |
+
+##Lien du powerpoint :
+https://onedrive.live.com/redir?resid=4F4D70B1970A5823!120&authkey=!AFIzwhsB2amrce8&ithint=file%2cpptx (lecture seule)
 
 ## Les différents projets
 
