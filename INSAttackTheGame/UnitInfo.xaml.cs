@@ -65,7 +65,7 @@ namespace INSAttackTheGame
         public void select()
         {
             Context.SelectedUnit = m_unit;
-            m_border.BorderBrush = Brushes.Red;
+            //m_border.BorderBrush = Brushes.Red;
         }
     }
 }
