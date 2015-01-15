@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -346,6 +347,12 @@ namespace INSAttackTheGame
             Context.EnableHints = (sender as MenuItem).IsChecked;
             //refreshes the view to make the hints appear (or disappear)
             m_mapView.InvalidateVisual();
+        }
+
+        private void Help_Click(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists("DocUtilisateur.pdf")) Process.Start("DocUtilisateur.pdf");
+            else MessageBox.Show("Le manuel utilisateur est introuvable");
         }
 
     }
