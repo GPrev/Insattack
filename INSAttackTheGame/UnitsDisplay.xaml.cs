@@ -24,11 +24,9 @@ namespace INSAttackTheGame
     public partial class UnitsDisplay : UserControl
     {
         private List<UnitInfo> m_unitsList;
-        private bool m_visibility;//true if the unit list has to be display
         public UnitsDisplay()
         {
             InitializeComponent();
-            m_visibility = false;
             m_unitsList = new List<UnitInfo>();
         }
 
@@ -66,7 +64,7 @@ namespace INSAttackTheGame
                 }
                 else
                 {
-                    if(m_visibility) m_units.Visibility = System.Windows.Visibility.Visible;
+                    m_units.Visibility = System.Windows.Visibility.Visible;
                 }
             }
             else
@@ -91,12 +89,6 @@ namespace INSAttackTheGame
             }
         }
 
-        public void setUIVisibility(bool visible)
-        {
-            m_visibility = visible;
-            if (!visible) Visibility = System.Windows.Visibility.Hidden;
-            else Visibility = System.Windows.Visibility.Visible;
-        }
 
         private void m_units_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
