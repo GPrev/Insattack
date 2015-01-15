@@ -236,6 +236,7 @@ namespace INSAttackTheGame
             if (!Context.isGameOver()) Context.Game.endOfTurn();
             m_unitsDisplay.update();
             m_playerDisplay.update();
+            InvalidateVisual();
             checkWinState();
         }
 
@@ -315,7 +316,7 @@ namespace INSAttackTheGame
         {
             if (Context.isGameValid())
             {
-                //string savename = VirtualPathUtility.toAbsolute(GameLoader.DefaultSaveName);
+                //string savename = VirtualPathUtility.ToAbsolute(GameLoader.DefaultSaveName);
                 Context.Game.save();
             }
         }
