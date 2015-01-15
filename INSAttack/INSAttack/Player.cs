@@ -5,6 +5,7 @@ using System.Text;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Runtime.Serialization.Formatters.Binary;
+using MapDataModel;
 
 namespace INSAttack
 {
@@ -17,13 +18,13 @@ namespace INSAttack
             m_count++;
             m_name = "Joueur " + m_id;
         }
-        public Player(String name)
+        public Player(String name, Dept dept = Dept.INFO)
         {
             m_id = m_count;
             m_count++;
             m_name = name;
+            m_dept = dept;
         }
-
 
         private int m_id;
 
@@ -47,6 +48,14 @@ namespace INSAttack
         {
             get { return m_name; }
             set { m_name = value; }
+        }
+
+        private Dept m_dept;
+
+        public Dept Dept
+        {
+            get { return m_dept; }
+            set { m_dept = value; }
         }
 
         public bool isAlly(Player p)

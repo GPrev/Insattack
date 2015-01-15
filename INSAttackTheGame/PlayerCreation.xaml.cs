@@ -42,7 +42,7 @@ namespace INSAttackTheGame
         {
             get
             {
-                Player player = new Player(m_playerName.Text);
+                Player player = new Player(m_playerName.Text, getDept());
                 return getDepartment(player);
             }
         }
@@ -57,6 +57,16 @@ namespace INSAttackTheGame
             if (m_departChoice.SelectedIndex == 4) return new GMA(player);
             if (m_departChoice.SelectedIndex == 5) return new INSAttack.GC(player);
             return new INFO(player); //default case
+        }
+
+        private Dept getDept()
+        {
+            if (m_departChoice.SelectedIndex == 1) return Dept.EII;
+            if (m_departChoice.SelectedIndex == 2) return Dept.SRC;
+            if (m_departChoice.SelectedIndex == 3) return Dept.SGM;
+            if (m_departChoice.SelectedIndex == 4) return Dept.GMA;
+            if (m_departChoice.SelectedIndex == 5) return Dept.GC;
+            return Dept.INFO; //default case
         }
 
         //Set the default department for the player

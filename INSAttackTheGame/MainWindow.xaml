@@ -27,7 +27,7 @@
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" DockPanel.Dock="Left">
                 <local:UnitsDisplay x:Name="m_unitsDisplay" Width="240" Visibility="Hidden" Margin="20,0,0,0"></local:UnitsDisplay>
                 <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" DockPanel.Dock="Left" Margin="10,15,0,0">
-                    <local:PlayersDisplay x:Name="m_playerDisplay"></local:PlayersDisplay>
+                    <local:PlayersDisplay x:Name="m_playerDisplay" ></local:PlayersDisplay>
                     <Button Name="m_buttonEndOfTurn"  Click="m_buttonEndOfTurn_Click" Visibility="Hidden"  BorderBrush="Black" BorderThickness="1" ClickMode="Release" Width="100" Height="50" Margin="0,10,0,0">
                     Fin du tour
                     </Button>

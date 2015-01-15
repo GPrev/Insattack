@@ -7,11 +7,14 @@
              d:DesignHeight="300" d:DesignWidth="300">
     
     <Grid>
-        
-        <StackPanel HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top">
-            <Label x:Name ="m_playerName" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"/>
-            <Label x:Name ="m_nbPoint" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-            <Label x:Name ="m_nbUnits" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+
+        <StackPanel HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Orientation="Horizontal" Margin="10">
+            <Image x:Name ="m_playerFace" Source="Resources/Units/INFO.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" ClipToBounds="True"/>
+            <StackPanel HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" >
+                <Label x:Name ="m_playerName" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label x:Name ="m_nbPoint" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                <Label x:Name ="m_nbUnits" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>

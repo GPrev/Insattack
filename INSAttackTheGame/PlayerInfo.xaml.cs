@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using INSAttack;
+using MapDataModel;
 
 namespace INSAttackTheGame
 {
@@ -52,6 +53,30 @@ namespace INSAttackTheGame
             InitializeComponent();
             m_player = player;
             update();
+
+            BitmapFrame img = null;
+            switch(player.Dept)
+            {
+                case Dept.EII:
+                    img = BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/EII.png"));
+                    break;
+                case Dept.SRC:
+                    img = BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/SRC.png"));
+                    break;
+                case Dept.GMA:
+                    img = BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/GMA.png"));
+                    break;
+                case Dept.SGM:
+                    img = BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/SGM.png"));
+                    break;
+                case Dept.GC:
+                    img = BitmapFrame.Create(new Uri(@"pack://application:,,/Resources/Units/GC.png"));
+                    break;
+                default: //INFO
+                    break; //the picture is already there
+            }
+            if(img != null)
+                m_playerFace.Source = img;
         }
 
         public void update()

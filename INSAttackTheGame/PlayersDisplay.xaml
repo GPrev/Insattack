@@ -6,8 +6,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TextBlock x:Name ="m_main" Text="" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold"/>
-        <StackPanel x:Name="m_players" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top">
-        </StackPanel>
+        <DockPanel>
+            <TextBlock x:Name ="m_main" Text="" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" DockPanel.Dock="Top"/>
+            <StackPanel x:Name="m_players" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top">
+            </StackPanel>            
+        </DockPanel>
     </Grid>
 </UserControl>
