@@ -27,12 +27,3 @@ C:\Users\ishamael\Documents\GitHub\Insattack\INSAttack\INSAttack\bin\Debug\MapGe
 C:\Users\ishamael\Documents\GitHub\Insattack\INSAttack\INSAttack\obj\Debug\INSAttack.csprojResolveAssemblyReference.cache
 C:\Users\ishamael\Documents\GitHub\Insattack\INSAttack\INSAttack\obj\Debug\INSAttack.dll
 C:\Users\ishamael\Documents\GitHub\Insattack\INSAttack\INSAttack\obj\Debug\INSAttack.pdb
-C:\Users\klael\Documents\GitHub\Insattack\INSAttack\INSAttack\bin\Debug\INSAttack.dll
-C:\Users\klael\Documents\GitHub\Insattack\INSAttack\INSAttack\bin\Debug\INSAttack.pdb
-C:\Users\klael\Documents\GitHub\Insattack\INSAttack\INSAttack\bin\Debug\MapDataModel.dll
-C:\Users\klael\Documents\GitHub\Insattack\INSAttack\INSAttack\bin\Debug\MapGeneratorWrapper.dll
-C:\Users\klael\Documents\GitHub\Insattack\INSAttack\INSAttack\bin\Debug\MapDataModel.pdb
-C:\Users\klael\Documents\GitHub\Insattack\INSAttack\INSAttack\bin\Debug\MapGeneratorWrapper.pdb
-C:\Users\klael\Documents\GitHub\Insattack\INSAttack\INSAttack\obj\Debug\INSAttack.csprojResolveAssemblyReference.cache
-C:\Users\klael\Documents\GitHub\Insattack\INSAttack\INSAttack\obj\Debug\INSAttack.dll
-C:\Users\klael\Documents\GitHub\Insattack\INSAttack\INSAttack\obj\Debug\INSAttack.pdb

@@ -382,7 +382,7 @@ namespace INSAttackTheGame
 
         private void Help_Click(object sender, RoutedEventArgs e)
         {
-            if (File.Exists("DocUtilisateur.pdf")) Process.Start("DocUtilisateur.pdf");
+            if (File.Exists("..\\DocUtilisateur.pdf")) Process.Start("..\\DocUtilisateur.pdf");
             else MessageBox.Show("Le manuel utilisateur est introuvable");
         }
 
