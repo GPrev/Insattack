@@ -236,7 +236,7 @@ namespace INSAttackTheGame
             if (!Context.isGameOver()) Context.Game.endOfTurn();
             m_unitsDisplay.update();
             m_playerDisplay.update();
-            InvalidateVisual();
+            m_mapView.InvalidateVisual();
             checkWinState();
         }
 
